@@ -64,7 +64,7 @@ const pause = async () => {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={[styles.button, {backgroundColor: colors.pink}]} onPress={() => pause()}>
+          <TouchableOpacity style={[styles.button, {backgroundColor: colors.purple}]} onPress={() => pause()}>
           <View style={styles.buttonTextView} >
             <Text style={styles.buttonText}>pause</Text>
             </View>

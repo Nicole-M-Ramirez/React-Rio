@@ -32,8 +32,8 @@ function Emergencia({route}) {
                                                      img: <Image source={require('../assets/Respiracion-Profunda.gif')} resizeMode='contain' style={[styles.ActividadImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
                                                      texto:gs['respiracionCont'][lang],
                                                      color: colors.mintGreen,
-                                                     titulo: gs['respiracion'][lang]
-                                                     //forDate: forDate
+                                                     titulo: gs['respiracion'][lang],
+                                                     forDate: forDate
                                                     }),
     () => navigation.navigate('MeditacionEmergencia', {forDate: forDate}),
     // () => navigation.navigate('ActividadEnProgreso',{pantalla: 'SeguimientoUrgencia',

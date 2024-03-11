@@ -28,9 +28,10 @@ function ActividadEnProgreso({route}) {
   const {texto} = route.params;
   const {titulo} = route.params;
   const {vieneDe} = route.params;
+  //const {forDate} = route.params;
 
   const functions = [
-    () => navigation.navigate('RegistroUtilidad',{img:img}),
+    () => navigation.navigate('RegistroUtilidad',{img:img, forDate: forDate }),
   ]
 
 

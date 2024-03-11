@@ -507,8 +507,11 @@ If you have medical insurance, you can contact a customer service representative
     'es':'Toma un momento para respirar y relajarte. Usa el círculo como guía. Aprender a relajarte te puede ayudar a evitar que te autolesiones, te enfermes y también te puede ayudar a mejorar tu rendimiento académico.',
     'en':'Take a moment to breathe and relax. Use the circle as a guide. Learning to relax can help you avoid self-harm, illness, and can also improve your academic performance.'
   },
-  'meditacion': {'es':'Meditación', 'en':'Meditation'}
-
+  'meditacion': {'es':'Meditación', 'en':'Meditation'},
+  'meditacionEmer':{
+    'es':`Esta meditación te puede ayudar cuando tu nivel de estrés está aumentando, para ayudarte a detener este proceso conectándote con un mayor estado de relajación. Te invito a que escuches los sonidos que acompañan esta meditación mientras respiramos de manera profunda y lenta. Agudiza tus sentidos para conectarte auditivamente con los sonidos que aquí escuchas incluyendo el sonido de tu respiración. Mientras escuchas estos sonidos atentamente, te invito a que visualices en tu mente algún lugar que te guste y que te genere mucha tranquilidad y sosiego. Tú eliges el lugar. Solo tu conoces que lugar te brinda esa sensación de paz y serenidad. Imagínate que estas en ese lugar sintiendo toda la energía que te brinda este espacio maravilloso y disfrútalo al máximo.`,
+    'en':`This meditation can help you when your stress level is increasing, to help you stop this process by connecting with a greater state of relaxation. I invite you to listen to the sounds accompanying this meditation while we breathe deeply and slowly. Sharpen your senses to connect audibly with the sounds you hear here, including the sound of your breath. As you attentively listen to these sounds, I invite you to visualize in your mind a place that you like and that generates a sense of tranquility and serenity for you. You choose the place. Only you know which place gives you that feeling of peace and serenity. Imagine yourself in that place, feeling all the energy that this wonderful space provides, and enjoy it to the fullest.
+    `}
   
 
 }

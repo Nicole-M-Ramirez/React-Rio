@@ -24,6 +24,7 @@ const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
 
 function SeguimientoUrgencia({route}) {
+  const {forDate} = route.params;
   const dispatch = useDispatch();
   const navigation = useNavigation();
   const lang = useSelector(state => state.counter.language);
@@ -45,7 +46,7 @@ function SeguimientoUrgencia({route}) {
     if(intentos === false){
       console.log('primero')
       dispatch(updateintentosActividad({"intento":true}));
-      navigation.navigate('Emergencia')
+      navigation.navigate('Emergencia', {forDate: forDate})
     }
     else{
       dispatch(updateintentosActividad({"intento":false}));

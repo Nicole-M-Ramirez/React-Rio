@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 import {
   Text,
   View,
@@ -22,11 +22,18 @@ import { useEffect } from 'react';
 // import SoundPlayer from 'react-native-sound-player';
 // import Sound from 'react-native-sound';
 import TrackPlayer from 'react-native-track-player';
+import { gs } from '../../components/RioGlobalStrings';
+import { useSelector } from 'react-redux';
+
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
 
-function MeditacionEmergencia () {
+function MeditacionEmergencia ({route}) {
+  const {forDate} = route.params
+  const navigation = useNavigation();
+  const lang = useSelector(state => state.counter.language);
+
   const setup = async () => {
     // Set up the player
     await TrackPlayer.setupPlayer();
@@ -39,78 +46,113 @@ function MeditacionEmergencia () {
         artist: 'Track Artist',
         artwork: require('../../assets/aceptacion.png')
     });
-
-    // Start playing it
-    //await TrackPlayer.play();
-
-    //await TrackPlayer.reset();
 };
 
 setup()
 
+const [audioSelect, setAudioSelect] = useState ("play")
+
 const play = async () => {
   await TrackPlayer.play();
+  await setAudioSelect("pause")
 }
 
 const pause = async () => {
   await TrackPlayer.pause();
+  await setAudioSelect("play")
 }
 
-  return (
-    <BodyView flexDirec = 'row'>
-      <TouchableOpacity style={[styles.button, {backgroundColor: colors.blue}]} onPress={() => play()}>
-            <View style={styles.buttonTextView} >
-            <Text style={styles.buttonText}>play</Text>
-            </View>
-          </TouchableOpacity>
+const reset = async () => {
+  await TrackPlayer.stop();
+  await TrackPlayer.play();
+  await setAudioSelect("pause")
+}
 
-          <TouchableOpacity style={[styles.button, {backgroundColor: colors.purple}]} onPress={() => pause()}>
-          <View style={styles.buttonTextView} >
-            <Text style={styles.buttonText}>pause</Text>
+
+  return (
+    <View>
+      <HeaderView headerButtons = 'yes'>
+        <TimeSince/>
+      </HeaderView>
+
+      <BodyView>
+        <View style={styles.scrollView}>
+          <ScrollView>
+            <Text style={styles.scrollText}>{gs['meditacionEmer'][lang]}</Text>
+          </ScrollView>
+        </View>
+
+        {audioSelect === "play" ? 
+            <View>
+            <TouchableOpacity onPress={()=>play()}>
+              <Image source={require('../../assets/play.png')}  style={styles.buttonImage}/>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={()=>reset()} style={{ width: dimensions.bodyWidth*0.075, height: dimensions.bodyHeight*0.05, left: dimensions.bodyWidth*0.75, top: dimensions.bodyHeight*-0.03}}>
+                <Image source={require('../../assets/refresh.png')}  style={{width: dimensions.shortButtonHeight*0.3, height: dimensions.shortButtonHeight*0.3}}/>
+              </TouchableOpacity>
             </View>
-          </TouchableOpacity>
-        </BodyView>
+            :
+            <View>
+            <TouchableOpacity onPress={()=>pause()}>
+              <Image source={require('../../assets/pausa.png')}  style={styles.buttonImage}/>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={()=>reset()} style={{ width: dimensions.bodyWidth*0.075, height: dimensions.bodyHeight*0.05, left: dimensions.bodyWidth*0.75, top: dimensions.bodyHeight*-0.03}}>
+                <Image source={require('../../assets/refresh.png')}  style={{width: dimensions.shortButtonHeight*0.3, height: dimensions.shortButtonHeight*0.3}}/>
+              </TouchableOpacity>
+            </View>
+        }
+      </BodyView>
+
+      <FooterView> 
+        <TouchableOpacity  style={{height:'100%'}}  onPress={() => navigation.navigate('SeguimientoUrgencia', {forDate : forDate})}>
+          <View style={styles.hookedStyles}>
+            <View style={{width:'8%', 'height': '100%',  alignItems: 'flex-start',justifyContent: 'center',  }}>
+              <Image source={require('../../assets/back.png')}  style={styles.backButtonsImage} />
+            </View>
+            <View style={{width:'92%', 'height': '100%', alignItems: 'flex-start',justifyContent: 'center', }}> 
+              <Text style={{color: 'white', textAlignVertical: 'center'}}>{gs['volver'][lang]}</Text>
+            </View>
+          </View>
+        </TouchableOpacity>
+      </FooterView>
+
+      <EmergencyView>
+          <Emergency/>
+      </EmergencyView>
+    </View>
   )
 }
 
 export default MeditacionEmergencia;
 
 const styles = StyleSheet.create({
-  title: {
-    fontSize: normalize(20),
-    color: colors.mintGreen
-  },
-  button:{
-    top: dimensions.bodyHeight /2 ,
-    width: dimensions.buttonWidth,
-    height: dimensions.shortButtonHeight,
-    borderRadius:3,
-    margin: dimensions.separator / 2,
-  },
-  buttonText:{
-    color:'white',
-    fontSize: normalize(11),
-    top: dimensions.shortButtonHeight/1.5,
-    left: ScreenWidth * 0.04,
-  },
   buttonImage :{
-    width: dimensions.shortButtonHeight /2,
-    height: dimensions.shortButtonHeight /2,
-    // top: ScreenHeight * 0.0,
-    // left: ScreenWidth * 0.25
-    position: 'absolute'
-  },
-  buttonTextView : {
-    height: dimensions.shortButtonHeight
-  },
-  buttonImgView : {
-    height: dimensions.shortButtonHeight,
-    left: dimensions.buttonWidth / 2,
-    width: dimensions.buttonWidth / 2,
-    position: 'absolute',
-    justifyContent: "center",
-    alignItems: "center",
-    verticalAlign: "middle"
+    width: dimensions.shortButtonHeight*1,
+    height: dimensions.shortButtonHeight*1,
+    left : dimensions.bodyWidth *0.38,
+    top: dimensions.bodyHeight *0.08,
     
+  },
+  scrollText : {
+    color: 'white',
+  },
+  scrollView : {
+    //backgroundColor: 'grey',
+    //heigth: dimensions.bodyHeight*0.01
+  },
+
+  hookedStyles :{
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    direction: 'inherit',
+    flexWrap: 'nowrap',
+    height: '100%'
+  
+  },
+  backButtonsImage :{
+    width: dimensions.bodyWidth * 0.024,
+    height: dimensions.footerHeight * 0.14,
+    position: 'absolute'
   }
 });

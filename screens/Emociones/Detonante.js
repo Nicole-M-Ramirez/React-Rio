@@ -137,7 +137,7 @@ function Detonante({route}) {
       
 
       <FooterView>
-          <View style={{width:'50%', position:'absolute',marginTop: dimensions.separator}}>
+          <View style={{width:'50%', position:'absolute',marginTop: dimensions.separator*7}}>
             <TouchableOpacity  style={{height:'100%'}}  onPress={() => navigation.navigate('SelectorEmocion', {forDate: forDate})}>
             <View style={styles.hookedStyles}>
               <View style={{width:'8%', 'height': '100%',  alignItems: 'flex-start',justifyContent: 'center',  }}>
@@ -151,7 +151,7 @@ function Detonante({route}) {
           </View>
 
 
-          <View style={{left: '50%', width:'50%', position:'absolute',marginTop: dimensions.separator}}>
+          <View style={{left: '50%', width:'50%', position:'absolute',marginTop: dimensions.separator*7}}>
             {/* <NextLink labelNoAcepto={"Continuar"} gotoScreen={pantalla}></NextLink> */}
 
           <TouchableOpacity  style={{height:'100%'}}  onPress={() => {

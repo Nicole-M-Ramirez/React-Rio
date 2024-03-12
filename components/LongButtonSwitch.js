@@ -34,8 +34,8 @@ function LongButtonSwitch({Color, Title, Function, switchText1, switchText2, swi
             onValueChange={() => {toggleSwitch(); Function(isEnabled);}}
             value={isEnabled}
             style={styles.switchStyle}
-            circleSize={30}
-            barHeight={37}
+            circleSize={20}
+            barHeight={27}
             circleBorderWidth={0}
             switchWidthMultiplier={2.5}
             switchLeftPx={10}
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   },
   buttonsText: {
     color: 'white',
-    fontSize: normalize(13),
+    fontSize: normalize(10),
     top: dimensions.buttonHeight/16,
     left: dimensions.separator,
   },

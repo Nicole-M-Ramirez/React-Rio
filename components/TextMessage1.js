@@ -13,12 +13,13 @@ function TextMessage2(){
     
     return (
         <>
+            <View style={[styles.triangleCorner]} />
             <View style={styles.rectangle}>
                 <View style={{left:'5%',top:'7%',width:'90%', height:'90%'}} >
                     <Text style={styles.BoxText}>{gs['burbujaUrgencia'][lang]}</Text>
                 </View>
             </View>
-            <View style={[styles.triangleCorner]} />
+            
         </>
     );
 }
@@ -31,10 +32,11 @@ const styles = StyleSheet.create({
         width: dimensions.bodyWidth,
         height: ScreenHeight * 0.16,
         backgroundColor: colors.mintGreen,
+        top: dimensions.bodyHeight*-0.35
     },
     triangleCorner: {
-        top: ScreenHeight * -0.06,
-        left: ScreenWidth * 0.55,
+        top: ScreenHeight * 0.1,
+        left: ScreenWidth * 0.4,
         width: 0,
         height: 0,
         backgroundColor: 'transparent',
@@ -45,7 +47,7 @@ const styles = StyleSheet.create({
         borderLeftColor: 'transparent',
         borderRightColor: 'transparent',
         borderBottomColor: colors.mintGreen,
-        transform: [{ rotate: "150deg" }]
+        transform: [{ rotate: "130deg" }]
       },
     BoxText: {
         color: 'white',

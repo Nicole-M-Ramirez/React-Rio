@@ -33,15 +33,17 @@ function Configuracion() {
   const passwordState = useSelector(state => state.counter.setPassword);
   const lang = useSelector(state => state.counter.language);
   const dispatch = useDispatch();
+
   function CambiarPassword () {
     // navigation.navigate('Contrasena',{
     //   pantalla: 'NewPassword'
     // })
     if(passwordState === true){
-      navigation.navigate('Contrasena',{pantalla: 'NewPassword',volver:'Configuracion'})
+      navigation.navigate('Contrasena',{pantalla: 'PasswordMenu',volver:'Configuracion'})
     }
     else{
-      navigation.navigate('NewPassword',{pantalla: 'Configuracion'})
+      //navigation.navigate('NewPassword',{pantalla: 'Configuracion'})
+      navigation.navigate('PasswordMenu')
     }
   }
 

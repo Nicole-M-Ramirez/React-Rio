@@ -27,7 +27,7 @@ import Tristeza from './screens/Emociones/Tristeza';
 import Coraje from './screens/Emociones/Coraje';
 import Otros from './screens/Emociones/Otros';
 import ActividadEnProgreso from './screens/Emociones/ActividadEnProgreso';
-import Contrasena from './screens/Contrasena';
+//import Contrasena from './screens/Contrasena';
 import Metas from './screens/Mi Espacio/Metas';
 import EmocionesExpancion from './screens/Emociones/EmocionesExpancion';
 import SetMetas from './screens/Mi Espacio/SetMetas';
@@ -49,6 +49,11 @@ import Gratitud from './screens/Actividades/Gratitud';
 
 import RioCalendar from './components/RioCalendar';
 import Diary from './components/Diary';
+
+import Contrasena from './screens/Passwords/Contrasena';
+import PasswordMenu from './screens/Passwords/PasswordMenu';
+import EditarPassword from './screens/Passwords/EditarPassword';
+import ConfirmarBorrar from './screens/Passwords/ConfirmarBorrar';
  
 
 import store, { persistor } from './redux/store';
@@ -206,8 +211,35 @@ export default function App() {
               }}
             />
             <Stack.Screen
+              name='PasswordMenu'
+              component={PasswordMenu}
+              independent ={true}
+              options={{
+                headerTitle: "",
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
               name='Contrasena'
               component={Contrasena}
+              independent ={true}
+              options={{
+                headerTitle: "",
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name='EditarPassword'
+              component={EditarPassword}
+              independent ={true}
+              options={{
+                headerTitle: "",
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name='ConfirmarBorrar'
+              component={ConfirmarBorrar}
               independent ={true}
               options={{
                 headerTitle: "",

@@ -79,8 +79,9 @@ export default SelectorIdioma;
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: normalize(20),
+    fontSize: normalize(18),
     color: colors.mintGreen
+
   },
   button:{
     top: dimensions.bodyHeight /2 ,

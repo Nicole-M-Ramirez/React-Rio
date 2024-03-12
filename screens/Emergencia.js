@@ -160,7 +160,7 @@ function Emergencia({route}) {
     </BodyView>
 
     <FooterView>
-    <View style={{ position:'absolute',marginTop: dimensions.separator}}>
+    <View style={{position:'absolute',marginTop: dimensions.separator}}>
       {/* <TouchableOpacity  style={{height:'100%'}}  onPress={() => navigation.navigate('MenuPrincipal')}>
         <View style={styles.hookedStyles}>
           <View style={{width:'8%', 'height': '100%',  alignItems: 'flex-start',justifyContent: 'center',  }}>
@@ -198,11 +198,12 @@ const styles = StyleSheet.create({
       paddingTop: dimensions.emergencyHeight  * 0.1,
     },
     titleText: {
+      //backgroundColor:'grey',
       color: "#4eb5a3",
-      fontSize: normalize(15),
+      fontSize: normalize(14),
       fontWeight: '600',
       width: dimensions.bodyWidth * 0.75,
-      top: dimensions.footerHeight * 0.15
+      top: dimensions.footerHeight * 0.25
       },
       button:{
         borderRadius:5,

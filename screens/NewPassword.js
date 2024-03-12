@@ -289,6 +289,9 @@ function NewPassword({route}) {
       </BodyView>
       
       <FooterView>
+          <View style={{width:'50%', position:'absolute',marginTop: dimensions.bodyHeight*0.09}}>
+            <BackLink labelBack={gs['volver'][lang]} gotoScreen={"PasswordMenu"}></BackLink>
+          </View>
           {/* <View style={{width:'50%', position:'absolute',marginTop: dimensions.separator}}>
             <BackLink labelBack={gs['volver'][lang]} gotoScreen={pantalla}></BackLink>
           </View> */}

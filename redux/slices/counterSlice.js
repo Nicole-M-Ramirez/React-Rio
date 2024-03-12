@@ -206,12 +206,17 @@ export const counterSlice = createSlice({
          console.log('password:'+state.password)
          state.setPassword = true;
       },
+      updatePasswordDelete: (state, action)=>{
+         state.setPassword = false;
+         state.password = action.payload.pass;
+         console.log('password borrado')
+      },
       updateintentosActividad: (state, action)=>{
          state.intentosActividad = action.payload.intento;
       },
    },
 });
 
-export const { registerFirstDate,updateDateData, updateLastAuto, updateMetaCumplida, updateMetaCheck, updateMood, updateLang, decreaseByOne, register, updatePassword, reportCASIS, addMeta, updateMeta,updateintentosActividad } = counterSlice.actions;
+export const { registerFirstDate,updateDateData, updateLastAuto, updateMetaCumplida, updateMetaCheck, updateMood, updateLang, decreaseByOne, register, updatePassword, updatePasswordDelete, reportCASIS, addMeta, updateMeta,updateintentosActividad } = counterSlice.actions;
 
 export default counterSlice.reducer;

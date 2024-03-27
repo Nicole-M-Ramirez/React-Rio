@@ -6,7 +6,7 @@ export const gs = {
   'noAcepto':{'es':'No Acepto','en':'Do not accept'},
   'continuar':{'es':'continuar','en':'continue'},
   'saltar':{'es':'saltar', 'en':'skip'},
-  'volver':{'es':'volver','en':'back'},
+  'volver':{'es':'Volver','en':'Back'},
   'si':{'es':'Si','en':'Yes'},
   'completado':{'es':'Completado','en':'Completed'},
 
@@ -52,8 +52,8 @@ export const gs = {
     'en':'This button will be accessible at all times and will provide you with emergency service contacts, if needed.'
   },
   'burbujaContador':{
-    'es':'Aquí podrás ver el tiempo que llevas sin autolesionarte',
-    'en':'Here you can see how long you have gone without self-harming'
+    'es':'Aquí podrás ver el tiempo que llevas sin autolesionarte.',
+    'en':'Here you can see how long you have gone without self-harming.'
   },
 
   //pagina P2
@@ -518,7 +518,7 @@ If you have medical insurance, you can contact a customer service representative
   'CrearPass' : {'es':'Crear contraseña', 'en':'Create password'},
   'CambiarPass' : {'es': 'Cambiar contraseña', 'en':'Change password'},
   'DeletePass' : {'es': 'Borrar contraseña', 'en' : 'Delete password'},
-  'confirmarBorrar': {'es': '¿Esta seguro que desea borrar su contraseña?', 'en':'Are you sure you want to delete your password?'},
+  'confirmarBorrar': {'es': '¿Está seguro que desea borrar su contraseña?', 'en':'Are you sure that you want to delete your password?'},
   'borrar' : {'es':'Borrar', 'en':'Delete'},
 
   //Emociones

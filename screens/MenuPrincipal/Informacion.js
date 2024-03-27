@@ -171,7 +171,7 @@ function Informacion({route}) {
 
 
         <View style={{top:dimensions.footerHeight*-0.65, height:'75%',justifyContent: 'center' , alignItems: 'flex-start'}}> 
-          <Text style={styles.titleText}>{gs['configuracion'][lang]}</Text> 
+          <Text style={styles.titleText}>{gs['informacion'][lang]}</Text> 
         </View> 
       </FooterView>
 

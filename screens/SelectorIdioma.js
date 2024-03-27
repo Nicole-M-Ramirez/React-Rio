@@ -52,7 +52,7 @@ function SelectorIdioma() {
 
           <TouchableOpacity style={[styles.button, {backgroundColor: colors.pink}]} onPress={() => buttonHandler('en')}>
           <View style={styles.buttonTextView} >
-            <Text style={styles.buttonText}>Ingles</Text>
+            <Text style={styles.buttonText}>Inglés</Text>
             </View>
             <View style={styles.buttonImgView}>
               <Image source={require('../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />

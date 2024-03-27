@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         borderRadius: 6,
         top:dimensions.bodyHeight*0.02,
         width: dimensions.bodyWidth,
-        height: dimensions.bodyHeight*0.3,
+        height: dimensions.bodyHeight*0.25,
         backgroundColor: colors.mintGreen,
     },
     triangleCorner: {

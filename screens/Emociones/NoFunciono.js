@@ -27,6 +27,7 @@ function NoFunciono({route}) {
   const lang = useSelector(state => state.counter.language);
   const today = new Date();
   const theDate = today.toISOString().substring(0,10);
+  const {pantalla} = route.params;
 
   function Calling (phoneNumber) {
 
@@ -52,7 +53,7 @@ function NoFunciono({route}) {
         <Text style={styles.TitleText}>¿Le gustaria intentar otra actividad?</Text>
 
         <View style={{flexDirection:'row'}}>
-            <TouchableOpacity style={[styles.button, {backgroundColor: colors.blue}]} onPress={() => navigation.navigate('SelectorEmocion', { theDate: theDate })}>
+            <TouchableOpacity style={[styles.button, {backgroundColor: colors.blue}]} onPress={() => navigation.navigate(pantalla, { theDate: theDate })}>
                     <Text style={styles.buttonText}>{gs['si'][lang]}</Text>
             </TouchableOpacity>
 

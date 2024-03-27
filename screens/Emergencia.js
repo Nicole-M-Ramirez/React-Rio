@@ -95,7 +95,7 @@ function Emergencia({route}) {
           <Image source={require('../assets/urgencia.png')} resizeMode='contain' style={styles.buttonImage} />
         </View>
 
-        <TouchableOpacity onPress={()=>{Calling('7875080302')}} style={[styles.button, {
+        <TouchableOpacity onPress={()=>{Calling('18009810023')}} style={[styles.button, {
                                                   backgroundColor:colors.emergencyRed,
                                                   top: 1*(dimensions.buttonHeight + dimensions.separator),
                                                   left: 0,
@@ -107,7 +107,7 @@ function Emergencia({route}) {
           <Text style={styles.smallButtonText}>Linea PAS</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={()=>{Calling('7875080302')}} style={[styles.button, {
+        <TouchableOpacity onPress={()=>{Calling('911')}} style={[styles.button, {
                                                   backgroundColor:colors.emergencyRed,
                                                   top: 1.33*(dimensions.buttonHeight + dimensions.separator),
                                                   left: 0,
@@ -120,7 +120,7 @@ function Emergencia({route}) {
           <Text style={styles.smallButtonText}>911</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={()=>{Calling('7875080302')}} style={[styles.button, {
+        <TouchableOpacity onPress={()=>{Calling('988')}} style={[styles.button, {
                                                   backgroundColor:colors.emergencyRed,
                                                   top: 1.66*(dimensions.buttonHeight + dimensions.separator),
                                                   left: 0,
@@ -133,7 +133,7 @@ function Emergencia({route}) {
           <Text style={styles.smallButtonText}>988</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={()=>{Calling('7875080302')}} style={[styles.button, {
+        <TouchableOpacity onPress={()=>{Calling('18886727622')}} style={[styles.button, {
                                                   backgroundColor:colors.emergencyRed,
                                                   top: 2*(dimensions.buttonHeight + dimensions.separator),
                                                   left: 0,
@@ -172,11 +172,11 @@ function Emergencia({route}) {
         </View>
       </TouchableOpacity> */}
                 {/* <View style={{width:'50%', position:'absolute',marginTop: dimensions.separator}}> */}
-            <BackLink labelBack={"Regresar"} gotoScreen={'MiEspacio'}></BackLink>
+            <BackLink labelBack={"Regresar"} gotoScreen={'MenuPrincipal'}></BackLink>
           {/* </View> */}
     </View>
 
-      <View style={{position:'absolute',marginTop: dimensions.separator*2}}>
+      <View style={{position:'absolute',marginTop: dimensions.separator*2,height:dimensions.footerHeight*0.7,width:dimensions.bodyWidth*1, top:dimensions.footerHeight*0.2}}>
         <Text style={styles.titleText}>{gs['tituloUrgencia'][lang]}</Text>
       </View>
     </FooterView>
@@ -202,8 +202,8 @@ const styles = StyleSheet.create({
       color: "#4eb5a3",
       fontSize: normalize(14),
       fontWeight: '600',
-      width: dimensions.bodyWidth * 0.75,
-      top: dimensions.footerHeight * 0.25
+      width: dimensions.bodyWidth * 0.8,
+      top: dimensions.footerHeight * 0
       },
       button:{
         borderRadius:5,

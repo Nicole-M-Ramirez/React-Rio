@@ -218,7 +218,7 @@ function Meditacion ({route}) {
   const navigation = useNavigation();
   const lang = useSelector(state => state.counter.language);
 
-  const setup = async () => {
+  const setupEs = async () => {
     // Set up the player
     await TrackPlayer.setupPlayer();
 
@@ -230,9 +230,28 @@ function Meditacion ({route}) {
         artist: 'Track Artist',
         artwork: require('../../assets/aceptacion.png')
     });
-};
+  };
 
-setup()
+  const setupEn = async () => {
+    // Set up the player
+    await TrackPlayer.setupPlayer();
+
+    // Add a track to the queue
+    await TrackPlayer.add({
+        id: 'trackId',
+        url: require('../../assets/Audio/MeditacionEN-EMER.mp4'),
+        title: 'Track Title',
+        artist: 'Track Artist',
+        artwork: require('../../assets/aceptacion.png')
+    });
+  };
+
+if (lang === 'es') {
+  setupEs();
+}
+else {
+  setupEn();
+}
 
 const [audioSelect, setAudioSelect] = useState ("play")
 
@@ -262,25 +281,25 @@ const reset = async () => {
       <BodyView>
         <View style={styles.scrollView}>
           <ScrollView>
-            <Text style={styles.scrollText}>{gs['meditacionEmer'][lang]}</Text>
+            <Text style={styles.scrollText}>{gs['meditacionNormal'][lang]}</Text>
           </ScrollView>
         </View>
 
         {audioSelect === "play" ? 
             <View>
             <TouchableOpacity onPress={()=>play()}>
-              <Image source={require('../../assets/play.png')}  style={styles.buttonImage}/>
+              <Image source={require('../../assets/play.png')}  style={[styles.buttonImage, {left : dimensions.bodyWidth *0.38,}]}/>
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=>reset()} style={{ width: dimensions.bodyWidth*0.075, height: dimensions.bodyHeight*0.05, left: dimensions.bodyWidth*0.75, top: dimensions.bodyHeight*-0.03}}>
+            <TouchableOpacity onPress={()=>reset()} style={{ width: dimensions.bodyWidth*0.075, height: dimensions.bodyHeight*0.05, left: dimensions.bodyWidth*0.75, top: dimensions.bodyHeight*-0.07}}>
                 <Image source={require('../../assets/refresh.png')}  style={{width: dimensions.shortButtonHeight*0.3, height: dimensions.shortButtonHeight*0.3}}/>
               </TouchableOpacity>
             </View>
             :
             <View>
             <TouchableOpacity onPress={()=>pause()}>
-              <Image source={require('../../assets/pausa.png')}  style={styles.buttonImage}/>
+              <Image source={require('../../assets/pausa.png')}  style={[styles.buttonImage, {left : dimensions.bodyWidth *0.38,}]}/>
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=>reset()} style={{ width: dimensions.bodyWidth*0.075, height: dimensions.bodyHeight*0.05, left: dimensions.bodyWidth*0.75, top: dimensions.bodyHeight*-0.03}}>
+            <TouchableOpacity onPress={()=>reset()} style={{ width: dimensions.bodyWidth*0.075, height: dimensions.bodyHeight*0.05, left: dimensions.bodyWidth*0.75, top: dimensions.bodyHeight*-0.07}}>
                 <Image source={require('../../assets/refresh.png')}  style={{width: dimensions.shortButtonHeight*0.3, height: dimensions.shortButtonHeight*0.3}}/>
               </TouchableOpacity>
             </View>
@@ -339,16 +358,17 @@ const styles = StyleSheet.create({
   buttonImage :{
     width: dimensions.shortButtonHeight*1,
     height: dimensions.shortButtonHeight*1,
-    left : dimensions.bodyWidth *0.38,
-    top: dimensions.bodyHeight *0.08,
+    //left : dimensions.bodyWidth *0.38,
+    top: dimensions.bodyHeight *0.04,
     
   },
   scrollText : {
     color: 'white',
+    fontSize: normalize(14)
   },
   scrollView : {
     //backgroundColor: 'grey',
-    //heigth: dimensions.bodyHeight*0.01
+    height: dimensions.bodyHeight*0.85
   },
 
   hookedStyles :{

@@ -14,6 +14,7 @@ import { normalize } from '../../components/FondNormilize';
 import TimeSince from '../../components/TimeSince';
 import { useSelector } from 'react-redux';
 import { gs } from '../../components/RioGlobalStrings';
+import BackLink from '../../components/BackLink';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
@@ -69,7 +70,9 @@ function MiEspacio() {
 
           <Image source={require('../../assets/continuar3.png')}  style={styles.reportArrow} />
         </TouchableOpacity> */}
-
+         <View style={{top:dimensions.footerHeight*0.55,width:'50%', position:'absolute',marginTop: dimensions.separator}}>
+            <BackLink labelBack={gs['volver'][lang]} gotoScreen={"MenuPrincipal"}></BackLink>
+          </View>
         
       </FooterView>
 
@@ -87,7 +90,7 @@ const styles = StyleSheet.create({
     color: "#4eb5a3",
     fontSize: normalize(20),
     fontWeight: '600',
-    // top: ScreenHeight * 0.83,
+    top: dimensions.footerHeight*-0.2,
     // left: ScreenWidth * 0.08,
   },
   buttonImage :{

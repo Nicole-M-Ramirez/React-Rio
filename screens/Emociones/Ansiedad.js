@@ -15,6 +15,8 @@ import TimeSince from '../../components/TimeSince';
 import FooterView from '../../components/FooterView';
 import BackLink from '../../components/BackLink';
 import BackLinkWithDate from '../../components/BackLinkWithDate';
+import { gs } from '../../components/RioGlobalStrings';
+import { useDispatch, useSelector } from 'react-redux';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
@@ -22,7 +24,7 @@ const ScreenWidth = Dimensions.get("window").width
 function Ansiedad({route}) {
   const { forDate } = route.params;
   const navigation = useNavigation();
-
+  const lang = useSelector(state => state.counter.language);
 
 
   const Colors = [colors.deepPurple,colors.mintGreen,colors.pink,colors.blue,colors.purple]
@@ -43,7 +45,7 @@ function Ansiedad({route}) {
     //                                                  titulo: title[1]}),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Ansiedad',
                                                      img: <Image source={require('../../assets/Respiracion-Profunda.gif')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
-                                                     texto:'Toma un momento para enfocarte en tu respiracion. Intenta seguir el circulo, inhalando mientras crece y exalando al achicarse. Respira con calma mientras pasa el tiempo y relajate. Aprender a relajarte te puede ayudar a evitar que te autolesiones, te enfermes y tambien te puede ayudar a mejorar tu rendimiento academico.',
+                                                     texto:gs['respiracionCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[2]}),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Ansiedad',

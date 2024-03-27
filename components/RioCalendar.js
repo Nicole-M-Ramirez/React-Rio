@@ -12,6 +12,11 @@ import TimeSince from './TimeSince';
 import { useDispatch, useSelector } from 'react-redux';
 import Emergency from './Emergency';
 import EmergencyView from './EmergencyView';
+import FooterView from './FooterView';
+import BackLinkWithDate from './BackLinkWithDate';
+import BackLink from './BackLink';
+import { gs } from './RioGlobalStrings';
+//import { useSelector } from 'react-redux';
 
 const screenWidth =  Dimensions.get("window").width;
 const centerX = Dimensions.get("window").width / 2;
@@ -45,6 +50,7 @@ const ReduxRecordToMarked = (r) => {
 }
 
 const RioCalendar = (props) => {
+  const lang = useSelector(state => state.counter.language);
   const navigation = useNavigation();
 
   const myDateData = useSelector(state => state.counter.dateData);
@@ -149,6 +155,12 @@ disableArrowRight={false}
 
 />
 </View>
+
+<FooterView>
+  <View style={{width:'50%', position:'absolute',top:dimensions.footerHeight*0.5}}>
+    <BackLink labelBack={gs['volver'][lang]} gotoScreen={'MiEspacio'} ></BackLink>
+  </View> 
+</FooterView>
 <EmergencyView>
           <Emergency/>
         </EmergencyView>

@@ -15,6 +15,7 @@ import FooterView from '../components/FooterView';
 import EmergencyView from '../components/EmergencyView';
 import Emergency from '../components/Emergency';
 import BackLink from '../components/BackLink';
+import NextLink from '../components/NextLink';
 
 import { gs } from '../components/RioGlobalStrings';
 import { useSelector } from 'react-redux';
@@ -59,7 +60,7 @@ function SegundoSeguimiento({route}) {
         <Text style={styles.infoText}>{gs['urgenciaInfo'][lang]}</Text>
 
         <View style={{flexDirection:'row'}}>
-            <TouchableOpacity onPress={()=>{Calling('7875080302')}} style={[styles.button, {backgroundColor: colors.emergencyRed}]}>
+            <TouchableOpacity onPress={()=>{Calling('18009810023')}} style={[styles.button, {backgroundColor: colors.emergencyRed}]}>
                 <View style={styles.buttonTextView} >
                     <Text style={styles.buttonText}>PAS</Text>
                 </View>
@@ -68,9 +69,9 @@ function SegundoSeguimiento({route}) {
                 </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={()=>{Calling('7875080302')}} style={[styles.button, {backgroundColor: colors.emergencyRed}]}>
+            <TouchableOpacity onPress={()=>{Calling('18886727622')}} style={[styles.button, {backgroundColor: colors.emergencyRed}]}>
                 <View style={styles.buttonTextView} >
-                    <Text style={styles.buttonText}>{gs['personasSordas'][lang]}</Text>
+                    <Text style={[styles.buttonText, {top: dimensions.shortButtonHeight*0.05}]}>{gs['personasSordas'][lang]}</Text>
                 </View>
                 <View style={styles.buttonImgView}>
                     <Image source={require('../assets/llamada.png')} resizeMode='contain' style={styles.buttonImage} />
@@ -79,7 +80,7 @@ function SegundoSeguimiento({route}) {
         </View>
 
         <View style={{flexDirection:'row'}}>
-            <TouchableOpacity onPress={()=>{Calling('7875080302')}} style={[styles.button, {backgroundColor: colors.emergencyRed}]}>
+            <TouchableOpacity onPress={()=>{Calling('911')}} style={[styles.button, {backgroundColor: colors.emergencyRed}]}>
                 <View style={styles.buttonTextView} >
                     <Text style={styles.buttonText}>911</Text>
                 </View>
@@ -88,7 +89,7 @@ function SegundoSeguimiento({route}) {
                 </View>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={()=>{Calling('7875080302')}} style={[styles.button, {backgroundColor: colors.emergencyRed}]}>
+            <TouchableOpacity onPress={()=>{Calling('988')}} style={[styles.button, {backgroundColor: colors.emergencyRed}]}>
                 <View style={styles.buttonTextView} >
                     <Text style={styles.buttonText}>988</Text>
                 </View>
@@ -107,6 +108,10 @@ function SegundoSeguimiento({route}) {
 
       <View style={{height:'100%',justifyContent: 'center' , alignItems: 'flex-start'}}>
         <Text style={styles.titleText}>{gs['contactosEmergencia'][lang]}</Text>
+      </View>
+
+      <View style={{left: '50%', width:'50%', position:'absolute', top:dimensions.footerHeight*0.6}}>
+        <NextLink labelNoAcepto={gs['continuar'][lang]} gotoScreen={'MenuPrincipal'}></NextLink>
       </View>
     </FooterView>
 
@@ -138,7 +143,7 @@ const styles = StyleSheet.create({
       fontSize: normalize(15),
       fontWeight: '600',
       width: dimensions.bodyWidth * 0.75,
-      top: dimensions.footerHeight * 0.15
+      top: dimensions.footerHeight * 0.05
       },
       titleImage :{
         width: ScreenWidth * 0.23,
@@ -159,7 +164,7 @@ const styles = StyleSheet.create({
         fontSize: normalize(14),
         top: dimensions.shortButtonHeight/6,
         left: dimensions.buttonWidth*0.4,
-        width: dimensions.buttonWidth *0.5
+        width: dimensions.buttonWidth *0.6
       },
       buttonImage :{
         width: dimensions.shortButtonHeight /2,

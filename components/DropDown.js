@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   },
  titleText: {
   color: "#4eb5a3",
-  fontSize: normalize(20),
+  fontSize: normalize(18),
   fontWeight: '600',
   },
   buttonView: {
@@ -79,9 +79,9 @@ const styles = StyleSheet.create({
   },
   buttonsText: {
     color: 'white',
-    fontSize: normalize(15),
+    fontSize: normalize(13),
     top: dimensions.buttonHeight/16,
     left: dimensions.separator,
-    width: dimensions.bodyWidth*0.9
+    width: dimensions.bodyWidth*0.8
   }
 });

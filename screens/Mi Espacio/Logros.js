@@ -124,8 +124,8 @@ function Logros() {
       </HeaderView>
 
       <BodyView>
-        {logroImage !== undefined && <Text style={styles.titleText}>Reto Activo</Text>}
-        {logroImage === undefined && <Text style={styles.titleText}>Ningún reto Activo</Text>}
+        {logroImage !== undefined && <Text style={styles.titleText}>{gs['retoActivo'][lang]}</Text>}
+        {logroImage === undefined && <Text style={styles.titleText}>{gs['ningunReto'][lang]}</Text>}
 
         {logroImage !== undefined &&
         <Image source={logroImage} resizeMode='contain' style={styles.buttonImage} />}
@@ -162,7 +162,7 @@ function Logros() {
         <View style={{position: 'absolute', top:dimensions.bodyHeight*.44}}>
           <View style={{borderBottomColor: colors.mintGreen, width: dimensions.bodyWidth, borderBottomWidth:2,top: dimensions.bodyHeight * 0.02}}/>
           <View style={{position: 'relative', top: dimensions.separator * 2, height: dimensions.bodyHeight*.52}}>
-            <Text style={{color: colors.mintGreen, fontSize: normalize(18), fontWeight:'500', }}>Logros Anteriores</Text>
+            <Text style={{color: colors.mintGreen, fontSize: normalize(18), fontWeight:'500', }}>{gs['logrosAnteriores'][lang]}</Text>
         
               <ScrollView>
         {/* Region donde salen las metas logradas */}
@@ -198,7 +198,7 @@ function Logros() {
 
       <FooterView>
           <View style={{width:'50%', position:'absolute',marginTop: dimensions.separator}}>
-            <BackLink labelBack={"Regresar"} gotoScreen={'MiEspacio'}></BackLink>
+            <BackLink labelBack={gs['volver'][lang]} gotoScreen={'MiEspacio'}></BackLink>
           </View>
       </FooterView>
 

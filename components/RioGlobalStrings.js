@@ -21,25 +21,23 @@ export const gs = {
   //pagina P1.3
   'bienvenida':{'es':'¡Bienvenida/o!','en':'Welcome!'},
   'bienvenidaCont':{
-    'es':'Bienvenida a la aplicación RÍO. Antes de comenzar, quisiéramos compartir un poco de información sobre quiénes somos y sobre nuestra base teórica.',
-    'en':'Welcome to RIO. Before we begin, we would like to share some information about who we are, including our theoretical basis.'
+    'es':'Te damos la bienvenida a la aplicación RIO. Antes de comenzar, quisiéramos compartir un poco de información sobre quiénes somos y sobre nuestra base teórica.',
+    'en':'We welcome you to RIO. Before we begin, we would like to share some information about who we are, including our theoretical basis.'
   },
   'sobreNosotros':{'es':'Quiénes somos', 'en':'About us'},
   'sobreNosotrosCont':{
-    'es':'Somos un grupo de investigación de diferentes disciplinas de la Universidad de Puerto Rico, Recinto de Rio Piedras que desarrolló RIO como una aplicación dirigida a ayudarte a prevenir la conducta autolesiva. La idea para RIO surgió desde nuestro interés por concientizar a la población general sobre la conducta autolesiva sin intención suicida (CASIS). Entendemos que tanto profesionales de la salud como las personas que se autolesionan se pueden beneficiar de tener información accesible sobre dicha conducta y sobre algunas estrategias de ayuda que podrían implementar. Aunque es un instrumento desarrollado para estudiantes universitaries, puede ser usado por otras poblaciones. Es una aplicación diseñada en el contexto puertorriqueño pero que esperamos pueda ser útil para otras poblaciones del Caribe y Latinoamérica.',
+    'es':'Somos un grupo de investigación de diferentes disciplinas de la Universidad de Puerto Rico, Recinto de Río Piedras que desarrolló RIO como una aplicación dirigida a ayudarte a prevenir la conducta autolesiva. La idea para RIO surgió desde nuestro interés por concientizar a la población general sobre la conducta autolesiva sin intención suicida (CASIS). Entendemos que tanto profesionales de la salud como las personas que se autolesionan se pueden beneficiar de tener información accesible sobre dicha conducta y sobre algunas estrategias de ayuda que podrían implementar. Aunque es un instrumento desarrollado para estudiantes universitaries, puede ser usado por otras poblaciones. Es una aplicación diseñada en el contexto puertorriqueño pero que esperamos pueda ser útil para otras poblaciones del Caribe y Latinoamérica.',
     'en':'We are a research group based at the University of Puerto Rico, Rio Piedras Campus, that developed RIO as an application aimed at helping manage self-injurious behavior. The idea for RIO emerges from our interest in raising awareness among the general population about non-suicidal self-injury (NSSI). We understand that both healthcare professionals and individuals who self-injure can benefit from having accessible information about NSSI, including helpful strategies they could implement. Although it is an instrument developed for university students, it can be used by other populations. It’s an application designed within the Puerto Rican context, but we hope it can be useful for other populations in the Caribbean and Latin America.'
   },
   'baseTeorica':{'es':'Base teórica', 'en':'Theoretical basis'},
   'baseTeoricaCont':{
     'es':`Durante el proceso de desarrollo de la aplicación, investigamos sobre los distintos modelos terapéuticos basados en evidencia utilizados para el tratamiento de la conducta autolesiva sin intención suicida (CASIS). Aunque hasta el presente no hay un modelo estrella para el tratamiento de la CASIS, la terapia dialéctica conductual (DBT en inglés) sobresale como uno de los modelos terapéuticos basados en evidencia con niveles de eficacia más altos relacionados a esta conducta. También, resaltamos a la terapia cognitiva conductual (TCC) como otra terapia basada en evidencia que puede ser efectiva para trabajar con la conducta autolesiva. Ambos modelos promueven tanto la psicoeducación como el desarrollo de destrezas dirigidas al cambio conductual mediante la asignación de tareas y el monitoreo de pensamientos, emociones y conductas. Sin embargo, el DBT incluye, además, un énfasis en desarrollar destrezas que permitan tanto la solución de problemas como la regulación emocional y la efectividad interpersonal mediante el uso de la atención plena (mindfulness) y el uso de estrategias dialécticas que promuevan el balance y el cambio. Otra terapia que muestra un nivel de efectividad prometedor, es la terapia grupal de regulación emocional (ERGT por sus siglas en ingles). Este tipo de terapia integra componentes de otras terapias con el propósito de desarrollar destrezas para un manejo emocional más efectivo. RIO toma como base algunas de las estrategias utilizadas en estos modelos terapéuticos y sus consideraciones teóricas para ofrecer apoyo a aquellas personas que utilicen nuestra aplicación. 
-          Nuestra meta es que dentro de RIO puedas identificar, ventilar y manejar tus emociones a través del uso de las distintas áreas disponibles en la aplicación.
-          Otras terapias que pueden ser de utilidad para trabajar con CASIS son:`,
+          Nuestra meta es que dentro de RIO puedas identificar, ventilar y manejar tus emociones a través del uso de las distintas áreas disponibles en la aplicación.`,
     'en':`  During the development process of the application, we researched different evidence-based therapeutic models used for the treatment of non-suicidal self-injury (NSSI). Although there is no one-size-fits-all model for NSSI treatment, Dialectical Behavior Therapy (DBT) stands out as one of the evidence-based therapeutic models with higher efficacy levels related to NSSI. We also highlight Cognitive-Behavioral Therapy (CBT) as another evidence-based therapy that can be effective in addressing self-injurious behavior. Both models promote psychoeducation and the development of skills focused on behavioral change through task assignments and regular monitoring of thoughts, emotions, and behaviors. However, DBT includes an emphasis on developing skills for problem-solving, emotional regulation, and interpersonal effectiveness using mindfulness and dialectical strategies that promote balance and change. Another therapy that shows promising effectiveness is Emotional Regulation Group Therapy (ERGT). This type of therapy integrates components from other therapeutic practices to develop skills for more effective emotional management. RIO incorporates some of the strategies used in these therapeutic models and their theoretical considerations to provide support for our users.
 
     Our goal is for you to be able to identify, vent, and manage your emotions with the different areas available in the application.
 
     Other therapies that may be useful in addressing NSSI are:
-
     Acceptance and Commitment Therapy (ACT) - This therapy helps individuals live in the present moment and cope with difficult emotions and negative thoughts. It has been indicated that ACT can reduce non-suicidal self-injury and suicide attempts.
 
     Systemic Family Therapy - Considers the family or social system in which the person is immersed. It can help individuals identify underlying emotions that may be contributing to self-injurious behaviors and develop more effective strategies to manage these emotions.
@@ -54,8 +52,8 @@ export const gs = {
     'en':'This button will be accessible at all times and will provide you with emergency service contacts, if needed.'
   },
   'burbujaContador':{
-    'es':'Al proponerte una meta en la sección mi perfil, este contador te dejará saber cuánto te falta para cumplirla. Podrás ver tu progreso desde cualquier pantalla.',
-    'en':'By setting a goal in the "My Profile" section, this counter will let you know how much time’s left to achieve it. You can see your progress from any screen.'
+    'es':'Aquí podrás ver el tiempo que llevas sin autolesionarte',
+    'en':'Here you can see how long you have gone without self-harming'
   },
 
   //pagina P2
@@ -87,10 +85,10 @@ export const gs = {
   'configuracion':{'es':'Configuración','en':'Settings'},
   'idioma':{'es':'Idioma','en':'Languages'},
   'notificaciones':{'es':'Notificaciones','en':'Notifications'},
-  'contraseña':{'es':'Contrasena','en':'Password'},
+  'contraseña':{'es':'Contraseña','en':'Password'},
   'politicaYterminos':{'es':'Politica de privacidad y terminos de uso','en':'Privacy policy and terms of use'},
   'quienesSomos':{'es':'Quienes somos','en':'Who are we'},
-  'contactanos':{'es':'Contactanos','en':'contact us'},
+  'contactanos':{'es':'Contactanos','en':'Contact us'},
   'comparte':{'es':'Comparte','en':'Share'},
 
   //pagina P3B2
@@ -98,7 +96,7 @@ export const gs = {
   'diario':{'es':'Diario','en':'Diary'},
   'registro':{'es':'registro','en':'Register'},
   'comoTeSientes':{'es':'¿Como te sientes hoy?','en':'How do you feel today?'},
-  'reportarAL':{'es':'Reportar Autolesión','en':'report self harm'},
+  'reportarAL':{'es':'Reportar Autolesión','en':'Report self harm'},
   'logros':{'es':'Logros','en':'Accomplishments'},
   'metas':{'es':'Metas','en':'Goals'},
   'graficas':{'es':'Gráficas','en':'Charts'},
@@ -122,21 +120,21 @@ export const gs = {
       'es':
 `i.    Discusión con padres, parejas o mejores amigues
       
-ii.   obtener bajas calificaciones
+ii.   Obtener bajas calificaciones
 
-iii.  ruptura o separación de pareja
+iii.  Ruptura o separación de pareja
 
-iv.   experimentar algún tipo de abuso, acoso o experiencia de burla o bullying
+iv.   Experimentar algún tipo de abuso, acoso o experiencia de burla o bullying
 
-v.    recibir una crítica
+v.    Recibir una crítica
 
-vi.   percibir que hizo un error o sentirse culpable
+vi.   Percibir que hizo un error o sentirse culpable
 
-vii.  estar atravesando una situación angustiante o dolorosa
+vii.  Estar atravesando una situación angustiante o dolorosa
 
-viii. sentirme abrumado/a o tener mucho estrés
+viii. Sentirme abrumado/a o tener mucho estrés
 
-ix.   sentirme desconectado/a o vacío/a
+ix.   Sentirme desconectado/a o vacío/a
 
 x.    Crisis de identidad
 
@@ -178,12 +176,12 @@ xiii. Other`
 `I. Información para personas que se autolesionan
     i.   Infórmale a tu profesional sobre esta aplicación
     ii.  Déjale saber que esta aplicación ofrece un rastreo que puede ser útil para ambos
-    iii. pueden acordar que información pueden compartir 
+    iii. Pueden acordar que información pueden compartir 
 
 II. Información para profesionales de ayuda:
     i.   Infórmales a tus participantes que se autolesionan sobre esta aplicación.
     ii.  Recomienda su uso como herramienta complementaria que te permite llevar un registro sobre progreso
-    iii. acuerden información relevante que deseas conocer para mejorar las intervenciones terapéuticas. `,
+    iii. Acuerden información relevante que deseas conocer para mejorar las intervenciones terapéuticas. `,
       'en':
 `I. Information for individuals who self-harm
 
@@ -521,8 +519,121 @@ If you have medical insurance, you can contact a customer service representative
   'CambiarPass' : {'es': 'Cambiar contraseña', 'en':'Change password'},
   'DeletePass' : {'es': 'Borrar contraseña', 'en' : 'Delete password'},
   'confirmarBorrar': {'es': '¿Esta seguro que desea borrar su contraseña?', 'en':'Are you sure you want to delete your password?'},
-  'borrar' : {'es':'Borrar', 'en':'Delete'}
+  'borrar' : {'es':'Borrar', 'en':'Delete'},
+
+  //Emociones
+  'Felicidad' : {'es': 'Felicidad', 'en':'Happiness'},
+  'Ansiedad' : {'es': 'Ansiedad', 'en':'Anxiety'},
+  'Miedo' : {'es': 'Miedo', 'en':'Fear'},
+  'Tristeza' : {'es': 'Trizteza', 'en':'Sadness'},
+  'Coraje' : {'es': 'Coraje', 'en':'Anger'},
+  'Otros' : {'es': 'Otros', 'en':'Other'},
+  'emocionesTitulo' : {'es':'Estado de ánimo','en':'Mood'},
+
+  //Detonantes
+  'DetTitulo' : {'es' : 'Detonantes:', 'en' : 'Triggers:'},
+  'DetContenido' : {'es' : 'Toma conciencia sobre lo que activó esta emoción. ¿Qúe relaciones o situaciones han aportado a que te sientas de esta manera?', 'en' : 'Become aware of what activated this emotion. What relationships or situations have contributed to you feeling this way?'},
+  'pareja' : {'es' : 'Pareja', 'en' : 'Relationship'},
+  'familia' : {'es' : 'Familia', 'en' : 'Family'},
+  'amistades' : {'es' : 'Amistades', 'en' : 'Friendships'},
+  'perdida' : {'es' : 'Pérdida o duelo', 'en' : 'Loss or grief'},
+  'estUniversitarios' : {'es' : 'Estudios Universitarios', 'en' : 'University studies'},
+  'otraOp' : {'es' : 'Otros/Crear opción:', 'en' : 'Other/Create option:'},
+
+  //nombres Actividades
+  'diario' : {'es' : 'Diario', 'en' : 'Diary'},
+  'hablar' : {'es' : 'Hablar', 'en' : 'Talk'},
+  'respirar' : {'es' : 'Respirar', 'en' : 'Breathing'},
+  'espiritualidad' : {'es' : 'Espiritualidad', 'en' : 'Spirituality'},
+  'atenPlena' : {'es' : 'Atención plena', 'en' : 'Mindfulness'},
+  'caminar' : {'es' : 'Caminar', 'en' : 'Walking'},
+  'bano' : {'es' : 'Ducha', 'en' : 'Shower'},
+  'ejercicio' : {'es' : 'Ejercicio', 'en' : 'Exercise'},
+  'cocinar' : {'es' : 'Concinar', 'en' : 'Cooking'},
+  'gratitud' : {'es' : 'Gratitud', 'en' : 'Gratitude'},
+  'dibujar' : {'es' : 'Dibujar', 'en' : 'Drawing'},
+  'musica' : {'es' : 'Música', 'en' : 'Music'},
+  'psicoeduacion' : {'es' : 'Psicoeducación', 'en' : 'Psychoeducation'},
+  '' : {'es' : '', 'en' : ''},
+  '' : {'es' : '', 'en' : ''},
+  //Contenido Actividades
+  'diarioCont' : {'es' : 'Escribe tus pensamientos en palabras e incluye todo lo que estas sintiendo al momento. No te detengas; todo lo que sientes es válido y merece ser expresado.', 'en' : "Write your thoughts in words and include everything youre feeling in the moment. Don't hold back; everything you feel is valid and deserves to be expressed."},
+  'dibujarCont' : {'es' : 'Desde garabatos hasta obras de arte, intenta plasmar lo que sientes. El arte puede ser un medio accesible para comenzar a explorar y reconocer tus emociones, particularmente para trabajar con sentimientos de preocupación o ansiedad.', 'en' : 'From doodles to masterpieces, try expressing what you feel. Art can be an accessible mean to start exploring and recognizing your emotions, particularly for working with feelings of worry or anxiety.'},
+  'respiracionCont' : {'es' : 'Toma un momento para enfocarte en tu respiración. Intenta seguir el círculo, inhalando mientras crece y exhalando al achicarse. Respira con calma mientras pasa el tiempo y relajate. Aprender a relajarte te puede ayudar a evitar que te autolesiones, te enfermes y también te puede ayudar a mejorar tu rendimiento académico.', 'en' : 'Take a moment to focus on your breathing. Try to follow the circle, inhaling as it grows and exhaling as it shrinks. Breathe calmly as time passes and relax. Learning to relax can help you avoid self-harm, getting sick, and can also help you improve your academic performance.'},
+  'atencionPlenaCont' : {'es' : 'Enfócate en tus cinco (5) sentidos en este momento. ¿Qué estás viendo, escuchando, oliendo, saboreando y sintiendo? En este momento sólo existe el momento presente. Observa atentamente y sin juicios tu cuerpo, tu mente y tus emociones. Practica la aceptación y la curiosidad de esto que logras identificar. Descubre todos los beneficios que la ciencia ha descubierto que puedes obtener cuando practicas la atención plena de manera regular.', 'en' : 'Focus on your five (5) senses in this moment. What are you seeing, hearing, smelling, tasting, and feeling? In this moment, only the present moment exists. Observe your body, mind, and emotions attentively and without judgment. Practice acceptance and curiosity towards what you can identify. Discover all the benefits that science has found you can gain from regular mindfulness practice.'},
+  'espiritualidadCont' : {'es' : 'Conecta con tu espiritualidad de la manera que sea mejor para ti. Estos momentos pueden abrir un espacio para conectar contigo y con las metas que identificaste.', 'en' : "Connect with your spirituality in the way that works best for you. These moments can open up space to connect with yourself and the goals you've identified."},
+  'hablarCont' : {'es' : 'Háblate en voz alta o con alguien de confianza. El poder tener conversaciones sobre lo que estés pensando puede ayudarte a canalizar lo que sientes y a reflexionar antes de actuar.', 'en' : "Speak aloud to yourself or with a trusted person. Being able to have conversations about what you're thinking can help you channel what you're feeling and reflect before taking action."},
+  'gratitudcONT' : {'es' : '', 'en' : ''},
+  'musicaCont' : {'es' : '', 'en' : ''},
+  'caminarCont' : {'es' : 'Agarra tus tenis y sal a caminar y a respirar aire fresco. Cambiar de escenario te permite generar espacio entre lo que sientes y la situación en la que te encuentras. Además, conectar con el ambiente natural nos permite reconsiderar aquello que nos aqueja y nos provee tranquilidad.', 'en' : "Grab your sneakers and go for a walk to breathe in the fresh air. Changing your surroundings allows you to create space between what you're feeling and the situation you're in. Moreover, connecting with the natural environment allows you to reconsider what's actually troubling you and provides you with tranquility."},
+  'banoCont' : {'es' : 'Prepara el ambiente para un baño relajante con tu fragancia preferida. Deja que el agua corra, creando sensaciones que fomentan la relajación. El sumergirnos en agua de esta manera promueve sentimientos fisiológicos agradables, lo que disminuye sentimientos de tensión y coraje.', 'en' : 'Set the ambiance for a relaxing bath with your favorite fragrance. Let the water flow, creating sensations that promote relaxation. Immersing ourselves in water in this way promotes pleasant physiological feelings, reducing tension and anger.'},
+  'ejercicioCont' : {'es' : 'No necesitas ir al gimnasio para ejercitarte. El mantenerte en movimiento te puede ayudar a quemar el coraje que estás sintiendo. Actividades que mantengan el ritmo cardiaco elevado pueden proveer beneficios psicoemocionales como reducción de estrés, ansiedad, miedo e ira.', 'en' : "You don't need to go to the gym to exercise. Staying active can help you burn off the anger you're feeling. Activities that keep your heart rate up can provide psycho-emotional benefits such as stress reduction, anxiety, fear, and anger."},
+  'cocinarCont' : {'es' : 'Saca un tiempo para hacer una comida, esto no sólo mejora las funciones ejecutivas, sino que es una distracción que puede canalizar tu energía y aumentar la autoestima.', 'en' : 'Set aside some time to prepare a meal. Not only does it improve executive functions, but it also serves as a distraction that can channel your energy and boost self-esteem.'},
+  '' : {'es' : '', 'en' : ''},
+  '' : {'es' : '', 'en' : ''},
+  '' : {'es' : '', 'en' : ''},
+
+  //Meditaciones:
+  'meditacionNormal' : {'es': 'Esta meditación va dirigida a ayudarte a tramitar lo que estas sintiendo en este momento. No es necesario que estes tranquilo o tranquila. Solo has una pausa mental para que te preguntes con curiosidad: ¿Como me siento ahora mismo? Al contestarte, No juzgues lo que sientes como algo malo. Solo reconócelo y date el permiso de sentirlo. Te voy a acompañar realizando unas respiraciones profundas que te pueden ayudar a bajar la intensidad de lo que estas sintiendo. Comenzamos…Inhala profundo (Hago inhalación profunda) reten la respiración … y exhala tan lentamente como te sea posible. No luches con lo que estas sintiendo… ni intentes no sentirlo. Enfócate en la respiración. Usa todos tus sentidos dirigidos a tu respiración. Te invito a que hagas otra inhalación profunda conmigo (Hago Inhalación), reten la respiración … y exhala lentamente. Lo estás haciendo bien. Vamos a repetir otra inhalación profunda (Hago inhalación), reten la respiración… y exhala lentamente. Es posible que tu mente te quiera distraer con pensamientos negativos; no mluches contras ellos, solo obsérvalos y pon toda tu atención en tu respiración. Observa como estas respirando, conecta con los movimientos que ocurren en tu cuerpo al respirar…escucha atentamente el sonido de tu respiración, siente el momento en que el aire entra por tu nariz al inhalar… y el momento en que sale de tu nariz al exhalar. Solo siente tu respiración… Vive tu proceso de respirar. Pon todos tus sentidos en tu respiración… Continúa enfocando tu atención a la respiración y cuando tu mente te distraiga vuelve a enfocarte en tu respiración... Recuerda no juzgar lo que estas sintiendo ni intentar deshacerte de esto que sientes… permítete sentir con curiosidad sin juzgar lo que sientes. Mientras sigues prestando toda tu atención a la respiración te invito a que coloques tus manos sobre el área del pecho llevándote un mensaje de amor y compasión. Eres un ser humano y es válido lo que sientes. Continúa enfocando en tu respiración y validando lo que sientes con amor y compasión. Si surge algún pensamiento crítico hacia ti o hacia lo que sientes, reconócelo y déjalo ir mientras rediriges tu atención al sentimiento de amor y de compasión que esta creando dentro de ti.. Inhala profunda y lentamente y exhala suave y lentamente expulsando todo el aire. Y finalizamos este ejercicio meditativo felicitándote por haberlo realizado.', 
+                        'en' : "This meditation is aimed at helping you process what you're feeling in this moment. It's not necessary for you to be calm. Just take a mental pause and ask yourself with curiosity, 'How do I feel right now?' As you answer, don't judge what you're feeling as something bad. Just acknowledge it and give yourself permission to feel it. I'll accompany you by guiding you through deep breaths that can help lower the intensity of what you're feeling. Let's begin... Take a deep breath (I take a deep inhale), hold your breath... and exhale as slowly as possible. Don't fight against what you're feeling... or try not to feel it. Focus on your breath. Use all your senses directed towards your breath. I invite you to take another deep breath with me (I take an inhale), hold your breath... and exhale slowly. You're doing well. Let's repeat another deep breath (I take an inhale), hold your breath... and exhale slowly. Your mind may want to distract you with negative thoughts; don't fight against them, just observe them and put all your attention on your breath. Observe how you're breathing, connect with the movements happening in your body as you breathe... listen attentively to the sound of your breath, feel the moment when the air enters your nose as you inhale... and the moment it leaves your nose as you exhale. Just feel your breath... Experience your process of breathing. Put all your senses into your breath... Continue focusing your attention on your breath, and when your mind distracts you, refocus on your breath... Remember not to judge what you're feeling or try to get rid of it... Allow yourself to feel with curiosity without judging what you feel. While you continue giving your full attention to your breath, I invite you to place your hands on your chest area, sending yourself a message of love and compassion. You are a human being, and what you feel is valid. Continue focusing on your breath and validating what you feel with love and compassion. If any critical thoughts arise towards yourself or what you're feeling, acknowledge them and let them go as you redirect your attention to the feeling of love and compassion that's arising within you... Take a deep and slow breath, and exhale gently and slowly, releasing all the air. And we conclude this meditative exercise by congratulating you for completing it."},
+
+  //Emociones Expancion
+  'motivacion' : {'es' : 'Motivación', 'en' : 'Motivation'},
+  'optimismo' : {'es' : 'Optimismo', 'en' : 'Optimism'},
+  'satisfacion' : {'es' : 'Satisfacción', 'en' : 'Satisfaction'},
+  'tranquilidad' : {'es' : 'Tranquilidad', 'en' : 'Tranquility'},
+  'falicidad' : {'es' : 'Felicidad', 'en' : 'Happiness'},
+  'nervios' : {'es' : 'Nervios', 'en' : 'Nerves'},
+  'estres' : {'es' : 'Estrés', 'en' : 'Stress'},
+  'impaciencia' : {'es' : 'Impaciencia', 'en' : 'Impatience'},
+  'desesperacion' : {'es' : 'Desesperación', 'en' : 'Despair'},
+  'abrumo' : {'es' : 'Abrumo', 'en' : 'Overwhelm'},
+  'panico' : {'es' : 'Pánico', 'en' : 'Panic'},
+  'terror' : {'es' : 'Terror', 'en' : 'Terror'},
+  'inseguridad' : {'es' : 'Inseguridad', 'en' : 'Insecurity'},
+  'paralisis' : {'es' : 'Parálisis', 'en' : 'Paralysis'},
+  'bloqueoMental' : {'es' : 'Bloqueo mental', 'en' : 'Mental Block'},
+  'vacio' : {'es' : 'Vacío', 'en' : 'Emptiness'},
+  'desilucion' : {'es' : 'Desilusión', 'en' : 'Disappointment'},
+  'desmotivacion' : {'es' : 'Desmotivación', 'en' : 'Demotivation'},
+  'decepcion' : {'es' : 'Decepción', 'en' : 'Disappointment'},
+  'culpa' : {'es' : 'Culpa', 'en' : 'Guilt'},
+  'irritabilidad' : {'es' : 'Irritabilidad', 'en' : 'Irritability'},
+  'enojo' : {'es' : 'Enojo', 'en' : 'Anger'},
+  'furia' : {'es' : 'Furia', 'en' : 'Fury'},
+  'indignacion' : {'es' : 'Indignación', 'en' : 'Indignation'},
+  'molestia' : {'es' : 'Molestia', 'en' : 'Annoyance'},
+  'emocionExpacionTitulo' : {'es' : 'Como te sientes hoy?', 'en' : 'How are you feeling today?'},
+
+  //logros
+
+  'ningunReto' : {'es' : 'Ningún reto Activo', 'en' : 'No active challenge'},
+  'retoActivo' : {'es' : 'Reto Activo', 'en' : 'Active Challenge'},
+  'logrosAnteriores' : {'es' : 'Logros Anteriores', 'en' : 'Previous Achievements'},
+
+  //Metas
+  'seleccionarReto' : {'es' : 'Selecciona tu próximo reto', 'en' : 'Select your next challenge'},
+  'porActividad' : {'es' : 'Por Actividad', 'en' : 'By challenge'},
+  'porTiempo' : {'es' : 'Por tiempo', 'en' : 'By time'},
+  'diaMeditacion' : {'es' : 'día de meditación o relajación', 'en' : 'day of meditation or relaxation'},
+  'diasMeditacion' : {'es' : 'días de meditación o relajación', 'en' : 'days of meditation or relaxation'},
+  'diaEjercicio' : {'es' : 'día de ejercicio o caminar', 'en' : 'day of exercise or walking'},
+  'diasEjercicio' : {'es' : 'días de ejercicio o caminar', 'en' : 'days of exercise or walking'},
+  'diaEscribir' : {'es' : 'día de escribir en el diario', 'en' : 'day of journal writing'},
+  'diasEscribir' : {'es' : 'días de escribir en el diario', 'en' : 'days of journal writing'},
+  'diaDibujar' : {'es' : 'día de dibujar o pintar', 'en' : 'day of drawing or painting'},
+  'diasDibujar' : {'es' : 'días de dibujar o pintar', 'en' : 'days of drawing or painting'},
+  'diaAutocuidado' : {'es' : 'día de descansar o autocuidado', 'en' : 'day of rest or self-care'},
+  'diasAutocuidado' : {'es' : 'días de descansar o autocuidado', 'en' : 'days of rest or self-care'},
+  'diaLibreCasis' : {'es' : 'día libre de CASIS', 'en' : 'day free of CASIS'},
+  'diasLibreCasis' : {'es' : 'días libre de CASIS', 'en' : 'days free of CASIS'},
+  'activar' : {'es' : 'Activar', 'en' : 'Activate'},
+  'activarMeta' : {'es' : '¿Deseas activar la meta?', 'en' : 'Do you want to activate the goal?'},
+  'activarMeta2' : {'es' : '¿Deseas activar esta nueva meta aunque reemplace la que está activa', 'en' : 'Do you want to activate this new goal even if it replaces the one that is active'},
+  '' : {'es' : '', 'en' : ''},
+  '' : {'es' : '', 'en' : ''},
+  '' : {'es' : '', 'en' : ''},
+
 
 }
-
 

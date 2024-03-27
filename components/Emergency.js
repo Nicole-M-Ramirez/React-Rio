@@ -5,11 +5,14 @@ import { colors, dimensions } from './constants';
 
 import {text} from '../Diccionario/español';
 import { normalize } from './FondNormilize';
+import { gs } from '../components/RioGlobalStrings';
+import { useSelector } from 'react-redux';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
 
 function Emergency() {
+  const lang = useSelector(state => state.counter.language);
   const navigation = useNavigation();
   const today = new Date();
   const theDate = today.toISOString().substring(0,10);
@@ -17,7 +20,7 @@ function Emergency() {
     <>
         {/* <View style={styles.topLine}/> */}
 
-        <Text style={styles.text}>DESARROLLADO POR LA UNIVERSIDAD DE PUERTO RICO</Text>
+        <Text style={styles.text}>{gs['tituloFoother'][lang]}</Text>
         <View style={styles.emergencyButtonView}>
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Emergencia',{forDate: theDate})}>
           <Image source={require('../assets/urgencia.png')} resizeMode='contain' style={styles.buttonImage} />

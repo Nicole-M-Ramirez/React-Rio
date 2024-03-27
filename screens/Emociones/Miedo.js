@@ -15,6 +15,8 @@ import TimeSince from '../../components/TimeSince';
 import FooterView from '../../components/FooterView';
 import BackLink from '../../components/BackLink';
 import BackLinkWithDate from '../../components/BackLinkWithDate';
+import { gs } from '../../components/RioGlobalStrings';
+import { useSelector } from 'react-redux';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
@@ -22,46 +24,48 @@ const ScreenWidth = Dimensions.get("window").width
 function Miedo({route}) {
   const { forDate } = route.params;
   const navigation = useNavigation();
+  const lang = useSelector(state => state.counter.language);
 
   const Colors = [colors.deepPurple,colors.blue,colors.pink,colors.mintGreen,colors.purple]
-  const title = ['Diario', 'Habla', 'Respirar', 'Espiritualidad','Atención plena']
+  const title = [gs['diario'][lang],gs['hablar'][lang],gs['respirar'][lang],gs['espiritualidad'][lang],gs['atenPlena'][lang],]
+  const images = [
+    <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage, {alignSelf: 'flex-start', left: dimensions.buttonHeight/5}]} />,
+    <Image source={require('../../assets/hablar.png')} resizeMode='contain' style={styles.buttonImage} />,
+    <Image source={require('../../assets/respirar2.png')} resizeMode='contain' style={styles.buttonImage} />,
+    <Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={styles.buttonImage} />,
+    <Image source={require('../../assets/pausa2.png')} resizeMode='contain' style={styles.buttonImage} />
+  ]
   const functions = [
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Miedo',
-                                                     img: <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
-                                                     texto:'Escribre tus pensamientos en palabras e incluye todo lo que estas sintiendo al momento. No te detengas; todo lo que sientes es valido y merece ser expresado.',
+                                                     img: images[0],
+                                                     texto:gs['diarioCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[0]
                                                     }),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Miedo',
-                                                    img: null,
-                                                    texto:'Háblate en voz alta o con alguien de confianza. El poder tener conversaciones sobre lo que estés pensando puede ayudarte a canalizar lo que sientes y a reflexionar antes de actuar.',
+                                                    img: images[1],
+                                                    texto:gs['hablarCont'][lang],
                                                     forDate: forDate,
                                                     titulo: title[1]
                                                    }),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Miedo',
-                                                     img: <Image source={require('../../assets/Respiracion-Profunda.gif')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
-                                                     texto:'Toma un momento para enfocarte en tu respiracion. Intenta seguir el circulo, inhalando mientras crece y exalando al achicarse. Respira con calma mientras pasa el tiempo y relajate. Aprender a relajarte te puede ayudar a evitar que te autolesiones, te enfermes y tambien te puede ayudar a mejorar tu rendimiento academico.',
+                                                     img: <Image source={require('../../assets/Respiracion-Profunda.gif')} resizeMode='contain' style={styles.buttonImage} />,
+                                                     texto:gs['respiracionCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[2]}),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Miedo',
-                                                     img:null,
-                                                     texto:'Conecta con tu espiritualidad de la manera que sea mejor para ti. Estos momentos pueden abrir un espacio para conectar contigo y con las metas que identificaste.',
+                                                     img:images[3],
+                                                     texto:gs['espiritualidadCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[3]}),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Miedo',
-                                                     img:null,
-                                                     texto:'Enfócate en tus cinco (5) sentidos en este momento. ¿Qué estás viendo, escuchando, oliendo, saboreando y sintiendo? En este momento sólo existe el momento presente. Observa atentamente y sin juicios tu cuerpo, tu mente y tus emociones. Practica la aceptación y la curiosidad de esto que logras identificar. Descubre todos los beneficios que la ciencia ha descubierto que puedes obtener cuando practicas la atención plena de manera regular:',
+                                                     img:images[4],
+                                                     texto:gs['atencionPlenaCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[4]}),
   ]
 
-  const images = [
-    <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage, {alignSelf: 'flex-start', left: dimensions.buttonHeight/5}]} />,
-    null,
-    <Image source={require('../../assets/respirar2.png')} resizeMode='contain' style={styles.buttonImage} />,
-    null,
-    null
-  ]
+
 
   return (
     <View>
@@ -79,7 +83,7 @@ function Miedo({route}) {
 
       <FooterView>
           <View style={{width:'50%', position:'absolute',marginTop: dimensions.separator}}>
-            <BackLinkWithDate labelBack={"Regresar"} gotoScreen={'SelectorEmocion'} theDate={forDate}></BackLinkWithDate>
+            <BackLinkWithDate labelBack={gs['volver'][lang]} gotoScreen={'SelectorEmocion'} theDate={forDate}></BackLinkWithDate>
           </View>         
       </FooterView>
 

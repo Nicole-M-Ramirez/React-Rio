@@ -13,6 +13,8 @@ import HeaderView from '../../components/HeaderView'
 import { normalize } from '../../components/FondNormilize';
 import TimeSince from '../../components/TimeSince';
 import { dimensions } from '../../components/constants';
+import { gs } from '../../components/RioGlobalStrings';
+import { useDispatch, useSelector } from 'react-redux';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
@@ -20,12 +22,13 @@ const ScreenWidth = Dimensions.get("window").width
 function SelectorEmocion({route}) {
   const navigation = useNavigation();
   const { theDate } = route.params;
+  const lang = useSelector(state => state.counter.language);
 
   console.log("You have entered the moods window in date: " + theDate);
 
 
   const Colors = [colors.pink, colors.mintGreen, colors.deepPurple, colors.blue, colors.purple, colors.greyBlue]
-  const title = ['Felicidad', 'Ansiedad', 'Miedo', 'Tristeza','Coraje', 'Otros']
+  const title = [gs['Felicidad'][lang], gs['Ansiedad'][lang], gs['Miedo'][lang], gs['Tristeza'][lang],gs['Coraje'][lang], gs['Otros'][lang]]
   const functions = [
     () => navigation.navigate('Detonante',{
       pantalla: 'Felicidad', forDate: theDate
@@ -73,7 +76,7 @@ function SelectorEmocion({route}) {
 
       <FooterView>
         <View style={{height:'100%',justifyContent: 'center' , alignItems: 'flex-start'}}>
-          <Text style={styles.titleText}>Estado de ánimo</Text>
+          <Text style={styles.titleText}>{gs['emocionesTitulo'][lang]}</Text>
         </View>
       </FooterView>
 

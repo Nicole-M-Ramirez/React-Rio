@@ -28,6 +28,7 @@ function RegistroUtilidad({route}) {
   const {img} = route.params;
   const today = new Date();
   const theDate = today.toISOString().substring(0,10);
+  const {pantalla} = route.params;
 
   function Calling (phoneNumber) {
 
@@ -63,7 +64,7 @@ function RegistroUtilidad({route}) {
                     <Text style={styles.buttonText}>{gs['si'][lang]}</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={[styles.button, {backgroundColor: colors.pink}]} onPress={() => {navigation.navigate('NoFunciono')}}>
+            <TouchableOpacity style={[styles.button, {backgroundColor: colors.pink}]} onPress={() => {navigation.navigate('NoFunciono', {pantalla:pantalla})}}>
                     <Text style={styles.buttonText}>No</Text>     
             </TouchableOpacity>
         </View>

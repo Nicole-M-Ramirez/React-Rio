@@ -13,6 +13,8 @@ import HeaderView from '../../components/HeaderView'
 import { normalize } from '../../components/FondNormilize';
 import TimeSince from '../../components/TimeSince';
 import { dimensions } from '../../components/constants';
+import { gs } from '../../components/RioGlobalStrings';
+import { useSelector } from 'react-redux';
 // import BackLink from '../../components/BackLink';
 import BackLinkWithDate from '../../components/BackLinkWithDate';
 import NextLink from '../../components/NextLink';
@@ -21,6 +23,7 @@ const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
 
 function ActividadEnProgreso({route}) {
+  const lang = useSelector(state => state.counter.language);
   const navigation = useNavigation();
   const { forDate } = route.params;
   const {pantalla} = route.params;
@@ -28,10 +31,12 @@ function ActividadEnProgreso({route}) {
   const {texto} = route.params;
   const {titulo} = route.params;
   const {vieneDe} = route.params;
+  //const {continuacionExtra} = route.params;
   //const {forDate} = route.params;
 
   const functions = [
-    () => navigation.navigate('RegistroUtilidad',{img:img, forDate: forDate }),
+    () => navigation.navigate('RegistroUtilidad',{img:img, forDate: forDate, pantalla : pantalla}),
+    () => navigation.navigate(continuacionExtra, {forDate:forDate}),
   ]
 
 
@@ -54,8 +59,8 @@ function ActividadEnProgreso({route}) {
       </BodyView>
 
       <FooterView>
-          <View style={{width:'50%', position:'absolute',marginTop: dimensions.separator}}>
-            <BackLinkWithDate labelBack={"Regresar"} gotoScreen={pantalla} forDate={forDate}></BackLinkWithDate>
+          <View style={{width:'50%', position:'absolute',top:dimensions.footerHeight*0.6}}>
+            <BackLinkWithDate labelBack={gs['volver'][lang]} gotoScreen={pantalla} forDate={forDate}></BackLinkWithDate>
           </View>
 
           {/* <TouchableOpacity  style={{left:dimensions.bodyWidth*0.7,width:dimensions.bodyWidth*0.25,height:dimensions.footerHeight*0.5}}  onPress={functions[0]}>
@@ -69,10 +74,10 @@ function ActividadEnProgreso({route}) {
             </View>
           </TouchableOpacity>       */}
           { vieneDe === 'Emergencia' ? <View></View> :
-            <TouchableOpacity  style={{left:dimensions.bodyWidth*0.7,width:dimensions.bodyWidth*0.25,height:dimensions.footerHeight*0.5}}  onPress={functions[0]}>
+            <TouchableOpacity  style={{left:dimensions.bodyWidth*0.7,width:dimensions.bodyWidth*0.25,height:dimensions.footerHeight*0.5,top:dimensions.footerHeight*0.5}}  onPress={functions[0]}>
               <View style={styles.hookedStyles}>
                 <View style={{width:'92%', 'height': dimensions.footerHeight*0.5, alignItems: 'flex-end',justifyContent: 'center', }}> 
-                  <Text style={{color: 'white', textAlignVertical: 'center'}}>Continuar</Text>
+                  <Text style={{color: 'white', textAlignVertical: 'center'}}>{gs['continuar'][lang]}</Text>
                 </View>
                 <View style={{width:'15%', 'height': dimensions.footerHeight*0.5,  alignItems: 'flex-end',justifyContent: 'center',  }}>
                   <Image source={require('../../assets/continuar2.png')}  style={styles.buttonTitleImage} />

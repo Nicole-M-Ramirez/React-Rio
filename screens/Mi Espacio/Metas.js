@@ -17,44 +17,46 @@ import MetaPorAct from '../../components/MetaPorAct';
 import MetaPorTiem from '../../components/MetaPorTiem';
 import { useDispatch, useSelector } from 'react-redux';
 import { addMeta } from '../../redux/slices/counterSlice';
+import { gs } from '../../components/RioGlobalStrings';
+//import { useSelector } from 'react-redux';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
 
 
-const showAlert = (dispatch, meta, oldMeta) => {
+// const showAlert = (dispatch, meta, oldMeta) => {
 
-  let msg;
-  if (oldMeta == undefined) msg = "¿Deseas activar la meta?" 
-  else msg = "¿Deseas activar esta nueva meta aunque remplaze la que está activa (" + oldMeta +  ")?"
-  Alert.alert(
-    'Confirmación',
-    msg,
-    [
-      {
-        text: 'No',
-        // onPress: handleCancel,
-        style: 'cancel',
-      },
-      {
-        text: 'Si',
-        onPress: ()=> { 
-          console.log("Confirmed!!: " + meta);
-          // console.log(meta);
-          // console.log(meta.includes("dia"));
+//   let msg;
+//   if (oldMeta == undefined) msg = gs['activarMeta'][lang] 
+//   else msg = gs['activarMeta2'][lang]+" (" + oldMeta +  ")?"
+//   Alert.alert(
+//     'Confirmación',
+//     msg,
+//     [
+//       {
+//         text: 'No',
+//         // onPress: handleCancel,
+//         style: 'cancel',
+//       },
+//       {
+//         text: gs['si'][lang],
+//         onPress: ()=> { 
+//           console.log("Confirmed!!: " + meta);
+//           // console.log(meta);
+//           // console.log(meta.includes("dia"));
 
-          // if (meta.includes("dia")) {
-            dispatch(addMeta({"theDate":new Date().toString().split("(")[0], meta: meta}))
-          // }
-          // else {
-          //   dispatch(addMeta({"theDate":new Date().toString().split("(")[0], meta: meta, check: {'1': false, '2': false,'3': false, '4': false, '5': false}}))
-          // }
-        }
-      },
-    ],
-    { cancelable: false }
-  );
-};
+//           // if (meta.includes("dia")) {
+//             dispatch(addMeta({"theDate":new Date().toString().split("(")[0], meta: meta}))
+//           // }
+//           // else {
+//           //   dispatch(addMeta({"theDate":new Date().toString().split("(")[0], meta: meta, check: {'1': false, '2': false,'3': false, '4': false, '5': false}}))
+//           // }
+//         }
+//       },
+//     ],
+//     { cancelable: false }
+//   );
+// };
 
 const getMetaActiva = (metas) => {
   for (let i = metas.length - 1; i >=0; i--) {
@@ -68,7 +70,42 @@ const getMetaActiva = (metas) => {
 
 function Metas() {
 
+  const showAlert = (dispatch, meta, oldMeta) => {
+
+    let msg;
+    if (oldMeta == undefined) msg = gs['activarMeta'][lang] 
+    else msg = gs['activarMeta2'][lang]+" (" + oldMeta +  ")?"
+    Alert.alert(
+      'Confirmación',
+      msg,
+      [
+        {
+          text: 'No',
+          // onPress: handleCancel,
+          style: 'cancel',
+        },
+        {
+          text: gs['si'][lang],
+          onPress: ()=> { 
+            console.log("Confirmed!!: " + meta);
+            // console.log(meta);
+            // console.log(meta.includes("dia"));
+  
+            // if (meta.includes("dia")) {
+              dispatch(addMeta({"theDate":new Date().toString().split("(")[0], meta: meta}))
+            // }
+            // else {
+            //   dispatch(addMeta({"theDate":new Date().toString().split("(")[0], meta: meta, check: {'1': false, '2': false,'3': false, '4': false, '5': false}}))
+            // }
+          }
+        },
+      ],
+      { cancelable: false }
+    );
+  };
+
   const dispatch = useDispatch();
+  const lang = useSelector(state => state.counter.language);
 
   const metasFromStore = useSelector(state => state.counter.metas);
   console.log("All the metas in the store:")
@@ -120,14 +157,14 @@ function Metas() {
         marginLeft: dimensions.leftMargin,
         height: dimensions.bodyHeight,
         width: dimensions.bodyWidth}}>
-        <Text style={styles.titleText}>Selecciona tu próximo reto</Text>
+        <Text style={styles.titleText}>{gs['seleccionarReto'][lang]}</Text>
 
         <TouchableOpacity onPress={actividadPressHandle} style={[styles.TopButton, {backgroundColor: buttonActividadColors}]}>
-            <Text style={styles.TopButtonText}>Por actividad</Text>
+            <Text style={styles.TopButtonText}>{gs['porActividad'][lang]}</Text>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={tiempoPressHandler} style={[styles.TopButton, {backgroundColor: buttonTiempoColor, left: (dimensions.bodyWidth / 2) + 3}]}>
-        <Text style={styles.TopButtonText}>Por tiempo</Text>
+        <Text style={styles.TopButtonText}>{gs['porTiempo'][lang]}</Text>
         </TouchableOpacity>
 
         {/* {metasMostradas} */}
@@ -145,7 +182,7 @@ function Metas() {
                               style={[styles.LongButton, {backgroundColor: colors.mintGreen,
                                 borderWidth: selectedOption === 'meditar01' ? 2 : 0,
                                 borderColor: selectedOption === 'meditar01' ? 'white' : 'gray'}]} >
-              <Text style={[styles.LongButtonText]}>1 día de meditación o relajación</Text>
+              <Text style={[styles.LongButtonText]}>1 {gs['diaMeditacion'][lang]}</Text>
               <Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={styles.buttonImage} />
             </TouchableOpacity>
 
@@ -153,32 +190,32 @@ function Metas() {
                               style={[styles.LongButton, {backgroundColor: colors.purple,
                                       borderWidth: selectedOption === 'meditar03' ? 2 : 0,
                                       borderColor: selectedOption === 'meditar03' ? 'white' : 'gray'}]} >
-              <Text style={styles.LongButtonText}>3 días de meditación o relajación</Text>
-              <Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={[styles.buttonImage,{top:(dimensions.buttonHeight/2)*-0.9}]} />
+              <Text style={styles.LongButtonText}>3 {gs['diasMeditacion'][lang]}</Text>
+              <Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={[styles.buttonImage]} />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={()=>{handleButtonPress('meditar05')}} 
                               style={[styles.LongButton, {backgroundColor: colors.greyBlue,
                                       borderWidth: selectedOption === 'meditar05' ? 2 : 0,
                                       borderColor: selectedOption === 'meditar05' ? 'white' : 'gray'}]} >
-              <Text style={styles.LongButtonText}>5 días de meditación o relajación</Text>
-              <Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={[styles.buttonImage,{top:(dimensions.buttonHeight/2)*-0.9}]} />
+              <Text style={styles.LongButtonText}>5 {gs['diasMeditacion'][lang]}</Text>
+              <Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={[styles.buttonImage]} />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={()=>{handleButtonPress('meditar07')}} 
                               style={[styles.LongButton, {backgroundColor: colors.blue,
                                       borderWidth: selectedOption === 'meditar07' ? 2 : 0,
                                       borderColor: selectedOption === 'meditar07' ? 'white' : 'gray'}]} >
-              <Text style={styles.LongButtonText}>7 días de meditación o relajación</Text>
-              <Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={[styles.buttonImage,{top:(dimensions.buttonHeight/2)*-0.9}]} />
+              <Text style={styles.LongButtonText}>7 {gs['diasMeditacion'][lang]}</Text>
+              <Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={[styles.buttonImage]} />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={()=>{handleButtonPress('meditar10')}} 
                               style={[styles.LongButton, {backgroundColor: colors.deepPurple,
                                       borderWidth: selectedOption === 'meditar10' ? 2 : 0,
                                       borderColor: selectedOption === 'meditar10' ? 'white' : 'gray'}]} >
-              <Text style={styles.LongButtonText}>10 días de meditación o relajación</Text>
-              <Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={[styles.buttonImage,{top:(dimensions.buttonHeight/2)*-0.9}]} />
+              <Text style={styles.LongButtonText}>10 {gs['diasMeditacion'][lang]}</Text>
+              <Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={[styles.buttonImage]} />
             </TouchableOpacity>
 
             {/*--------------------------------------------------------------------------- */}
@@ -187,7 +224,7 @@ function Metas() {
                               style={[styles.LongButton, {backgroundColor: colors.mintGreen,
                                 borderWidth: selectedOption === 'caminar01' ? 2 : 0,
                                 borderColor: selectedOption === 'caminar01' ? 'white' : 'gray'}]} >
-              <Text style={[styles.LongButtonText]}>1 día de ejercicio o caminar</Text>
+              <Text style={[styles.LongButtonText]}>1 {gs['diaEjercicio'][lang]}</Text>
               <Image source={require('../../assets/caminar2.png')} resizeMode='contain' style={styles.buttonImage} />
             </TouchableOpacity>
 
@@ -195,7 +232,7 @@ function Metas() {
                               style={[styles.LongButton, {backgroundColor: colors.purple,
                                       borderWidth: selectedOption === 'caminar02' ? 2 : 0,
                                       borderColor: selectedOption === 'caminar02' ? 'white' : 'gray'}]} >
-              <Text style={styles.LongButtonText}>3 días de ejercicio o caminar</Text>
+              <Text style={styles.LongButtonText}>3 {gs['diasEjercicio'][lang]}</Text>
               <Image source={require('../../assets/caminar2.png')} resizeMode='contain' style={styles.buttonImage} />
             </TouchableOpacity>
 
@@ -203,7 +240,7 @@ function Metas() {
                               style={[styles.LongButton, {backgroundColor: colors.greyBlue,
                                       borderWidth: selectedOption === 'caminar05' ? 2 : 0,
                                       borderColor: selectedOption === 'caminar05' ? 'white' : 'gray'}]} >
-              <Text style={styles.LongButtonText}>5 días de ejercicio o caminar</Text>
+              <Text style={styles.LongButtonText}>5 {gs['diasEjercicio'][lang]}</Text>
               <Image source={require('../../assets/caminar2.png')} resizeMode='contain' style={styles.buttonImage} />
             </TouchableOpacity>
 
@@ -211,7 +248,7 @@ function Metas() {
                               style={[styles.LongButton, {backgroundColor: colors.blue,
                                       borderWidth: selectedOption === 'caminar07' ? 2 : 0,
                                       borderColor: selectedOption === 'caminar07' ? 'white' : 'gray'}]} >
-              <Text style={styles.LongButtonText}>7 días de ejercicio o caminar</Text>
+              <Text style={styles.LongButtonText}>7 {gs['diasEjercicio'][lang]}</Text>
               <Image source={require('../../assets/caminar2.png')} resizeMode='contain' style={styles.buttonImage} />
             </TouchableOpacity>
 
@@ -219,7 +256,7 @@ function Metas() {
                               style={[styles.LongButton, {backgroundColor: colors.deepPurple,
                                       borderWidth: selectedOption === 'caminar10' ? 2 : 0,
                                       borderColor: selectedOption === 'caminar10' ? 'white' : 'gray'}]} >
-              <Text style={styles.LongButtonText}>10 días de ejercicio o caminar</Text>
+              <Text style={styles.LongButtonText}>10 {gs['diasEjercicio'][lang]}</Text>
               <Image source={require('../../assets/caminar2.png')} resizeMode='contain' style={styles.buttonImage} />
             </TouchableOpacity>
 
@@ -229,7 +266,7 @@ function Metas() {
                               style={[styles.LongButton, {backgroundColor: colors.mintGreen,
                                 borderWidth: selectedOption === 'diario01' ? 2 : 0,
                                 borderColor: selectedOption === 'diario01' ? 'white' : 'gray'}]} >
-              <Text style={[styles.LongButtonText]}>1 día de escribir en el diario</Text>
+              <Text style={[styles.LongButtonText]}>1 {gs['diaEscribir'][lang]}</Text>
               <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={styles.buttonImage} />
             </TouchableOpacity>
 
@@ -237,7 +274,7 @@ function Metas() {
                               style={[styles.LongButton, {backgroundColor: colors.purple,
                                       borderWidth: selectedOption === 'diario03' ? 2 : 0,
                                       borderColor: selectedOption === 'diario03' ? 'white' : 'gray'}]} >
-              <Text style={styles.LongButtonText}>3 días de escribir en el diario</Text>
+              <Text style={styles.LongButtonText}>3 {gs['diasEscribir'][lang]}</Text>
               <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={styles.buttonImage} />
             </TouchableOpacity>
 
@@ -245,7 +282,7 @@ function Metas() {
                               style={[styles.LongButton, {backgroundColor: colors.greyBlue,
                                       borderWidth: selectedOption === 'diario05' ? 2 : 0,
                                       borderColor: selectedOption === 'diario05' ? 'white' : 'gray'}]} >
-              <Text style={styles.LongButtonText}>5 días de escribir en el diario</Text>
+              <Text style={styles.LongButtonText}>5 {gs['diasEscribir'][lang]}</Text>
               <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={styles.buttonImage} />
             </TouchableOpacity>
 
@@ -253,7 +290,7 @@ function Metas() {
                               style={[styles.LongButton, {backgroundColor: colors.blue,
                                       borderWidth: selectedOption === 'diario07' ? 2 : 0,
                                       borderColor: selectedOption === 'diario07' ? 'white' : 'gray'}]} >
-              <Text style={styles.LongButtonText}>7 días de escribir en el diario</Text>
+              <Text style={styles.LongButtonText}>7 {gs['diasEscribir'][lang]}</Text>
               <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={styles.buttonImage} />
             </TouchableOpacity>
 
@@ -261,7 +298,7 @@ function Metas() {
                               style={[styles.LongButton, {backgroundColor: colors.deepPurple,
                                       borderWidth: selectedOption === 'diario10' ? 2 : 0,
                                       borderColor: selectedOption === 'diario10' ? 'white' : 'gray'}]} >
-              <Text style={styles.LongButtonText}>10 días de escribir en el diario</Text>
+              <Text style={styles.LongButtonText}>10 {gs['diasEscribir'][lang]}</Text>
               <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={styles.buttonImage} />
             </TouchableOpacity>
 
@@ -271,7 +308,7 @@ function Metas() {
                               style={[styles.LongButton, {backgroundColor: colors.mintGreen,
                                 borderWidth: selectedOption === 'dibujar01' ? 2 : 0,
                                 borderColor: selectedOption === 'dibujar01' ? 'white' : 'gray'}]} >
-              <Text style={[styles.LongButtonText]}>1 día de dibujar o pintar</Text>
+              <Text style={[styles.LongButtonText]}>1 {gs['diaDibujar'][lang]}</Text>
               <Image source={require('../../assets/dibujo2.png')} resizeMode='contain' style={styles.buttonImage} />
             </TouchableOpacity>
 
@@ -279,7 +316,7 @@ function Metas() {
                               style={[styles.LongButton, {backgroundColor: colors.purple,
                                       borderWidth: selectedOption === 'dibujar03' ? 2 : 0,
                                       borderColor: selectedOption === 'dibujar03' ? 'white' : 'gray'}]} >
-              <Text style={styles.LongButtonText}>3 días de dibujar o pintar</Text>
+              <Text style={styles.LongButtonText}>3 {gs['diasDibujar'][lang]}</Text>
               <Image source={require('../../assets/dibujo2.png')} resizeMode='contain' style={styles.buttonImage} />
             </TouchableOpacity>
 
@@ -287,7 +324,7 @@ function Metas() {
                               style={[styles.LongButton, {backgroundColor: colors.greyBlue,
                                       borderWidth: selectedOption === 'dibujar05' ? 2 : 0,
                                       borderColor: selectedOption === 'dibujar05' ? 'white' : 'gray'}]} >
-              <Text style={styles.LongButtonText}>5 días de dibujar o pintar</Text>
+              <Text style={styles.LongButtonText}>5 {gs['diasDibujar'][lang]}</Text>
               <Image source={require('../../assets/dibujo2.png')} resizeMode='contain' style={styles.buttonImage} />
             </TouchableOpacity>
 
@@ -295,7 +332,7 @@ function Metas() {
                               style={[styles.LongButton, {backgroundColor: colors.blue,
                                       borderWidth: selectedOption === 'dibujar07' ? 2 : 0,
                                       borderColor: selectedOption === 'dibujar07' ? 'white' : 'gray'}]} >
-              <Text style={styles.LongButtonText}>7 días de dibujar o pintar</Text>
+              <Text style={styles.LongButtonText}>7 {gs['diasDibujar'][lang]}</Text>
               <Image source={require('../../assets/dibujo2.png')} resizeMode='contain' style={styles.buttonImage} />
             </TouchableOpacity>
 
@@ -303,7 +340,7 @@ function Metas() {
                               style={[styles.LongButton, {backgroundColor: colors.deepPurple,
                                       borderWidth: selectedOption === 'dibujar10' ? 2 : 0,
                                       borderColor: selectedOption === 'dibujar10' ? 'white' : 'gray'}]} >
-              <Text style={styles.LongButtonText}>10 días de dibujar o pintar</Text>
+              <Text style={styles.LongButtonText}>10 {gs['diasDibujar'][lang]}</Text>
               <Image source={require('../../assets/dibujo2.png')} resizeMode='contain' style={styles.buttonImage} />
             </TouchableOpacity>
 
@@ -313,7 +350,7 @@ function Metas() {
                               style={[styles.LongButton, {backgroundColor: colors.mintGreen,
                                 borderWidth: selectedOption === 'descansar01' ? 2 : 0,
                                 borderColor: selectedOption === 'descansar01' ? 'white' : 'gray'}]} >
-              <Text style={[styles.LongButtonText]}>1 día de descansar o autocuidado</Text>
+              <Text style={[styles.LongButtonText]}>1 {gs['diaAutocuidado'][lang]}</Text>
               <Image source={require('../../assets/aceptacion.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.buttonHeight*-0.45}]} />
             </TouchableOpacity>
 
@@ -321,7 +358,7 @@ function Metas() {
                               style={[styles.LongButton, {backgroundColor: colors.purple,
                                       borderWidth: selectedOption === 'descansar03' ? 2 : 0,
                                       borderColor: selectedOption === 'descansar03' ? 'white' : 'gray'}]} >
-              <Text style={styles.LongButtonText}>3 días de descansar o autocuidado</Text>
+              <Text style={styles.LongButtonText}>3 {gs['diasAutocuidado'][lang]}</Text>
               <Image source={require('../../assets/aceptacion.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.buttonHeight*-0.45}]} />
             </TouchableOpacity>
 
@@ -329,7 +366,7 @@ function Metas() {
                               style={[styles.LongButton, {backgroundColor: colors.greyBlue,
                                       borderWidth: selectedOption === 'descansar05' ? 2 : 0,
                                       borderColor: selectedOption === 'descansar05' ? 'white' : 'gray'}]} >
-              <Text style={styles.LongButtonText}>5 días de descansar o autocuidado</Text>
+              <Text style={styles.LongButtonText}>5 {gs['diasAutocuidado'][lang]}</Text>
               <Image source={require('../../assets/aceptacion.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.buttonHeight*-0.45}]} />
             </TouchableOpacity>
 
@@ -337,7 +374,7 @@ function Metas() {
                               style={[styles.LongButton, {backgroundColor: colors.blue,
                                       borderWidth: selectedOption === 'descansar07' ? 2 : 0,
                                       borderColor: selectedOption === 'descansar07' ? 'white' : 'gray'}]} >
-              <Text style={styles.LongButtonText}>7 días de descansar o autocuidado</Text>
+              <Text style={styles.LongButtonText}>7 {gs['diasAutocuidado'][lang]}</Text>
               <Image source={require('../../assets/aceptacion.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.buttonHeight*-0.45}]} />
             </TouchableOpacity>
 
@@ -345,7 +382,7 @@ function Metas() {
                               style={[styles.LongButton, {backgroundColor: colors.deepPurple,
                                       borderWidth: selectedOption === 'descansar10' ? 2 : 0,
                                       borderColor: selectedOption === 'descansar10' ? 'white' : 'gray'}]} >
-              <Text style={styles.LongButtonText}>10 días de descansar o autocuidado</Text>
+              <Text style={styles.LongButtonText}>10 {gs['diasAutocuidado'][lang]}</Text>
               <Image source={require('../../assets/aceptacion.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.buttonHeight*-0.45}]} />
             </TouchableOpacity>
 
@@ -363,48 +400,48 @@ function Metas() {
                                 borderWidth: selectedOption === '01dias' ? 2 : 0,
                                 borderColor: selectedOption === '01dias' ? 'white' : 'gray'}]} >
                   
-                    <Text style={styles.LongButtonText}>01 día libre de CASIS</Text>
-                    <Image source={require('../../assets/01-2.png')} resizeMode='contain' style={styles.buttonImage} />
+                    <Text style={styles.LongButtonText}>01 {gs['diaLibreCasis'][lang]}</Text>
+                    <Image source={require('../../assets/01-2.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.buttonHeight*-0.22}]} />
                   </TouchableOpacity>
       
                   <TouchableOpacity onPress={()=>{handleButtonPress('02dias')}} 
                               style={[styles.LongButton, {backgroundColor: colors.greyBlue,
                                 borderWidth: selectedOption === '02dias' ? 2 : 0,
                                 borderColor: selectedOption === '02dias' ? 'white' : 'gray'}]} >
-                    <Text style={styles.LongButtonText}>02 días libre de CASIS</Text>
-                    <Image source={require('../../assets/02-2.png')} resizeMode='contain' style={styles.buttonImage} />
+                    <Text style={styles.LongButtonText}>02 {gs['diasLibreCasis'][lang]}</Text>
+                    <Image source={require('../../assets/02-2.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.buttonHeight*-0.22}]} />
                   </TouchableOpacity>
       
                   <TouchableOpacity onPress={()=>{handleButtonPress('05dias')}} 
                               style={[styles.LongButton, {backgroundColor: colors.purple,
                                 borderWidth: selectedOption === '05dias' ? 2 : 0,
                                 borderColor: selectedOption === '05dias' ? 'white' : 'gray'}]} >
-                    <Text style={styles.LongButtonText}>05 días libre de CASIS</Text>
-                    <Image source={require('../../assets/05-2.png')} resizeMode='contain' style={styles.buttonImage} />
+                    <Text style={styles.LongButtonText}>05 {gs['diasLibreCasis'][lang]}</Text>
+                    <Image source={require('../../assets/05-2.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.buttonHeight*-0.22}]} />
                   </TouchableOpacity>
       
                   <TouchableOpacity onPress={()=>{handleButtonPress('07dias')}} 
                               style={[styles.LongButton, {backgroundColor: colors.blue,
                                 borderWidth: selectedOption === '07dias' ? 2 : 0,
                                 borderColor: selectedOption === '07dias' ? 'white' : 'gray'}]} >
-                    <Text style={styles.LongButtonText}>07 días libre de CASIS</Text>
-                    <Image source={require('../../assets/10-2.png')} resizeMode='contain' style={styles.buttonImage} />
+                    <Text style={styles.LongButtonText}>07 {gs['diasLibreCasis'][lang]}</Text>
+                    <Image source={require('../../assets/10-2.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.buttonHeight*-0.22}]} />
                   </TouchableOpacity>
 
                   <TouchableOpacity onPress={()=>{handleButtonPress('14dias')}} 
                               style={[styles.LongButton, {backgroundColor: colors.greyBlue,
                                 borderWidth: selectedOption === '14dias' ? 2 : 0,
                                 borderColor: selectedOption === '14dias' ? 'white' : 'gray'}]} >
-                    <Text style={styles.LongButtonText}>14 días libre de CASIS</Text>
-                    <Image source={require('../../assets/10-2.png')} resizeMode='contain' style={styles.buttonImage} />
+                    <Text style={styles.LongButtonText}>14 {gs['diasLibreCasis'][lang]}</Text>
+                    <Image source={require('../../assets/10-2.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.buttonHeight*-0.22}]} />
                   </TouchableOpacity>
 
                   <TouchableOpacity onPress={()=>{handleButtonPress('30dias')}} 
                               style={[styles.LongButton, {backgroundColor: colors.purple,
                                 borderWidth: selectedOption === '30dias' ? 2 : 0,
                                 borderColor: selectedOption === '30dias' ? 'white' : 'gray'}]} >
-                    <Text style={styles.LongButtonText}>30 días libre de CASIS</Text>
-                    <Image source={require('../../assets/10-2.png')} resizeMode='contain' style={styles.buttonImage} />
+                    <Text style={styles.LongButtonText}>30 {gs['diasLibreCasis'][lang]}</Text>
+                    <Image source={require('../../assets/10-2.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.buttonHeight*-0.22}]} />
                   </TouchableOpacity>
                 </ScrollView>
             </View>
@@ -416,7 +453,7 @@ function Metas() {
 
       <FooterView>
           <View style={{width:'50%', position:'absolute',marginTop: dimensions.separator}}>
-            <BackLink labelBack={"Regresar"} gotoScreen={'MiEspacio'}></BackLink>
+            <BackLink labelBack={gs['volver'][lang]} gotoScreen={'MiEspacio'}></BackLink>
           </View>
 
           <TouchableOpacity style={styles.activarButton} onPress={() => 
@@ -424,7 +461,7 @@ function Metas() {
               console.log(selectedOption);
               showAlert(dispatch, selectedOption, metaActiva);
             }}>
-            <Text style={styles.activarText}>Activar</Text>
+            <Text style={styles.activarText}>{gs['activar'][lang]}</Text>
             <Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.activarImg} />
           </TouchableOpacity>
       </FooterView>
@@ -471,14 +508,14 @@ const styles = StyleSheet.create({
     LongButtonText: {
       fontSize: normalize(14),
       color: 'white',
-      marginTop: dimensions.separator*6,
+      marginTop: dimensions.separator*3,
       marginLeft: dimensions.separator*2,
-      width: dimensions.bodyWidth*0.7,
+      width: dimensions.bodyWidth*0.65,
     },
     buttonImage :{
-      width: ScreenWidth * 0.17,
-      height: ScreenHeight * 0.09,
-      top: dimensions.buttonHeight*-0.35,
+      width: ScreenWidth * 0.16,
+      height: ScreenHeight * 0.08,
+      top: dimensions.buttonHeight*-0.37,
       left: dimensions.buttonWidth *1.55
     },
     scrollView: {
@@ -499,7 +536,8 @@ const styles = StyleSheet.create({
     activarText: {
       color: 'white',
       fontSize: normalize(15),
-      top: '25%'
+      top: dimensions.footerHeight*0.2,
+      left: dimensions.bodyWidth*-0.05
     },
     activarImg: {
       //backgroundColor: 'pink',

@@ -16,6 +16,8 @@ import { normalize } from '../../components/FondNormilize';
 import TimeSince from '../../components/TimeSince';
 import { dimensions } from '../../components/constants';
 import BackLink from '../../components/BackLink';
+//import { useSelector } from 'react-redux';
+import { gs } from '../../components/RioGlobalStrings';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
@@ -26,6 +28,7 @@ import { updateMood, decreaseByOne } from '../../redux/slices/counterSlice';
 let det = [];
 
 function Detonante({route}) {
+  const lang = useSelector(state => state.counter.language);
   const [detonanteCreado, setDetonanteCreado] = useState("")
   const [comfirmarDetonante, setComfirmarDetonante] = useState(<View></View>)
   const { pantalla } = route.params;
@@ -82,52 +85,51 @@ function Detonante({route}) {
       </HeaderView>
 
       <BodyView>
-        <Text style={styles.titleText}>Detonantes:</Text>
+        <Text style={styles.titleText}>{gs['DetTitulo'][lang]}</Text>
         <Text> </Text>
-        <Text style={styles.defText}>Toma conciencia sobre lo que activó esta emoción. ¿Qúe relaciones
-        o situaciones han aportado a que te sientas de esta manera?</Text>
+        <Text style={styles.defText}>{gs['DetContenido'][lang]}</Text>
         <Text> </Text>
         <View style={{borderBottomColor: colors.mintGreen, width: dimensions.bodyWidth, borderBottomWidth:3}}/>
 
         <View style={[styles.buttonView,{backgroundColor:colors.purple}]}>
-            <Text style={styles.buttonsText}>Pareja</Text>
+            <Text style={styles.buttonsText}>{gs['pareja'][lang]}</Text>
             <TouchableOpacity style={[styles.innerCircle, {backgroundColor: detonantes['pareja'] ? 'white':colors.purple}]} 
             onPress={()=>{toggleButtonDict ('pareja')}}/>
             <View style={styles.outerCircle}/>
         </View>
 
         <View style={[styles.buttonView,{backgroundColor:colors.purple}]}>
-            <Text style={styles.buttonsText}>Familia</Text>
+            <Text style={styles.buttonsText}>{gs['familia'][lang]}</Text>
             <TouchableOpacity style={[styles.innerCircle, {backgroundColor: detonantes['familia'] ? 'white':colors.purple}]} 
             onPress={()=>{toggleButtonDict ('familia')}}/>
             <View style={styles.outerCircle}></View>
         </View>
 
         <View style={[styles.buttonView,{backgroundColor:colors.purple}]}>
-            <Text style={styles.buttonsText}>Amistades</Text>
+            <Text style={styles.buttonsText}>{gs['amistades'][lang]}</Text>
             <TouchableOpacity style={[styles.innerCircle, {backgroundColor: detonantes['amistades'] ? 'white':colors.purple}]} 
             onPress={()=>{toggleButtonDict ('amistades')}}/>            
             <View style={styles.outerCircle}></View>
         </View>
 
         <View style={[styles.buttonView,{backgroundColor:colors.purple}]}>
-            <Text style={styles.buttonsText}>Perdida o duelo</Text>
+            <Text style={styles.buttonsText}>{gs['perdida'][lang]}</Text>
             <TouchableOpacity style={[styles.innerCircle, {backgroundColor: detonantes['perdida'] ? 'white':colors.purple}]} 
             onPress={()=>{toggleButtonDict ('perdida')}}/>
             <View style={styles.outerCircle}></View>
         </View>
 
         <View style={[styles.buttonView,{backgroundColor:colors.purple}]}>
-            <Text style={styles.buttonsText}>Estudios universitarios</Text>
+            <Text style={styles.buttonsText}>{gs['estUniversitarios'][lang]}</Text>
             <TouchableOpacity style={[styles.innerCircle, {backgroundColor: detonantes['estudios'] ? 'white':colors.purple}]} 
             onPress={()=>{toggleButtonDict ('estudios')}}/>
             <View style={styles.outerCircle}></View>
         </View>
 
         <View style={[styles.buttonView,{backgroundColor:colors.purple,height: dimensions.buttonHeight/2,}]}>
-            <Text style={styles.buttonsText}>Otros/Crear opción:</Text>
+            <Text style={styles.buttonsText}>{gs['otraOp'][lang]}</Text>
             <TextInput
-              style={{marginLeft:dimensions.separator}}
+              style={{marginLeft:dimensions.separator,top:(dimensions.buttonHeight/2)*0.12, color:'white'}}
               onChangeText={setDetonanteCreado}
               value={detonanteCreado}
             />
@@ -144,7 +146,7 @@ function Detonante({route}) {
                 <Image source={require ('../../assets/back.png')}  style={styles.buttonImage} />
               </View>
               <View style={{width:'92%', 'height': '100%', alignItems: 'flex-start',justifyContent: 'center', }}> 
-                <Text style={{color: 'white', textAlignVertical: 'center'}}>Estado de ánimo</Text>
+                <Text style={{color: 'white', textAlignVertical: 'center'}}>{gs['emocionesTitulo'][lang]}</Text>
               </View>
             </View>
             </TouchableOpacity>
@@ -165,7 +167,7 @@ function Detonante({route}) {
           }}>
             <View style={styles.hookedStyles}>
               <View style={{width:'92%', 'height': '100%', alignItems: 'flex-end',justifyContent: 'center', }}> 
-                <Text style={{color: 'white', textAlignVertical: 'center'}}>Continuar</Text>
+                <Text style={{color: 'white', textAlignVertical: 'center'}}>{gs['continuar'][lang]}</Text>
               </View>
               <View style={{width:'8%', 'height': '100%',  alignItems: 'flex-end',justifyContent: 'center',  }}>
                 <Image source={require('../../assets/continuar2.png')}  style={styles.buttonImage} />

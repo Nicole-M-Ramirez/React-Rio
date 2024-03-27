@@ -17,11 +17,14 @@ import BackLink from '../../components/BackLink';
 import NextLink from '../../components/NextLink';
 import ShortButton from '../../components/ShortButton';
 import BackLinkWithDate from '../../components/BackLinkWithDate';
+import { gs } from '../../components/RioGlobalStrings';
+import { useSelector } from 'react-redux';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
 
 function EmocionesExpancion({route}) {
+  const lang = useSelector(state => state.counter.language);
   const { forDate } = route.params;
   const navigation = useNavigation(); 
  
@@ -45,18 +48,18 @@ function EmocionesExpancion({route}) {
     })
   ]
   
-  Tiltes = ['motivación', 'optimismo', 'satisfacción', 'tranquilidad','n/a',
-            'nervios', 'estrés', 'impaciencia', 'desesperación', 'abrumo',
-            'pánico', 'terror', 'inseguridad', 'parálisis', 'bloqueo mental',
-            'vacío', 'desilusión', 'desmotivación', 'decepción', 'culpa',
-            'irritabilidad', 'enojo', 'furia', 'indignación', 'molestia']
+  Tiltes = [gs['motivacion'][lang], gs['optimismo'][lang], gs['satisfacion'][lang], gs['tranquilidad'][lang], gs['falicidad'][lang],
+            gs['nervios'][lang], gs['estres'][lang], gs['impaciencia'][lang], gs['desesperacion'][lang], gs['abrumo'][lang],
+            gs['panico'][lang], gs['terror'][lang], gs['inseguridad'][lang], gs['paralisis'][lang], gs['bloqueoMental'][lang],
+            gs['vacio'][lang], gs['desilucion'][lang], gs['desmotivacion'][lang], gs['decepcion'][lang], gs['culpa'][lang],
+            gs['irritabilidad'][lang], gs['enojo'][lang], gs['furia'][lang], gs['indignacion'][lang], gs['molestia'][lang]]
 
   const Images = [
     <Image source={require('../../assets/Felicidad.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.buttonHeight /4}]} />,
-    <Image source={require('../../assets/Ansiedad.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.buttonHeight*1.57}]} />,
-    <Image source={require('../../assets/Miedo.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.buttonHeight*2.8}]} />,
-    <Image source={require('../../assets/Tristeza.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.buttonHeight*4.1}]} />,
-    <Image source={require('../../assets/Coraje.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.buttonHeight*5.3}]} />
+    <Image source={require('../../assets/Ansiedad.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.bodyHeight*0.54}]} />,
+    <Image source={require('../../assets/Miedo.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.bodyHeight*0.98}]} />,
+    <Image source={require('../../assets/Tristeza.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.bodyHeight*1.44}]} />,
+    <Image source={require('../../assets/Coraje.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.bodyHeight*1.88}]} />
   ]
 
   const views = [];
@@ -88,10 +91,10 @@ function EmocionesExpancion({route}) {
 
       <FooterView>
         <View style={{width:'50%', position:'absolute',marginTop: dimensions.separator}}>
-        <BackLinkWithDate labelBack={"Regresar"} gotoScreen={'SelectorEmocion'} theDate={forDate}></BackLinkWithDate>
+        <BackLinkWithDate labelBack={gs['volver'][lang]} gotoScreen={'SelectorEmocion'} theDate={forDate}></BackLinkWithDate>
           </View>
         <View style={{top:dimensions.bodyHeight*0.08,height:'50%',justifyContent: 'center' , alignItems: 'flex-start'}}>
-          <Text style={styles.titleText}>Como te sientes hoy?</Text>
+          <Text style={styles.titleText}>{gs['emocionExpacionTitulo'][lang]}</Text>
         </View>
       </FooterView>
 
@@ -113,7 +116,7 @@ const styles = StyleSheet.create({
     },
     titleText: {
       color: colors.mintGreen,
-      fontSize: normalize(23),
+      fontSize: normalize(19),
       //top: dimensions.footerHeight*0.2
     },
     buttonImage :{

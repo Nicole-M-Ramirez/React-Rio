@@ -70,84 +70,84 @@ function Informacion({route}) {
                         Title={gs['detonantes'][lang]} 
                         Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion'})} 
                         Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*1.1}
+                        DropSize = {dimensions.bodyHeight*1.2}
                         contText= {gs['detonantesCont'][lang]}
             />
             <DropDown Color={colors.mintGreen} 
                         Title={gs['usoComp'][lang]} 
                         Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion', regresarTitulo:'volver'})} 
                         Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*0.77}
+                        DropSize = {dimensions.bodyHeight*1.2}
                         contText= {gs['usoCompCont'][lang]}
             />
             <DropDown Color={colors.mintGreen} 
                         Title={gs['mayorBenef'][lang]} 
                         Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion'})} 
                         Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*1.45}
+                        DropSize = {dimensions.bodyHeight*2.5}
                         contText= {gs['mayorBenefCont'][lang]}
             />
             <DropDown Color={colors.mintGreen} 
                         Title={gs['queAutolecion'][lang]} 
                         Function ={() => navigation.navigate('Informacion')} 
                         Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*0.8}
+                        DropSize = {dimensions.bodyHeight*1.2}
                         contText= {gs['queAutolecionCont'][lang]}
             />
             <DropDown Color={colors.mintGreen} 
                         Title={gs['porqueAutolesion'][lang]} 
                         Function ={() => navigation.navigate('Informacion')} 
                         Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*1.45}
+                        DropSize = {dimensions.bodyHeight*2.5}
                         contText= {gs['porqueAutolesionCont'][lang]}
             />
             <DropDown Color={colors.mintGreen} 
                         Title={gs['cuanAutolesion'][lang]} 
                         Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion'})} 
                         Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*0.5}
+                        DropSize = {dimensions.bodyHeight*0.7}
                         contText= {gs['cuanAutolesionCont'][lang]}
             />
             <DropDown Color={colors.mintGreen} 
                         Title={gs['quienAutolesion'][lang]} 
                         Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion'})} 
                         Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*0.35}
+                        DropSize = {dimensions.bodyHeight*0.5}
                         contText= {gs['quienAutolesionCont'][lang]}
             />
             <DropDown Color={colors.mintGreen} 
                         Title={gs['alerta'][lang]} 
                         Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion'})} 
                         Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*1.35}
+                        DropSize = {dimensions.bodyHeight*1.55}
                         contText= {gs['alertaCont'][lang]}
             />
             <DropDown Color={colors.mintGreen} 
                         Title={gs['suicidioAutolesion'][lang]} 
                         Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion'})} 
                         Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*0.5}
+                        DropSize = {dimensions.bodyHeight*0.7}
                         contText= {gs['suicidioAutolesionCont'][lang]}
             />
             <DropDown Color={colors.mintGreen} 
                         Title={gs['queHacer'][lang]} 
                         Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion'})} 
                         Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*0.55}
+                        DropSize = {dimensions.bodyHeight*1}
                         contText= {gs['queHacerCont'][lang]}
             />
             <DropDown Color={colors.mintGreen} 
                         Title={gs['regulacion'][lang]} 
                         Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion'})} 
                         Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*0.8}
+                        DropSize = {dimensions.bodyHeight*1.2}
                         contText= {gs['regulacionCont'][lang]}
             />
             <DropDown Color={colors.mintGreen} 
                         Title={gs['riesgo'][lang]} 
                         Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion'})} 
                         Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*1}
+                        DropSize = {dimensions.bodyHeight*1.3}
                         contText= {gs['riesgoCont'][lang]}
             />
           </ScrollView>
@@ -160,17 +160,17 @@ function Informacion({route}) {
         </View>  */}
         <TouchableOpacity  style={{height:'100%'}}  onPress={() => navigation.navigate(pantallaPasada,{img:img})}>
           <View style={styles.hookedStyles}>
-            <View style={{width:'8%', 'height': '100%',  alignItems: 'flex-start',justifyContent: 'center',  }}>
+            <View style={{width:'8%', 'height': '100%',  alignItems: 'flex-start',justifyContent: 'center', top:dimensions.footerHeight*-0.3 }}>
               <Image source={require('../../assets/back.png')}  style={styles.buttonsImage} />
             </View>
-            <View style={{width:'92%', 'height': '100%', alignItems: 'flex-start',justifyContent: 'center', }}> 
+            <View style={{width:'92%', 'height': '100%', alignItems: 'flex-start',justifyContent: 'center',top:dimensions.footerHeight*-0.3 }}> 
               <Text style={{color: 'white', textAlignVertical: 'center'}}>{gs['volver'][lang]}</Text>
             </View>
           </View>
         </TouchableOpacity>
 
 
-        <View style={{top:dimensions.footerHeight*.25, height:'75%',justifyContent: 'center' , alignItems: 'flex-start'}}> 
+        <View style={{top:dimensions.footerHeight*-0.65, height:'75%',justifyContent: 'center' , alignItems: 'flex-start'}}> 
           <Text style={styles.titleText}>{gs['configuracion'][lang]}</Text> 
         </View> 
       </FooterView>

@@ -17,38 +17,41 @@ import BackLink from '../../components/BackLink';
 import BackLinkWithDate from '../../components/BackLinkWithDate';
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
+import { gs } from '../../components/RioGlobalStrings';
+import { useSelector } from 'react-redux';
 
 function Coraje({route}) {
+  const lang = useSelector(state => state.counter.language);
   const { forDate } = route.params;
   const navigation = useNavigation();
 
   const Colors = [colors.deepPurple,colors.purple,colors.blue,colors.mintGreen,colors.greyBlue]
-  const title = ['Diario', 'Caminar', 'Baño', 'Ejercicio','Cocinar']
+  const title = [gs['diario'][lang], gs['caminar'][lang], gs['bano'][lang],gs['ejercicio'][lang],gs['cocinar'][lang]]
   const functions = [
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Coraje',
                                                      img: <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
-                                                     texto:'Escribre tus pensamientos en palabras e incluye todo lo que estas sintiendo al momento. No te detengas; todo lo que sientes es valido y merece ser expresado.',
+                                                     texto:gs['diarioCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[0]
                                                     }),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Coraje',
                                                      img: <Image source={require('../../assets/caminar2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
-                                                     texto: 'Agarra tus tenis y sal a caminar y a respirar aire fresco.Cambiar escenario te premite generar espacio entre lo que sientes y la situacion en la que te encuentras.Ademas, conectar con el ambiente natural nos permite reconsiderar aquello que nos aqueja y nos provee tranquilidad.',
+                                                     texto: gs['caminarCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[1]}),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Coraje',
                                                      img: <Image source={require('../../assets/bano2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
-                                                     texto:'Prepara el ambiente para un baño relajante con tu fragancia preferida. Deja que el agua corra, creando sensaciones que fomentan la relajacion.El sumergirnos en agua de esta manera promueve sentimientos fisisologicos agradables, lo que disminuye sentimientos de tension y coraje.',
+                                                     texto:gs['banoCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[2]}),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Coraje',
                                                      img: <Image source={require('../../assets/ejercicio2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
-                                                     texto:'No necesitas ir al gimnasio para ejercitarte. El mantenerte en movimiento te puede ayudar a quemar el coraje que mantegan el ritmo cardiaco elevsfo pueden proveer beneficios psicoemocionales como reduccion de estres, ansiedad, miedo e ira',
+                                                     texto:gs['ejercicioCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[3]}),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Coraje',
                                                      img: <Image source={require('../../assets/cocinar.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
-                                                     texto:'Saca un tiempo para hacer una comida, esto no solo mejora las funciones ejecutivas, sino que es una distraccion que puede canalizar tu energia y aumentar la autoestima.',
+                                                     texto:gs['cocinarCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[4]}),
   ]
@@ -77,7 +80,7 @@ function Coraje({route}) {
 
       <FooterView>
           <View style={{width:'50%', position:'absolute',marginTop: dimensions.separator}}>
-            <BackLinkWithDate labelBack={"Regresar"} gotoScreen={'SelectorEmocion'} theDate={forDate}></BackLinkWithDate>
+            <BackLinkWithDate labelBack={gs['volver'][lang]} gotoScreen={'SelectorEmocion'} theDate={forDate}></BackLinkWithDate>
           </View>         
       </FooterView>
 

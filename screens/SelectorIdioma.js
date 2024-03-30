@@ -37,7 +37,7 @@ function SelectorIdioma() {
   return (
     <SafeAreaView>
         <HeaderView>
-          <Text style={styles.title}>Seleccionar idioma de preferencia</Text>
+          <Text style={styles.title}>Seleccionar idioma de preferencia.</Text>
         </HeaderView>
 
         <BodyView flexDirec = 'row'>

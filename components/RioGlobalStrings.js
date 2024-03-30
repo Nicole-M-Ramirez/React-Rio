@@ -634,6 +634,12 @@ If you have medical insurance, you can contact a customer service representative
   '' : {'es' : '', 'en' : ''},
   '' : {'es' : '', 'en' : ''},
 
+  'diaAutocuidadoShort' : {'es' : 'día de descanso', 'en' : 'day of rest'},
+  'diasAutocuidadoShort' : {'es' : 'días de descanso', 'en' : 'days of rest'},
+  'diasDibujarShort' : {'es' : 'días de dibujar', 'en' : 'days of drawing'},
+  'diasMeditacionShort' : {'es' : 'días de meditación', 'en' : 'days of meditation'}, 
+  'diasEscribirShort' : {'es' : 'días de escribir', 'en' : 'day of journaling'}, 
+  'diasEjercicioShort' : {'es' : 'días de ejercicio', 'en' : 'days of exercise '}, 
 
 }
 

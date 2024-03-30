@@ -1,4 +1,37 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { gs } from '../components/RioGlobalStrings';
+
+export const getMetaStringGlobal = (inputString, lang) => {
+  
+  // Si dice 01dias, 05dias, etc es una meta de CASIS
+  if (inputString.indexOf('dias')>=0) 
+    return parseInt(inputString) + " " + gs['diasLibreCasis'][lang];
+
+  // De lo contrario parsear el nombre y el numero: ejemplo,caminar05
+  var regex = /([a-zA-Z]+)(\d+)/;
+  var match = regex.exec(inputString);
+  
+  if (match !== null) {
+      // Extracting the word and the number from the match
+      var word = match[1];
+      var number = match[2]; // Converting the matched number to an integer
+      // Returning an object containing the word and the number
+      if (word == 'descansar') strAction =  gs['diasAutocuidadoShort'][lang];
+      else if (word == 'dibujar') strAction =  gs['diasDibujarShort'][lang];
+      else if (word == 'escribir') strAction =  gs['diasEscribirShort'][lang];
+      else if (word == 'caminar') strAction =  gs['diasEjercicioShort'][lang];
+      else if (word == 'meditar') strAction =  gs['diasMeditacionShort'][lang];
+      
+      return parseInt(number)  + " " + strAction;
+      return word + "  " + number
+  } else {
+      // If no match is found, return null
+      return null;
+  }
+}
+
+
+
 
 export const getLatestMood = (data) => {
   return data.reduce((acc, curr) => {
@@ -118,11 +151,11 @@ export const metaToImageMap = {'01dias':require('../assets/01-2.png'),
 'caminar05':require('../assets/caminar2.png'),
 'caminar07':require('../assets/caminar2.png'),
 'caminar10':require('../assets/caminar2.png'),
-'diario01':require('../assets/diario2.png'),
-'diario03':require('../assets/diario2.png'),
-'diario05':require('../assets/diario2.png'),
-'diario07':require('../assets/diario2.png'),
-'diario10':require('../assets/diario2.png'),
+'escribir01':require('../assets/diario2.png'),
+'escribir03':require('../assets/diario2.png'),
+'escribir05':require('../assets/diario2.png'),
+'escribir07':require('../assets/diario2.png'),
+'escribir10':require('../assets/diario2.png'),
 'dibujar01':require('../assets/dibujo2.png'),
 'dibujar03':require('../assets/dibujo2.png'),
 'dibujar05':require('../assets/dibujo2.png'),

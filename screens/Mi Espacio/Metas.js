@@ -18,6 +18,10 @@ import MetaPorTiem from '../../components/MetaPorTiem';
 import { useDispatch, useSelector } from 'react-redux';
 import { addMeta } from '../../redux/slices/counterSlice';
 import { gs } from '../../components/RioGlobalStrings';
+
+import { getMetaStringGlobal } from '../../components/RioGlobalFuncs';
+
+
 //import { useSelector } from 'react-redux';
 
 const ScreenHeight = Dimensions.get("window").height
@@ -74,7 +78,7 @@ function Metas() {
 
     let msg;
     if (oldMeta == undefined) msg = gs['activarMeta'][lang] 
-    else msg = gs['activarMeta2'][lang]+" (" + oldMeta +  ")?"
+    else msg = gs['activarMeta2'][lang]+" (" + getMetaStringGlobal(oldMeta,lang) +  ")?"
     Alert.alert(
       'Confirmación',
       msg,
@@ -262,42 +266,42 @@ function Metas() {
 
             {/*--------------------------------------------------------------------------- */}
 
-            <TouchableOpacity onPress={()=>{handleButtonPress('diario01')}} 
+            <TouchableOpacity onPress={()=>{handleButtonPress('escribir01')}} 
                               style={[styles.LongButton, {backgroundColor: colors.mintGreen,
-                                borderWidth: selectedOption === 'diario01' ? 2 : 0,
-                                borderColor: selectedOption === 'diario01' ? 'white' : 'gray'}]} >
+                                borderWidth: selectedOption === 'escribir01' ? 2 : 0,
+                                borderColor: selectedOption === 'escribir01' ? 'white' : 'gray'}]} >
               <Text style={[styles.LongButtonText]}>1 {gs['diaEscribir'][lang]}</Text>
               <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={styles.buttonImage} />
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={()=>{handleButtonPress('diario03')}} 
+            <TouchableOpacity onPress={()=>{handleButtonPress('escribir03')}} 
                               style={[styles.LongButton, {backgroundColor: colors.purple,
-                                      borderWidth: selectedOption === 'diario03' ? 2 : 0,
-                                      borderColor: selectedOption === 'diario03' ? 'white' : 'gray'}]} >
+                                      borderWidth: selectedOption === 'escribir03' ? 2 : 0,
+                                      borderColor: selectedOption === 'escribir03' ? 'white' : 'gray'}]} >
               <Text style={styles.LongButtonText}>3 {gs['diasEscribir'][lang]}</Text>
               <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={styles.buttonImage} />
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={()=>{handleButtonPress('diario05')}} 
+            <TouchableOpacity onPress={()=>{handleButtonPress('escribir05')}} 
                               style={[styles.LongButton, {backgroundColor: colors.greyBlue,
-                                      borderWidth: selectedOption === 'diario05' ? 2 : 0,
-                                      borderColor: selectedOption === 'diario05' ? 'white' : 'gray'}]} >
+                                      borderWidth: selectedOption === 'escribir05' ? 2 : 0,
+                                      borderColor: selectedOption === 'escribir05' ? 'white' : 'gray'}]} >
               <Text style={styles.LongButtonText}>5 {gs['diasEscribir'][lang]}</Text>
               <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={styles.buttonImage} />
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={()=>{handleButtonPress('diario07')}} 
+            <TouchableOpacity onPress={()=>{handleButtonPress('escribiri07')}} 
                               style={[styles.LongButton, {backgroundColor: colors.blue,
-                                      borderWidth: selectedOption === 'diario07' ? 2 : 0,
-                                      borderColor: selectedOption === 'diario07' ? 'white' : 'gray'}]} >
+                                      borderWidth: selectedOption === 'escribiri07' ? 2 : 0,
+                                      borderColor: selectedOption === 'escribiri07' ? 'white' : 'gray'}]} >
               <Text style={styles.LongButtonText}>7 {gs['diasEscribir'][lang]}</Text>
               <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={styles.buttonImage} />
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={()=>{handleButtonPress('diario10')}} 
+            <TouchableOpacity onPress={()=>{handleButtonPress('escribir10')}} 
                               style={[styles.LongButton, {backgroundColor: colors.deepPurple,
-                                      borderWidth: selectedOption === 'diario10' ? 2 : 0,
-                                      borderColor: selectedOption === 'diario10' ? 'white' : 'gray'}]} >
+                                      borderWidth: selectedOption === 'escribir10' ? 2 : 0,
+                                      borderColor: selectedOption === 'escribir10' ? 'white' : 'gray'}]} >
               <Text style={styles.LongButtonText}>10 {gs['diasEscribir'][lang]}</Text>
               <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={styles.buttonImage} />
             </TouchableOpacity>

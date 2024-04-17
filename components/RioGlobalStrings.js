@@ -12,8 +12,8 @@ export const gs = {
 
   //foother
   'tituloFoother':{
-    'es':'DESARROLLADO POR LA UNIVERSIDAD DE PUERTO RICO',
-    'en':'DEVELOPED BY THE UNIVERSITY OF PUERTO RICO'
+    'es':`DESARROLLADO POR\nLA UNIVERSIDAD DE PUERTO RICO`,
+    'en':`DEVELOPED BY\nTHE UNIVERSITY OF PUERTO RICO`,
   },
 
   'politicaDePrivacidad':{'es':'Política de Privacidad','en':'Privacy Policy'},

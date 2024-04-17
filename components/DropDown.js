@@ -9,14 +9,14 @@ const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
 
 
-function DropDown({Color, Title, Function,Image,DropSize, contText}) {
+function DropDown({Color, Title, Function,Image,DropSize, contText, titleHeigth}) {
     
   const navigation = useNavigation();
   
   let change = false;
   const [Size, setSize] = useState(
     <TouchableOpacity style={[styles.buttonView,{backgroundColor:Color}]} onPress={Resize}>
-        <Text style={styles.buttonsText}>{Title}</Text>
+        <Text style={[styles.buttonsText,{top:(dimensions.buttonHeight/2)*titleHeigth,}]}>{Title}</Text>
         <View style={{position: 'absolute', zIndex: 0,  alignItems: 'flex-end',justifyContent: 'center',}}>
             {Image}
         </View>
@@ -29,7 +29,7 @@ function DropDown({Color, Title, Function,Image,DropSize, contText}) {
 
         setSize(
             <TouchableOpacity style={[styles.buttonView,{height: DropSize,backgroundColor:Color}]} onPress={Resize}>
-                <Text style={styles.buttonsText}>{Title}</Text>
+                <Text style={[styles.buttonsText,{top:(dimensions.buttonHeight/2)*titleHeigth,}]}>{Title}</Text>
                 <View style={{position: 'absolute', zIndex: 0,  alignItems: 'flex-end',justifyContent: 'center',}}>
                     {Image}
                 </View>
@@ -42,10 +42,10 @@ function DropDown({Color, Title, Function,Image,DropSize, contText}) {
 
         setSize(
             <TouchableOpacity style={[styles.buttonView,{backgroundColor:Color}]} onPress={Resize}>
-            <Text style={styles.buttonsText}>{Title}</Text>
-            <View style={{position: 'absolute', zIndex: 0,  alignItems: 'flex-end',justifyContent: 'center',}}>
+              <Text style={[styles.buttonsText,{top:(dimensions.buttonHeight/2)*titleHeigth,}]}>{Title}</Text>
+              <View style={{position: 'absolute', zIndex: 0,  alignItems: 'flex-end',justifyContent: 'center',}}>
                 {Image}
-            </View>
+              </View>
             </TouchableOpacity>
         )
     }
@@ -78,9 +78,10 @@ const styles = StyleSheet.create({
     marginTop: dimensions.separator,
   },
   buttonsText: {
+    // top:(dimensions.buttonHeight/2)*titleHeigth,
     color: 'white',
     fontSize: normalize(13),
-    top: dimensions.buttonHeight/16,
+    //top: dimensions.buttonHeight/18,
     left: dimensions.separator,
     width: dimensions.bodyWidth*0.8
   }

@@ -37,7 +37,7 @@ function SelectorIdioma() {
   return (
     <SafeAreaView>
         <HeaderView>
-          <Text style={styles.title}>Seleccionar idioma de preferencia.</Text>
+          <Text style={styles.title}>Seleccionar idioma de preferencia</Text>
         </HeaderView>
 
         <BodyView flexDirec = 'row'>
@@ -79,8 +79,15 @@ export default SelectorIdioma;
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: normalize(18),
-    color: colors.mintGreen
+    fontSize: normalize(17),
+    color: colors.mintGreen,
+    width : dimensions.bodyWidth,
+    //backgroundColor: 'grey',
+    height: dimensions.headerHeight*2
+    //color: colors.mintGreen,
+    // fontSize:normalize(17),
+    // width: dimensions.bodyWidth *1,
+    // paddingTop: dimensions.emergencyHeight  * 0.1,
 
   },
   button:{

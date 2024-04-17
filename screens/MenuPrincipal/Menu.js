@@ -56,9 +56,10 @@ function Menu() {
       {/* <View style={{zIndex:3, position: 'absolute'}}> */}
       <BodyView>
         {/* <FiveGrid colors={Colors} title={title} functions={functions} images={images}/> */}
+        <View style={{top: dimensions.bodyHeight*0.02}}>
         <TouchableOpacity onPress={functions[0]} style={[styles.button, {
                                                   backgroundColor:colors.blue,
-                                                  top: 0,
+                                                  top: 0.,
                                                   left: 0,
                                                   width : dimensions.bodyWidth,
                                                   height : dimensions.buttonHeight,
@@ -114,9 +115,10 @@ function Menu() {
                                                   //marginTop: dimensions.bodyHeight * 0.01 
                                                 }]}>
              <Image source={require('../../assets/infomacion2.png')} resizeMode='contain' style={[styles.buttonImage, {alignSelf: 'flex-start', left: dimensions.buttonHeight/5}]} />             
-            <Text style={styles.buttonText}>{gs['informacion'][lang]}</Text>
+            <Text style={[styles.buttonText, {top:dimensions.buttonHeight*0.15}]}>{gs['informacion'][lang]}</Text>
           </TouchableOpacity>
         </TouchableOpacity>
+        </View>
 
       </BodyView>
       {/* </View> */}

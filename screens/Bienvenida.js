@@ -13,6 +13,9 @@ import EmergencyView from '../components/EmergencyView';
 import FooterView from '../components/FooterView';
 import AceptoNoAcepto from '../components/AceptoNoAcepto';
 import TimeSince from '../components/TimeSince';
+import DropDown from '../components/DropDown';
+//import { gs } from '../../components/RioGlobalStrings';
+//import { ScrollView } from 'react-native-gesture-handler';
 
 import BackLink from '../components/BackLink';
 import NextLink from '../components/NextLink';
@@ -35,10 +38,32 @@ function Bienvenida() {
   return (
     <View>
       <HeaderView>
-        <TimeSince/>
+        {/* <TimeSince/> */}
       </HeaderView>
 
-      <BodyView>
+      <View style={styles.scrollView}>
+          <ScrollView>
+            <Text style={styles.textEx}>{gs['bienvenidaCont'][lang]}</Text>
+            <DropDown Color={colors.pink} 
+                        Title={gs['sobreNosotros'][lang]} 
+                        Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion'})} 
+                        Image={<Image source={require('../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
+                        DropSize = {dimensions.bodyHeight*1.3}
+                        contText= {gs['sobreNosotrosCont'][lang]}
+                        titleHeigth = {0.2}
+            />
+            <DropDown Color={colors.pink} 
+                        Title={gs['baseTeorica'][lang]} 
+                        Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion', regresarTitulo:'volver'})} 
+                        Image={<Image source={require('../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
+                        DropSize = {dimensions.bodyHeight*3.75}
+                        contText= {gs['baseTeoricaCont'][lang]}
+                        titleHeigth = {0.2}
+            />
+          </ScrollView>
+        </View>
+
+      {/* <BodyView>
         <Text style={styles.textEx}>{gs['bienvenidaCont'][lang]}</Text>
 
         <TouchableOpacity style={[styles.buttonView,{backgroundColor:colors.pink, marginTop: dimensions.bodyHeight*0.07,}]} onPress={() => navigation.navigate('SobreNosotros',{pantalla: 'Bienvenida'})}>
@@ -55,10 +80,10 @@ function Bienvenida() {
             </View>
         </TouchableOpacity>
 
-      </BodyView>
+      </BodyView> */}
 
       <FooterView>
-          <View style={{left: '50%', width:'50%', position:'absolute',marginTop: dimensions.separator}}>
+          <View style={{left: '50%', width:'50%', position:'absolute', top:dimensions.footerHeight*0.55}}>
             <NextLink labelNoAcepto={gs['saltar'][lang]} gotoScreen={'Explicacion1'}></NextLink>
           </View>          
       </FooterView>
@@ -82,7 +107,7 @@ const styles = StyleSheet.create({
   textEx: {
     color: colors.mintGreen,
     fontSize: normalize(17),
-    marginTop: dimensions.bodyHeight *0.05
+    marginTop: dimensions.bodyHeight *0.0
   },
   buttonView: {
     height: dimensions.buttonHeight/3,
@@ -100,7 +125,7 @@ const styles = StyleSheet.create({
     height: dimensions.buttonHeight/5,
     top: (dimensions.buttonHeight/3)*0.2,
     left: dimensions.buttonWidth*1.7,
-  }
+  },
 //   leftColImg: {
 //     width: dimensions.bodyWidth / 2,
 //     // justifyContent: "flex-start",
@@ -152,6 +177,47 @@ const styles = StyleSheet.create({
 //     width: dimensions.footerHeight * 0.2,
 //     position: 'absolute'
 //   }
+
+titleImage :{
+  left: dimensions.bodyWidth /3,
+  width: dimensions.buttonWidth * 0.6,
+  height: dimensions.buttonHeight *0.6,
+  margin: dimensions.separator,
+  marginBottom: dimensions.separator*4
+},
+titleText: {
+color: "#4eb5a3",
+fontSize: normalize(20),
+fontWeight: '600',
+},
+buttonImage: {
+  width: dimensions.buttonWidth/5,
+  height: dimensions.buttonHeight/5,
+  top: dimensions.buttonHeight/40,
+  left: dimensions.buttonWidth*1.8,
+},
+scrollView: {
+  left: dimensions.leftMargin,
+  top: dimensions.bodyHeight*0.2,
+  height: dimensions.bodyHeight*1.04,
+  width:dimensions.bodyWidth,
+  //backgroundColor: 'grey',
+},
+
+hookedStyles :{
+  flexDirection: 'row',
+  justifyContent: 'flex-start',
+  alignItems: 'flex-start',
+  direction: 'inherit',
+  flexWrap: 'nowrap',
+  height: '100%'
+
+},
+buttonsImage :{
+  width: dimensions.bodyWidth * 0.024,
+  height: dimensions.footerHeight * 0.14,
+  position: 'absolute'
+}
 });
 
 

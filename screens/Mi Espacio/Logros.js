@@ -33,6 +33,39 @@ const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
 
 
+import { getMetaStringGlobal } from '../../components/RioGlobalFuncs';
+
+
+// // Dado un string como caminar05 devolver algo como '5 dias de caminar' 
+
+// function getMetaString(inputString, lang) {
+  
+//   // Si dice 01dias, 05dias, etc es una meta de CASIS
+//   if (inputString.indexOf('dias')>=0) 
+//     return parseInt(inputString) + " " + gs['diasLibreCasis'][lang];
+
+//   // De lo contrario parsear el nombre y el numero: ejemplo,caminar05
+//   var regex = /([a-zA-Z]+)(\d+)/;
+//   var match = regex.exec(inputString);
+  
+//   if (match !== null) {
+//       // Extracting the word and the number from the match
+//       var word = match[1];
+//       var number = match[2]; // Converting the matched number to an integer
+//       // Returning an object containing the word and the number
+//       if (word == 'descansar') strAction =  gs['diasAutocuidadoShort'][lang];
+//       else if (word == 'dibujar') strAction =  gs['diasDibujarShort'][lang];
+//       else if (word == 'escribir') strAction =  gs['diasEscribirShort'][lang];
+//       else if (word == 'caminar') strAction =  gs['diasEjercicioShort'][lang];
+//       else if (word == 'meditar') strAction =  gs['diasMeditacionShort'][lang];
+      
+//       return parseInt(number)  + " " + strAction;
+//       return word + "  " + number
+//   } else {
+//       // If no match is found, return null
+//       return null;
+//   }
+// }
 
 function Logros() {
   
@@ -101,7 +134,7 @@ function Logros() {
   let metaDate = undefined;
   let percentComplete = undefined;
   if (activeMeta !== undefined) {
-    metaType = activeMeta.meta.includes("dia") ? 'dia' : 'actividad'; 
+    metaType = activeMeta.meta.includes("dias") ? 'dia' : 'actividad'; 
     if (metaType == 'dia') {
       metaDias = parseInt(activeMeta.meta.substring(0,2));
       metaDate = activeMeta.date;
@@ -124,12 +157,20 @@ function Logros() {
       </HeaderView>
 
       <BodyView>
+        <View style={{flexDirection: 'row', }}>
+        <View style={{flex:1}} >          
         {logroImage !== undefined && <Text style={styles.titleText}>{gs['retoActivo'][lang]}</Text>}
         {logroImage === undefined && <Text style={styles.titleText}>{gs['ningunReto'][lang]}</Text>}
 
+        </View>
+        {/* <View style={{backgroundColor: 'red',   flex:1}}> */}
         {logroImage !== undefined &&
         <Image source={logroImage} resizeMode='contain' style={styles.buttonImage} />}
 
+        {/* </View> */}
+        </View>
+
+ 
         {logroImage !== undefined && 
         <View>
           { metaType == 'dia' &&
@@ -154,7 +195,7 @@ function Logros() {
           }
           {
             metaType == 'actividad' &&
-            <CircleComponent activeMeta={activeMeta}/>
+            <CircleComponent  activeMeta={activeMeta}/>
           }
 
         </View>
@@ -173,7 +214,7 @@ function Logros() {
         // </View>
 
           <View key={index} style={[styles.LongButton, {backgroundColor: colors.greyBlue}]} >
-          <Text style={styles.LongButtonText}>{item.meta}</Text>
+          <Text style={styles.LongButtonText}>{getMetaStringGlobal(item.meta, lang)}</Text>
           <Text style={[styles.LongButtonText,{marginTop:dimensions.separator*1}]}>{gs['completado'][lang]} {formatDateYYMMDD(new Date(item.dateComplete))}</Text>
           <Image source={metaToImageMap[item.meta]} resizeMode='contain' style={styles.smallButtonImage} />
 
@@ -234,12 +275,12 @@ const styles = StyleSheet.create({
         //fontWeight: '500'
     },
     buttonImage :{
-        width: dimensions.bodyWidth * 0.40,
-        height: dimensions.bodyHeight * 0.27,
+        width: dimensions.bodyWidth * 0.30,
+        height: dimensions.bodyHeight * 0.19,
         backgroundColor : colors.mintGreen,
         borderRadius: 90,
         top: dimensions.buttonHeight*0,
-        left: dimensions.buttonWidth *1.2
+        // left: dimensions.buttonWidth *1.2
     },
     progressBar:{
         backgroundColor:colors.backgroudDarkBlue,
@@ -272,7 +313,7 @@ const styles = StyleSheet.create({
     LongButtonText: {
       fontSize: normalize(14),
       color: 'white',
-      marginTop: dimensions.separator*4,
+      marginTop: dimensions.separator*2,
       marginLeft: dimensions.separator*2
     },
     circleContainer: {
@@ -287,13 +328,13 @@ const styles = StyleSheet.create({
     circle: {
       //flex: 1,
       aspectRatio: 1,
-      borderRadius: 50,
-      marginHorizontal: 15,
+      borderRadius: 40,
+      marginHorizontal: 10,
       backgroundColor: 'black',
       borderColor: 'blue',
       borderWidth: 2,
       // height: '100%'
-      height: 50
+      height: 40
     },
     scrollView: {
       // top: dimensions.bodyHeight*0.28,

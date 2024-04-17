@@ -42,7 +42,7 @@ export const counterSlice = createSlice({
       },
       metas: 
          [{date: 'Wed Oct 11 2023 13:55:07 GMT-0400', meta: '05dias', active: false, lograda: false, dateComplete: 'none'},
-         {date: 'Wed Oct 10 2023 13:55:07 GMT-0400', meta: '05dias', active: false, lograda: true, dateComplete: 'Wed Oct 10 2023 15:55:07 GMT-0400'},
+         {date: 'Wed Oct 10 2023 13:55:07 GMT-0400', meta: 'caminar07', active: false, lograda: true, dateComplete: 'Wed Oct 10 2023 15:55:07 GMT-0400'},
          {date: 'Wed Oct 4 2023 13:55:07 GMT-0400', meta: '10dias', active: false, lograda: true, dateComplete: 'Wed Oct 6 2023 15:55:07 GMT-0400'}]      ,
       otraCosa: []
    },

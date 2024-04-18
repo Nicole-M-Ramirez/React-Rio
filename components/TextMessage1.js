@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     },
     triangleCorner: {
         top: ScreenHeight * 0.1,
-        left: ScreenWidth * 0.4,
+        left: ScreenWidth * 0.45,
         width: 0,
         height: 0,
         backgroundColor: 'transparent',
@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
       },
     BoxText: {
         color: 'white',
-        fontSize: normalize(15)
+        fontSize: normalize(15),
+        top: dimensions.buttonHeight*0.13
     }
 });

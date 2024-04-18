@@ -16,6 +16,9 @@ export const gs = {
     'en':`DEVELOPED BY\nTHE UNIVERSITY OF PUERTO RICO`,
   },
 
+  //heather
+  'libreCasis':{'es' : 'Libre de CASIS', 'en' : 'Free of CASIS'},
+
   'politicaDePrivacidad':{'es':'Política de Privacidad','en':'Privacy Policy'},
 
   //pagina P1.3
@@ -551,6 +554,9 @@ If you have medical insurance, you can contact a customer service representative
   'ejercicio' : {'es' : 'Ejercicio', 'en' : 'Exercise'},
   'cocinar' : {'es' : 'Concinar', 'en' : 'Cooking'},
   'gratitud' : {'es' : 'Gratitud', 'en' : 'Gratitude'},
+  'gratitudPaseo' : {'es' : 'Paseo de la gratitud', 'en' : 'Gratitude Walk'},
+  'gratitudInventario' : {'es' : 'Inventario de la gratitud', 'en' : 'Gratitude Inventory'},
+  'gratitudSonrisa' : {'es' : 'Sonrisa de la gratitud', 'en' : 'Gratitude Smile'},
   'dibujar' : {'es' : 'Dibujar', 'en' : 'Drawing'},
   'musica' : {'es' : 'Música', 'en' : 'Music'},
   'psicoeduacion' : {'es' : 'Psicoeducación', 'en' : 'Psychoeducation'},
@@ -563,7 +569,17 @@ If you have medical insurance, you can contact a customer service representative
   'atencionPlenaCont' : {'es' : 'Enfócate en tus cinco (5) sentidos en este momento. ¿Qué estás viendo, escuchando, oliendo, saboreando y sintiendo? En este momento sólo existe el momento presente. Observa atentamente y sin juicios tu cuerpo, tu mente y tus emociones. Practica la aceptación y la curiosidad de esto que logras identificar. Descubre todos los beneficios que la ciencia ha descubierto que puedes obtener cuando practicas la atención plena de manera regular.', 'en' : 'Focus on your five (5) senses in this moment. What are you seeing, hearing, smelling, tasting, and feeling? In this moment, only the present moment exists. Observe your body, mind, and emotions attentively and without judgment. Practice acceptance and curiosity towards what you can identify. Discover all the benefits that science has found you can gain from regular mindfulness practice.'},
   'espiritualidadCont' : {'es' : 'Conecta con tu espiritualidad de la manera que sea mejor para ti. Estos momentos pueden abrir un espacio para conectar contigo y con las metas que identificaste.', 'en' : "Connect with your spirituality in the way that works best for you. These moments can open up space to connect with yourself and the goals you've identified."},
   'hablarCont' : {'es' : 'Háblate en voz alta o con alguien de confianza. El poder tener conversaciones sobre lo que estés pensando puede ayudarte a canalizar lo que sientes y a reflexionar antes de actuar.', 'en' : "Speak aloud to yourself or with a trusted person. Being able to have conversations about what you're thinking can help you channel what you're feeling and reflect before taking action."},
-  'gratitudcONT' : {'es' : '', 'en' : ''},
+  'gratitudPaseoCont' : {
+      'es' : ` Dar un paseo y describir cuantas cosas puedas encontrar a tu paso que puedes agradecer:\nEjemplos: un cielo azul, un día soleado, el olor a pan recién horneado, la belleza por donde caminas, el tener el don de la vista para ver el lugar donde caminas, el poder tener piernas que te permiten transportarte por ese lugar etc.`, 
+      'en' : `Take a walk and describe as many things as you can along the way that you can be grateful for:\nExamples: a blue sky, a sunny day, the smell of freshly baked bread, the beauty around you as you walk, having the gift of sight to see the place where you're walking, having legs that allow you to move through that place, etc.`
+   },
+  'gratitudInventarioCont' : {
+      'es' : `Crea una lista de 25 cosas por las que estas agradecido/a. Puede dividir la lista por categorías:\na.\tpersonas\nb.\tcualidades que posees\nc.\texperiencias\nd.\tcosas que posees`, 
+      'en' : `Create a list of 25 things you are grateful for. You can divide the list into categories:\n\na.\tPeople\n\nb.\tQualities you possess\n\nc.\tExperiences\n\nd.\tThings you own`},
+  'gratitudSonrisaCont' : {
+      'es' : `Dibuja una sonrisa en tu rostro cuando tengas tensión o estrés y mantenla por 20 segundos, en ese tiempo. Cierra tus ojos y mientras sonríes, piensa en tus cosas favoritas en la vida (tus sitios preferidos, personas más queridas, recuerdos más felices que tengas, tu canción favorita, tu comida favorita, etc. Todo aquello en lo que has pensado son las cosas por las que puedes estar agradecido. Con este ejercicio esperamos que puedas cambiar tu estado mental y emocional.`, 
+      'en' : `Draw a smile on your face when you're feeling tension or stress and hold it for 20 seconds. During that time, close your eyes and while smiling, think about your favorite things in life (your favorite places, beloved people, happiest memories, favorite song, favorite food, etc.). Everything you have thought about are the things you can be grateful for. With this exercise, we hope you can change your mental and emotional state.`},
+  'gratitudCont' : {'es':'Practicar la gratitud con regularidad puede mejorar tu salud física, mental y emocional.','en':'Practicing gratitude regularly can improve your physical, mental, and emotional health.'},
   'musicaCont' : {'es' : '', 'en' : ''},
   'caminarCont' : {'es' : 'Agarra tus tenis y sal a caminar y a respirar aire fresco. Cambiar de escenario te permite generar espacio entre lo que sientes y la situación en la que te encuentras. Además, conectar con el ambiente natural nos permite reconsiderar aquello que nos aqueja y nos provee tranquilidad.', 'en' : "Grab your sneakers and go for a walk to breathe in the fresh air. Changing your surroundings allows you to create space between what you're feeling and the situation you're in. Moreover, connecting with the natural environment allows you to reconsider what's actually troubling you and provides you with tranquility."},
   'banoCont' : {'es' : 'Prepara el ambiente para un baño relajante con tu fragancia preferida. Deja que el agua corra, creando sensaciones que fomentan la relajación. El sumergirnos en agua de esta manera promueve sentimientos fisiológicos agradables, lo que disminuye sentimientos de tensión y coraje.', 'en' : 'Set the ambiance for a relaxing bath with your favorite fragrance. Let the water flow, creating sensations that promote relaxation. Immersing ourselves in water in this way promotes pleasant physiological feelings, reducing tension and anger.'},

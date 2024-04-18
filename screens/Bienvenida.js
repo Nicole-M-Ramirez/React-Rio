@@ -44,22 +44,24 @@ function Bienvenida() {
       <View style={styles.scrollView}>
           <ScrollView>
             <Text style={styles.textEx}>{gs['bienvenidaCont'][lang]}</Text>
-            <DropDown Color={colors.pink} 
-                        Title={gs['sobreNosotros'][lang]} 
-                        Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion'})} 
-                        Image={<Image source={require('../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*1.3}
-                        contText= {gs['sobreNosotrosCont'][lang]}
-                        titleHeigth = {0.2}
-            />
-            <DropDown Color={colors.pink} 
-                        Title={gs['baseTeorica'][lang]} 
-                        Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion', regresarTitulo:'volver'})} 
-                        Image={<Image source={require('../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*3.75}
-                        contText= {gs['baseTeoricaCont'][lang]}
-                        titleHeigth = {0.2}
-            />
+              <View style={{top:dimensions.bodyHeight*0.05}}>
+                <DropDown Color={colors.pink} 
+                            Title={gs['sobreNosotros'][lang]} 
+                            Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion'})} 
+                            Image={<Image source={require('../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
+                            DropSize = {dimensions.bodyHeight*1.3}
+                            contText= {gs['sobreNosotrosCont'][lang]}
+                            titleHeigth = {0.2}
+                />
+                <DropDown Color={colors.pink} 
+                            Title={gs['baseTeorica'][lang]} 
+                            Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion', regresarTitulo:'volver'})} 
+                            Image={<Image source={require('../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
+                            DropSize = {dimensions.bodyHeight*3.75}
+                            contText= {gs['baseTeoricaCont'][lang]}
+                            titleHeigth = {0.2}
+                />
+              </View>
           </ScrollView>
         </View>
 
@@ -107,7 +109,7 @@ const styles = StyleSheet.create({
   textEx: {
     color: colors.mintGreen,
     fontSize: normalize(17),
-    marginTop: dimensions.bodyHeight *0.0
+    top: dimensions.bodyHeight*0.03,
   },
   buttonView: {
     height: dimensions.buttonHeight/3,

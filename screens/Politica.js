@@ -71,13 +71,13 @@ Integer posuere efficitur nulla non eleifend. Praesent in venenatis enim. Phasel
       </FooterView> */}
 
       <FooterView>
-          <View style={{width:'50%', position:'absolute',marginTop: dimensions.separator}}>
+          <View style={{width:'50%', position:'absolute',top: dimensions.footerHeight*0.7}}>
             <BackLink labelBack={gs[regresarTitulo][lang]} gotoScreen={pantalla}></BackLink>
           </View>
           {/* <View style={{left: '50%', width:'50%', position:'absolute',marginTop: dimensions.separator}}>
             <NextLink labelNoAcepto={"Acepto"} gotoScreen={'Bienvenida'}></NextLink>
           </View>           */}
-          { pantalla === 'SelectorDeLenguage' ? <View style={{left: '50%', width:'50%', position:'absolute',marginTop: dimensions.separator}}>
+          { pantalla === 'SelectorDeLenguage' ? <View style={{left: '50%', width:'50%', position:'absolute',top: dimensions.footerHeight*0.7}}>
                                             <NextLink labelNoAcepto={gs['acepto'][lang]} gotoScreen={'Bienvenida'}></NextLink>
                                            </View> 
           : null }
@@ -124,6 +124,7 @@ const styles = StyleSheet.create({
   },
 
   textBox: {
+    top: dimensions.bodyHeight*0.015,
     backgroundColor: colors.mintGreen,
     width: dimensions.bodyWidth,
     height: "100%",

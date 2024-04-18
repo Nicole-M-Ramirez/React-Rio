@@ -187,7 +187,7 @@ function Metas() {
                                 borderWidth: selectedOption === 'meditar01' ? 2 : 0,
                                 borderColor: selectedOption === 'meditar01' ? 'white' : 'gray'}]} >
               <Text style={[styles.LongButtonText]}>1 {gs['diaMeditacion'][lang]}</Text>
-              <Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={styles.buttonImage} />
+              <Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={()=>{handleButtonPress('meditar03')}} 
@@ -195,7 +195,7 @@ function Metas() {
                                       borderWidth: selectedOption === 'meditar03' ? 2 : 0,
                                       borderColor: selectedOption === 'meditar03' ? 'white' : 'gray'}]} >
               <Text style={styles.LongButtonText}>3 {gs['diasMeditacion'][lang]}</Text>
-              <Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={[styles.buttonImage]} />
+              <Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={()=>{handleButtonPress('meditar05')}} 
@@ -203,7 +203,7 @@ function Metas() {
                                       borderWidth: selectedOption === 'meditar05' ? 2 : 0,
                                       borderColor: selectedOption === 'meditar05' ? 'white' : 'gray'}]} >
               <Text style={styles.LongButtonText}>5 {gs['diasMeditacion'][lang]}</Text>
-              <Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={[styles.buttonImage]} />
+              <Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={()=>{handleButtonPress('meditar07')}} 
@@ -211,7 +211,7 @@ function Metas() {
                                       borderWidth: selectedOption === 'meditar07' ? 2 : 0,
                                       borderColor: selectedOption === 'meditar07' ? 'white' : 'gray'}]} >
               <Text style={styles.LongButtonText}>7 {gs['diasMeditacion'][lang]}</Text>
-              <Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={[styles.buttonImage]} />
+              <Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={()=>{handleButtonPress('meditar10')}} 
@@ -219,7 +219,7 @@ function Metas() {
                                       borderWidth: selectedOption === 'meditar10' ? 2 : 0,
                                       borderColor: selectedOption === 'meditar10' ? 'white' : 'gray'}]} >
               <Text style={styles.LongButtonText}>10 {gs['diasMeditacion'][lang]}</Text>
-              <Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={[styles.buttonImage]} />
+              <Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
             </TouchableOpacity>
 
             {/*--------------------------------------------------------------------------- */}
@@ -229,7 +229,7 @@ function Metas() {
                                 borderWidth: selectedOption === 'caminar01' ? 2 : 0,
                                 borderColor: selectedOption === 'caminar01' ? 'white' : 'gray'}]} >
               <Text style={[styles.LongButtonText]}>1 {gs['diaEjercicio'][lang]}</Text>
-              <Image source={require('../../assets/caminar2.png')} resizeMode='contain' style={styles.buttonImage} />
+              <Image source={require('../../assets/caminar2.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={()=>{handleButtonPress('caminar02')}} 
@@ -237,7 +237,7 @@ function Metas() {
                                       borderWidth: selectedOption === 'caminar02' ? 2 : 0,
                                       borderColor: selectedOption === 'caminar02' ? 'white' : 'gray'}]} >
               <Text style={styles.LongButtonText}>3 {gs['diasEjercicio'][lang]}</Text>
-              <Image source={require('../../assets/caminar2.png')} resizeMode='contain' style={styles.buttonImage} />
+              <Image source={require('../../assets/caminar2.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={()=>{handleButtonPress('caminar05')}} 
@@ -245,7 +245,7 @@ function Metas() {
                                       borderWidth: selectedOption === 'caminar05' ? 2 : 0,
                                       borderColor: selectedOption === 'caminar05' ? 'white' : 'gray'}]} >
               <Text style={styles.LongButtonText}>5 {gs['diasEjercicio'][lang]}</Text>
-              <Image source={require('../../assets/caminar2.png')} resizeMode='contain' style={styles.buttonImage} />
+              <Image source={require('../../assets/caminar2.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={()=>{handleButtonPress('caminar07')}} 
@@ -253,7 +253,7 @@ function Metas() {
                                       borderWidth: selectedOption === 'caminar07' ? 2 : 0,
                                       borderColor: selectedOption === 'caminar07' ? 'white' : 'gray'}]} >
               <Text style={styles.LongButtonText}>7 {gs['diasEjercicio'][lang]}</Text>
-              <Image source={require('../../assets/caminar2.png')} resizeMode='contain' style={styles.buttonImage} />
+              <Image source={require('../../assets/caminar2.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={()=>{handleButtonPress('caminar10')}} 
@@ -261,7 +261,7 @@ function Metas() {
                                       borderWidth: selectedOption === 'caminar10' ? 2 : 0,
                                       borderColor: selectedOption === 'caminar10' ? 'white' : 'gray'}]} >
               <Text style={styles.LongButtonText}>10 {gs['diasEjercicio'][lang]}</Text>
-              <Image source={require('../../assets/caminar2.png')} resizeMode='contain' style={styles.buttonImage} />
+              <Image source={require('../../assets/caminar2.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
             </TouchableOpacity>
 
             {/*--------------------------------------------------------------------------- */}
@@ -271,7 +271,7 @@ function Metas() {
                                 borderWidth: selectedOption === 'escribir01' ? 2 : 0,
                                 borderColor: selectedOption === 'escribir01' ? 'white' : 'gray'}]} >
               <Text style={[styles.LongButtonText]}>1 {gs['diaEscribir'][lang]}</Text>
-              <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={styles.buttonImage} />
+              <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={()=>{handleButtonPress('escribir03')}} 
@@ -279,7 +279,7 @@ function Metas() {
                                       borderWidth: selectedOption === 'escribir03' ? 2 : 0,
                                       borderColor: selectedOption === 'escribir03' ? 'white' : 'gray'}]} >
               <Text style={styles.LongButtonText}>3 {gs['diasEscribir'][lang]}</Text>
-              <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={styles.buttonImage} />
+              <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={()=>{handleButtonPress('escribir05')}} 
@@ -287,7 +287,7 @@ function Metas() {
                                       borderWidth: selectedOption === 'escribir05' ? 2 : 0,
                                       borderColor: selectedOption === 'escribir05' ? 'white' : 'gray'}]} >
               <Text style={styles.LongButtonText}>5 {gs['diasEscribir'][lang]}</Text>
-              <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={styles.buttonImage} />
+              <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={()=>{handleButtonPress('escribiri07')}} 
@@ -295,7 +295,7 @@ function Metas() {
                                       borderWidth: selectedOption === 'escribiri07' ? 2 : 0,
                                       borderColor: selectedOption === 'escribiri07' ? 'white' : 'gray'}]} >
               <Text style={styles.LongButtonText}>7 {gs['diasEscribir'][lang]}</Text>
-              <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={styles.buttonImage} />
+              <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={()=>{handleButtonPress('escribir10')}} 
@@ -303,7 +303,7 @@ function Metas() {
                                       borderWidth: selectedOption === 'escribir10' ? 2 : 0,
                                       borderColor: selectedOption === 'escribir10' ? 'white' : 'gray'}]} >
               <Text style={styles.LongButtonText}>10 {gs['diasEscribir'][lang]}</Text>
-              <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={styles.buttonImage} />
+              <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
             </TouchableOpacity>
 
             {/*--------------------------------------------------------------------------- */}
@@ -313,7 +313,7 @@ function Metas() {
                                 borderWidth: selectedOption === 'dibujar01' ? 2 : 0,
                                 borderColor: selectedOption === 'dibujar01' ? 'white' : 'gray'}]} >
               <Text style={[styles.LongButtonText]}>1 {gs['diaDibujar'][lang]}</Text>
-              <Image source={require('../../assets/dibujo2.png')} resizeMode='contain' style={styles.buttonImage} />
+              <Image source={require('../../assets/dibujo2.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={()=>{handleButtonPress('dibujar03')}} 
@@ -321,7 +321,7 @@ function Metas() {
                                       borderWidth: selectedOption === 'dibujar03' ? 2 : 0,
                                       borderColor: selectedOption === 'dibujar03' ? 'white' : 'gray'}]} >
               <Text style={styles.LongButtonText}>3 {gs['diasDibujar'][lang]}</Text>
-              <Image source={require('../../assets/dibujo2.png')} resizeMode='contain' style={styles.buttonImage} />
+              <Image source={require('../../assets/dibujo2.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={()=>{handleButtonPress('dibujar05')}} 
@@ -329,7 +329,7 @@ function Metas() {
                                       borderWidth: selectedOption === 'dibujar05' ? 2 : 0,
                                       borderColor: selectedOption === 'dibujar05' ? 'white' : 'gray'}]} >
               <Text style={styles.LongButtonText}>5 {gs['diasDibujar'][lang]}</Text>
-              <Image source={require('../../assets/dibujo2.png')} resizeMode='contain' style={styles.buttonImage} />
+              <Image source={require('../../assets/dibujo2.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={()=>{handleButtonPress('dibujar07')}} 
@@ -337,7 +337,7 @@ function Metas() {
                                       borderWidth: selectedOption === 'dibujar07' ? 2 : 0,
                                       borderColor: selectedOption === 'dibujar07' ? 'white' : 'gray'}]} >
               <Text style={styles.LongButtonText}>7 {gs['diasDibujar'][lang]}</Text>
-              <Image source={require('../../assets/dibujo2.png')} resizeMode='contain' style={styles.buttonImage} />
+              <Image source={require('../../assets/dibujo2.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={()=>{handleButtonPress('dibujar10')}} 
@@ -345,7 +345,7 @@ function Metas() {
                                       borderWidth: selectedOption === 'dibujar10' ? 2 : 0,
                                       borderColor: selectedOption === 'dibujar10' ? 'white' : 'gray'}]} >
               <Text style={styles.LongButtonText}>10 {gs['diasDibujar'][lang]}</Text>
-              <Image source={require('../../assets/dibujo2.png')} resizeMode='contain' style={styles.buttonImage} />
+              <Image source={require('../../assets/dibujo2.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
             </TouchableOpacity>
 
             {/*--------------------------------------------------------------------------- */}
@@ -355,7 +355,7 @@ function Metas() {
                                 borderWidth: selectedOption === 'descansar01' ? 2 : 0,
                                 borderColor: selectedOption === 'descansar01' ? 'white' : 'gray'}]} >
               <Text style={[styles.LongButtonText]}>1 {gs['diaAutocuidado'][lang]}</Text>
-              <Image source={require('../../assets/aceptacion.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.buttonHeight*-0.45}]} />
+              <Image source={require('../../assets/aceptacion.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={()=>{handleButtonPress('descansar03')}} 
@@ -363,7 +363,7 @@ function Metas() {
                                       borderWidth: selectedOption === 'descansar03' ? 2 : 0,
                                       borderColor: selectedOption === 'descansar03' ? 'white' : 'gray'}]} >
               <Text style={styles.LongButtonText}>3 {gs['diasAutocuidado'][lang]}</Text>
-              <Image source={require('../../assets/aceptacion.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.buttonHeight*-0.45}]} />
+              <Image source={require('../../assets/aceptacion.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={()=>{handleButtonPress('descansar05')}} 
@@ -371,7 +371,7 @@ function Metas() {
                                       borderWidth: selectedOption === 'descansar05' ? 2 : 0,
                                       borderColor: selectedOption === 'descansar05' ? 'white' : 'gray'}]} >
               <Text style={styles.LongButtonText}>5 {gs['diasAutocuidado'][lang]}</Text>
-              <Image source={require('../../assets/aceptacion.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.buttonHeight*-0.45}]} />
+              <Image source={require('../../assets/aceptacion.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={()=>{handleButtonPress('descansar07')}} 
@@ -379,7 +379,7 @@ function Metas() {
                                       borderWidth: selectedOption === 'descansar07' ? 2 : 0,
                                       borderColor: selectedOption === 'descansar07' ? 'white' : 'gray'}]} >
               <Text style={styles.LongButtonText}>7 {gs['diasAutocuidado'][lang]}</Text>
-              <Image source={require('../../assets/aceptacion.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.buttonHeight*-0.45}]} />
+              <Image source={require('../../assets/aceptacion.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={()=>{handleButtonPress('descansar10')}} 
@@ -387,7 +387,7 @@ function Metas() {
                                       borderWidth: selectedOption === 'descansar10' ? 2 : 0,
                                       borderColor: selectedOption === 'descansar10' ? 'white' : 'gray'}]} >
               <Text style={styles.LongButtonText}>10 {gs['diasAutocuidado'][lang]}</Text>
-              <Image source={require('../../assets/aceptacion.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.buttonHeight*-0.45}]} />
+              <Image source={require('../../assets/aceptacion.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
             </TouchableOpacity>
 
             {/*--------------------------------------------------------------------------- */}
@@ -405,7 +405,7 @@ function Metas() {
                                 borderColor: selectedOption === '01dias' ? 'white' : 'gray'}]} >
                   
                     <Text style={styles.LongButtonText}>01 {gs['diaLibreCasis'][lang]}</Text>
-                    <Image source={require('../../assets/01-2.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.buttonHeight*-0.22}]} />
+                    <Image source={require('../../assets/01-2.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
                   </TouchableOpacity>
       
                   <TouchableOpacity onPress={()=>{handleButtonPress('02dias')}} 
@@ -413,7 +413,7 @@ function Metas() {
                                 borderWidth: selectedOption === '02dias' ? 2 : 0,
                                 borderColor: selectedOption === '02dias' ? 'white' : 'gray'}]} >
                     <Text style={styles.LongButtonText}>02 {gs['diasLibreCasis'][lang]}</Text>
-                    <Image source={require('../../assets/02-2.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.buttonHeight*-0.22}]} />
+                    <Image source={require('../../assets/02-2.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
                   </TouchableOpacity>
       
                   <TouchableOpacity onPress={()=>{handleButtonPress('05dias')}} 
@@ -421,7 +421,7 @@ function Metas() {
                                 borderWidth: selectedOption === '05dias' ? 2 : 0,
                                 borderColor: selectedOption === '05dias' ? 'white' : 'gray'}]} >
                     <Text style={styles.LongButtonText}>05 {gs['diasLibreCasis'][lang]}</Text>
-                    <Image source={require('../../assets/05-2.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.buttonHeight*-0.22}]} />
+                    <Image source={require('../../assets/05-2.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
                   </TouchableOpacity>
       
                   <TouchableOpacity onPress={()=>{handleButtonPress('07dias')}} 
@@ -429,7 +429,7 @@ function Metas() {
                                 borderWidth: selectedOption === '07dias' ? 2 : 0,
                                 borderColor: selectedOption === '07dias' ? 'white' : 'gray'}]} >
                     <Text style={styles.LongButtonText}>07 {gs['diasLibreCasis'][lang]}</Text>
-                    <Image source={require('../../assets/10-2.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.buttonHeight*-0.22}]} />
+                    <Image source={require('../../assets/10-2.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
                   </TouchableOpacity>
 
                   <TouchableOpacity onPress={()=>{handleButtonPress('14dias')}} 
@@ -437,7 +437,7 @@ function Metas() {
                                 borderWidth: selectedOption === '14dias' ? 2 : 0,
                                 borderColor: selectedOption === '14dias' ? 'white' : 'gray'}]} >
                     <Text style={styles.LongButtonText}>14 {gs['diasLibreCasis'][lang]}</Text>
-                    <Image source={require('../../assets/10-2.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.buttonHeight*-0.22}]} />
+                    <Image source={require('../../assets/10-2.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
                   </TouchableOpacity>
 
                   <TouchableOpacity onPress={()=>{handleButtonPress('30dias')}} 
@@ -445,7 +445,7 @@ function Metas() {
                                 borderWidth: selectedOption === '30dias' ? 2 : 0,
                                 borderColor: selectedOption === '30dias' ? 'white' : 'gray'}]} >
                     <Text style={styles.LongButtonText}>30 {gs['diasLibreCasis'][lang]}</Text>
-                    <Image source={require('../../assets/10-2.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.buttonHeight*-0.22}]} />
+                    <Image source={require('../../assets/10-2.png')} resizeMode='contain' style={[styles.buttonImage, {position: 'absolute',top: (dimensions.buttonHeight)*0.08}]} />
                   </TouchableOpacity>
                 </ScrollView>
             </View>
@@ -456,7 +456,7 @@ function Metas() {
       {/* </BodyView> */}
 
       <FooterView>
-          <View style={{width:'50%', position:'absolute',marginTop: dimensions.separator}}>
+          <View style={{width:'50%', position:'absolute',top: dimensions.footerHeight*0.6}}>
             <BackLink labelBack={gs['volver'][lang]} gotoScreen={'MiEspacio'}></BackLink>
           </View>
 
@@ -466,7 +466,7 @@ function Metas() {
               showAlert(dispatch, selectedOption, metaActiva);
             }}>
             <Text style={styles.activarText}>{gs['activar'][lang]}</Text>
-            <Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.activarImg} />
+            <Image source={require('../../assets/continuar2.png')} resizeMode='contain' style={styles.activarImg} />
           </TouchableOpacity>
       </FooterView>
 
@@ -517,14 +517,17 @@ const styles = StyleSheet.create({
       width: dimensions.bodyWidth*0.65,
     },
     buttonImage :{
-      width: ScreenWidth * 0.16,
-      height: ScreenHeight * 0.08,
+     //width: ScreenWidth * 0.16,
+      //height: ScreenHeight * 0.08,
+      width: dimensions.bodyWidth*0.17,
+      height: (dimensions.buttonHeight/2)*0.7,
       top: dimensions.buttonHeight*-0.37,
-      left: dimensions.buttonWidth *1.55
+      left: dimensions.buttonWidth *1.55,
+      //backgroundColor: 'grey',
     },
     scrollView: {
-      top: dimensions.bodyHeight*0.28,
-      height: dimensions.bodyHeight*0.64,
+      top: dimensions.bodyHeight*0.3,
+      height: dimensions.bodyHeight*0.6,
       //backgroundColor: 'grey',
     },
     activarButton: {
@@ -539,16 +542,16 @@ const styles = StyleSheet.create({
     },
     activarText: {
       color: 'white',
-      fontSize: normalize(15),
-      top: dimensions.footerHeight*0.2,
-      left: dimensions.bodyWidth*-0.05
+      fontSize: normalize(12),
+      top: dimensions.footerHeight*0.4,
+      left: dimensions.bodyWidth*0.15,
     },
     activarImg: {
       //backgroundColor: 'pink',
-      width: ScreenWidth * 0.13,
-      height: ScreenHeight * 0.07,
-      top: dimensions.buttonHeight*-0.14,
-      left: '60%'
+      width: ScreenWidth * 0.025,
+      height: ScreenHeight * 0.02,
+      top: dimensions.buttonHeight*0.1,
+      left: dimensions.bodyWidth*0.32
     }
 });
 // 

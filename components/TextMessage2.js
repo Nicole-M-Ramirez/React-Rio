@@ -37,8 +37,8 @@ const styles = StyleSheet.create({
     triangleCorner: {
         width: 0,
         height: 0,
-        top:dimensions.dayHeight*0.2,
-        left: dimensions.bodyWidth * 0.7,
+        top:dimensions.dayHeight*0.35,
+        left: dimensions.bodyWidth * 0.76,
         backgroundColor: 'transparent',
         borderStyle: 'solid',
         borderLeftWidth: ScreenWidth * 0.11,
@@ -52,5 +52,6 @@ const styles = StyleSheet.create({
     BoxText: {
         color: 'white',
         fontSize: normalize(15),
+        top: dimensions.buttonHeight*0.13
     }
 });

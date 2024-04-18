@@ -35,7 +35,7 @@ function SelectorIdioma() {
   dispatch(registerFirstDate());
 
   return (
-    <SafeAreaView>
+    <View>
         <HeaderView>
           <Text style={styles.title}>Seleccionar idioma de preferencia</Text>
         </HeaderView>
@@ -71,7 +71,7 @@ function SelectorIdioma() {
         <View style={{zIndex:3, position: 'absolute'}}>
           <Emergency/>
         </View> */}
-    </SafeAreaView>
+    </View>
   );
 }
 
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
 
   },
   button:{
-    top: dimensions.bodyHeight /2 ,
+    top: dimensions.bodyHeight*0.45 ,
     width: dimensions.buttonWidth,
     height: dimensions.shortButtonHeight,
     borderRadius:3,

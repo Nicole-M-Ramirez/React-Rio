@@ -29,10 +29,10 @@ function Miedo({route}) {
   const Colors = [colors.deepPurple,colors.blue,colors.pink,colors.mintGreen,colors.purple]
   const title = [gs['diario'][lang],gs['hablar'][lang],gs['respirar'][lang],gs['espiritualidad'][lang],gs['atenPlena'][lang],]
   const images = [
-    <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage, {alignSelf: 'flex-start', left: dimensions.buttonHeight/5}]} />,
+    <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage, {alignSelf: 'flex-start', left: dimensions.bodyWidth*0.59}]} />,
     <Image source={require('../../assets/hablar.png')} resizeMode='contain' style={styles.buttonImage} />,
     <Image source={require('../../assets/respirar2.png')} resizeMode='contain' style={styles.buttonImage} />,
-    <Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={styles.buttonImage} />,
+    <Image source={require('../../assets/Espiritualidad.png')} resizeMode='contain' style={styles.buttonImage} />,
     <Image source={require('../../assets/pausa2.png')} resizeMode='contain' style={styles.buttonImage} />
   ]
   const functions = [
@@ -82,7 +82,7 @@ function Miedo({route}) {
       {/* </View> */}
 
       <FooterView>
-          <View style={{width:'50%', position:'absolute',marginTop: dimensions.separator}}>
+          <View style={{width:'50%', position:'absolute', top:dimensions.footerHeight*0.7}}>
             <BackLinkWithDate labelBack={gs['volver'][lang]} gotoScreen={'SelectorEmocion'} theDate={forDate}></BackLinkWithDate>
           </View>         
       </FooterView>

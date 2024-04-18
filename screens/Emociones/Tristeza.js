@@ -172,7 +172,7 @@ function Tristeza({route}) {
                                                      forDate: forDate,
                                                      titulo: title[4]}),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Tristeza',
-                                                     img: null,
+                                                     img: <Image source={require('../../assets/aceptacion.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
                                                      texto:'Practica la aceptación. Ábrete a la experiencia de sentir y pensar sin emitir juicio alguno. Puede que no te agrade el proceso. Sin embargo, es un gran paso para poder asumir la realidad hacia lo que no podemos cambiar.',
                                                      forDate: forDate,
                                                      titulo: title[5]}),
@@ -183,7 +183,7 @@ function Tristeza({route}) {
     <Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={styles.buttonImage} />,
     <Image source={require('../../assets/dibujo2.png')} resizeMode='contain' style={styles.buttonImage} />,
     <Image source={require('../../assets/musica2.png')} resizeMode='contain' style={styles.buttonImage} />,
-    null,
+    <Image source={require('../../assets/aceptacion.png')} resizeMode='contain' style={styles.buttonImage} />,
   ]
 
 

@@ -31,7 +31,7 @@ function Expicacion2() {
   }
 
   return (
-    <SafeAreaView>
+    <View>
         <HeaderView>
             <TimeSince/>
         </HeaderView>
@@ -42,7 +42,7 @@ function Expicacion2() {
         </BodyView>
         
         <FooterView>
-          <View style={{left: '50%', width:'50%', position:'absolute', marginTop: dimensions.separator}}>
+          <View style={{left: '50%', width:'50%', position:'absolute', top: dimensions.footerHeight*0.7}}>
             <NextLink labelNoAcepto={gs['continuar'][lang]} gotoScreen={'MenuPrincipal'}></NextLink>
           </View>          
         </FooterView> 
@@ -53,7 +53,7 @@ function Expicacion2() {
         <View style={{zIndex:3, position: 'absolute'}}>
           <Emergency/>
         </View> */}
-    </SafeAreaView>
+    </View>
   );
 }
 

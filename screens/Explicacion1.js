@@ -17,6 +17,7 @@ import TimeSince from '../components/TimeSince';
 
 import { gs } from '../components/RioGlobalStrings';
 import { useSelector } from 'react-redux';
+import { createDynamicMiddleware } from '@reduxjs/toolkit';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
@@ -31,7 +32,7 @@ function Expicacion1() {
   }
 
   return (
-    <SafeAreaView>
+    <View>
         <HeaderView>
            <TimeSince/>
         </HeaderView>
@@ -47,7 +48,7 @@ function Expicacion1() {
         </BodyView>
         
         <FooterView>
-          <View style={{left: '50%', width:'50%', position:'absolute', marginTop: dimensions.separator}}>
+          <View style={{left: '50%', width:'50%', position:'absolute', top: dimensions.footerHeight*0.7}}>
             <NextLink labelNoAcepto={gs['continuar'][lang]} gotoScreen={'Explicacion2'}></NextLink>
           </View>          
         </FooterView>  
@@ -59,7 +60,7 @@ function Expicacion1() {
         <View style={{zIndex:3, position: 'absolute'}}>
           <Emergency/>
         </View> */}
-    </SafeAreaView>
+    </View>
   );
 }
 

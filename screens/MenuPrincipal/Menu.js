@@ -115,7 +115,7 @@ function Menu() {
                                                   //marginTop: dimensions.bodyHeight * 0.01 
                                                 }]}>
              <Image source={require('../../assets/infomacion2.png')} resizeMode='contain' style={[styles.buttonImage, {alignSelf: 'flex-start', left: dimensions.buttonHeight/5}]} />             
-            <Text style={[styles.buttonText, {top:dimensions.buttonHeight*0.15}]}>{gs['informacion'][lang]}</Text>
+            <Text style={[styles.buttonText, {top:dimensions.buttonHeight*0.17}]}>{gs['informacion'][lang]}</Text>
           </TouchableOpacity>
         </TouchableOpacity>
         </View>
@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
     buttonText:{
       color:'white',
       fontSize: normalize(13),
-      top: dimensions.buttonHeight * 0.15,
+      top: dimensions.buttonHeight * 0.17,
       left: dimensions.buttonWidth * 0.08,
     },
 });

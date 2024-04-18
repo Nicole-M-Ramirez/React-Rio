@@ -15,12 +15,12 @@ function HeaderView(props) {
 
   return (
     <View >
-      <TouchableOpacity onPress={()=>{navigation.navigate('MenuPrincipal')}} style={{width:dimensions.bodyWidth*0.09,left: dimensions.leftMargin, top: dimensions.headerHeight *0.6}}>
+      <TouchableOpacity onPress={()=>{navigation.navigate('MenuPrincipal')}} style={{width:dimensions.bodyWidth*0.09,left: dimensions.leftMargin, top: dimensions.headerHeight *0.7}}>
         <Image source={require('../assets/hogar2.png')} resizeMode='contain' style={[styles.buttonImage]} />
       </TouchableOpacity>
 
       <TouchableOpacity onPress={()=>{navigation.navigate('Configuracion')}} style={{width:dimensions.bodyWidth*0.09, top: dimensions.bodyHeight*0.03, left: dimensions.bodyWidth*0.97}}>
-        <Image source={require('../assets/actionMenu.png')} resizeMode='contain' style={[styles.buttonImage,{top:dimensions.headerHeight*0.0,left:dimensions.leftMargin-26}]} />
+        <Image source={require('../assets/actionMenu.png')} resizeMode='contain' style={[styles.buttonImage,{top:dimensions.headerHeight*0.13,left:dimensions.leftMargin-26}]} />
       </TouchableOpacity>
 
       <View style={styles.style}>
@@ -52,8 +52,9 @@ const styles = StyleSheet.create({
         //backgroundColor: 'pink'
     },
     buttonImage :{
-      width: dimensions.bodyWidth * 0.1,
-      height: dimensions.headerHeight * 0.4,
+      width: dimensions.bodyWidth * 0.07,
+      height: dimensions.headerHeight * 0.35,
       alignSelf: 'center',
+      //backgroundColor: 'grey'
     }
 });

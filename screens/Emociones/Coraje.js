@@ -29,7 +29,7 @@ function Coraje({route}) {
   const title = [gs['diario'][lang], gs['caminar'][lang], gs['bano'][lang],gs['ejercicio'][lang],gs['cocinar'][lang]]
   const functions = [
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Coraje',
-                                                     img: <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
+                                                     img: <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34,}]} />,
                                                      texto:gs['diarioCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[0]
@@ -57,7 +57,7 @@ function Coraje({route}) {
   ]
 
   const images = [
-    <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage, {alignSelf: 'flex-start', left: dimensions.buttonHeight/5}]} />,
+    <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage, {alignSelf: 'flex-start', left: dimensions.bodyWidth*0.59}]} />,
     <Image source={require('../../assets/caminar2.png')} resizeMode='contain' style={styles.buttonImage} />,
     <Image source={require('../../assets/bano2.png')} resizeMode='contain' style={styles.buttonImage} />,
     <Image source={require('../../assets/ejercicio2.png')} resizeMode='contain' style={styles.buttonImage} />,

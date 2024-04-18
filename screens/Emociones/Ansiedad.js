@@ -61,7 +61,7 @@ function Ansiedad({route}) {
   ]
 
   const images = [
-    <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage, {alignSelf: 'flex-start', left: dimensions.buttonHeight/5}]} />,
+    <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage, {alignSelf: 'flex-start', left: dimensions.bodyWidth*0.59}]} />,
     <Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={styles.buttonImage} />,
     <Image source={require('../../assets/respirar2.png')} resizeMode='contain' style={styles.buttonImage} />,
     <Image source={require('../../assets/atencionPlena.png')} resizeMode='contain' style={styles.buttonImage} />,
@@ -83,7 +83,7 @@ function Ansiedad({route}) {
       {/* </View> */}
 
       <FooterView>
-          <View style={{width:'50%', position:'absolute',marginTop: dimensions.separator}}>
+          <View style={{width:'50%', position:'absolute',top:dimensions.footerHeight*0.65}}>
           <BackLinkWithDate labelBack={"Regresar"} gotoScreen={'SelectorEmocion'} theDate={forDate}></BackLinkWithDate>
           </View>         
       </FooterView>

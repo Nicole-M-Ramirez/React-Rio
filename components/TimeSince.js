@@ -5,10 +5,15 @@ import { SafeAreaView, StyleSheet, View, Text } from "react-native";
 import { useDispatch, useSelector } from 'react-redux';
 import { getActiveMeta } from "./RioGlobalFuncs";
 import { updateMetaCumplida } from "../redux/slices/counterSlice";
+import { gs } from '../components/RioGlobalStrings';
+import { normalize } from "./FondNormilize";
+//import { useSelector } from 'react-redux';
 
 const MINUTE_MS = 10000;
 
 const LetterAndQty = ({letter, qty}) => {
+  
+
     return (
         <View >
         <View style={{ height: dimensions.headerHeight/4,   alignItems: 'flex-start' }}>
@@ -21,13 +26,15 @@ const LetterAndQty = ({letter, qty}) => {
     );
 }
 const Libre = () => {
+    const lang = useSelector(state => state.counter.language);
+
     return (
         <View >
         <View style={{ height: dimensions.headerHeight/4,  justifyContent: 'center' }}>
           <Text style={styles.textStyleLetter}></Text>
         </View>
         <View style={{  height: dimensions.headerHeight/2,  justifyContent: 'center' }}> 
-          <Text style={styles.textStyleLibre}>Libre de CASIS</Text>
+          <Text style={styles.textStyleLibre}>{gs['libreCasis'][lang]}</Text>
         </View>
       </View>
     );
@@ -42,7 +49,8 @@ const Line = () => {
         justifyContent: 'center',
         height: '50%',
         top: dimensions.headerHeight/2,
-        width: '40%'
+        width: '50%',
+        left: dimensions.bodyWidth*0.02
     }}
     />
     );
@@ -219,10 +227,12 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 9,
     color: colors.mintGreen,
+    left: dimensions.bodyWidth*0.03,
+    top: dimensions.headerHeight*0.1
   },
   textStyleLibre: {
     textAlign: "center",
-    fontSize: 12,
+    fontSize: normalize(11),
     color: colors.mintGreen,
   },
 });

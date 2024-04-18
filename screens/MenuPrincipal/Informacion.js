@@ -73,6 +73,7 @@ function Informacion({route}) {
                         DropSize = {dimensions.bodyHeight*1.2}
                         contText= {gs['detonantesCont'][lang]}
                         titleHeigth = {0.2}
+                        downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
             />
             <DropDown Color={colors.mintGreen} 
                         Title={gs['usoComp'][lang]} 
@@ -81,6 +82,7 @@ function Informacion({route}) {
                         DropSize = {dimensions.bodyHeight*1.2}
                         contText= {gs['usoCompCont'][lang]}
                         titleHeigth = {0.2}
+                        downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
             />
             <DropDown Color={colors.mintGreen} 
                         Title={gs['mayorBenef'][lang]} 
@@ -89,6 +91,7 @@ function Informacion({route}) {
                         DropSize = {dimensions.bodyHeight*2.5}
                         contText= {gs['mayorBenefCont'][lang]}
                         titleHeigth = {0.07}
+                        downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
             />
             <DropDown Color={colors.mintGreen} 
                         Title={gs['queAutolecion'][lang]} 
@@ -97,6 +100,7 @@ function Informacion({route}) {
                         DropSize = {dimensions.bodyHeight*1.2}
                         contText= {gs['queAutolecionCont'][lang]}
                         titleHeigth = {0.2}
+                        downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
             />
             <DropDown Color={colors.mintGreen} 
                         Title={gs['porqueAutolesion'][lang]} 
@@ -105,6 +109,7 @@ function Informacion({route}) {
                         DropSize = {dimensions.bodyHeight*2.5}
                         contText= {gs['porqueAutolesionCont'][lang]}
                         titleHeigth = {0.1}
+                        downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
             />
             <DropDown Color={colors.mintGreen} 
                         Title={gs['cuanAutolesion'][lang]} 
@@ -113,6 +118,7 @@ function Informacion({route}) {
                         DropSize = {dimensions.bodyHeight*0.7}
                         contText= {gs['cuanAutolesionCont'][lang]}
                         titleHeigth = {0.1}
+                        downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
             />
             <DropDown Color={colors.mintGreen} 
                         Title={gs['quienAutolesion'][lang]} 
@@ -121,6 +127,7 @@ function Informacion({route}) {
                         DropSize = {dimensions.bodyHeight*0.5}
                         contText= {gs['quienAutolesionCont'][lang]}
                         titleHeigth = {0.2}
+                        downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
             />
             <DropDown Color={colors.mintGreen} 
                         Title={gs['alerta'][lang]} 
@@ -129,6 +136,7 @@ function Informacion({route}) {
                         DropSize = {dimensions.bodyHeight*1.55}
                         contText= {gs['alertaCont'][lang]}
                         titleHeigth = {0.2}
+                        downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
             />
             <DropDown Color={colors.mintGreen} 
                         Title={gs['suicidioAutolesion'][lang]} 
@@ -137,6 +145,7 @@ function Informacion({route}) {
                         DropSize = {dimensions.bodyHeight*0.7}
                         contText= {gs['suicidioAutolesionCont'][lang]}
                         titleHeigth = {0.2}
+                        downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
             />
             <DropDown Color={colors.mintGreen} 
                         Title={gs['queHacer'][lang]} 
@@ -145,6 +154,7 @@ function Informacion({route}) {
                         DropSize = {dimensions.bodyHeight*1}
                         contText= {gs['queHacerCont'][lang]}
                         titleHeigth = {0.07}
+                        downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
             />
             <DropDown Color={colors.mintGreen} 
                         Title={gs['regulacion'][lang]} 
@@ -153,6 +163,7 @@ function Informacion({route}) {
                         DropSize = {dimensions.bodyHeight*1.2}
                         contText= {gs['regulacionCont'][lang]}
                         titleHeigth = {0.07}
+                        downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
             />
             <DropDown Color={colors.mintGreen} 
                         Title={gs['riesgo'][lang]} 
@@ -161,6 +172,7 @@ function Informacion({route}) {
                         DropSize = {dimensions.bodyHeight*1.3}
                         contText= {gs['riesgoCont'][lang]}
                         titleHeigth = {0.2}
+                        downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
             />
           </ScrollView>
         </View>

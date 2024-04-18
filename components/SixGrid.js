@@ -44,7 +44,7 @@ function SixGrid ({colors, title, functions, images}) {
                                                   position: 'absolute' 
                                                 }]}>
           {images[2]}
-          <Text style={[styles.buttonText, {fontSize:normalize(13),left:dimensions.buttonWidth*0.05}]}>{title[2]}</Text>
+          <Text style={[styles.buttonText, {fontSize:normalize(13), top: dimensions.buttonHeight*0.17}]}>{title[2]}</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={functions[3]} style={[styles.button, {
                                                   backgroundColor:colors[3],

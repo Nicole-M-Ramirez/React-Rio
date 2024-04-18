@@ -528,7 +528,7 @@ If you have medical insurance, you can contact a customer service representative
   'Felicidad' : {'es': 'Felicidad', 'en':'Happiness'},
   'Ansiedad' : {'es': 'Ansiedad', 'en':'Anxiety'},
   'Miedo' : {'es': 'Miedo', 'en':'Fear'},
-  'Tristeza' : {'es': 'Trizteza', 'en':'Sadness'},
+  'Tristeza' : {'es': 'Tristeza', 'en':'Sadness'},
   'Coraje' : {'es': 'Coraje', 'en':'Anger'},
   'Otros' : {'es': 'Otros', 'en':'Other'},
   'emocionesTitulo' : {'es':'Estado de ánimo','en':'Mood'},
@@ -619,7 +619,7 @@ If you have medical insurance, you can contact a customer service representative
   'furia' : {'es' : 'Furia', 'en' : 'Fury'},
   'indignacion' : {'es' : 'Indignación', 'en' : 'Indignation'},
   'molestia' : {'es' : 'Molestia', 'en' : 'Annoyance'},
-  'emocionExpacionTitulo' : {'es' : 'Como te sientes hoy?', 'en' : 'How are you feeling today?'},
+  'emocionExpacionTitulo' : {'es' : '¿Cómo te sientes hoy?', 'en' : 'How are you feeling today?'},
 
   //logros
 

@@ -97,14 +97,14 @@ function Emergencia({route}) {
 
         <TouchableOpacity onPress={()=>{Calling('18009810023')}} style={[styles.button, {
                                                   backgroundColor:colors.emergencyRed,
-                                                  top: 1*(dimensions.buttonHeight + dimensions.separator),
+                                                  top: 1.009*(dimensions.buttonHeight + dimensions.separator),
                                                   left: 0,
                                                   width : dimensions.buttonWidth,
                                                   height : ScreenHeight * 0.062,
                                                   position: 'absolute'
                                                 }]}>
           <Image source={require('../assets/llamada.png')} resizeMode='contain' style={styles.smallButtonImage} />
-          <Text style={styles.smallButtonText}>Linea PAS</Text>
+          <Text style={styles.smallButtonText}>Línea PAS</Text>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={()=>{Calling('911')}} style={[styles.button, {
@@ -209,10 +209,11 @@ const styles = StyleSheet.create({
         borderRadius:5,
       },
       buttonText:{
+        position: 'absolute',
         color:'white',
-        fontSize: normalize(13),
-        top: dimensions.buttonHeight*0.1,
-        left: ScreenWidth * 0.05,
+        fontSize: normalize(12),
+        top: dimensions.buttonHeight*0.76,
+        left: dimensions.buttonWidth*0.08,
         width: dimensions.bodyWidth*0.4 
       },
       buttonImage :{
@@ -236,9 +237,10 @@ const styles = StyleSheet.create({
       },
       smallButtonText:{
        // backgroundColor:'grey',
+        position:'absolute',
         color:'white',
         fontSize: normalize(12),
-        top: (ScreenHeight * 0.062) *0.1,
+        top: (dimensions.buttonHeight/3)*0.3,
         left: ScreenWidth * 0.15,
         position: 'absolute',
         width: dimensions.buttonWidth * 0.57

@@ -54,9 +54,10 @@ const styles = StyleSheet.create({
       },
       text: {
         color: colors.mintGreen,
-        fontSize:normalize(10),
-        width: dimensions.bodyWidth *.6,
+        fontSize:normalize(9),
+        width: dimensions.bodyWidth *.7,
         paddingTop: dimensions.emergencyHeight  * 0.1,
+        fontFamily: 'HelveticaNeue-Medium'
       },
       buttonImage :{
         width: dimensions.bodyWidth * 0.14,

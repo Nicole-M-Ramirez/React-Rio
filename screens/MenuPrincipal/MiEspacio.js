@@ -22,9 +22,9 @@ const ScreenWidth = Dimensions.get("window").width
 function MiEspacio() {
   const navigation = useNavigation();
   const lang = useSelector(state => state.counter.language);
-  const Colors = [colors.deepPurple, colors.pink, colors.blue, colors.greyBlue, colors.purple, colors.mintGreen]
+  const Colors = [colors.deepPurple, colors.pink, colors.blue, colors.greyBlue,colors.mintGreen, colors.purple]
 
-  const title = [gs['calendario'][lang], gs['diario'][lang], gs['logros'][lang], gs['metas'][lang],gs['graficas'][lang], gs['exportar'][lang]]
+  const title = [gs['calendario'][lang], gs['diario'][lang], gs['logros'][lang], gs['metas'][lang],gs['exportar'][lang],gs['graficas'][lang]]
 
   const today = new Date();
   const functions = [
@@ -34,16 +34,16 @@ function MiEspacio() {
       dateString:today.toISOString().substr(0,10), fromScreen:'MiEspacio'}),
     () => navigation.navigate('Logros'),
     () => navigation.navigate('Metas'),
-    () => navigation.navigate('Graficas'),
     () => navigation.navigate('Exportar'),
+    () => navigation.navigate('Graficas'),
   ]
   const images = [
     <Image source={require('../../assets/calendario2.png')} resizeMode='contain' style={styles.buttonImage} />,
     <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={styles.buttonImage} />,
     <Image source={require('../../assets/logros2.png')} resizeMode='contain' style={styles.buttonImage} />,
     <Image source={require('../../assets/metas2.png')} resizeMode='contain' style={styles.buttonImage} />,
-    <Image source={require('../../assets/graficas2.png')} resizeMode='contain' style={styles.buttonImage} />,
     <Image source={require('../../assets/exportar2.png')} resizeMode='contain' style={styles.buttonImage} />,
+    <Image source={require('../../assets/graficas2.png')} resizeMode='contain' style={styles.buttonImage} />,
   ]
 
 
@@ -58,7 +58,10 @@ function MiEspacio() {
       </BodyView>
 
       <FooterView>
-        <View style={{height:'100%',justifyContent: 'center' , alignItems: 'flex-start'}}>
+        <View style={{top:dimensions.footerHeight*0.55,width:'50%', position:'absolute',top:dimensions.footerHeight*0.2, }}>
+          <BackLink labelBack={gs['volver'][lang]} gotoScreen={"MenuPrincipal"}></BackLink>
+        </View>
+        <View style={{height:dimensions.footerHeight*0.4,justifyContent: 'center' , alignItems: 'flex-start',top:dimensions.footerHeight*0.5}}>
           <Text style={styles.titleText}>{gs['miEspacio'][lang]}</Text>
         </View>
 
@@ -70,9 +73,9 @@ function MiEspacio() {
 
           <Image source={require('../../assets/continuar3.png')}  style={styles.reportArrow} />
         </TouchableOpacity> */}
-         <View style={{top:dimensions.footerHeight*0.55,width:'50%', position:'absolute',marginTop: dimensions.separator}}>
+         {/* <View style={{top:dimensions.footerHeight*0.55,width:'50%', position:'absolute',marginTop: dimensions.separator}}>
             <BackLink labelBack={gs['volver'][lang]} gotoScreen={"MenuPrincipal"}></BackLink>
-          </View>
+          </View> */}
         
       </FooterView>
 
@@ -90,7 +93,7 @@ const styles = StyleSheet.create({
     color: "#4eb5a3",
     fontSize: normalize(20),
     fontWeight: '600',
-    top: dimensions.footerHeight*-0.2,
+    //top: dimensions.footerHeight*0.2,
     // left: ScreenWidth * 0.08,
   },
   buttonImage :{

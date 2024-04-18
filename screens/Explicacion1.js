@@ -34,7 +34,8 @@ function Expicacion1() {
   return (
     <View>
         <HeaderView>
-           <TimeSince/>
+           <Text style={{color:colors.mintGreen,left: dimensions.bodyWidth*0.7, fontSize:normalize(9), top: dimensions.headerHeight*0.2, position:'absolute'}}>   D       H      M</Text>
+           <Text style={{color:colors.mintGreen,left: dimensions.bodyWidth*0.71, fontSize:normalize(16), top: dimensions.headerHeight*0.4, position:'absolute'}}>00.00.00</Text>
         </HeaderView>
 
         <BodyView>

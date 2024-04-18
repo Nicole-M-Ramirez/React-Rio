@@ -49,8 +49,9 @@ const Line = () => {
         justifyContent: 'center',
         height: '50%',
         top: dimensions.headerHeight/2,
-        width: '50%',
-        left: dimensions.bodyWidth*0.02
+        width: dimensions.bodyWidth*0.25,
+        left: dimensions.bodyWidth*0.04,
+        position:'absolute'
     }}
     />
     );

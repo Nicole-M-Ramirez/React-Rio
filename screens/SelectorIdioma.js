@@ -102,6 +102,7 @@ const styles = StyleSheet.create({
     fontSize: normalize(11),
     top: dimensions.shortButtonHeight/1.5,
     left: ScreenWidth * 0.04,
+    fontFamily: 'HelveticaNeue-Medium'
   },
   buttonImage :{
     width: dimensions.shortButtonHeight /2,

@@ -51,7 +51,9 @@ const styles = StyleSheet.create({
       },
     BoxText: {
         color: 'white',
-        fontSize: normalize(15),
-        top: dimensions.buttonHeight*0.13
+        fontSize: normalize(14),
+        //top: dimensions.buttonHeight*0.13,
+        position: "absolute",
+        width: dimensions.bodyWidth*0.94
     }
 });

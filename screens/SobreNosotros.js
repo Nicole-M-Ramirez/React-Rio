@@ -37,9 +37,9 @@ function SobreNosotros({route}) {
       </HeaderView>
 
       <View style={{position:'relative', 
-        marginTop: dimensions.bodyTopMargin - dimensions.headerHeight + dimensions.separator*2, 
+        marginTop: dimensions.bodyTopMargin - dimensions.headerHeight + dimensions.separator*3, 
         marginLeft: dimensions.leftMargin,
-        height: dimensions.bodyHeight,
+        height: dimensions.bodyHeight - dimensions.separator*2,
         width: dimensions.bodyWidth}}>
       <View style={styles.textBox}>
           <ScrollView>

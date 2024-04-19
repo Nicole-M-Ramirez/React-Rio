@@ -72,6 +72,19 @@ const MyTheme = {
   },
 }; 
 
+
+const config = {
+  animation: "spring",
+  config: {
+    stiffness: 1000,
+    damping: 500,
+    mass: 3,
+    overshootClamping: true,
+    restDisplacementThreshold: 0.01,
+    restSpeedThreshold: 0.01
+  }
+};
+
 export default function App() {
   console.log("PURGING THE PERSISTOR!!!");
   persistor.purge(); 
@@ -83,7 +96,22 @@ export default function App() {
   <Provider store={store}>
   <PersistGate loading={null} persistor={persistor}>
     <NavigationContainer theme={MyTheme}>
-        <Stack.Navigator>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false, // Optionally hide the header
+            animationEnabled: true, // Enable animations globally
+            animationTypeForReplace: 'pop', // Animation type for screen replacement
+            cardStyleInterpolator: ({ current }) => ({
+              cardStyle: {
+                opacity: current.progress, // Opacity animation
+              },
+            }),
+            transitionSpec: {
+              open: { animation: 'timing', config: { duration: 400 } }, // Opening animation config
+              close: { animation: 'timing', config: { duration: 400 } }, // Closing animation config
+            },
+          }}
+        >
             <Stack.Screen
               name='SelectorDeLenguage'
               component={SelectorIdioma}

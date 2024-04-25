@@ -27,6 +27,8 @@ function MiEspacio() {
   const title = [gs['calendario'][lang], gs['diario'][lang], gs['logros'][lang], gs['metas'][lang],gs['exportar'][lang],gs['graficas'][lang]]
 
   const today = new Date();
+
+  console.log("MiEspaciox");
   const functions = [
     () => navigation.navigate('RioCalendar', {initialDate: today.toISOString().substr(0,10)}),
     // () => navigation.navigate('Diary'),

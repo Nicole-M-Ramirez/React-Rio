@@ -4,10 +4,10 @@ export const gs = {
   //miselanes
   'acepto':{'es':'Acepto','en':'Accept'},
   'noAcepto':{'es':'No Acepto','en':'Do not accept'},
-  'continuar':{'es':'continuar','en':'continue'},
+  'continuar':{'es':'Continuar','en':'continue'},
   'saltar':{'es':'saltar', 'en':'skip'},
   'volver':{'es':'Volver','en':'Back'},
-  'si':{'es':'Si','en':'Yes'},
+  'si':{'es':'Sí','en':'Yes'},
   'completado':{'es':'Completado','en':'Completed'},
 
   //foother
@@ -71,7 +71,7 @@ export const gs = {
     'en':'Emergency contacts and recommended activities'
   },
   'personasSordas':{'es':'Personas sordas','en':'Deaf people'},
-  'contactoPersonal':{'es':'Persona de contacto','en':'contact person'},
+  'contactoPersonal':{'es':'Persona de contacto','en':'Contact person'},
 
   //Pagina P2.2
   'pasoUrgencia':{'es':'¿Pasó la urgencia?','en':'Has the urge passed?'},
@@ -89,17 +89,17 @@ export const gs = {
   'idioma':{'es':'Idioma','en':'Languages'},
   'notificaciones':{'es':'Notificaciones','en':'Notifications'},
   'contraseña':{'es':'Contraseña','en':'Password'},
-  'politicaYterminos':{'es':'Politica de privacidad y terminos de uso','en':'Privacy policy and terms of use'},
-  'quienesSomos':{'es':'Quienes somos','en':'Who are we'},
-  'contactanos':{'es':'Contactanos','en':'Contact us'},
+  'politicaYterminos':{'es':'Política de privacidad','en':'Privacy policy'},
+  'quienesSomos':{'es':'¿Quiénes somos?','en':'About us'},
+  'contactanos':{'es':'Contáctanos','en':'Contact us'},
   'comparte':{'es':'Comparte','en':'Share'},
 
   //pagina P3B2
   'calendario':{'es':'Calendario','en':'Calendar'},
   'diario':{'es':'Diario','en':'Diary'},
-  'registro':{'es':'registro','en':'Register'},
-  'comoTeSientes':{'es':'¿Como te sientes hoy?','en':'How do you feel today?'},
-  'reportarAL':{'es':'Reportar Autolesión','en':'Report self harm'},
+  'registro':{'es':'Registro','en':'Register'},
+  'comoTeSientes':{'es':'¿Cómo te sientes hoy?','en':'How do you feel today?'},
+  'reportarAL':{'es':'Reportar autolesión','en':'Report self-harm'},
   'logros':{'es':'Logros','en':'Accomplishments'},
   'metas':{'es':'Metas','en':'Goals'},
   'graficas':{'es':'Gráficas','en':'Charts'},
@@ -108,22 +108,20 @@ export const gs = {
   //pagina P3C
   'detonantes':{'es':'Detonantes','en':'Triggers'},
   'usoComp':{'es':'Uso complementario','en':'Complementary Use'},
-  'mayorBenef':{'es':'¿Cómo usar esta aplicación para tu mayor beneficio?','en':'How to use this application for your maximum benefit?'},
+  'mayorBenef':{'es':'¿Cómo usar esta aplicación?','en':'How to use this app?'},
   'queAutolecion':{'es':'¿Qué es la autolesión?','en':'What is self-harm?'},
   'porqueAutolesion':{'es':'¿Por qué las personas se autolesionan?','en':'Why do people self-harm?'},
   'cuanAutolesion':{'es':'¿Cuán común es la autolesión?','en':'How common is self-harm?'},
   'quienAutolesion':{'es':'¿Quiénes se autolesionan?','en':'Who self-harms?'},
   'alerta':{'es':'Señales de alerta','en':'Warning signs'},
   'suicidioAutolesion':{'es':'Autolesión y suicidio','en':'Self-harm and suicide'},
-  'queHacer':{'es':' ¿Qué hacer si tienes ideación suicida además de autolesión?','en':'What to do if you have suicidal ideation in addition to self-harm?'},
+  'queHacer':{'es':' ¿Qué hacer si tienes ideación suicida?','en':'What to do if you have suicidal ideation?'},
   'regulacion':{'es':'Autolesión y regulación emocional','en':'Self-harm and emotional regulation'},
   'riesgo':{'es':'Factores de riesgo','en':'Risk factors'},
 
   'detonantesCont':{
       'es':
-`i.    Discusión con padres, parejas o mejores amigues
-      
-ii.   Obtener bajas calificaciones
+`i.\tDiscusión con padres, parejas o mejores amigues\n\nii.\tObtener bajas calificaciones
 
 iii.  Ruptura o separación de pareja
 
@@ -552,7 +550,7 @@ If you have medical insurance, you can contact a customer service representative
   'caminar' : {'es' : 'Caminar', 'en' : 'Walking'},
   'bano' : {'es' : 'Ducha', 'en' : 'Shower'},
   'ejercicio' : {'es' : 'Ejercicio', 'en' : 'Exercise'},
-  'cocinar' : {'es' : 'Concinar', 'en' : 'Cooking'},
+  'cocinar' : {'es' : 'Cocinar', 'en' : 'Cooking'},
   'gratitud' : {'es' : 'Gratitud', 'en' : 'Gratitude'},
   'gratitudPaseo' : {'es' : 'Paseo de la gratitud', 'en' : 'Gratitude Walk'},
   'gratitudInventario' : {'es' : 'Inventario de la gratitud', 'en' : 'Gratitude Inventory'},
@@ -562,6 +560,7 @@ If you have medical insurance, you can contact a customer service representative
   'psicoeduacion' : {'es' : 'Psicoeducación', 'en' : 'Psychoeducation'},
   '' : {'es' : '', 'en' : ''},
   '' : {'es' : '', 'en' : ''},
+
   //Contenido Actividades
   'diarioCont' : {'es' : 'Escribe tus pensamientos en palabras e incluye todo lo que estas sintiendo al momento. No te detengas; todo lo que sientes es válido y merece ser expresado.', 'en' : "Write your thoughts in words and include everything youre feeling in the moment. Don't hold back; everything you feel is valid and deserves to be expressed."},
   'dibujarCont' : {'es' : 'Desde garabatos hasta obras de arte, intenta plasmar lo que sientes. El arte puede ser un medio accesible para comenzar a explorar y reconocer tus emociones, particularmente para trabajar con sentimientos de preocupación o ansiedad.', 'en' : 'From doodles to masterpieces, try expressing what you feel. Art can be an accessible mean to start exploring and recognizing your emotions, particularly for working with feelings of worry or anxiety.'},
@@ -580,7 +579,7 @@ If you have medical insurance, you can contact a customer service representative
       'es' : `Dibuja una sonrisa en tu rostro cuando tengas tensión o estrés y mantenla por 20 segundos, en ese tiempo. Cierra tus ojos y mientras sonríes, piensa en tus cosas favoritas en la vida (tus sitios preferidos, personas más queridas, recuerdos más felices que tengas, tu canción favorita, tu comida favorita, etc. Todo aquello en lo que has pensado son las cosas por las que puedes estar agradecido. Con este ejercicio esperamos que puedas cambiar tu estado mental y emocional.`, 
       'en' : `Draw a smile on your face when you're feeling tension or stress and hold it for 20 seconds. During that time, close your eyes and while smiling, think about your favorite things in life (your favorite places, beloved people, happiest memories, favorite song, favorite food, etc.). Everything you have thought about are the things you can be grateful for. With this exercise, we hope you can change your mental and emotional state.`},
   'gratitudCont' : {'es':'Practicar la gratitud con regularidad puede mejorar tu salud física, mental y emocional.','en':'Practicing gratitude regularly can improve your physical, mental, and emotional health.'},
-  'musicaCont' : {'es' : '', 'en' : ''},
+  'musicaCont' : {'es' : 'La música es un buen medio para regular las emociones. Busca tu música favorita o crea tu propia lista de música, organízala en el orden que desees y ponle un nombre que te inspire. Escúchala y disfrútala.', 'en' : 'Music is a good medium for regulating emotions. Look for your favorite music or create your own music playlist, organize it in the order you prefer, and give it a name that inspires you. Listen to it and enjoy.'},
   'caminarCont' : {'es' : 'Agarra tus tenis y sal a caminar y a respirar aire fresco. Cambiar de escenario te permite generar espacio entre lo que sientes y la situación en la que te encuentras. Además, conectar con el ambiente natural nos permite reconsiderar aquello que nos aqueja y nos provee tranquilidad.', 'en' : "Grab your sneakers and go for a walk to breathe in the fresh air. Changing your surroundings allows you to create space between what you're feeling and the situation you're in. Moreover, connecting with the natural environment allows you to reconsider what's actually troubling you and provides you with tranquility."},
   'banoCont' : {'es' : 'Prepara el ambiente para un baño relajante con tu fragancia preferida. Deja que el agua corra, creando sensaciones que fomentan la relajación. El sumergirnos en agua de esta manera promueve sentimientos fisiológicos agradables, lo que disminuye sentimientos de tensión y coraje.', 'en' : 'Set the ambiance for a relaxing bath with your favorite fragrance. Let the water flow, creating sensations that promote relaxation. Immersing ourselves in water in this way promotes pleasant physiological feelings, reducing tension and anger.'},
   'ejercicioCont' : {'es' : 'No necesitas ir al gimnasio para ejercitarte. El mantenerte en movimiento te puede ayudar a quemar el coraje que estás sintiendo. Actividades que mantengan el ritmo cardiaco elevado pueden proveer beneficios psicoemocionales como reducción de estrés, ansiedad, miedo e ira.', 'en' : "You don't need to go to the gym to exercise. Staying active can help you burn off the anger you're feeling. Activities that keep your heart rate up can provide psycho-emotional benefits such as stress reduction, anxiety, fear, and anger."},

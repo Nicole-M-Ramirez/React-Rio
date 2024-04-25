@@ -28,15 +28,17 @@ export default TextMessage2;
 
 const styles = StyleSheet.create({
     rectangle: {
+        position: 'absolute',
         borderRadius: 6,
         width: dimensions.bodyWidth,
         height: ScreenHeight * 0.16,
         backgroundColor: colors.mintGreen,
-        top: dimensions.bodyHeight*-0.35
+        top: dimensions.bodyHeight*0.08
     },
     triangleCorner: {
-        top: ScreenHeight * 0.1,
-        left: ScreenWidth * 0.45,
+        position: 'absolute',
+        top: dimensions.bodyHeight * 0.2,
+        left: dimensions.bodyWidth * 0.5,
         width: 0,
         height: 0,
         backgroundColor: 'transparent',
@@ -47,7 +49,7 @@ const styles = StyleSheet.create({
         borderLeftColor: 'transparent',
         borderRightColor: 'transparent',
         borderBottomColor: colors.mintGreen,
-        transform: [{ rotate: "130deg" }]
+        transform: [{ rotate: "125deg" }]
       },
     BoxText: {
         color: 'white',

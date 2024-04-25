@@ -37,7 +37,7 @@ function SobreNosotros({route}) {
       </HeaderView>
 
       <View style={{position:'relative', 
-        marginTop: dimensions.bodyTopMargin - dimensions.headerHeight + dimensions.separator*3, 
+        marginTop: dimensions.bodyTopMargin - dimensions.headerHeight + dimensions.separator*8, 
         marginLeft: dimensions.leftMargin,
         height: dimensions.bodyHeight - dimensions.separator*2,
         width: dimensions.bodyWidth}}>
@@ -54,7 +54,7 @@ function SobreNosotros({route}) {
         </View>
 
       <FooterView>
-        <View style={{width:'50%', position:'absolute',marginTop: dimensions.separator}}>
+        <View style={{width:'50%', position:'absolute',top: dimensions.footerHeight*0.7}}>
           <BackLink labelBack={gs['volver'][lang]} gotoScreen={pantalla}></BackLink>
         </View>
           {/* <View style={{left: '50%', width:'50%', position:'absolute', marginTop: dimensions.separator}}>

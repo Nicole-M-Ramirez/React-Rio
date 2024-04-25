@@ -70,10 +70,10 @@ function Psicoeducacion({route}) {
           { vieneDe === 'Emergencia' ? <View></View> :
             <TouchableOpacity  style={{left:dimensions.bodyWidth*0.7,width:dimensions.bodyWidth*0.25,height:dimensions.footerHeight*0.5}}  onPress={functions[0]}>
               <View style={styles.hookedStyles}>
-                <View style={{width:'92%', 'height': dimensions.footerHeight*0.5, alignItems: 'flex-end',justifyContent: 'center', }}> 
-                  <Text style={{color: 'white', textAlignVertical: 'center'}}>Hacia Informacion</Text>
+                <View style={{width:'120%', 'height': dimensions.footerHeight*0.5, alignItems: 'flex-end',justifyContent: 'center',left:dimensions.bodyWidth*-0.04 }}> 
+                  <Text style={{color: 'white', textAlignVertical: 'center'}}>Información</Text>
                 </View>
-                <View style={{width:'15%', 'height': dimensions.footerHeight*0.5,  alignItems: 'flex-end',justifyContent: 'center',  }}>
+                <View style={{width:'15%', 'height': dimensions.footerHeight*0.5,  alignItems: 'flex-end',justifyContent: 'center',left:dimensions.bodyWidth*-0.04  }}>
                   <Image source={require('../../assets/continuar2.png')}  style={styles.buttonTitleImage} />
                 </View>
               </View>

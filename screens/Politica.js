@@ -12,6 +12,8 @@ import BodyView from '../components/BodyView';
 import EmergencyView from '../components/EmergencyView';
 import FooterView from '../components/FooterView';
 import AceptoNoAcepto from '../components/AceptoNoAcepto';
+import FootherInicio from '../components/FootherInicio';
+import HeaderInicio from '../components/HeaderInicio';
 
 import BackLink from '../components/BackLink';
 import NextLink from '../components/NextLink';
@@ -40,12 +42,12 @@ function Politica({route}) {
       <View style={{zIndex:3, position: 'absolute'}}>
         <Image source={require('../assets/actionMenu.png')} resizeMode='contain' style={[styles.headerHouseButton, {left: ScreenWidth * 0.87,}]} />
       </View> */}
-      <HeaderView>
+      <HeaderInicio>
         <Text style={styles.title}>{gs['politicaDePrivacidad'][lang]}</Text>
-      </HeaderView>
+      </HeaderInicio>
 
       <View style={{position:'relative', 
-        marginTop: dimensions.bodyTopMargin - dimensions.headerHeight + dimensions.separator*2, 
+        marginTop: dimensions.bodyTopMargin - dimensions.headerHeight + dimensions.separator*5.5, 
         marginLeft: dimensions.leftMargin,
         height: dimensions.bodyHeight,
         width: dimensions.bodyWidth}}>
@@ -84,7 +86,8 @@ Integer posuere efficitur nulla non eleifend. Praesent in venenatis enim. Phasel
       </FooterView>
 
       <EmergencyView>
-          <Emergency/>
+          {/* <Emergency/> */}
+          <FootherInicio/>
         </EmergencyView>
     </View>
   );

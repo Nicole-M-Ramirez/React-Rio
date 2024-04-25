@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   },
   buttonsText: {
     color: 'white',
-    fontSize: normalize(10),
+    fontSize: normalize(11),
     top: dimensions.buttonHeight/16,
     left: dimensions.separator,
   },

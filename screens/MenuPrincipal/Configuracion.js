@@ -20,6 +20,7 @@ import LongButton from '../../components/LongButton';
 import LongButtonSwitch from '../../components/LongButtonSwitch';
 import { updateLang } from '../../redux/slices/counterSlice';
 import BackLink from '../../components/BackLink';
+import BaseTeorica from '../../screens/BaseTeorica'
 
 import { gs } from '../../components/RioGlobalStrings';
 
@@ -55,8 +56,9 @@ function Configuracion() {
         <TimeSince/>
       </HeaderView>
 
+      <View style={{top:dimensions.bodyHeight*-0.04}}>
       <BodyView>
-        <Image source={require('../../assets/configuracion2.png')} resizeMode='contain' style={styles.titleImage} />
+        {/* <Image source={require('../../assets/configuracion2.png')} resizeMode='contain' style={styles.titleImage} /> */}
         {/* <LongButton Color={colors.pink} 
                     Title={'Sobre Nosotros'} 
                     Function ={() => navigation.navigate('Configuracion')} 
@@ -97,6 +99,11 @@ function Configuracion() {
                     Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
         />
         <LongButton Color={colors.pink} 
+                    Title={gs['baseTeorica'][lang]} 
+                    Function ={() => navigation.navigate('BaseTeorica',{pantalla: 'Configuracion'})} 
+                    Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
+        />
+        <LongButton Color={colors.pink} 
                     Title={gs['contactanos'][lang]} 
                     Function ={() => navigation.navigate('Configuracion')} 
                     Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
@@ -107,14 +114,15 @@ function Configuracion() {
                     Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
         />
       </BodyView>
+      </View>
 
       <FooterView> 
-        <View style={{height:'25%', width:'50%', position:'absolute',marginBottom: dimensions.separator}}> 
+        <View style={{height:'25%', width:'50%', position:'absolute',top: dimensions.footerHeight*0.7}}> 
           <BackLink labelBack={gs['volver'][lang]} gotoScreen={'MenuPrincipal'}/> 
         </View> 
-        <View style={{top:dimensions.footerHeight*.25, height:'75%',justifyContent: 'center' , alignItems: 'flex-start'}}> 
+        {/* <View style={{top:dimensions.footerHeight*.25, height:'75%',justifyContent: 'center' , alignItems: 'flex-start'}}> 
           <Text style={styles.titleText}>{gs['configuracion'][lang]}</Text> 
-        </View> 
+        </View>  */}
       </FooterView>
 
       <EmergencyView>

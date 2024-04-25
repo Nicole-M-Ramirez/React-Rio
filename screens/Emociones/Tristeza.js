@@ -156,7 +156,7 @@ function Tristeza({route}) {
                                                      texto:'Escribre tus pensamientos en palabras e incluye todo lo que estas sintiendo al momento. No te detengas; todo lo que sientes es valido y merece ser expresado.',
                                                      forDate: forDate,
                                                      titulo: title[1]}),
-    () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Tristeza',
+    () => navigation.navigate('Meditacion',{pantalla: 'Tristeza',
                                                      img: <Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
                                                      texto:'Conecta con tu espiritualidad de la manera que sea major para ti. Estos momentos pueden abrir un espacio para conectar contigo y con las metas que identificaste.',
                                                      forDate: forDate,

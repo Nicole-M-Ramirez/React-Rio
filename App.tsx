@@ -41,6 +41,7 @@ import SeguimientoUrgencia from './screens/SeguimientoUrgencia';
 import SegundoSeguimiento from './screens/SegundoSeguimiento';
 import RegistroUtilidad from './screens/Emociones/RegistroUtilidad';
 import NoFunciono from './screens/Emociones/NoFunciono';
+import ActividadDiario from './screens/Actividades/ActividadDiario';
 //simport MeditacionEmergencia from './screens/Actividades/MeditacionEmergencia';
 import Meditacion from './screens/Actividades/Meditacion';
 import Psicoeducacion from './screens/Actividades/Psicoeducacion';
@@ -520,6 +521,15 @@ export default function App() {
             <Stack.Screen
               name='EmocionExpancion'
               component={EmocionesExpancion}
+              independent ={true}
+              options={{
+                headerTitle: "",
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name='ActividadDiario'
+              component={ActividadDiario}
               independent ={true}
               options={{
                 headerTitle: "",

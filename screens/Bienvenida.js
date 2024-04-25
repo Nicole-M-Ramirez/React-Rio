@@ -14,6 +14,8 @@ import FooterView from '../components/FooterView';
 import AceptoNoAcepto from '../components/AceptoNoAcepto';
 import TimeSince from '../components/TimeSince';
 import DropDown from '../components/DropDown';
+import FootherInicio from '../components/FootherInicio';
+import HeaderInicio from '../components/HeaderInicio';
 //import { gs } from '../../components/RioGlobalStrings';
 //import { ScrollView } from 'react-native-gesture-handler';
 
@@ -37,9 +39,9 @@ function Bienvenida() {
 
   return (
     <View>
-      <HeaderView>
+      <HeaderInicio>
         {/* <TimeSince/> */}
-      </HeaderView>
+      </HeaderInicio>
 
       <View style={styles.scrollView}>
           <ScrollView>
@@ -91,7 +93,8 @@ function Bienvenida() {
       </FooterView>
 
       <EmergencyView>
-          <Emergency/>
+          {/* <Emergency/> */}
+          <FootherInicio/>
         </EmergencyView>
     </View>
   );
@@ -200,7 +203,7 @@ buttonImage: {
 },
 scrollView: {
   left: dimensions.leftMargin,
-  top: dimensions.bodyHeight*0.2,
+  top: dimensions.bodyHeight*0.25,
   height: dimensions.bodyHeight*1.04,
   width:dimensions.bodyWidth,
   //backgroundColor: 'grey',

@@ -7,11 +7,13 @@ import Emergency from '../components/Emergency';
 import HeaderView from '../components/HeaderView';
 import BodyView from '../components/BodyView';
 import EmergencyView from '../components/EmergencyView';
+import FootherInicio from '../components/FootherInicio';
 
 import BackLink from '../components/BackLink';
 import NextLink from '../components/NextLink';
 import FooterView from '../components/FooterView'
 import { normalize } from '../components/FondNormilize';
+import HeaderInicio from '../components/HeaderInicio';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
@@ -36,9 +38,9 @@ function SelectorIdioma() {
 
   return (
     <View>
-        <HeaderView>
+        <HeaderInicio>
           <Text style={styles.title}>Seleccionar idioma de preferencia</Text>
-        </HeaderView>
+        </HeaderInicio>
 
         <BodyView flexDirec = 'row'>
           <TouchableOpacity style={[styles.button, {backgroundColor: colors.blue}]} onPress={() => buttonHandler('es')}>
@@ -65,7 +67,8 @@ function SelectorIdioma() {
 
 
         <EmergencyView>
-          <Emergency/>
+          {/* <Emergency/> */}
+          <FootherInicio/>
         </EmergencyView>
 {/* 
         <View style={{zIndex:3, position: 'absolute'}}>

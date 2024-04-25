@@ -37,7 +37,7 @@ function Politica() {
       </HeaderView>
 
       <View style={{position:'relative', 
-        marginTop: dimensions.bodyTopMargin - dimensions.headerHeight + dimensions.separator*2, 
+        marginTop: dimensions.bodyTopMargin - dimensions.headerHeight + dimensions.separator*8, 
         marginLeft: dimensions.leftMargin,
         height: dimensions.bodyHeight,
         width: dimensions.bodyWidth}}>
@@ -54,8 +54,8 @@ function Politica() {
         </View>
 
       <FooterView>
-        <View style={{width:'50%', position:'absolute',marginTop: dimensions.separator}}>
-          <BackLink labelBack={gs['volver'][lang]} gotoScreen={'Bienvenida'}></BackLink>
+        <View style={{width:'50%', position:'absolute',top: dimensions.footerHeight*0.7}}>
+          <BackLink labelBack={gs['volver'][lang]} gotoScreen={'Configuracion'}></BackLink>
         </View>
           {/* <View style={{left: '50%', width:'50%', position:'absolute', marginTop: dimensions.separator}}>
             <NextLink labelNoAcepto={"Continuar"} gotoScreen={'Explicacion1'}></NextLink>

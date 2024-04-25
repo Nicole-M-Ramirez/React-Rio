@@ -225,7 +225,7 @@ function Meditacion ({route}) {
     // Add a track to the queue
     await TrackPlayer.add({
         id: 'trackId',
-        url: require('../../assets/Audio/MeditacionEN-EMER.mp4'),
+        url: require('../../assets/Audio/MeditacionEsUrgencia.m4a'),
         title: 'Track Title',
         artist: 'Track Artist',
         artwork: require('../../assets/aceptacion.png')

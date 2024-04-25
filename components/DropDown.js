@@ -33,7 +33,7 @@ function DropDown({Color, Title, Function,Image,DropSize, contText, titleHeigth,
             <TouchableOpacity style={[styles.buttonView,{height: DropSize,backgroundColor:Color}]} onPress={Resize}>
                 <Text style={[styles.buttonsText,{top:(dimensions.buttonHeight/2)*titleHeigth,}]}>{Title}</Text>
                 <View style={{position: 'absolute', zIndex: 0,  alignItems: 'flex-end',justifyContent: 'center',}}>
-                    {image}
+                    {downImage}
                 </View>
                 <Text style={{width:dimensions.buttonWidth*1.99,color:'white', fontSize:normalize(14),top:20, left:dimensions.separator, marginTop:dimensions.bodyWidth*0.07}}>{contText}</Text>
             </TouchableOpacity>

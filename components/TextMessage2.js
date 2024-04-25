@@ -5,6 +5,7 @@ import { backgroundColor } from './react-native-calendars/src/style';
 
 import { gs } from '../components/RioGlobalStrings';
 import { useSelector } from 'react-redux';
+import FootherTextBox from './FootherTextBox';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
@@ -16,7 +17,7 @@ function TextMessage2(){
         <>
             <View style={[styles.triangleCorner]} />
             <View style={styles.rectangle}>
-                <View style={{left:'5%',top:(dimensions.bodyHeight*0.3)*0.1,width:dimensions.bodyWidth*0.9, height:dimensions.bodyHeight*0.23}} >
+                <View style={{left:'5%',width:dimensions.bodyWidth*0.9, height:dimensions.bodyHeight*0.23}} >
                     <Text style={styles.BoxText}>{gs['burbujaContador'][lang]}</Text>
                 </View>
             </View>
@@ -50,8 +51,9 @@ const styles = StyleSheet.create({
         transform: [{ rotate: "0deg" }]
       },
     BoxText: {
+        position: 'absolute',
         color: 'white',
         fontSize: normalize(15),
-        top: dimensions.buttonHeight*0.13
+        top: dimensions.buttonHeight*0.15
     }
 });

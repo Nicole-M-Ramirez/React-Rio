@@ -19,6 +19,8 @@ import Emergency from '../../components/Emergency';
 import EmergencyView from '../../components/EmergencyView';
 import TimeSince from '../../components/TimeSince';
 import { useEffect } from 'react';
+
+import { useIsFocused } from '@react-navigation/native';
 // import SoundPlayer from 'react-native-sound-player';
 // import Sound from 'react-native-sound';
 import TrackPlayer from 'react-native-track-player';
@@ -34,18 +36,26 @@ function MeditacionEmergencia ({route}) {
   const navigation = useNavigation();
   const lang = useSelector(state => state.counter.language);
 
+  const [track, setTrack] = useState(require('../../assets/Audio/MeditacionEsUrgencia.m4a'))
+
+  const isFocused = useIsFocused();
+
   const setupEs = async () => {
     // Set up the player
     await TrackPlayer.setupPlayer();
 
     // Add a track to the queue
     await TrackPlayer.add({
-        id: 'trackId',
-        url: require('../../assets/Audio/MeditacionEN-EMER.mp4'),
+        id: 'trackEs',
+        url: require('../../assets/Audio/MeditacionEsUrgencia.m4a'),
         title: 'Track Title',
         artist: 'Track Artist',
         artwork: require('../../assets/aceptacion.png')
     });
+
+    if(!isFocused) {
+      await TrackPlayer.remove([trackId]);
+    }
   };
 
   const setupEn = async () => {
@@ -54,13 +64,17 @@ function MeditacionEmergencia ({route}) {
 
     // Add a track to the queue
     await TrackPlayer.add({
-        id: 'trackId',
+        id: 'trackEn',
         url: require('../../assets/Audio/MeditacionEN-EMER.mp4'),
         title: 'Track Title',
         artist: 'Track Artist',
         artwork: require('../../assets/aceptacion.png')
     });
+
   };
+
+
+
 
 if (lang === 'es') {
   setupEs();
@@ -68,6 +82,11 @@ if (lang === 'es') {
 else {
   setupEn();
 }
+
+// if(!isFocused) {
+//   //await TrackPlayer.remove([trackId]);
+//   TrackPlayer.stop();
+// }
 
 const [audioSelect, setAudioSelect] = useState ("play")
 
@@ -85,6 +104,19 @@ const reset = async () => {
   await TrackPlayer.stop();
   await TrackPlayer.play();
   await setAudioSelect("pause")
+}
+
+const close = async () => {
+  await TrackPlayer.stop();
+  await TrackPlayer.remove([trackId]);
+  console.log('se borro')
+}
+
+//console.log('IS FOCUSED??????::', isFocused)
+
+if(isFocused === true) {
+  close();
+  console.log('IS FOCUSED??????::', isFocused)
 }
 
 

@@ -14,10 +14,13 @@ import NextLink from '../components/NextLink';
 import FooterView from '../components/FooterView'
 import { normalize } from '../components/FondNormilize';
 import TimeSince from '../components/TimeSince';
+import HeaderInicio from '../components/HeaderInicio';
 
 import { gs } from '../components/RioGlobalStrings';
 import { useSelector } from 'react-redux';
 import { createDynamicMiddleware } from '@reduxjs/toolkit';
+
+import FootherTextBox from '../components/FootherTextBox';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
@@ -33,10 +36,10 @@ function Expicacion1() {
 
   return (
     <View>
-        <HeaderView>
+        <HeaderInicio>
            <Text style={{color:colors.mintGreen,left: dimensions.bodyWidth*0.7, fontSize:normalize(9), top: dimensions.headerHeight*0.2, position:'absolute'}}>   D       H      M</Text>
            <Text style={{color:colors.mintGreen,left: dimensions.bodyWidth*0.71, fontSize:normalize(16), top: dimensions.headerHeight*0.4, position:'absolute'}}>00.00.00</Text>
-        </HeaderView>
+        </HeaderInicio>
 
         <BodyView>
             <View style={{top:ScreenHeight*0.43}}>
@@ -55,7 +58,8 @@ function Expicacion1() {
         </FooterView>  
         
         <EmergencyView>
-          <Emergency/>
+          {/* <Emergency/> */}
+          <FootherTextBox/>
         </EmergencyView>
 {/* 
         <View style={{zIndex:3, position: 'absolute'}}>

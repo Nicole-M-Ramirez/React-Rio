@@ -51,7 +51,7 @@ function Felicidad({route}) {
                                                      continuacionExtra :null}),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Felicidad',
                                                      img: <Image source={require('../../assets/musica2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
-                                                     texto:gs['diarioCont'][lang],
+                                                     texto:gs['musicaCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[3]}),
     () => navigation.navigate('Psicoeducacion',{pantalla: 'Felicidad',

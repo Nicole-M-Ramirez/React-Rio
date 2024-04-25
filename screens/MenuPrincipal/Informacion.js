@@ -229,7 +229,7 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     left: dimensions.leftMargin,
-    top: dimensions.bodyHeight*0.2,
+    top: dimensions.bodyHeight*0.25,
     height: dimensions.bodyHeight*0.97,
     width:dimensions.bodyWidth,
     //backgroundColor: 'grey',

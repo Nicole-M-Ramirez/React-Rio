@@ -28,7 +28,7 @@ function Ansiedad({route}) {
 
 
   const Colors = [colors.deepPurple,colors.mintGreen,colors.pink,colors.blue,colors.purple]
-  const title = ['Diario', 'Meditacion', 'Respirar', 'Atención plena','Mascotas']
+  const title = ['Diario', 'Meditación', 'Respirar', 'Atención plena','Mascotas']
   const functions = [
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Ansiedad',
                                                      img: <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,

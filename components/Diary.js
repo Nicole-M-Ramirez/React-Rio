@@ -15,6 +15,7 @@ import EmergencyView from './EmergencyView';
 import TwoThirdsButton from './TwoThirdsButton';
 import { normalize } from './FondNormilize'
 import Registro from './Registro';
+import BackLinkForDiario from './BackLinkForDiario';
 import { getLatestMood, timeNowAsInt } from './RioGlobalFuncs';
 
 import { gs } from '../components/RioGlobalStrings';
@@ -40,6 +41,12 @@ function Diary( props) {
   const {dateString} = props.route.params;
 
   const {fromScreen} = props.route.params;
+
+  // RAAN - 2024-04-25
+  // Estas hubo que añadir para cuando llegamos al Diario a través de la actividad en los Estados de Ánimo
+  const { forDate } = props.route.params;
+  const {pantalla} = props.route.params;
+  const {img} = props.route.params;
 
   // console.log("Let it be known that I arrived to this screen from: " + fromScreen);
   console.log("===========Diaro with date string: " + dateString);
@@ -217,13 +224,17 @@ function Diary( props) {
       }
 
 
+{/* () => navigation.navigate('RegistroUtilidad',{img:img, forDate: forDate, pantalla : pantalla}), */}
 
         </View>
         </BodyView>
         <FooterView>
         <View style={{top:0}}>
         <View style={{top:0, position: 'absolute'}}>
-        <BackLink labelBack={gs['volver'][lang]} gotoScreen={fromScreen}/>        
+          {fromScreen === "RegistroUtilidad" ? 
+        <BackLinkForDiario labelBack={gs['volver'][lang]} gotoScreen={fromScreen} pantalla={pantalla} forDate={forDate} img={img} />    
+        : <BackLink labelBack={gs['volver'][lang]} gotoScreen={fromScreen}/>    }
+
         </View> 
         <View style={{top:0, left: dimensions.bodyWidth/2, position: 'absolute'}}>
         <TwoThirdsButton label ={gs['reportarAL'][lang]} topMargin = {0} 

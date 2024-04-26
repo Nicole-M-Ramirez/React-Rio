@@ -160,7 +160,8 @@ export const counterSlice = createSlice({
       */
       updateMood: (state, action) => {
          console.log("Updating mood for date: " + action.payload.theDate +  " to: " + action.payload.mood);
-         console.log("Detonantes en counter slice: " + JSON.stringify(action.payload.detonantes));
+         // console.log("Detonantes en counter slice: " + JSON.stringify(action.payload.detonantes));
+         console.log(action.payload.detonantes);
          const d = action.payload.theDate;
 
          if (state.dateData[d] === undefined) state.dateData[d] = {'text':'', mood : []}

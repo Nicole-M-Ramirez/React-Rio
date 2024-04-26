@@ -34,13 +34,26 @@ function ActividadEnProgreso({route}) {
   //const {continuacionExtra} = route.params;
   //const {forDate} = route.params;
 
+  const today = new Date();
+
   const functions = [
     () => navigation.navigate('RegistroUtilidad',{img:img, forDate: forDate, pantalla : pantalla}),
     () => navigation.navigate(continuacionExtra, {forDate:forDate}),
+
   ]
 
 
-  console.log("In ActividadEnProgreso forDate: " + forDate);
+  console.log("In ActividadEnProgreso forDate: " + forDate +  "  VieneDe:"  + pantalla + " Titulo:" + titulo);
+  let functionIdx = 0;
+  if (titulo == "Diario" || titulo == "Diary" ) {
+    functions.push(
+      () => navigation.navigate('Diary', {day:today.getDate(),month:today.getMonth(),year:today.getFullYear(), 
+      dateString:today.toISOString().substr(0,10), 
+      fromScreen:'RegistroUtilidad', pantalla:pantalla, img:img, forDate:forDate }));
+    functionIdx = 2;
+  }
+
+
   return (
     <View>
       <HeaderView>
@@ -74,7 +87,7 @@ function ActividadEnProgreso({route}) {
             </View>
           </TouchableOpacity>       */}
           { vieneDe === 'Emergencia' ? <View></View> :
-            <TouchableOpacity  style={{left:dimensions.bodyWidth*0.7,width:dimensions.bodyWidth*0.25,height:dimensions.footerHeight*0.5,top:dimensions.footerHeight*0.5}}  onPress={functions[0]}>
+            <TouchableOpacity  style={{left:dimensions.bodyWidth*0.7,width:dimensions.bodyWidth*0.25,height:dimensions.footerHeight*0.5,top:dimensions.footerHeight*0.5}}  onPress={functions[functionIdx]}>
               <View style={styles.hookedStyles}>
                 <View style={{width:'92%', 'height': dimensions.footerHeight*0.5, alignItems: 'flex-end',justifyContent: 'center', }}> 
                   <Text style={{color: 'white', textAlignVertical: 'center'}}>{gs['continuar'][lang]}</Text>

@@ -53,17 +53,7 @@ function Politica({route}) {
         width: dimensions.bodyWidth}}>
       <View style={styles.textBox}>
           <ScrollView>
-            <Text style={styles.boxTexts}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce congue dolor velit, vitae convallis eros fringilla id. Etiam finibus scelerisque lorem laoreet viverra. Duis justo purus, hendrerit sed venenatis ut, consequat nec massa. Donec varius dictum odio, sollicitudin accumsan enim faucibus at. Aliquam vel dictum leo, sit amet varius elit. Cras sagittis elit et mattis placerat. Donec quis tortor in augue luctus semper eget nec lorem. Sed iaculis pharetra lacus eget laoreet. Aliquam finibus, orci nec egestas vehicula, lectus mi sodales augue, at semper lorem neque molestie tellus. Ut molestie tincidunt molestie. Suspendisse tincidunt nulla ac porta egestas. Integer sit amet sem commodo, eleifend lacus quis, facilisis nisl. Proin interdum, velit quis fermentum vulputate, est ante volutpat ante, vitae aliquet risus nulla commodo turpis. Integer at felis vitae turpis dictum sodales venenatis vitae magna.
-
-Sed egestas sem eget egestas suscipit. Nunc a dui quis diam vulputate imperdiet sit amet nec mauris. Integer felis mi, rutrum non enim id, bibendum tristique sem. Etiam non convallis velit. Sed laoreet congue tellus. Nullam fermentum elit quis erat euismod consequat. Aliquam ut libero tempor, sollicitudin nisl eget, bibendum eros.
-
-Aliquam vel auctor urna. Pellentesque varius in quam accumsan dapibus. Phasellus imperdiet tortor at consectetur ullamcorper. Pellentesque convallis tellus eu ipsum venenatis, quis facilisis augue finibus. Nulla id volutpat dolor, eget ultrices eros. Donec egestas eget lacus a lacinia. Fusce enim lacus, congue sed vulputate in, ultricies non velit. Mauris viverra iaculis urna at accumsan. Suspendisse vel sapien in elit euismod auctor. Vivamus mattis lacus eu nunc auctor, nec iaculis nisl dignissim. Nullam at lorem posuere, blandit ipsum in, venenatis massa. Nunc porta nunc ac magna placerat, sit amet placerat lectus lobortis. Nam eu mollis ipsum.
-
-Morbi in fringilla lacus. In ullamcorper elit ac ligula tincidunt pulvinar. Maecenas at ullamcorper sem. Nulla pretium maximus magna, sed maximus mauris maximus blandit. Vivamus commodo volutpat lorem quis euismod. Nullam vitae urna iaculis, fermentum tortor nec, posuere nulla. Morbi cursus tincidunt mi, in accumsan enim gravida ut. Quisque mollis tortor libero, eu rhoncus ipsum tincidunt eget. Vivamus accumsan tortor at turpis vulputate, ac ullamcorper erat gravida.
-
-Integer posuere efficitur nulla non eleifend. Praesent in venenatis enim. Phasellus vitae pretium nunc. Suspendisse facilisis eget nibh et porttitor. Nulla maximus porta risus fermentum bibendum. Praesent porttitor elementum mattis. Proin dapibus nunc sem, sed iaculis ligula dignissim in.
-            </Text>
+            <Text style={styles.boxTexts}>{gs['politicaCont'][lang]}</Text>
           </ScrollView>
         </View>
 

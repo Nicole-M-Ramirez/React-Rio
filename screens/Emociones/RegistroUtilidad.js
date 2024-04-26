@@ -57,7 +57,7 @@ function RegistroUtilidad({route}) {
 
         <View style={{top:dimensions.bodyHeight*0.32, borderBottomColor: colors.mintGreen, width: dimensions.bodyWidth, borderBottomWidth:3}}/>
 
-        <Text style={styles.TitleText}>¿Le funcionó la actividad?</Text>
+        <Text style={styles.TitleText}>{gs['actividadFunciono'][lang]}</Text>
 
         <View style={{flexDirection:'row'}}>
             <TouchableOpacity style={[styles.button, {backgroundColor: colors.blue}]} onPress={() => navigation.navigate('SelectorEmocion', { theDate: theDate })}>

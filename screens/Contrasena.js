@@ -129,7 +129,7 @@ function Contrasena({route}) {
 
   function Titulo () {
     if(pantalla === 'NewPassword'){
-       setTitle(<Text style={styles.titleText}>Porfavor registre una contraseña</Text>)
+       setTitle(<Text style={styles.titleText}>{gs['crearContrasena'][lang]}</Text>)
     } else {
       setTitle(<Image source={require('../assets/miPerfil2.png')} resizeMode='contain' style={styles.titleImage} />)
     }
@@ -299,7 +299,7 @@ function Contrasena({route}) {
                 <Image source={require('../assets/back.png')}  style={styles.buttonsImage} />
               </View>
               <View style={{width:'92%', 'height': '100%', alignItems: 'flex-start',justifyContent: 'center', }}> 
-                <Text style={{color: 'white', textAlignVertical: 'center'}}>volver</Text>
+                <Text style={{color: 'white', textAlignVertical: 'center'}}>{gs['volver'][lang]}</Text>
               </View>
             </View>
           </TouchableOpacity>

@@ -651,9 +651,12 @@ If you have medical insurance, you can contact a customer service representative
   'PassMenuTit' : {'es':'Elija una opcion', 'en':'Choose an option'},
   'CrearPass' : {'es':'Crear contraseña', 'en':'Create password'},
   'CambiarPass' : {'es': 'Cambiar contraseña', 'en':'Change password'},
+  'cambiarCon' : {'es' : 'Porfavor ingrese una nueva contraseña', 'en' : 'Please enter a new password'},
   'DeletePass' : {'es': 'Borrar contraseña', 'en' : 'Delete password'},
   'confirmarBorrar': {'es': '¿Está seguro que desea borrar su contraseña?', 'en':'Are you sure that you want to delete your password?'},
   'borrar' : {'es':'Borrar', 'en':'Delete'},
+  'crearContrasena' : {'es' : 'Porfavor registre una contraseña', 'en' : 'Please register a password'},
+  'confirmarCon' : {'es' : 'Confirmar Contraseña', 'en' : 'Confirm Password'},
 
   //Emociones
   'Felicidad' : {'es': 'Felicidad', 'en':'Happiness'},
@@ -691,6 +694,12 @@ If you have medical insurance, you can contact a customer service representative
   'dibujar' : {'es' : 'Dibujar', 'en' : 'Drawing'},
   'musica' : {'es' : 'Música', 'en' : 'Music'},
   'psicoeduacion' : {'es' : 'Psicoeducación', 'en' : 'Psychoeducation'},
+  'descanso' : {'es' : 'Descansar', 'en' : 'Resting'},
+  'aceptacion' : {'es' : 'Aceptación', 'en' : 'Acceptance'},
+  '' : {'es' : '', 'en' : ''},
+  '' : {'es' : '', 'en' : ''},
+  '' : {'es' : '', 'en' : ''},
+  '' : {'es' : '', 'en' : ''},
   '' : {'es' : '', 'en' : ''},
   '' : {'es' : '', 'en' : ''},
 
@@ -717,9 +726,13 @@ If you have medical insurance, you can contact a customer service representative
   'banoCont' : {'es' : 'Prepara el ambiente para un baño relajante con tu fragancia preferida. Deja que el agua corra, creando sensaciones que fomentan la relajación. El sumergirnos en agua de esta manera promueve sentimientos fisiológicos agradables, lo que disminuye sentimientos de tensión y coraje.', 'en' : 'Set the ambiance for a relaxing bath with your favorite fragrance. Let the water flow, creating sensations that promote relaxation. Immersing ourselves in water in this way promotes pleasant physiological feelings, reducing tension and anger.'},
   'ejercicioCont' : {'es' : 'No necesitas ir al gimnasio para ejercitarte. El mantenerte en movimiento te puede ayudar a quemar el coraje que estás sintiendo. Actividades que mantengan el ritmo cardiaco elevado pueden proveer beneficios psicoemocionales como reducción de estrés, ansiedad, miedo e ira.', 'en' : "You don't need to go to the gym to exercise. Staying active can help you burn off the anger you're feeling. Activities that keep your heart rate up can provide psycho-emotional benefits such as stress reduction, anxiety, fear, and anger."},
   'cocinarCont' : {'es' : 'Saca un tiempo para hacer una comida, esto no sólo mejora las funciones ejecutivas, sino que es una distracción que puede canalizar tu energía y aumentar la autoestima.', 'en' : 'Set aside some time to prepare a meal. Not only does it improve executive functions, but it also serves as a distraction that can channel your energy and boost self-esteem.'},
+  'mascotasCont' : {'es' : 'De tener alguna, conecta con tu mascota: acariciándola, jugando o paseando con ella. De esta manera, distraes tu mente y te diviertes.', 'en' : 'If you have one, connect with your pet by petting, playing, or taking a walk with them. This way, you can distract your mind by focusing your energy on your animal companion.'},
+  'atencionCont' : {'es' : 'Enfócate en tus cinco (5) sentidos en este momento. ¿Qué estás viendo, escuchando, oliendo, saboreando y sintiendo? En este momento sólo existe el momento presente. Observa atentamente y sin juicios tu cuerpo, tu mente y tus emociones. Practica la aceptación y la curiosidad de esto que logras identificar. Descubre todos los beneficios que la ciencia ha descubierto que puedes obtener cuando practicas la atención plena de manera regular:', 'en' : 'Focus on your five (5) senses in this moment. What are you seeing, hearing, smelling, tasting, and feeling? In this moment, only the present moment exists. Observe your body, mind, and emotions attentively and without judgment. Practice acceptance and curiosity towards what you can identify. Discover all the benefits that science has found you can gain from regular mindfulness practice:'},
+  'descansoCont' : {'es' : 'Busca un espacio seguro donde puedas descansar y relajarte. En momentos donde nos sentimos tristes, es natural que nuestros patrones de sueño se vean afectados. El descansar podría ayudarte a regular lo que sientes.', 'en' : "Find a safe space where you can rest and relax. In moments when we feel sad, it's natural for our sleep patterns to be affected. Resting could help regulate what you're feeling."},
+  'aceptacionCont' : {'es' : 'Practica la aceptación. Ábrete a la experiencia de sentir y pensar sin emitir juicio alguno. Puede que no te agrade el proceso. Sin embargo, es un gran paso para poder asumir la realidad hacia lo que no podemos cambiar.', 'en' : "Practice acceptance. Open yourself to the experience of feeling and thinking without passing judgment. You may not like the process. However, it's a great step towards acknowledging reality for what we cannot change."},
   '' : {'es' : '', 'en' : ''},
   '' : {'es' : '', 'en' : ''},
-  '' : {'es' : '', 'en' : ''},
+
 
   //Meditaciones:
   'meditacionNormal' : {'es': 'Esta meditación va dirigida a ayudarte a tramitar lo que estas sintiendo en este momento. No es necesario que estes tranquilo o tranquila. Solo has una pausa mental para que te preguntes con curiosidad: ¿Como me siento ahora mismo? Al contestarte, No juzgues lo que sientes como algo malo. Solo reconócelo y date el permiso de sentirlo. Te voy a acompañar realizando unas respiraciones profundas que te pueden ayudar a bajar la intensidad de lo que estas sintiendo. Comenzamos…Inhala profundo (Hago inhalación profunda) reten la respiración … y exhala tan lentamente como te sea posible. No luches con lo que estas sintiendo… ni intentes no sentirlo. Enfócate en la respiración. Usa todos tus sentidos dirigidos a tu respiración. Te invito a que hagas otra inhalación profunda conmigo (Hago Inhalación), reten la respiración … y exhala lentamente. Lo estás haciendo bien. Vamos a repetir otra inhalación profunda (Hago inhalación), reten la respiración… y exhala lentamente. Es posible que tu mente te quiera distraer con pensamientos negativos; no mluches contras ellos, solo obsérvalos y pon toda tu atención en tu respiración. Observa como estas respirando, conecta con los movimientos que ocurren en tu cuerpo al respirar…escucha atentamente el sonido de tu respiración, siente el momento en que el aire entra por tu nariz al inhalar… y el momento en que sale de tu nariz al exhalar. Solo siente tu respiración… Vive tu proceso de respirar. Pon todos tus sentidos en tu respiración… Continúa enfocando tu atención a la respiración y cuando tu mente te distraiga vuelve a enfocarte en tu respiración... Recuerda no juzgar lo que estas sintiendo ni intentar deshacerte de esto que sientes… permítete sentir con curiosidad sin juzgar lo que sientes. Mientras sigues prestando toda tu atención a la respiración te invito a que coloques tus manos sobre el área del pecho llevándote un mensaje de amor y compasión. Eres un ser humano y es válido lo que sientes. Continúa enfocando en tu respiración y validando lo que sientes con amor y compasión. Si surge algún pensamiento crítico hacia ti o hacia lo que sientes, reconócelo y déjalo ir mientras rediriges tu atención al sentimiento de amor y de compasión que esta creando dentro de ti.. Inhala profunda y lentamente y exhala suave y lentamente expulsando todo el aire. Y finalizamos este ejercicio meditativo felicitándote por haberlo realizado.', 
@@ -788,6 +801,22 @@ If you have medical insurance, you can contact a customer service representative
   'diasMeditacionShort' : {'es' : 'días de meditación', 'en' : 'days of meditation'}, 
   'diasEscribirShort' : {'es' : 'días de escribir', 'en' : 'day of journaling'}, 
   'diasEjercicioShort' : {'es' : 'días de ejercicio', 'en' : 'days of exercise '}, 
+
+
+  //Confirmar actividad
+  'actividadFunciono' : {'es' : '¿Le funcionó la actividad?', 'en' : 'Did the activity work for you?'},
+
+  //actividades
+  'meditacion' : {'es' : 'Meditación', 'en' : 'Meditation'},
+  'respiracion' : {'es' : 'Respirar', 'en' : 'Breathe'},
+  'atencion' : {'es' : 'Atención plena', 'en' : 'Mindfulness'},
+  'mascotas' : {'es' : 'Mascotas', 'en' : 'Pets'},
+  '' : {'es' : '', 'en' : ''},
+  '' : {'es' : '', 'en' : ''},
+  '' : {'es' : '', 'en' : ''},
+  '' : {'es' : '', 'en' : ''},
+  '' : {'es' : '', 'en' : ''},
+
 
 }
 

@@ -132,48 +132,54 @@ import TimeSince from '../../components/TimeSince';
 import { dimensions } from '../../components/constants';
 import BackLink from '../../components/BackLink';
 import BackLinkWithDate from '../../components/BackLinkWithDate';
+import { gs } from '../../components/RioGlobalStrings';
+// const ScreenHeight = Dimensions.get("window").height
+// const ScreenWidth = Dimensions.get("window").width
+
+import { useSelector } from 'react-redux';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
 
 function Tristeza({route}) {
   const { forDate } = route.params;
+  const lang = useSelector(state => state.counter.language);
 
 
   const navigation = useNavigation();
 
   const Colors = [colors.blue, colors.deepPurple, colors.mintGreen, colors.pink, colors.greyBlue, colors.purple]
-  const title = ['Descanso', 'Diario', 'Meditacion', 'Dibujar','Musica', 'Aceptación']
+  const title = [gs['descanso'][lang],gs['diario'][lang],gs['meditacion'][lang],gs['dibujar'][lang],gs['musica'][lang],gs['aceptacion'][lang]]
   const functions = [
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Tristeza',
                                                      img: <Image source={require('../../assets/descanso2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
-                                                     texto:'Busca un espacio seguro donde puedas descansar y relajarte. En momentos donde nos sentimos tristes, es natural que nuestros patrones de sueño se vean afectados. El descansar podría ayudarte a regular lo que sientes.',
+                                                     texto:gs['descansoCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[0]
                                                     }),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Tristeza',
                                                      img: <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
-                                                     texto:'Escribre tus pensamientos en palabras e incluye todo lo que estas sintiendo al momento. No te detengas; todo lo que sientes es valido y merece ser expresado.',
+                                                     texto:gs['diarioCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[1]}),
     () => navigation.navigate('Meditacion',{pantalla: 'Tristeza',
                                                      img: <Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
-                                                     texto:'Conecta con tu espiritualidad de la manera que sea major para ti. Estos momentos pueden abrir un espacio para conectar contigo y con las metas que identificaste.',
+                                                     texto:gs['meditacion'][lang],
                                                      forDate: forDate,
                                                      titulo: title[2]}),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Tristeza',
                                                      img: <Image source={require('../../assets/dibujo2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
-                                                     texto:'Desde garabatos hasta obras de arte, intenta plasmar lo que sientes. El arte puede ser un medio accesible para comenzar a explorar y reconocer tus emociones, particularmente para trabajar con sentimientos de preocupación o ansiedad.',
+                                                     texto:gs['dibujarCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[3]}),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Tristeza',
                                                      img: <Image source={require('../../assets/musica2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
-                                                     texto:'La musica es un buen medio para regular las emociones. Busca tu musica favorita o crea tu propia lista de musica, organizala en el orden que desees y ponle un nombre que te inspire. Escuchala y disfrutala.',
+                                                     texto:gs['musicaCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[4]}),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Tristeza',
                                                      img: <Image source={require('../../assets/aceptacion.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
-                                                     texto:'Practica la aceptación. Ábrete a la experiencia de sentir y pensar sin emitir juicio alguno. Puede que no te agrade el proceso. Sin embargo, es un gran paso para poder asumir la realidad hacia lo que no podemos cambiar.',
+                                                     texto:gs['aceptacionCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[5]}),
   ]

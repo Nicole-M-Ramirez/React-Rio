@@ -294,7 +294,7 @@ function Contrasena({route}) {
                 <Image source={require('../../assets/back.png')}  style={styles.buttonsImage} />
               </View>
               <View style={{width:'92%', 'height': '100%', alignItems: 'flex-start',justifyContent: 'center', }}> 
-                <Text style={{color: 'white', textAlignVertical: 'center'}}>volver</Text>
+                <Text style={{color: 'white', textAlignVertical: 'center'}}>{gs['volver'][lang]}</Text>
               </View>
             </View>
           </TouchableOpacity>

@@ -112,11 +112,11 @@ function NewPassword({route}) {
 
         if(pass.length === 5){
             setConfirmPass(
-                <View  style={{left: '50%', width:'50%', position:'absolute', marginTop: dimensions.separator}}>
+                <View  style={{left: '50%', width:'50%', position:'absolute', top:dimensions.footerHeight*0.53}}>
                     <TouchableOpacity  style={{height:'100%'}}  onPress={() => {ConfirmarContrasena()}}>
                         <View style={styles.hookedStyles}>
-                            <View style={{width:'92%', 'height': '100%', alignItems: 'flex-end',justifyContent: 'center', }}> 
-                                <Text style={{color: 'white', textAlignVertical: 'center'}}>Confirmar Contrasena</Text>
+                            <View style={{width:'92%', 'height': '100%', alignItems: 'flex-end',justifyContent: 'center' }}> 
+                                <Text style={{color: 'white', textAlignVertical: 'center'}}>{gs['confirmarCon'][lang]}</Text>
                             </View>
                             <View style={{width:'8%', 'height': '100%',  alignItems: 'flex-end',justifyContent: 'center',  }}>
                                 <Image source={require('../assets/continuar2.png')}  style={styles.CbuttonImage} />
@@ -146,7 +146,7 @@ function NewPassword({route}) {
 
       {/* <View style={{zIndex:3, position: 'absolute'}}> */}
       <BodyView>
-        <Text style={styles.titleText}>Porfavor registre una contraseña</Text>
+        <Text style={styles.titleText}>{gs['crearContrasena'][lang]}</Text>
 
         <TouchableOpacity onPress={()=>{ num = '1'; pressHandler('1')}} style={[styles.button, {
                                                   backgroundColor:colors.greyBlue,

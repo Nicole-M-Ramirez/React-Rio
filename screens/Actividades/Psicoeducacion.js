@@ -16,11 +16,15 @@ import { dimensions } from '../../components/constants';
 // import BackLink from '../../components/BackLink';
 import BackLinkWithDate from '../../components/BackLinkWithDate';
 import NextLink from '../../components/NextLink';
+import { gs } from '../../components/RioGlobalStrings';
+import { useSelector } from 'react-redux';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
 
 function Psicoeducacion({route}) {
+  const lang = useSelector(state => state.counter.language);
+
   const navigation = useNavigation();
   const { forDate } = route.params;
   const {pantalla} = route.params;
@@ -54,7 +58,7 @@ function Psicoeducacion({route}) {
 
       <FooterView>
           <View style={{width:'50%', position:'absolute',marginTop: dimensions.separator}}>
-            <BackLinkWithDate labelBack={"Regresar"} gotoScreen={pantalla} forDate={forDate}></BackLinkWithDate>
+            <BackLinkWithDate labelBack={gs['volver'][lang]} gotoScreen={pantalla} forDate={forDate}></BackLinkWithDate>
           </View>
 
           {/* <TouchableOpacity  style={{left:dimensions.bodyWidth*0.7,width:dimensions.bodyWidth*0.25,height:dimensions.footerHeight*0.5}}  onPress={functions[0]}>
@@ -71,7 +75,7 @@ function Psicoeducacion({route}) {
             <TouchableOpacity  style={{left:dimensions.bodyWidth*0.7,width:dimensions.bodyWidth*0.25,height:dimensions.footerHeight*0.5}}  onPress={functions[0]}>
               <View style={styles.hookedStyles}>
                 <View style={{width:'120%', 'height': dimensions.footerHeight*0.5, alignItems: 'flex-end',justifyContent: 'center',left:dimensions.bodyWidth*-0.04 }}> 
-                  <Text style={{color: 'white', textAlignVertical: 'center'}}>Información</Text>
+                  <Text style={{color: 'white', textAlignVertical: 'center'}}>{gs['informacion'][lang]}</Text>
                 </View>
                 <View style={{width:'15%', 'height': dimensions.footerHeight*0.5,  alignItems: 'flex-end',justifyContent: 'center',left:dimensions.bodyWidth*-0.04  }}>
                   <Image source={require('../../assets/continuar2.png')}  style={styles.buttonTitleImage} />

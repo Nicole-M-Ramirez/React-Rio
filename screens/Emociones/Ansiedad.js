@@ -28,11 +28,11 @@ function Ansiedad({route}) {
 
 
   const Colors = [colors.deepPurple,colors.mintGreen,colors.pink,colors.blue,colors.purple]
-  const title = ['Diario', 'Meditación', 'Respirar', 'Atención plena','Mascotas']
+  const title = [gs['diario'][lang],gs['meditacion'][lang],gs['respiracion'][lang],gs['atencion'][lang],gs['mascotas'][lang]]
   const functions = [
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Ansiedad',
                                                      img: <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
-                                                     texto:'Escribre tus pensamientos en palabras e incluye todo lo que estas sintiendo al momento. No te detengas; todo lo que sientes es valido y merece ser expresado.',
+                                                     texto:gs['diarioCont'][lang],
                                                      color: colors.deepPurple,
                                                      forDate: forDate,
                                                      titulo: title[0]
@@ -50,12 +50,12 @@ function Ansiedad({route}) {
                                                      titulo: title[2]}),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Ansiedad',
                                                      img: <Image source={require('../../assets/atencionPlena.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
-                                                     texto:'Enfócate en tus cinco (5) sentidos en este momento. ¿Qué estás viendo, escuchando, oliendo, saboreando y sintiendo? En este momento sólo existe el momento presente. Observa atentamente y sin juicios tu cuerpo, tu mente y tus emociones. Practica la aceptación y la curiosidad de esto que logras identificar. Descubre todos los beneficios que la ciencia ha descubierto que puedes obtener cuando practicas la atención plena de manera regular.',
+                                                     texto:gs['atencionCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[3]}),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Ansiedad',
                                                      img: <Image source={require('../../assets/mascota2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
-                                                     texto:'De tener alguna, conecta con tu mascota: acariciándola, jugando o paseando con ella. De esta manera, distraes tu mente y te diviertes.',
+                                                     texto:gs['mascotasCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[4]}),
   ]
@@ -84,7 +84,7 @@ function Ansiedad({route}) {
 
       <FooterView>
           <View style={{width:'50%', position:'absolute',top:dimensions.footerHeight*0.65}}>
-          <BackLinkWithDate labelBack={"Regresar"} gotoScreen={'SelectorEmocion'} theDate={forDate}></BackLinkWithDate>
+          <BackLinkWithDate labelBack={gs['volver'][lang]} gotoScreen={'SelectorEmocion'} theDate={forDate}></BackLinkWithDate>
           </View>         
       </FooterView>
 

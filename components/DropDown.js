@@ -3,6 +3,7 @@ import {colors, dimensions} from '../components/constants';
 import React, { useState } from 'react';
 import { normalize } from '../components/FondNormilize';
 import { useNavigation } from '@react-navigation/native';
+import { WebView } from 'react-native-webview'; 
 
 
 const ScreenHeight = Dimensions.get("window").height
@@ -35,7 +36,8 @@ function DropDown({Color, Title, Function,Image,DropSize, contText, titleHeigth,
                 <View style={{position: 'absolute', zIndex: 0,  alignItems: 'flex-end',justifyContent: 'center',}}>
                     {downImage}
                 </View>
-                <Text style={{width:dimensions.buttonWidth*1.99,color:'white', fontSize:normalize(14),top:20, left:dimensions.separator, marginTop:dimensions.bodyWidth*0.07}}>{contText}</Text>
+                {/* <Text style={{width:dimensions.buttonWidth*1.99,color:'white', fontSize:normalize(14),top:20, left:dimensions.separator, marginTop:dimensions.bodyWidth*0.07}}>{contText}</Text> */}
+                <WebView style={{backgroundColor: 'transparent', width:dimensions.buttonWidth*1.99,color:'white', fontSize:normalize(24),top:20, left:dimensions.separator, marginTop:dimensions.bodyWidth*0.07}}  originWhitelist={['*']} source={{ html: '<div style="font-size: 50px;font-family: Arial, Helvetica; color: white" >' + contText + '</div>' }}/>
             </TouchableOpacity>
         )
     }

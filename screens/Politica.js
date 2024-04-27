@@ -14,6 +14,7 @@ import FooterView from '../components/FooterView';
 import AceptoNoAcepto from '../components/AceptoNoAcepto';
 import FootherInicio from '../components/FootherInicio';
 import HeaderInicio from '../components/HeaderInicio';
+import { WebView } from 'react-native-webview'; 
 
 import BackLink from '../components/BackLink';
 import NextLink from '../components/NextLink';
@@ -54,6 +55,14 @@ function Politica({route}) {
       <View style={styles.textBox}>
           <ScrollView>
             <Text style={styles.boxTexts}>{gs['politicaCont'][lang]}</Text>
+            {/* <WebView style={{backgroundColor: 'transparent', width:dimensions.buttonWidth*1.99,color:'white', fontSize:normalize(24),top:20, left:dimensions.separator, marginTop:dimensions.bodyWidth*0.07}}  
+            originWhitelist={['*']} 
+            source={{ html: `
+              <ul>
+                <li>Arguments with parents, partners, or friends
+                <li>Receiving low grades
+              </ul>` 
+            }}/> */}
           </ScrollView>
         </View>
 

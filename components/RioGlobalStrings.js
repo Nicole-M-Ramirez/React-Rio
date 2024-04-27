@@ -59,127 +59,254 @@ export const gs = {
 "RIO" puede proporcionar apoyo general y orientación, no está enfocado para realizar diagnósticos clínicos ni evalúa el riesgo de autolesión de manera precisa. Siempre se recomienda la consulta con un profesional de la salud mental para una evaluación y tratamiento adecuados.
    
 "RIO" no es un sustituto de la evaluación psicológica profesional. Las estrategias y recursos ofrecidos están destinados a complementar, y no a reemplazar, la atención profesional en salud mental.\n
+
+a.\tEmergencias Médicas o Psicológicas: En caso de una emergencia médica o psicológica, se debe buscar atención profesional inmediata. "RIO" no está diseñado para manejar situaciones de crisis agudas. Debe acudir a la sala de emergencia más cercana o comunicarse a la Línea PAS para manejo de crisis al 1-800-981-0023. Si la autolesión resulta en sangrado que no puede ser controlado, cortes profundos, o si hay cualquier signo de infección (como enrojecimiento, hinchazón, o aumento del dolor), es crucial buscar atención médica de inmediato.\n
+b.\tEn caso de heridas que parezcan necesitar suturas, o si hay objetos incrustados en la herida, se debe acudir a evaluación médica o llamar a los servicios de emergencia.\n
+c.\tSiempre es recomendable realizar una consulta con un profesional de la salud después de cualquier episodio de autolesión, incluso si la herida parece menor, para asegurar una evaluación adecuada y recibir apoyo emocional.\n
+d.\tFomentamos a los usuarios a desarrollar un plan de seguridad en colaboración con su terapeuta o profesional de salud mental, que incluya pasos a seguir en caso de urgencia y contactos de emergencia.\n
+Política de Privacidad
+   
+La presente Política de Privacidad establece cómo se recopilan, utilizan, protegen y comparten los datos personales de los usuarios de RIO, aplicación para promover el bienestar para estudiantes universitarios con conductas autolesivas sin intención suicida (CASIS), (en lo sucesivo, “RIO” o la “Aplicación”), en cumplimiento con la Leyes estatales del Estado Libre Asociado de Puerto Rico y leyes federales aplicables.
+
+Datos Personales Recopilados
+   
+El Propietario no recopila datos personales de los usuarios a través de RIO. Los datos registrados se quedarán guardados en el dispositivo del usuario. Una vez borrada la Aplicación del dispositivo del usuario, todos los datos serán borrados de igual forma. Es importante que el usuario sepa que si pierde u olvida su contraseña la misma no podrá ser recuperada y no podrá tener acceso a los datos previamente recopilados. Una alternativa que tienen los usuarios es realizar una copia de sus datos, en caso de perder u olvidar su contraseña.  
+   
+Al utilizar RIO usted representa que no es un menor de trece (13) años. Si usted tiene menos de trece (13) años, no podrá utilizar RIO. 
+   
+Uso de los Datos Personales 
+   
+El Propietario no recopila datos personales a través de RIO, y solo el usuario tiene acceso y control sobre sus propios datos. Estos datos, que el usuario registra, pueden ayudar a identificar patrones en comportamientos, pensamientos y emociones. RIO permite al usuario generar informes de estos patrones a través de gráficos. El usuario tiene la opción de compartir estos informes con profesionales de la salud si así lo decide.
+   
+Compartir Datos con Terceros
+   
+El Propietario respeta la privacidad de los datos personales de los usuarios y no realiza transferencias de estos a terceros. Aseguramos que cualquier información ingresada en RIO es de uso exclusivo del usuario y no se divulga a entidades externas en ninguna circunstancia.
+   
+Señales de “Do-not-track”
+   
+Al presente algunos navegadores ofrecen la opción a sus usuarios de seleccionar en su configuración la opción de no ser rastreados (“do-not-track”). Estos navegadores, a su vez, transmiten señales a los sitios web con los que el navegador se comunica. En la medida que no existe uniformidad en la industria en cuanto al uso de este tipo de tecnología, por el momento la Aplicación no asignará valor o significado a señales de “do-not-track” y no responderá a las mismas. 
+   
+Medidas de Seguridad 
+   
+El usuario es el responsable de mantener en secreto cualquier contraseña o credencial que se le asigne para inscribirse a la Aplicación. El usuario releva al Propietario y a sus afiliadas de, y contra, toda responsabilidad por la perdida, destrucción, falsificación, manipulación y acceso y/o divulgación no autorizada de sus datos personales que suceda por causas fuera del control del Propietario.
+   
+Cambios a la Política de Privacidad
+   
+El Propietario se reserva el derecho de actualizar y/o modificar esta política de privacidad en cualquier momento. Los usuarios serán notificados de cualquier cambio en la Política de Privacidad a través de la Aplicación.
+   
+Contacto
+   
+Si tiene alguna duda o sugerencia con respecto a las políticas de privacidad de RIO, por favor contáctenos a: proyecto.fipicasis@upr.edu.  Importante: Este correo electrónico no está destinado para emergencias ni para asistencia inmediata en situaciones de crisis. 
+   
+
+Términos de uso aplicación RIO
+   
+Aceptación de los Términos
+   
+Los presentes términos de uso (en adelante, los "Términos") establecen las condiciones bajo las cuales los usuarios pueden utilizar RIO, aplicación para promover el bienestar para estudiantes con conductas autolesivas sin intención a suicidio, (en adelante, “RIO” o la "Aplicación"). RIO es propiedad de la Universidad de Puerto Rico Recinto de Río Piedras (en adelante, el "Propietario"). Al bajar la Aplicación usted acepta que entiende y está de acuerdo con los Términos de uso y la Política de Privacidad de la aplicación RIO". Usted reconoce el derecho del Propietario a actualizar los Términos de uso en cualquier momento sin previo aviso y estar comprometido a cumplir con cualquier cambio. De no aceptar estos Términos de uso debe abandonar el uso de la Aplicación inmediatamente.
+   
+Uso de la Aplicación
+   
+El uso de la Aplicación es exclusivo para el propósito establecido y no sustituye a los servicios de psicoterapia. Los usuarios no pueden utilizar la Aplicación para ningún otro propósito.
+   
+RIO" es una herramienta psicoeducativa diseñada para ofrecer estrategias para el manejo de emociones, enfocándose particularmente en la necesidad de abordar las conductas autolesivas en estudiantes universitarios.
+   
+"RIO" puede proporcionar apoyo general y orientación, no está enfocado para realizar diagnósticos clínicos ni evalúa el riesgo de autolesión de manera precisa. Siempre se recomienda la consulta con un profesional de la salud mental para una evaluación y tratamiento adecuados.
+
+"RIO" no es un sustituto de la evaluación psicológica profesional. Las estrategias y recursos ofrecidos están destinados a complementar, y no a reemplazar, la atención profesional en salud mental.
    
 a.\tEmergencias Médicas o Psicológicas: En caso de una emergencia médica o psicológica, se debe buscar atención profesional inmediata. "RIO" no está diseñado para manejar situaciones de crisis agudas. Debe acudir a la sala de emergencia más cercana o comunicarse a la Línea PAS para manejo de crisis al 1-800-981-0023. Si la autolesión resulta en sangrado que no puede ser controlado, cortes profundos, o si hay cualquier signo de infección (como enrojecimiento, hinchazón, o aumento del dolor), es crucial buscar atención médica de inmediato.\n
 b.\tEn caso de heridas que parezcan necesitar suturas, o si hay objetos incrustados en la herida, se debe acudir a evaluación médica o llamar a los servicios de emergencia.\n
 c.\tSiempre es recomendable realizar una consulta con un profesional de la salud después de cualquier episodio de autolesión, incluso si la herida parece menor, para asegurar una evaluación adecuada y recibir apoyo emocional.\n
 d.\tFomentamos a los usuarios a desarrollar un plan de seguridad en colaboración con su terapeuta o profesional de salud mental, que incluya pasos a seguir en caso de urgencia y contactos de emergencia.\n
-<b>Política de Privacidad<b>
    
-   La presente Política de Privacidad establece cómo se recopilan, utilizan, protegen y comparten los datos personales de los usuarios de RIO, aplicación para promover el bienestar para estudiantes universitarios con conductas autolesivas sin intención suicida (CASIS), (en lo sucesivo, “RIO” o la “Aplicación”), en cumplimiento con la Leyes estatales del Estado Libre Asociado de Puerto Rico y leyes federales aplicables.
-   Datos Personales Recopilados
+Reglas Generales relacionadas a su uso:
    
-   El Propietario no recopila datos personales de los usuarios a través de RIO. Los datos registrados se quedarán guardados en el dispositivo del usuario. Una vez borrada la Aplicación del dispositivo del usuario, todos los datos serán borrados de igual forma. Es importante que el usuario sepa que si pierde u olvida su contraseña la misma no podrá ser recuperada y no podrá tener acceso a los datos previamente recopilados. Una alternativa que tienen los usuarios es realizar una copia de sus datos, en caso de perder u olvidar su contraseña.  
+Esta aplicación está libre de costo para su uso personal y no debe ser usado para propósitos no autorizados, ilegales, comerciales o cualquier otro uso indebido. Usted se compromete a usar esta aplicación en cumplimento con todas las leyes aplicables y términos de uso.  
    
-   Al utilizar RIO usted representa que no es un menor de trece (13) años. Si usted tiene menos de trece (13) años, no podrá utilizar RIO. 
+Privacidad y Protección de Datos Personales
    
-   Uso de los Datos Personales 
+El Propietario se compromete a cumplir con las leyes aplicables en Puerto Rico y leyes federales aplicables en relación con la protección de datos personales y privacidad. La Aplicación no recopila datos personales y de salud mental de los usuarios, esta información solo es registrada por el usuario para que pueda usarla en sus sesiones de terapia, si así lo desea.
    
-   El Propietario no recopila datos personales a través de RIO, y solo el usuario tiene acceso y control sobre sus propios datos. Estos datos, que el usuario registra, pueden ayudar a identificar patrones en comportamientos, pensamientos y emociones. RIO permite al usuario generar informes de estos patrones a través de gráficos. El usuario tiene la opción de compartir estos informes con profesionales de la salud si así lo decide.
+El Propietario se compromete a proteger la privacidad y seguridad de los datos personales y de salud mental de los usuarios de la Aplicación. La Política de Privacidad de la Aplicación, que se encuentra disponible en la Aplicación, describe cómo se recopilan, utilizan, protegen y comparten los datos personales y de salud mental de los usuarios.
    
-   Compartir Datos con Terceros
+Propiedad Intelectual
    
-   El Propietario respeta la privacidad de los datos personales de los usuarios y no realiza transferencias de estos a terceros. Aseguramos que cualquier información ingresada en RIO es de uso exclusivo del usuario y no se divulga a entidades externas en ninguna circunstancia.
+El Propietario es el titular de todos los derechos de propiedad intelectual sobre la Aplicación, incluyendo, sin limitación, los derechos de autor, marcas comerciales, patentes, diseños y/o modelos industriales relacionados con esta. El Propietario es, además, el titular del contenido, características y funcionalidad (incluyendo, sin limitación, toda la información, texto, imágenes, video, audio, diseño, y de la selección y disposición de estos) de la Aplicación. Los usuarios no podrán utilizar, copiar, reproducir, distribuir, transmitir, exhibir, vender, licenciar la Aplicación o cualquier contenido de la misma sin la autorización previa y por escrito del Propietario.
    
-   Señales de “Do-not-track”
+Modificaciones a la Aplicación
    
-   Al presente algunos navegadores ofrecen la opción a sus usuarios de seleccionar en su configuración la opción de no ser rastreados (“do-not-track”). Estos navegadores, a su vez, transmiten señales a los sitios web con los que el navegador se comunica. En la medida que no existe uniformidad en la industria en cuanto al uso de este tipo de tecnología, por el momento la Aplicación no asignará valor o significado a señales de “do-not-track” y no responderá a las mismas. 
+El Propietario se reserva el derecho de actualizar o modificar la Aplicación en cualquier momento, sin necesidad de notificar a los usuarios previamente. El Propietario se reserva el derecho de agregar o eliminar servicios o funciones de la Aplicación en cualquier momento, sin necesidad de notificar a los usuarios previamente.
    
-   Medidas de Seguridad 
+Limitaciones de Responsabilidad
    
-   El usuario es el responsable de mantener en secreto cualquier contraseña o credencial que se le asigne para inscribirse a la Aplicación. El usuario releva al Propietario y a sus afiliadas de, y contra, toda responsabilidad por la perdida, destrucción, falsificación, manipulación y acceso y/o divulgación no autorizada de sus datos personales que suceda por causas fuera del control del Propietario.
+El Propietario no será responsable por los daños que puedan resultar del uso de la Aplicación, incluyendo, sin limitación, daños directos, indirectos, especiales o consecuentes. El Propietario no garantiza que la Aplicación esté libre de errores o que su funcionamiento sea ininterrumpido.\n
+a.\tNo garantizamos la ausencia de errores o interrupciones, el Propietario no ofrece garantías sobre la exactitud, fiabilidad o idoneidad de la información proporcionada por la Aplicación para cualquier propósito específico.\n
+b.\tEl Propietario no asume responsabilidad por pérdidas de datos, daños a dispositivos o cualquier otro tipo de perjuicio resultante de fallos en el software.\n
+c.\tDeclaramos que el uso de la Aplicación es bajo el propio riesgo del usuario.\n
+d.\tEl Propietario no es responsable del contenido o prácticas de privacidad de los enlaces a sitios web incluidos en la aplicación RIO.
    
-   Cambios a la Política de Privacidad
+En la medida máxima establecida por la ley, el propietario no será responsable de ninguna pérdida o daño causado por un ataque de denegación de servicio, virus u otro material tecnológicamente dañino que pueda infectar su equipo de computadora, programas de computadora, datos u otro material propietario debido a su uso de la aplicación o cualquier servicio obtenido a través de ella o de su descarga de cualquier material publicado en la aplicación.\n 
+Su uso de la aplicación, su contenido y cualquier servicio obtenido a través de ella es bajo su propio riesgo. La aplicación, su contenido y cualquier servicio o artículo obtenido a través de la aplicación se proporcionan "tal cual" y "según disponible", sin ninguna garantía de ningún tipo, ya sea explícita o implícita. Ni el propietario ni ninguna persona asociada con el propietario ofrece ninguna garantía o representación con respecto a la integridad, seguridad, confiabilidad, calidad, exactitud o disponibilidad de la aplicación. Sin limitar lo anterior, ni el propietario ni ninguna persona asociada con al propietario representa o garantiza que la aplicación, su contenido o cualquier servicio o artículo obtenido a través de la misma será preciso, confiable, libre de errores o ininterrumpido, que los defectos serán corregidos, que la aplicación o el servidor que la hace disponible estén libres de virus u otros componentes dañinos, o que la aplicación o cualquier servicio o artículo obtenido a través de la aplicación cumplirá sus necesidades o expectativas. En la medida máxima proporcionada por la ley, el propietario rechaza todas las garantías de cualquier tipo, ya sea explícita o implícita, legal o de otro tipo, incluyendo, entre otras, cualquier garantía de comerciabilidad, no-infracción, o de idoneidad para un fin particular. Lo anterior no afecta las garantías que no pueden ser excluidas o limitadas según la ley aplicable.\n
+En la medida máxima establecida por la ley, en ningún caso el propietario, sus afiliados, socios comerciales o sus licenciatarios, proveedores de servicios, empleados, agentes, funcionarios o directores serán responsables por daños de cualquier tipo, bajo cualquier teoría legal, que surjan de o en conexión con su uso, o incapacidad para usar la aplicación, cualquier otro sitio web vinculado a ella, cualquier contenido en la aplicación o en otros sitio webs, incluyendo cualquier daño directo, indirecto, especial, incidental, consecuente o punitivo, incluyendo pero sin limitarse a, lesiones personales, dolor y sufrimiento, angustia emocional, pérdida de ingresos, pérdida de ganancias, pérdida de negocios o ahorros esperados, pérdida de uso, pérdida de datos, ya sea causado por agravio (incluyendo negligencia), incumplimiento de contrato, o de otro modo, aunque sea previsible. Lo anterior no afecta ninguna responsabilidad que no puede ser excluida o limitada bajo la ley aplicable.\n
+Algunas jurisdicciones no permiten la exclusión de ciertas garantías o la limitación o exclusión de responsabilidad por daños y perjuicios. En consecuencia, es posible que algunas de las limitaciones y exenciones de responsabilidad anteriores no le apliquen a usted. En la medida en que no podamos, según la ley aplicable, renunciar a ninguna garantía o limitar nuestra responsabilidad, el alcance y la duración de dicha garantía y el alcance de nuestra responsabilidad serán los mínimos permitidos por dicha ley.\n
+Modificación de los Términos
+El Propietario se reserva el derecho de modificar estos Términos en cualquier momento y sin previo aviso. Los usuarios deben revisar regularmente estos Términos para estar al tanto de cualquier modificación. El uso continuado de la Aplicación después de la modificación de los Términos implicará la aceptación de los mismos.
    
-   El Propietario se reserva el derecho de actualizar y/o modificar esta política de privacidad en cualquier momento. Los usuarios serán notificados de cualquier cambio en la Política de Privacidad a través de la Aplicación.
+Terminación
    
-   Contacto
+El Propietario puede terminar la cuenta de cualquier usuario en cualquier momento y sin previo aviso si el usuario incumple estos Términos.
    
-   Si tiene alguna duda o sugerencia con respecto a las políticas de privacidad de RIO, por favor contáctenos a: proyecto.fipicasis@upr.edu.  Importante: Este correo electrónico no está destinado para emergencias ni para asistencia inmediata en situaciones de crisis. 
+Legislación Aplicable y Jurisdicción
    
+Los presentes Términos se regirán e interpretarán de acuerdo con las leyes del Estado Libre Asociado de Puerto Rico y leyes federales aplicables. En caso de cualquier controversia o disputa resultante de la interpretación o aplicación de estos Términos de Uso, dicha controversia será sometida a y resuelta por los tribunales competentes en Puerto Rico
    
+Renuncia y Separabilidad
    
-   Términos de uso aplicación RIO
+Ninguna renuncia por parte del Propietario de cualquier término o condición establecido en estos Términos de uso se considerará una renuncia adicional o continua de dicho término o condición o una renuncia de cualquier otro término o condición, y cualquier falla del Propietario para hacer valer un derecho o disposición bajo estos Términos de uso no constituirá una renuncia a tal derecho o disposición. Si un tribunal u otro tribunal de jurisdicción competente considera que alguna disposición de estos Términos de uso es inválida, ilegal o inaplicable por cualquier motivo, dicha disposición se eliminará o limitará en la medida mínima en que las disposiciones restantes de los Términos de uso continuarán en pleno vigor y efecto.
    
-   Aceptación de los Términos
+Contacto
    
-   Los presentes términos de uso (en adelante, los "Términos") establecen las condiciones bajo las cuales los usuarios pueden utilizar RIO, aplicación para promover el bienestar para estudiantes con conductas autolesivas sin intención a suicidio, (en adelante, “RIO” o la "Aplicación"). RIO es propiedad de la Universidad de Puerto Rico Recinto de Río Piedras (en adelante, el "Propietario"). Al bajar la Aplicación usted acepta que entiende y está de acuerdo con los Términos de uso y la Política de Privacidad de la aplicación RIO". Usted reconoce el derecho del Propietario a actualizar los Términos de uso en cualquier momento sin previo aviso y estar comprometido a cumplir con cualquier cambio. De no aceptar estos Términos de uso debe abandonar el uso de la Aplicación inmediatamente.
+Si tiene alguna pregunta o comentario sobre estos Términos o la Política de Privacidad, puede contactar al Propietario en la siguiente dirección de correo electrónico: [proyecto.fipicasis@upr.edu]. Importante: Este correo electrónico no está destinado para emergencias ni para asistencia inmediata en situaciones de crisis.
    
-   Uso de la Aplicación
-   
-   El uso de la Aplicación es exclusivo para el propósito establecido y no sustituye a los servicios de psicoterapia. Los usuarios no pueden utilizar la Aplicación para ningún otro propósito.
-   
-   RIO" es una herramienta psicoeducativa diseñada para ofrecer estrategias para el manejo de emociones, enfocándose particularmente en la necesidad de abordar las conductas autolesivas en estudiantes universitarios.
-   
-   "RIO" puede proporcionar apoyo general y orientación, no está enfocado para realizar diagnósticos clínicos ni evalúa el riesgo de autolesión de manera precisa. Siempre se recomienda la consulta con un profesional de la salud mental para una evaluación y tratamiento adecuados.
-   
-    "RIO" no es un sustituto de la evaluación psicológica profesional. Las estrategias y recursos ofrecidos están destinados a complementar, y no a reemplazar, la atención profesional en salud mental.
-   
-   Emergencias Médicas o Psicológicas: En caso de una emergencia médica o psicológica, se debe buscar atención profesional inmediata. "RIO" no está diseñado para manejar situaciones de crisis agudas. Debe acudir a la sala de emergencia más cercana o comunicarse a la Línea PAS para manejo de crisis al 1-800-981-0023. Si la autolesión resulta en sangrado que no puede ser controlado, cortes profundos, o si hay cualquier signo de infección (como enrojecimiento, hinchazón, o aumento del dolor), es crucial buscar atención médica de inmediato.
-   En caso de heridas que parezcan necesitar suturas, o si hay objetos incrustados en la herida, se debe acudir a evaluación médica o llamar a los servicios de emergencia.
-   Siempre es recomendable realizar una consulta con un profesional de la salud después de cualquier episodio de autolesión, incluso si la herida parece menor, para asegurar una evaluación adecuada y recibir apoyo emocional.
-   Fomentamos a los usuarios a desarrollar un plan de seguridad en colaboración con su terapeuta o profesional de salud mental, que incluya pasos a seguir en caso de urgencia y contactos de emergencia.
-   
-   Reglas Generales relacionadas a su uso:
-   
-   Esta aplicación está libre de costo para su uso personal y no debe ser usado para propósitos no autorizados, ilegales, comerciales o cualquier otro uso indebido. Usted se compromete a usar esta aplicación en cumplimento con todas las leyes aplicables y términos de uso.  
-   
-   Privacidad y Protección de Datos Personales
-   
-   El Propietario se compromete a cumplir con las leyes aplicables en Puerto Rico y leyes federales aplicables en relación con la protección de datos personales y privacidad. La Aplicación no recopila datos personales y de salud mental de los usuarios, esta información solo es registrada por el usuario para que pueda usarla en sus sesiones de terapia, si así lo desea.
-   
-   El Propietario se compromete a proteger la privacidad y seguridad de los datos personales y de salud mental de los usuarios de la Aplicación. La Política de Privacidad de la Aplicación, que se encuentra disponible en la Aplicación, describe cómo se recopilan, utilizan, protegen y comparten los datos personales y de salud mental de los usuarios.
-   
-   Propiedad Intelectual
-   
-   El Propietario es el titular de todos los derechos de propiedad intelectual sobre la Aplicación, incluyendo, sin limitación, los derechos de autor, marcas comerciales, patentes, diseños y/o modelos industriales relacionados con esta. El Propietario es, además, el titular del contenido, características y funcionalidad (incluyendo, sin limitación, toda la información, texto, imágenes, video, audio, diseño, y de la selección y disposición de estos) de la Aplicación. Los usuarios no podrán utilizar, copiar, reproducir, distribuir, transmitir, exhibir, vender, licenciar la Aplicación o cualquier contenido de la misma sin la autorización previa y por escrito del Propietario.
-   
-   Modificaciones a la Aplicación
-   
-   El Propietario se reserva el derecho de actualizar o modificar la Aplicación en cualquier momento, sin necesidad de notificar a los usuarios previamente. El Propietario se reserva el derecho de agregar o eliminar servicios o funciones de la Aplicación en cualquier momento, sin necesidad de notificar a los usuarios previamente.
-   
-   Limitaciones de Responsabilidad
-   
-   El Propietario no será responsable por los daños que puedan resultar del uso de la Aplicación, incluyendo, sin limitación, daños directos, indirectos, especiales o consecuentes. El Propietario no garantiza que la Aplicación esté libre de errores o que su funcionamiento sea ininterrumpido.
-   No garantizamos la ausencia de errores o interrupciones, el Propietario no ofrece garantías sobre la exactitud, fiabilidad o idoneidad de la información proporcionada por la Aplicación para cualquier propósito específico.
-   El Propietario no asume responsabilidad por pérdidas de datos, daños a dispositivos o cualquier otro tipo de perjuicio resultante de fallos en el software.
-    Declaramos que el uso de la Aplicación es bajo el propio riesgo del usuario.
-   El Propietario no es responsable del contenido o prácticas de privacidad de los enlaces a sitios web incluidos en la aplicación RIO.
-   
-   En la medida máxima establecida por la ley, el propietario no será responsable de ninguna pérdida o daño causado por un ataque de denegación de servicio, virus u otro material tecnológicamente dañino que pueda infectar su equipo de computadora, programas de computadora, datos u otro material propietario debido a su uso de la aplicación o cualquier servicio obtenido a través de ella o de su descarga de cualquier material publicado en la aplicación.  
-   Su uso de la aplicación, su contenido y cualquier servicio obtenido a través de ella es bajo su propio riesgo. La aplicación, su contenido y cualquier servicio o artículo obtenido a través de la aplicación se proporcionan "tal cual" y "según disponible", sin ninguna garantía de ningún tipo, ya sea explícita o implícita. Ni el propietario ni ninguna persona asociada con el propietario ofrece ninguna garantía o representación con respecto a la integridad, seguridad, confiabilidad, calidad, exactitud o disponibilidad de la aplicación. Sin limitar lo anterior, ni el propietario ni ninguna persona asociada con al propietario representa o garantiza que la aplicación, su contenido o cualquier servicio o artículo obtenido a través de la misma será preciso, confiable, libre de errores o ininterrumpido, que los defectos serán corregidos, que la aplicación o el servidor que la hace disponible estén libres de virus u otros componentes dañinos, o que la aplicación o cualquier servicio o artículo obtenido a través de la aplicación cumplirá sus necesidades o expectativas. En la medida máxima proporcionada por la ley, el propietario rechaza todas las garantías de cualquier tipo, ya sea explícita o implícita, legal o de otro tipo, incluyendo, entre otras, cualquier garantía de comerciabilidad, no-infracción, o de idoneidad para un fin particular. Lo anterior no afecta las garantías que no pueden ser excluidas o limitadas según la ley aplicable.
-   En la medida máxima establecida por la ley, en ningún caso el propietario, sus afiliados, socios comerciales o sus licenciatarios, proveedores de servicios, empleados, agentes, funcionarios o directores serán responsables por daños de cualquier tipo, bajo cualquier teoría legal, que surjan de o en conexión con su uso, o incapacidad para usar la aplicación, cualquier otro sitio web vinculado a ella, cualquier contenido en la aplicación o en otros sitio webs, incluyendo cualquier daño directo, indirecto, especial, incidental, consecuente o punitivo, incluyendo pero sin limitarse a, lesiones personales, dolor y sufrimiento, angustia emocional, pérdida de ingresos, pérdida de ganancias, pérdida de negocios o ahorros esperados, pérdida de uso, pérdida de datos, ya sea causado por agravio (incluyendo negligencia), incumplimiento de contrato, o de otro modo, aunque sea previsible. Lo anterior no afecta ninguna responsabilidad que no puede ser excluida o limitada bajo la ley aplicable.
-   Algunas jurisdicciones no permiten la exclusión de ciertas garantías o la limitación o exclusión de responsabilidad por daños y perjuicios. En consecuencia, es posible que algunas de las limitaciones y exenciones de responsabilidad anteriores no le apliquen a usted. En la medida en que no podamos, según la ley aplicable, renunciar a ninguna garantía o limitar nuestra responsabilidad, el alcance y la duración de dicha garantía y el alcance de nuestra responsabilidad serán los mínimos permitidos por dicha ley.
-   
-   Modificación de los Términos
-   El Propietario se reserva el derecho de modificar estos Términos en cualquier momento y sin previo aviso. Los usuarios deben revisar regularmente estos Términos para estar al tanto de cualquier modificación. El uso continuado de la Aplicación después de la modificación de los Términos implicará la aceptación de los mismos.
-   
-   Terminación
-   
-   El Propietario puede terminar la cuenta de cualquier usuario en cualquier momento y sin previo aviso si el usuario incumple estos Términos.
-   
-   Legislación Aplicable y Jurisdicción
-   
-   Los presentes Términos se regirán e interpretarán de acuerdo con las leyes del Estado Libre Asociado de Puerto Rico y leyes federales aplicables. En caso de cualquier controversia o disputa resultante de la interpretación o aplicación de estos Términos de Uso, dicha controversia será sometida a y resuelta por los tribunales competentes en Puerto Rico
-   
-   Renuncia y Separabilidad
-   
-   Ninguna renuncia por parte del Propietario de cualquier término o condición establecido en estos Términos de uso se considerará una renuncia adicional o continua de dicho término o condición o una renuncia de cualquier otro término o condición, y cualquier falla del Propietario para hacer valer un derecho o disposición bajo estos Términos de uso no constituirá una renuncia a tal derecho o disposición. Si un tribunal u otro tribunal de jurisdicción competente considera que alguna disposición de estos Términos de uso es inválida, ilegal o inaplicable por cualquier motivo, dicha disposición se eliminará o limitará en la medida mínima en que las disposiciones restantes de los Términos de uso continuarán en pleno vigor y efecto.
-   
-   Contacto
-   
-   Si tiene alguna pregunta o comentario sobre estos Términos o la Política de Privacidad, puede contactar al Propietario en la siguiente dirección de correo electrónico: [proyecto.fipicasis@upr.edu]. Importante: Este correo electrónico no está destinado para emergencias ni para asistencia inmediata en situaciones de crisis.
-   
-   
-   Fecha de entrada en vigor
-   Estos Términos y la Política de Privacidad entran en vigor en la fecha de descarga y uso de la Aplicación por parte del usuario.
-   
-   
-   
+Fecha de entrada en vigor\n
+Estos Términos y la Política de Privacidad entran en vigor en la fecha de descarga y uso de la Aplicación por parte del usuario.
    `
    , 
    'en' : 
-   ''
+`
+Privacy Policy for the Rio App
+
+Welcome to RIO, a mobile application developed by a group of researchers from the University of Puerto Rico, Rio Piedras Campus. 
+ 
+"RIO" is a psychoeducational tool designed to offer strategies for managing emotions, focusing particularly on the need to address self-injurious behaviors in college students. RIO is owned by the University of Puerto Rico, Río Piedras Campus (hereinafter, the "Owner").
+
+"RIO" can provide general support and guidance, is not focused on making clinical diagnoses or accurately assesses the risk of self-harm. Consultation with a mental health professional is always recommended for proper evaluation and treatment.
+
+"RIO" is not a substitute for professional psychological evaluation. The strategies and resources offered are intended to complement, not replace, professional mental health care.
+
+a.\tMedical or Psychological Emergencies: In the event of a medical or psychological emergency, immediate professional attention should be sought. "RIO" is not designed to handle acute crisis situations. You should go to the nearest emergency room or call the PAS Crisis Management Line at 1-800-981-0023. If self-harm results in bleeding that cannot be controlled, deep cuts, or if there are any signs of infection (such as redness, swelling, or increased pain), it is crucial to seek medical attention immediately.\n
+b.\tIn case of wounds that appear to need stitches, or if there are objects embedded in the wound, medical evaluation or emergency services should be called.\n
+c.\tIt is always advisable to consult with a healthcare professional after any episode of self-harm, even if the wound seems minor, to ensure a proper evaluation and receive emotional support.\n
+d.\tWe encourage users to develop a safety plan in collaboration with their therapist or mental health professional, including urgent steps and emergency contacts.\n
+
+
+Privacy Policy
+
+This Privacy Policy sets forth how the personal data of users of RIO, Application to Promote the Welfare of College Students with Self-Injurious Non-Suicidal Behavior (CASIS) is collected, used, protected, and shared (hereinafter, "RIO" or the "Application"), in compliance with the State Laws of the Commonwealth of Puerto Rico and applicable federal laws.
+Personal Data Collected
+
+The Owner does not collect personal data from users through RIO. The recorded data will be stored on the user's device. Once the Application is deleted from the user's device, all data will be deleted in the same way. It is important for the user to know that if they lose or forget their password, it cannot be recovered and they will not be able to access the data previously collected. An alternative that users have is to make a copy of their data, in case they lose or forget their password.  
+
+By using RIO you represent that you are not under the age of thirteen (13). If you are under the age of thirteen (13), you may not use RIO. 
+
+Use of Personal Data 
+
+The Owner does not collect personal data through RIO, and only the user has access and control over their own data. This data, which is recorded by the user, can help identify patterns in behaviors, thoughts, and emotions. RIO allows the user to generate reports of these patterns through graphs. The user has the option to share these reports with healthcare professionals if they choose to do so.
+
+Sharing Data with Third Parties
+
+The Owner respects the privacy of users' personal data and does not transfer them to third parties. We ensure that any information entered into RIO  is for the exclusive use of the user and is not disclosed to external entities under any circumstances.
+
+Do-not-track signals
+
+Currently, some browsers offer their users the option to select the "do-not-track" option in their settings. These browsers, in turn, transmit signals to the websites with which the browser communicates. To the extent that there is no industry uniformity in the use of this type of technology, the Application will not assign value or meaning to and will not respond to do-not-track signals at this time. 
+
+Security Measures 
+
+The user is responsible for maintaining the secrecy of any password or credential assigned to him or her in order to register for the Application. The user releases the Owner and its affiliates from and against all liability for the loss, destruction, falsification, manipulation and unauthorized access and/or disclosure of their personal data that occurs due to causes beyond the control of the Owner.
+
+Changes to the Privacy Policy
+
+The Owner reserves the right to update and/or modify this privacy policy at any time. Users will be notified of any changes to the Privacy Policy through the Application.
+
+Contact
+
+If you have any questions or suggestions regarding RIO's privacy policies, please contact us at: proyecto.fipicasis@upr.edu.  Important: This email is not intended for emergencies or immediate assistance in crisis situations. 
+
+
+RIO App Terms of Use
+
+Acceptance of Terms
+
+These Terms of Use (hereinafter referred to as the "Terms") set forth the conditions under which users may use RIO, an application to promote well-being for students with self-injurious behaviors without the intent to commit suicide, (hereinafter referred to as "RIO" or the "Application"). RIO is owned by the University of Puerto Rico Río Piedras Campus (hereinafter, the "Owner"). By downloading the App, you agree that you understand and agree to the RIO App Terms of Use and Privacy Policy." You acknowledge the Owner's right to update the Terms of Use at any time without notice and to be committed to complying with any changes. If you do not agree to these Terms of Use, you must immediately stop using the Application.
+
+Use of the Application
+
+Use of the Application is for the stated purpose only and is not a substitute for psychotherapy services. Users may not use the Application for any other purpose.
+
+RIO" is a psychoeducational tool designed to offer strategies for managing emotions, focusing particularly on the need to address self-injurious behaviors in college students.
+
+"RIO" can provide general support and guidance, is not focused on making clinical diagnoses or accurately assesses the risk of self-harm. Consultation with a mental health professional is always recommended for proper evaluation and treatment.
+
+ "RIO" is not a substitute for professional psychological evaluation. The strategies and resources offered are intended to complement, not replace, professional mental health care.
+
+a.\tMedical or Psychological Emergencies: In the event of a medical or psychological emergency, immediate professional attention should be sought. "RIO" is not designed to handle acute crisis situations. You should go to the nearest emergency room or call the PAS Crisis Management Line at 1-800-981-0023. If self-harm results in bleeding that cannot be controlled, deep cuts, or if there are any signs of infection (such as redness, swelling, or increased pain), it is crucial to seek medical attention immediately.
+b.\tIn case of wounds that appear to need stitches, or if there are objects embedded in the wound, medical evaluation or emergency services should be called.
+c.\tIt is always advisable to consult with a healthcare professional after any episode of self-harm, even if the wound seems minor, to ensure a proper evaluation and receive emotional support.
+d.\tWe encourage users to develop a safety plan in collaboration with their therapist or mental health professional, including urgent steps and emergency contacts.
+
+General Rules related to its use:
+
+This app is free of charge for your personal use and should not be used for any unauthorized, illegal, commercial, or any other misuse purposes. You agree to use this application in compliance with all applicable laws and terms of use.  
+
+Privacy and Protection of Personal Data
+
+The Owner agrees to comply with applicable laws in Puerto Rico and applicable federal laws regarding the protection of personal data and privacy. The App does not collect personal and mental health data from users, this information is only recorded by the user so that they can use it in their therapy sessions, if they wish.
+
+The Owner is committed to protecting the privacy and security of the personal and mental health data of the users of the Application. The App Privacy Policy, which is available on the App, describes how users' personal and mental health data is collected, used, protected, and shared.
+
+Intellectual property
+
+The Owner is the owner of all intellectual property rights in the Application, including, without limitation, copyrights, trademarks, patents, designs and/or industrial models related thereto. The Owner is also the owner of the content, features, and functionality (including, without limitation, all information, text, images, video, audio, design, and the selection and arrangement thereof) of the Application. Users may not use, copy, reproduce, distribute, transmit, display, sell, license the Application or any content therein without the prior written permission of the Owner.
+
+Modifications to the Application
+
+The Owner reserves the right to update or modify the Application at any time, without the need to notify users in advance. The Owner reserves the right to add or remove services or functions from the Application at any time, without the need to notify users in advance.
+
+Limitations of Liability
+
+The Owner shall not be liable for any damages that may result from the use of the Application, including, without limitation, direct, indirect, special or consequential damages. The Owner does not warrant that the Application will be error-free or that its operation will be uninterrupted.\n
+a.\tWe do not guarantee the absence of errors or interruptions, the Owner makes no warranties about the accuracy, reliability or suitability of the information provided by the Application for any specific purpose.\n
+b.\tThe Owner assumes no responsibility for loss of data, damage to devices or any other type of harm resulting from software failures.\n
+c.\tWe declare that the use of the Application is at the user's own risk.\n
+d.\tThe Owner is not responsible for the content or privacy practices of any website links included in the RIO App.
+
+To the maximum extent provided by law, the Owner shall not be liable for any loss or damage caused by a denial-of-service attack, viruses, or other technologically harmful material that may infect your computer equipment, computer programs, data, or other proprietary material due to your use of the Application or any services obtained through it or your downloading of any material posted on the Application.  
+
+Your use of the App, its content, and any services obtained through it is at your own risk. The App, its content, and any services or items obtained through the App are provided on an "as is" and "as available" basis, without any warranty of any kind, either express or implied. Neither the Owner nor anyone associated with the Owner makes any warranties or representations regarding the completeness, security, reliability, quality, accuracy, or availability of the Application. Without limiting the foregoing, neither the Owner nor anyone associated with the Owner represents or warrants that the Application, its content or any services or items obtained through it will be accurate, reliable, error-free or uninterrupted, that defects will be corrected, that the Application or the server that makes it available are free of viruses or other harmful components,  or that the App or any services or items obtained through the App will meet your needs or expectations. To the maximum extent provided by law, the Owner disclaims all warranties of any kind, whether express or implied, statutory or otherwise, including, but not limited to, any warranties of merchantability, non-infringement, or fitness for a particular purpose. The foregoing does not affect warranties that cannot be excluded or limited under applicable law.
+
+To the maximum extent provided by law, in no event shall the owner, its affiliates, business partners, or its licensors, service providers, employees, agents, officers, or directors be liable for damages of any kind, under any legal theory, arising out of or in connection with your use, of, or inability to use, the App, any other website linked to it,  any content on the App or on other websites, including any direct, indirect, special, incidental, consequential or punitive damages, including, but not limited to, personal injury, pain and suffering, emotional distress, loss of revenue, loss of profits, loss of business or expected savings, loss of use, loss of data, whether caused by tort (including negligence),  breach of contract, or otherwise, even if foreseeable. The foregoing does not affect any liability that cannot be excluded or limited under applicable law.
+
+Some jurisdictions do not allow the exclusion of certain warranties or the limitation or exclusion of liability for damages. Accordingly, some of the above limitations and disclaimers may not apply to you. To the extent that we cannot, under applicable law, disclaim any warranty or limit our liability, the scope and duration of such warranty and the scope of our liability shall be the minimum permitted by such law.
+
+Modification of Terms
+The Owner reserves the right to modify these Terms at any time and without notice. Users should regularly review these Terms to be aware of any modifications. Your continued use of the Application following the modification of the Terms will constitute your acceptance of the Terms.
+
+Termination
+
+The Owner may terminate any user's account at any time and without notice if the user breaches these Terms.
+
+Governing Law and Jurisdiction
+
+These Terms shall be governed by and construed in accordance with the laws of the Commonwealth of Puerto Rico and applicable federal laws. In the event of any controversy or dispute arising out of the interpretation or application of these Terms of Use, such controversy shall be submitted to and resolved by the competent courts in Puerto Rico
+
+Waiver and Severability
+
+No waiver by the Owner of any term or condition set forth in these Terms of Use shall be deemed a further or continuing waiver of such term or condition or a waiver of any other term or condition, and any failure of the Owner to assert a right or provision under these Terms of Use shall not constitute a waiver of such right or provision. If any provision of these Terms of Use is found by a court or other tribunal of competent jurisdiction to be invalid, illegal, or unenforceable for any reason, such provision shall be eliminated or limited to the minimum extent that the remaining provisions of the Terms of Use shall continue in full force and effect.
+
+Contact
+
+If you have any questions or comments about these Terms or the Privacy Policy, you may contact the Owner at the following email address: [proyecto.fipicasis@upr.edu]. Important: This email is not intended for emergencies or immediate assistance in crisis situations.
+
+
+Effective Date
+These Terms and the Privacy Policy are effective on the date of your download and use of the Application.
+
+
+
+
+`
    },
 
   //paginas P1.4

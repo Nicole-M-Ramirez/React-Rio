@@ -70,7 +70,7 @@ function Informacion({route}) {
                         Title={gs['detonantes'][lang]} 
                         Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion'})} 
                         Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*1.2}
+                        DropSize = {dimensions.bodyHeight*1.1}
                         contText= {gs['detonantesCont'][lang]}
                         titleHeigth = {0.2}
                         downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
@@ -79,7 +79,7 @@ function Informacion({route}) {
                         Title={gs['usoComp'][lang]} 
                         Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion', regresarTitulo:'volver'})} 
                         Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*1.2}
+                        DropSize = {dimensions.bodyHeight*1.1}
                         contText= {gs['usoCompCont'][lang]}
                         titleHeigth = {0.2}
                         downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
@@ -88,7 +88,7 @@ function Informacion({route}) {
                         Title={gs['mayorBenef'][lang]} 
                         Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion'})} 
                         Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*2.5}
+                        DropSize = {dimensions.bodyHeight*1.4}
                         contText= {gs['mayorBenefCont'][lang]}
                         titleHeigth = {0.07}
                         downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
@@ -97,7 +97,7 @@ function Informacion({route}) {
                         Title={gs['queAutolecion'][lang]} 
                         Function ={() => navigation.navigate('Informacion')} 
                         Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*1.2}
+                        DropSize = {dimensions.bodyHeight*0.9}
                         contText= {gs['queAutolecionCont'][lang]}
                         titleHeigth = {0.2}
                         downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
@@ -106,7 +106,7 @@ function Informacion({route}) {
                         Title={gs['porqueAutolesion'][lang]} 
                         Function ={() => navigation.navigate('Informacion')} 
                         Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*2.5}
+                        DropSize = {dimensions.bodyHeight*1.7}
                         contText= {gs['porqueAutolesionCont'][lang]}
                         titleHeigth = {0.1}
                         downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
@@ -115,7 +115,7 @@ function Informacion({route}) {
                         Title={gs['cuanAutolesion'][lang]} 
                         Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion'})} 
                         Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*0.7}
+                        DropSize = {dimensions.bodyHeight*0.6}
                         contText= {gs['cuanAutolesionCont'][lang]}
                         titleHeigth = {0.1}
                         downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
@@ -133,7 +133,7 @@ function Informacion({route}) {
                         Title={gs['alerta'][lang]} 
                         Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion'})} 
                         Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*1.55}
+                        DropSize = {dimensions.bodyHeight*1.3}
                         contText= {gs['alertaCont'][lang]}
                         titleHeigth = {0.2}
                         downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
@@ -142,7 +142,7 @@ function Informacion({route}) {
                         Title={gs['suicidioAutolesion'][lang]} 
                         Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion'})} 
                         Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*0.7}
+                        DropSize = {dimensions.bodyHeight*0.6}
                         contText= {gs['suicidioAutolesionCont'][lang]}
                         titleHeigth = {0.2}
                         downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
@@ -151,7 +151,7 @@ function Informacion({route}) {
                         Title={gs['queHacer'][lang]} 
                         Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion'})} 
                         Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*1}
+                        DropSize = {dimensions.bodyHeight*.8}
                         contText= {gs['queHacerCont'][lang]}
                         titleHeigth = {0.07}
                         downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
@@ -160,7 +160,7 @@ function Informacion({route}) {
                         Title={gs['regulacion'][lang]} 
                         Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion'})} 
                         Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*1.2}
+                        DropSize = {dimensions.bodyHeight*1.0}
                         contText= {gs['regulacionCont'][lang]}
                         titleHeigth = {0.07}
                         downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
@@ -169,7 +169,7 @@ function Informacion({route}) {
                         Title={gs['riesgo'][lang]} 
                         Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion'})} 
                         Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*1.3}
+                        DropSize = {dimensions.bodyHeight*1.0}
                         contText= {gs['riesgoCont'][lang]}
                         titleHeigth = {0.2}
                         downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}

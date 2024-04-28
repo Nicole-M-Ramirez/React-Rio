@@ -184,7 +184,7 @@ Welcome to RIO, a mobile application developed by a group of researchers from th
 "RIO" can provide general support and guidance, is not focused on making clinical diagnoses or accurately assesses the risk of self-harm. Consultation with a mental health professional is always recommended for proper evaluation and treatment.
 
 "RIO" is not a substitute for professional psychological evaluation. The strategies and resources offered are intended to complement, not replace, professional mental health care.
-
+  
 a.\tMedical or Psychological Emergencies: In the event of a medical or psychological emergency, immediate professional attention should be sought. "RIO" is not designed to handle acute crisis situations. You should go to the nearest emergency room or call the PAS Crisis Management Line at 1-800-981-0023. If self-harm results in bleeding that cannot be controlled, deep cuts, or if there are any signs of infection (such as redness, swelling, or increased pain), it is crucial to seek medical attention immediately.\n
 b.\tIn case of wounds that appear to need stitches, or if there are objects embedded in the wound, medical evaluation or emergency services should be called.\n
 c.\tIt is always advisable to consult with a healthcare professional after any episode of self-harm, even if the wound seems minor, to ensure a proper evaluation and receive emotional support.\n
@@ -381,223 +381,163 @@ These Terms and the Privacy Policy are effective on the date of your download an
 
   'detonantesCont':{
       'es':
-`i.\tDiscusión con padres, parejas o mejores amigues\n\nii.\tObtener bajas calificaciones
-
-iii.  Ruptura o separación de pareja
-
-iv.   Experimentar algún tipo de abuso, acoso o experiencia de burla o bullying
-
-v.    Recibir una crítica
-
-vi.   Percibir que hizo un error o sentirse culpable
-
-vii.  Estar atravesando una situación angustiante o dolorosa
-
-viii. Sentirme abrumado/a o tener mucho estrés
-
-ix.   Sentirme desconectado/a o vacío/a
-
-x.    Crisis de identidad
-
-xi.   Crisis de duelo
-
-xii.  Crisis económica
-
-xiii. Otra`,
+      `
+      <ol style="padding-left: 90px;" type="i">
+            <li style="margin-top: .40em;">Discusión con padres, parejas o mejores amigues</li>
+            <li style="margin-top: .40em;">Obtener bajas calificaciones.</li>
+            <li style="margin-top: .40em;">Ruptura o separación de pareja.</li>
+            <li style="margin-top: .40em;">Experimentar algún tipo de abuso, acoso o experiencia de burla o bullying.</li>
+            <li style="margin-top: .40em;">Recibir una crítica</li>
+            <li style="margin-top: .40em;">Percibir que hizo un error o sentirse culpable</li>
+            <li style="margin-top: .40em;">Estar atravesando una situación angustiante o dolorosa</li>
+            <li style="margin-top: .40em;">Sentirme abrumado/a o tener mucho estrés</li>
+            <li style="margin-top: .40em;">Sentirme desconectado/a o vacío/a</li>
+            <li style="margin-top: .40em;">Crisis de identidad</li>
+            <li style="margin-top: .40em;">Crisis de duelo</li>
+            <li style="margin-top: .40em;">Crisis económica</li>
+            <li style="margin-top: .40em;">Otra</li>
+      </ol>`,
       'en':
-`i.    Arguments with parents, partners, or friends
+`
+      <ol style="padding-left: 90px;" type="i">
+            <li style="margin-top: .40em;">Arguments with parents, partners, or friends
+            <li style="margin-top: .40em;">Receiving low grades 
+            <li style="margin-top: .40em;">Breakup or separation from a partner or friends
+            <li style="margin-top: .40em;">Experiencing any form of abuse, harassment, teasing, or bullying
+            <li style="margin-top: .40em;">Receiving criticism
+            <li style="margin-top: .40em;">Feeling that you made a mistake or feeling guilty
+            <li style="margin-top: .40em;">Going through a distressing or painful situation
+            <li style="margin-top: .40em;">Feeling overwhelmed or highly stressed
+            <li style="margin-top: .40em;">Feeling disconnected or empty
+            <li style="margin-top: .40em;">Identity crisis
+            <li style="margin-top: .40em;">Grief crisis
+            <li style="margin-top: .40em;">Financial crisis
+            <li style="margin-top: .40em;">Other
+      </ol>
 
-ii.   Receiving low grades 
-
-iii.  Breakup or separation from a partner or friends
-
-iv.   Experiencing any form of abuse, harassment, teasing, or bullying
-
-v.    Receiving criticism
-
-vi.   Feeling that you made a mistake or feeling guilty
-
-vii. Going through a distressing or painful situation
-
-viii.   Feeling overwhelmed or highly stressed
-
-ix.    Feeling disconnected or empty
-
-x.   Identity crisis
-
-xi.  Grief crisis
-
-xii. Financial crisis
-
-xiii. Other`
+`
     },
 
     'usoCompCont':{
       'es':
-`I. Información para personas que se autolesionan
-    i.   Infórmale a tu profesional sobre esta aplicación
-    ii.  Déjale saber que esta aplicación ofrece un rastreo que puede ser útil para ambos
-    iii. Pueden acordar que información pueden compartir 
-
-II. Información para profesionales de ayuda:
-    i.   Infórmales a tus participantes que se autolesionan sobre esta aplicación.
-    ii.  Recomienda su uso como herramienta complementaria que te permite llevar un registro sobre progreso
-    iii. Acuerden información relevante que deseas conocer para mejorar las intervenciones terapéuticas. `,
+`
+<ol style="padding-left: 70px;" type="I">
+  <li>Información para personas que se autolesionan:</li>
+  <ol style="padding-left: 55px;" type="i">
+      <li style="margin-top: .40em;">Infórmale a tu profesional sobre esta aplicación.</li>
+      <li style="margin-top: .40em;">Déjale saber que esta aplicación ofrece un rastreo que puede ser útil para ambos.</li>
+      <li style="margin-top: .40em;">Pueden acordar que información pueden compartir.</li>
+  </ol>
+  <p>
+  <li style="margin-top: .40em;">Información para profesionales de ayuda::</li>
+  <ol style="padding-left: 55px;" type="i">
+      <li style="margin-top: .40em;">Infórmales a tus participantes que se autolesionan sobre esta aplicación.</li>
+      <li style="margin-top: .40em;">Recomienda su uso como herramienta complementaria que te permite llevar un registro sobre progreso.</li>
+      <li style="margin-top: .40em;">Acuerden información relevante que deseas conocer para mejorar las intervenciones terapéuticas.</li>
+  </ol>
+</ol>
+`,
       'en':
-`I. Information for individuals who self-harm
-
-i.   Inform your professional about thisapplication.
-ii.  Let them know that this application offers tracking that can be useful for both of you.
-iii. Agree on what information you are willing to share.
-
-II. Information for helping professionals:
-
-i.   Inform your participants who self-harm about this application.
-ii.  Recommend its use as a complementary tool that allows you to track progress.
-iii. Agree on relevant information that you would like to know to enhance therapeutic interventions.`
+`
+<ol style="padding-left: 70px;" type="I">
+  <li>Information for individuals who self-harm</li>
+  <ol style="padding-left: 55px;" type="i">
+      <li style="margin-top: .40em;">Inform your professional about thisapplication.</li>
+      <li style="margin-top: .40em;">Let them know that this application offers tracking that can be useful for both of you.</li>
+      <li style="margin-top: .40em;">Agree on what information you are willing to share.</li>
+  </ol>
+  <p>
+  <li style="margin-top: .40em;">Information for helping professionals:</li>
+  <ol style="padding-left: 55px;" type="i">
+      <li style="margin-top: .40em;">Inform your participants who self-harm about this application.</li>
+      <li style="margin-top: .40em;">Recommend its use as a complementary tool that allows you to track progress.</li>
+      <li style="margin-top: .40em;">Agree on relevant information that you would like to know to enhance therapeutic interventions.</li>
+  </ol>
+</ol>
+`
     },
     'mayorBenefCont':{
       'es':
 `Rio puede ser programada a tus gustos y preferencias. Puedes escoger el idioma, el uso de notificaciones y las actividades que más gustes: 
-
-  i.Escoge el idioma de tu preferencia (español 
-  o inglés), aunque lo puedes cambiar en 
-  cualquier momento
-
-  ii. Si deseas obtener recordatorios para usar
-  RIO puedes encenderlos en las configuraciones.
-
-  iii. Lee la información educativa cuando tengas
-  tiempo.
-
-  iv. Identifica cuales son las situaciones o 
-  detonantes (ver sección de detonantes para
-  más información) que te ponen en mayor riesgo
-  de autolesionarte. 
-      
-  v. Identifica las estrategias que mejor te 
-  funcionan para prevenir la autolesión.
-
-  vi. Cuando sientas el deseo de autolesionarte
-  conéctate a la aplicación y ve directo a la
-  actividad que mejor te permitirá detener la
-  autolesión.
-
-  vii. Si recibes ayuda profesional, infórmale
-  que usas esta aplicación para que puedas 
-  usarla como herramienta complementaria de
-  ayuda.`,
+<ol style="padding-left: 90px;" type="i">
+<li style="margin-top: .40em;"> Escoge el idioma de tu preferencia (español o inglés), aunque lo puedes cambiar en cualquier momento
+<li style="margin-top: .40em;"> Si deseas obtener recordatorios para usar RIO puedes encenderlos en las configuraciones.
+<li style="margin-top: .40em;"> Lee la información educativa cuando tengas tiempo.
+<li style="margin-top: .40em;"> Identifica cuales son las situaciones o detonantes (ver sección de detonantes para más información) que te ponen en mayor riesgo de autolesionarte. 
+<li style="margin-top: .40em;"> Identifica las estrategias que mejor te funcionan para prevenir la autolesión.
+<li style="margin-top: .40em;"> Cuando sientas el deseo de autolesionarte conéctate a la aplicación y ve directo a la actividad que mejor te permitirá detener la autolesión.
+<li style="margin-top: .40em;"> Si recibes ayuda profesional, infórmale que usas esta aplicación para que puedas usarla como herramienta complementaria de ayuda.
+</ol>`,
       'en':
 `Rio can be customized to your preferences. You can choose the language, use of notifications, and the activities you prefer.
-
-  i. Select your preferred language
-  (Spanish or English), although you can
-  change it at any time.
-
-  ii. If you want reminders to use RIO, 
-  you can turn them on in the settings
-  section.
-
-  iii. Read the educational information
-  provided in the information section.
-
-  iv. Identify the situations or triggers
-  (see triggers section for more
-  information) that place you at a higher
-  risk of self-harm.
-
-  v. Identify the strategies that work best
-  for you in preventing self-harm.
-
-  vi. When you feel the urge to self-harm, 
-  connect to the application and go directly
-  to the activity that will help you feel 
-  more in control.
-
-  vii. If you receive professional help, inform
-  them that you are using this application so
-  you can use it as a complementary tool for 
-  support.
+<ol style="padding-left: 90px;" type="i">
+<li style="margin-top: .40em;"> Select your preferred language (Spanish or English), although you can change it at any time.
+<li style="margin-top: .40em;"> If you want reminders to use RIO, you can turn them on in the settings section.
+<li style="margin-top: .40em;"> Read the educational information provided in the information section.
+<li style="margin-top: .40em;"> Identify the situations or triggers (see triggers section for more information) that place you at a higher risk of self-harm.
+<li style="margin-top: .40em;"> Identify the strategies that work best for you in preventing self-harm.
+<li style="margin-top: .40em;"> When you feel the urge to self-harm, connect to the application and go directly to the activity that will help you feel more in control.
+<li style="margin-top: .40em;"> If you receive professional help, inform them that you are using this application so you can use it as a complementary tool for support.
+</ol>
 `
     },
     'queAutolecionCont':{
       'es':
 `Es cuando una persona se provoca daño corporal, pero sin la intención de provocar la muerte. Algunas de las formas más comunes de autolesionarse son el cortarse, pellizcarse hasta sangrar, golpearse, quemarse, entre otras). Puedes buscar más información entrando a los siguientes enlaces:
-
-  Programa de investigación sobre la 
+<ul>
+  <li><a href="https://www.selfinjury.bctr.cornell.edu/">Programa de investigación sobre la 
   autolesión ysu recuperación de la
   Universidad de Cornell (SIRR): The
   Cornell Research Program on
-  Self-Injury and Recovery
-
-  Sociedad Internacional para el
+  Self-Injury and Recovery (https://www.selfinjury.bctr.cornell.edu/)</a>
+<br>&nbsp;
+  <li><a href="https://www.selfinjury.bctr.cornell.edu/">Sociedad Internacional para el
   Estudio de la Autolesión:
-  Home | ISSS (itriples.org)`,
+  Home | ISSS (itriples.org)</a>
+</ul>`,
       'en':
 `It is when a person intentionally harms their body without the intention of causing death. Some common forms of self-harm include cutting, pinching until bleeding, hitting oneself, burning, among others. You can find more information by visiting the following links:
 
-  Self-Injury and Recovery Research Program 
-  at Cornell University (SIRR): The Cornell 
-  Research Program on Self-Injury and
-  Recovery
-
-  International Society for the Study of 
-  Self-Injury: Home | ISSS (itriples.org)
+<ul>
+      <li><a href="https://www.selfinjury.bctr.cornell.edu/">Self-Injury and Recovery Research Program at Cornell University (SIRR): The Cornell Research Program on Self-Injury and Recovery (https://www.selfinjury.bctr.cornell.edu/)</a>
+      <br>&nbsp;
+  
+      <li><a href="https://www.selfinjury.bctr.cornell.edu/">International Society for the Study of Self-Injury: Home | ISSS (itriples.org)</a>
+</ul>
 `
     },
     'porqueAutolesionCont':{
       'es':
 `Las personas se pueden autolesionar por diversas razones:
-
-i.    Para aliviar la tensión en momentos
-      difíciles, cuando se sienten abrumades
-      o sobrecargades emocionalmente.
-ii.   Como modo de castigo, cuando se sienten
-      culpables y no saben cómo aliviar ese
-      sentimiento de culpa.
-iii.  Para lidiar con algún sentimiento que
-      les crea malestar: tales como la ansiedad,
-      el coraje, la frustración, la vergüenza,
-      entre otros.
-iv.   Como modo de sentir vida o conectarse con
-      alguna sensación que les haga sentir que
-      tienen vida.
-v.    Como modo de lidiar con personas y los
-      conflictos inherentes a las relaciones.
-vi.   Para evadir sentimiento de tristeza,
-      dolor o angustia.
-vii.  Como modo de lidiar con situaciones que
-      no sabe resolver o parecen no tener
-      solución.
+<ol style="padding-left: 90px;" type="i">
+      <li style="margin-top: .40em;">Para aliviar la tensión en momentos difíciles, cuando se sienten abrumades o sobrecargades emocionalmente.
+      <li style="margin-top: .40em;">Como modo de castigo, cuando se sienten culpables y no saben cómo aliviar ese     sentimiento de culpa.
+      <li style="margin-top: .40em;">Para lidiar con algún sentimiento que les crea malestar: tales como la ansiedad, el coraje, la frustración, la vergüenza, entre otros.
+      <li style="margin-top: .40em;">Como modo de sentir vida o conectarse con alguna sensación que les haga sentir que     tienen vida.
+      <li style="margin-top: .40em;">Como modo de lidiar con personas y los conflictos inherentes a las relaciones.
+      <li style="margin-top: .40em;">Para evadir sentimiento de tristeza, dolor o angustia.
+      <li style="margin-top: .40em;">Como modo de lidiar con situaciones que no sabe resolver o parecen no tener solución.
+</ol>
 
 Puede haber otras razones que lleven a alguien a autolesionarse. Todas están relacionadas al manejo emocional y a la dificultad de sentir incomodidad y malestar. Por ello, recomendamos el pedir ayuda profesional junto con el uso de RIO. Puedes entrar a este enlace para más información: Why do people self-injure? | ISSS (itriples.org)
-
+<p>
 Si tienes plan médico puedes comunicarte con servicio al cliente para que te orienten sobre profesionales cercanos a donde vives.`,
       'en':
 `People may self-harm for various reasons:
 
-i.    To relieve tension during difficult
-      times or when they feel overwhelmed
-      or emotionally overloaded.
-ii.   As a form of punishment when they
-      feel guilty and don't know how to 
-      alleviate the feeling of guilt.
-iii.  To cope with uncomfortable emotions
-      such as anxiety, anger, frustration,
-      shame, and others.
-iv.   To feel alive or connected to a
-      sensation that makes them feel
-      alive.
-v.    To deal with people and the inherent
-      conflicts in relationships.
-vi.   To escape feelings of sadness, pain,
-      or distress.
-vii.  To cope with situations, they don't
-      know how to resolve or that seem
-      unsolvable.
+<ol style="padding-left: 90px;" type="i">
+      <li style="margin-top: .40em;">To relieve tension during difficult times or when they feel overwhelmed or emotionally overloaded.
+      <li style="margin-top: .40em;">As a form of punishment when they feel guilty and don't know how to alleviate the feeling of guilt.
+      <li style="margin-top: .40em;">To cope with uncomfortable emotions such as anxiety, anger, frustration, shame, and others.
+      <li style="margin-top: .40em;">To feel alive or connected to a sensation that makes them feel alive.
+      <li style="margin-top: .40em;">To deal with people and the inherent conflicts in relationships.
+      <li style="margin-top: .40em;">To escape feelings of sadness, pain, or distress.
+      <li style="margin-top: .40em;">To cope with situations, they don't know how to resolve or that seem unsolvable.
+</ol>
 
 There may be other reasons that lead someone to self-harm, yet they are all related to emotional management and the difficulty of tolerating discomfort and distress. Therefore, we recommend seeking professional help along with using RIO. You can visit this link for more information: Why do people self-injure? | ISSS (itriples.org)
 
+<p> 
 If you have medical insurance, you can contact a customer service representative that can aid in guiding you to professionals near your area.
 `
     },
@@ -615,78 +555,60 @@ If you have medical insurance, you can contact a customer service representative
     },
     'alertaCont':{
       'es':
-`i.   Cortaduras recientes, quemaduras u otras marcas de daño corporal.
-
-ii.   Sangre en la bañera o lavamanos.
-
-iii.  Uso frecuente de curitas o vendajes en manos, muslos, estomago.
-
-iv.   Uso de ropa inadecuada para la ocasión (mangas largas cuando hay mucho calor).
-
-v.    Uso constante de brazaletes u otros objetos para tapar heridas.
-
-vi.   Incapacidad para participar en actividades que requieren uso de menos ropa (nadar, correr, etc.).
-
-vii.  Cambios dramáticos en estilos de vestir.
-
-viii. Señales emocionales: desapego emocional.
-
-ix.   Preocupación constante.
-
-x.    Dejar de hacer actividades favoritas.
-
-xi.   Irritabilidad.
-
-xii.  Fluctuaciones en estado de animo.
-
-xiii. Dificultades interpersonales.
-
-xiv.  Aislamiento.
+`
+<ol style="padding-left: 90px;" type="i">
+      <li style="margin-top: .40em;">Cortaduras recientes, quemaduras u otras marcas de daño corporal.
+      <li style="margin-top: .40em;">Sangre en la bañera o lavamanos.
+      <li style="margin-top: .40em;">Uso frecuente de curitas o vendajes en manos, muslos, estomago.
+      <li style="margin-top: .40em;">Uso de ropa inadecuada para la ocasión (mangas largas cuando hay mucho calor).
+      <li style="margin-top: .40em;">Uso constante de brazaletes u otros objetos para tapar heridas.
+      <li style="margin-top: .40em;">Incapacidad para participar en actividades que requieren uso de menos ropa (nadar, correr, etc.).
+      <li style="margin-top: .40em;">Cambios dramáticos en estilos de vestir.
+      <li style="margin-top: .40em;">Señales emocionales: desapego emocional.
+      <li style="margin-top: .40em;">Preocupación constante.
+      <li style="margin-top: .40em;">Dejar de hacer actividades favoritas.
+      <li style="margin-top: .40em;">Irritabilidad.
+      <li style="margin-top: .40em;">Fluctuaciones en estado de animo.
+      <li style="margin-top: .40em;">Dificultades interpersonales.
+      <li style="margin-top: .40em;">Aislamiento.   
+</ol>
 `,
       'en':
-`i.   Recent cuts, burns, or other marks of bodily harm.
-
-ii.   Blood in the bathtub or sink.
-
-iii.  Frequent use of band-aids or dressings on hands, thighs or stomach.
-
-iv.   Wearing inappropriate clothing for the occasion (long sleeves in hot weather).
-
-v.    Constant use of bracelets or other objects to cover wounds.
-
-vi.   Inability to participate in activities that require less clothing (swimming, running, etc.).
-
-vii.  Dramatic changes in dressing styles.
-
-viii. Emotional detachment.
-
-ix.   Constant worry.
-
-x.    Loss of interest in favorite activities.
-
-xi.   Irritability.
-
-xii.  Mood fluctuations.
-
-xiii. interpersonal difficulties.
-
-xiv.  Isolation.
+`
+<ol style="padding-left: 90px;" type="i">
+      <li style="margin-top: .40em;">Recent cuts, burns, or other marks of bodily harm.
+      <li style="margin-top: .40em;">Blood in the bathtub or sink.
+      <li style="margin-top: .40em;">Frequent use of band-aids or dressings on hands, thighs or stomach.
+      <li style="margin-top: .40em;">Wearing inappropriate clothing for the occasion (long sleeves in hot weather).
+      <li style="margin-top: .40em;">Constant use of bracelets or other objects to cover wounds.
+      <li style="margin-top: .40em;">Inability to participate in activities that require less clothing (swimming, running, etc.).
+      <li style="margin-top: .40em;">Dramatic changes in dressing styles.
+      <li style="margin-top: .40em;">Emotional detachment.
+      <li style="margin-top: .40em;">Constant worry.
+      <li style="margin-top: .40em;">Loss of interest in favorite activities.
+      <li style="margin-top: .40em;">Irritability.
+      <li style="margin-top: .40em;">Mood fluctuations.
+      <li style="margin-top: .40em;">interpersonal difficulties.
+      <li style="margin-top: .40em;">Isolation.
+</ol>
 `
     },
     'suicidioAutolesionCont':{
       'es':
-`i.   Se diferencian en tres aspectos básicos: intención, repetición y letalidad.
-
-ii.   Jóvenes que incurren en conducta autolesiva son más propensos a incurrir en conducta suicida.
-
-iii.  El antecedente de conductas autolesivas es uno de los más potentes predictores de suicidio consumado
+`
+<ol style="padding-left: 90px;" type="i">
+      <li style="margin-top: .40em;">Se diferencian en tres aspectos básicos: intención, repetición y letalidad.
+      <li style="margin-top: .40em;">Jóvenes que incurren en conducta autolesiva son más propensos a incurrir en conducta suicida.
+      <li style="margin-top: .40em;">El antecedente de conductas autolesivas es uno de los más potentes predictores de suicidio consumado
+</ol>
 `,
       'en':
-`i.   They differ in three basic aspects: intention, repetition, and lethality.
-
-ii.   Youth who engage in self-harm behavior are more prone to engage in suicidal behavior.
-
-iii.  A history of self-injurious behavior is one of the most potent predictors of completed suicide.
+`
+<ol style="padding-left: 90px;" type="i">
+      <li style="margin-top: .40em;">They differ in three basic aspects: intention, repetition, and letha
+      <li style="margin-top: .40em;">Youth who engage in self-harm behavior are more prone to engage in suicidal beha
+      <li style="margin-top: .40em;">A history of self-injurious behavior is one of the most potent predictors of completed suicide.
+</ol>
 `
     },
     'queHacerCont':{
@@ -716,46 +638,25 @@ If you have medical insurance, you can contact a customer service representative
       'es':
 `La literatura ha identificado diversos factores que pueden aumentar la posibilidad de autolesión entre ellas: 
 
-  i. Tener alguna condición de salud mental
-  diagnosticada.
-
-  ii. Uso y abuso de alcohol y otras
-  sustancias.
-
-  iii.  Haber experimentado algún trauma,
-  incluyendo alguna situación de abuso.
-  (físico, sexual, emocional).
-
-  iv. Población LGBTQ+ – debido al estima,
-  al discrimen y los prejuicios hacia esta
-  población.
-
-  v.  Tener una imagen negativa hacia
-  nuestro cuerpo.
-
-  vi. Tener problemas relacionándome
-  con otras personas
+<ol style="padding-left: 90px;" type="i">
+      <li style="margin-top: .40em;">Tener alguna condición de salud mental diagnosticada.
+      <li style="margin-top: .40em;">Uso y abuso de alcohol y otras sustancias.
+      <li style="margin-top: .40em;">Haber experimentado algún trauma, incluyendo alguna situación de abuso (físico, sexual, emocional).
+      <li style="margin-top: .40em;">Población LGBTQ+ – debido al estima, al discrimen y los prejuicios hacia esta población.
+      <li style="margin-top: .40em;">Tener una imagen negativa hacia nuestro cuerpo.
+      <li style="margin-top: .40em;">Tener problemas relacionándome con otras personas
+</ol>
 `,
       'en':
 `The literature has identified various factors that can increase the likelihood of self-harm, including:
-  i. Having a diagnosed mental health
-  condition.
-
-  ii. Use and abuse of alcohol and
-  other substances.
-
-  iii. Having experienced trauma, 
-  including situations of physical,
-  sexual, or emotional abuse.
-
-  iv. LGBTQ+ population - due to stigma,
-  discrimination, and prejudice against
-  this population.
-
-  v. Having a negative body image.
-
-  vi. Having difficulties in relating to
-  other people.
+<ol style="padding-left: 90px;" type="i">
+      <li style="margin-top: .40em;">Having a diagnosed mental health condition. 
+      <li style="margin-top: .40em;">Use and abuse of alcohol and other substances.
+      <li style="margin-top: .40em;">Having experienced trauma, including situations of physical, sexual, or emotional abuse.
+      <li style="margin-top: .40em;">LGBTQ+ population - due to stigma, discrimination, and prejudice against this population.
+      <li style="margin-top: .40em;">Having a negative body image.
+      <li style="margin-top: .40em;">Having difficulties in relating toother people.
+</ol>
 `
     },
   

@@ -71,7 +71,10 @@ function SelectorEmocion({route}) {
       </HeaderView>
 
       <BodyView>
+      <View style={{top: dimensions.bodyHeight*0.02}}>
+
         <SixGrid colors={Colors} title={title} functions={functions} images={images}/>
+        </View>
       </BodyView>
 
       <FooterView>

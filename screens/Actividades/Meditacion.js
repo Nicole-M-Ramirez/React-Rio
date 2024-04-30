@@ -218,13 +218,17 @@ function Meditacion ({route}) {
   const navigation = useNavigation();
   const lang = useSelector(state => state.counter.language);
 
+  const [lenguageAudio, setLenguajeAudio] = useState("");
+
   const setupEs = async () => {
     // Set up the player
     await TrackPlayer.setupPlayer();
 
+    await setLenguajeAudio('es')
+
     // Add a track to the queue
     await TrackPlayer.add({
-        id: 'trackId',
+        id: 'track1',
         url: require('../../assets/Audio/MeditacionEsUrgencia.m4a'),
         title: 'Track Title',
         artist: 'Track Artist',
@@ -236,9 +240,11 @@ function Meditacion ({route}) {
     // Set up the player
     await TrackPlayer.setupPlayer();
 
+    await setLenguajeAudio('en')
+
     // Add a track to the queue
     await TrackPlayer.add({
-        id: 'trackId',
+        id: 'track2',
         url: require('../../assets/Audio/MeditacionEN-EMER.mp4'),
         title: 'Track Title',
         artist: 'Track Artist',
@@ -247,6 +253,7 @@ function Meditacion ({route}) {
   };
 
 if (lang === 'es') {
+  //setLenguajeAudio('esp')
   setupEs();
 }
 else {
@@ -271,6 +278,81 @@ const reset = async () => {
   await setAudioSelect("pause")
 }
 
+const eraseAndLoad = async () => {
+  await TrackPlayer.stop
+  let activeTrack =  await TrackPlayer.getActiveTrackIndex();
+
+  if (lang === 'es') {
+    //setupEs();
+    //await TrackPlayer.setupPlayer();
+
+    await TrackPlayer.add({
+      id: 'track1',
+      url: require('../../assets/Audio/MeditacionEsUrgencia.m4a'),
+      title: 'Track Title',
+      artist: 'Track Artist',
+      artwork: require('../../assets/aceptacion.png')
+  });
+  }
+  else {
+    //setupEn();
+    //await TrackPlayer.setupPlayer();
+
+    await TrackPlayer.add({
+      id: 'track2',
+      url: require('../../assets/Audio/MeditacionEN-EMER.mp4'),
+      title: 'Track Title',
+      artist: 'Track Artist',
+      artwork: require('../../assets/aceptacion.png')
+  });
+  }
+
+  let TrackAhora = await TrackPlayer.getActiveTrackIndex();
+  console.log('El track ahora antes del skip:', TrackAhora)
+
+  await TrackPlayer.skipToNext();
+  let TrackDespues = await TrackPlayer.getActiveTrackIndex();
+  console.log('El track ahora antes del skip:', TrackDespues)
+
+  await TrackPlayer.remove(TrackAhora);
+
+  let listaAhora = await TrackPlayer.getQueue()
+  console.log('Lista despues de borrar:', listaAhora)
+
+  let Activo = await TrackPlayer.getActiveTrack()
+  console.log('track activo ahora despues de borra: ', Activo)
+
+  await TrackPlayer.play();
+  await setAudioSelect("pause")
+
+  setLenguajeAudio(lang)
+
+  //const todosLostracks = await TrackPlayer.getQueue();
+  //console.log("El queu: ", todosLostracks)
+  //await TrackPlayer.skipToPrevious
+  //await TrackPlayer.remove(0)
+  //await TrackPlayer.remove()
+  // if (lang === 'es') {
+  //   setupEs();
+  // }
+  // else {
+  //   setupEn();
+  // }
+
+   //let activeTrack =  await TrackPlayer.getActiveTrackIndex();
+
+  //console.log("reacks:", activeTrack)
+  //await TrackPlayer.skipToNext
+  //await TrackPlayer.skipToNext
+  //await TrackPlayer.remove(1)
+  //await TrackPlayer.play();
+  //await setAudioSelect("pause")
+
+  //setLenguajeAudio(lang)
+}
+
+//console.log('lenguage del Audio:'+lenguageAudio)
+
 
   return (
     <View>
@@ -287,7 +369,7 @@ const reset = async () => {
 
         {audioSelect === "play" ? 
             <View>
-            <TouchableOpacity onPress={()=>play()}>
+            <TouchableOpacity onPress={()=>{ if(lang == lenguageAudio) {play()} else {eraseAndLoad()}}}>
               <Image source={require('../../assets/play.png')}  style={[styles.buttonImage, {left : dimensions.bodyWidth *0.38,}]}/>
             </TouchableOpacity>
             <TouchableOpacity onPress={()=>reset()} style={{ width: dimensions.bodyWidth*0.075, height: dimensions.bodyHeight*0.05, left: dimensions.bodyWidth*0.75, top: dimensions.bodyHeight*-0.07}}>
@@ -296,7 +378,7 @@ const reset = async () => {
             </View>
             :
             <View>
-            <TouchableOpacity onPress={()=>pause()}>
+            <TouchableOpacity onPress={()=> {pause()}}>
               <Image source={require('../../assets/pausa.png')}  style={[styles.buttonImage, {left : dimensions.bodyWidth *0.38,}]}/>
             </TouchableOpacity>
             <TouchableOpacity onPress={()=>reset()} style={{ width: dimensions.bodyWidth*0.075, height: dimensions.bodyHeight*0.05, left: dimensions.bodyWidth*0.75, top: dimensions.bodyHeight*-0.07}}>

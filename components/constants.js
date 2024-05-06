@@ -52,7 +52,7 @@ separatorWidth       : screenHeight * .008,
 
 headerTopTextMargin  : screenHeight * .014,
 dayWidth :  (screenHeight * 0.412) / 7.0,
-dayHeight : (screenHeight * .622) / 6,
+dayHeight : (screenHeight * .570) / 6,
 
 }
 

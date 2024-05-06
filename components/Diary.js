@@ -48,6 +48,38 @@ function Diary( props) {
   const {pantalla} = props.route.params;
   const {img} = props.route.params;
 
+
+  const showAlert = (dispatch, meta, oldMeta) => {
+
+    let msg;
+    msg = gs['reportarAL'][lang];
+    Alert.alert(
+      gs['confirmacion'][lang],
+      msg,
+      [
+        {
+          text: 'No',
+          style: 'cancel',
+        },
+        {
+          text: gs['si'][lang],
+          _onPress: () => {
+            console.log("Confirmed autolesion!!: " + meta);
+            dispatch(reportCASIS({"theDate":dateString}));
+            // dispatch(addMeta({ "theDate": new Date().toString().split("(")[0], meta: meta }));
+          },
+          get onPress() {
+            return this._onPress;
+          },
+          set onPress(value) {
+            this._onPress = value;
+          },
+        },
+      ],
+      { cancelable: false }
+    );
+  };
+
   // console.log("Let it be known that I arrived to this screen from: " + fromScreen);
   console.log("===========Diaro with date string: " + dateString);
 
@@ -239,7 +271,7 @@ function Diary( props) {
         <View style={{top:0, left: dimensions.bodyWidth/2, position: 'absolute'}}>
         <TwoThirdsButton label ={gs['reportarAL'][lang]} topMargin = {0} 
           bg = {colors.emergencyRed} row = {0} col = {0} img={require('../assets/ingresar.png')} active={new Date(dateString) < new Date()}
-          onPress={ () => dispatch(reportCASIS({"theDate":dateString})) }
+          onPress={ () =>showAlert(dispatch) }
           />
   
         </View>

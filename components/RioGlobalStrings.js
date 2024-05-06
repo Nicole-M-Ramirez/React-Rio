@@ -5,7 +5,7 @@ export const gs = {
   'acepto':{'es':'Acepto','en':'Accept'},
   'noAcepto':{'es':'No Acepto','en':'Do not accept'},
   'continuar':{'es':'Continuar','en':'Continue'},
-  'saltar':{'es':'saltar', 'en':'skip'},
+  'saltar':{'es':'Saltar', 'en':'Skip'},
   'volver':{'es':'Volver','en':'Back'},
   'si':{'es':'Sí','en':'Yes'},
   'completado':{'es':'Completado','en':'Completed'},
@@ -833,6 +833,8 @@ If you have medical insurance, you can contact a customer service representative
 
   //Confirmar actividad
   'actividadFunciono' : {'es' : '¿Le funcionó la actividad?', 'en' : 'Did the activity work for you?'},
+  'confirmacion' : {'es': 'Confirmación', 'en': 'Confirmation'},
+  
 
   //actividades
   'meditacion' : {'es' : 'Meditación', 'en' : 'Meditation'},

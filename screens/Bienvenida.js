@@ -87,7 +87,7 @@ function Bienvenida() {
       </BodyView> */}
 
       <FooterView>
-          <View style={{left: '50%', width:'50%', position:'absolute', top:dimensions.footerHeight*0.55}}>
+          <View style={{left: '50%', width:'50%', position:'absolute', top:dimensions.footerHeight*0.7}}>
             <NextLink labelNoAcepto={gs['saltar'][lang]} gotoScreen={'Explicacion1'}></NextLink>
           </View>          
       </FooterView>

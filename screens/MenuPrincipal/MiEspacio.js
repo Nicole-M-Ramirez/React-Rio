@@ -56,7 +56,10 @@ function MiEspacio() {
       </HeaderView>
 
       <BodyView>
+      <View style={{top: dimensions.bodyHeight*0.02}}>
+
         <SixGrid colors={Colors} title={title} functions={functions} images={images}/>
+      </View>
       </BodyView>
 
       <FooterView>
@@ -76,7 +79,7 @@ function MiEspacio() {
           <Image source={require('../../assets/continuar3.png')}  style={styles.reportArrow} />
         </TouchableOpacity> */}
          {/* <View style={{top:dimensions.footerHeight*0.55,width:'50%', position:'absolute',marginTop: dimensions.separator}}>
-            <BackLink labelBack={gs['volver'][lang]} gotoScreen={"MenuPrincipal"}></BackLink>
+            <BackLink labelBack={gs['volver'][lang]} gotoScreen={}></BackLink>
           </View> */}
         
       </FooterView>

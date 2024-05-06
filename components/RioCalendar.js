@@ -70,6 +70,8 @@ const RioCalendar = (props) => {
 
 <View style={{top: dimensions.bodyTopMarginCal, 
    left: calendarViewLeft,width:dimensions.bodyWidth, justifyContent: 'center'}}>
+          <View style={{top: dimensions.bodyHeight*0.06}}>
+
 <Calendar
   // Initially visible month. Default = now
   // initialDate={'2023-03-01'}
@@ -154,6 +156,7 @@ disableArrowRight={false}
   markedDates={theMarkedDateMap}//rafa == null?  recordToMarked(props.route.params.contextDateData)  : recordToMarked(rafa)}
 
 />
+</View>
 </View>
 
 <FooterView>

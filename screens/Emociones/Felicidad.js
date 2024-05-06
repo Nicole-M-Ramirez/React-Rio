@@ -31,7 +31,7 @@ function Felicidad({route}) {
   const title = [gs['diario'][lang],gs['gratitud'][lang],gs['dibujar'][lang],gs['musica'][lang],gs['psicoeduacion'][lang]]
   const functions = [
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Felicidad',
-                                                     img: <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
+                                                     img: <Image source={require('../../assets/animaciones/DIARIO.gif')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
                                                      texto:gs['diarioCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[0],
@@ -50,7 +50,7 @@ function Felicidad({route}) {
                                                      titulo: title[2],
                                                      continuacionExtra :null}),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Felicidad',
-                                                     img: <Image source={require('../../assets/musica2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
+                                                     img: <Image source={require('../../assets/animaciones/SONIDOS.gif')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
                                                      texto:gs['musicaCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[3]}),

@@ -26,8 +26,9 @@ function NoFunciono({route}) {
   const navigation = useNavigation();
   const lang = useSelector(state => state.counter.language);
   const today = new Date();
-  const theDate = today.toISOString().substring(0,10);
+  //const theDate = today.toISOString().substring(0,10);
   const {pantalla} = route.params;
+  const {theDate} = route.params;
 
   function Calling (phoneNumber) {
 
@@ -50,10 +51,10 @@ function NoFunciono({route}) {
 
         <View style={{top:dimensions.bodyHeight*0.32, borderBottomColor: colors.mintGreen, width: dimensions.bodyWidth, borderBottomWidth:3}}/>
 
-        <Text style={styles.TitleText}>¿Le gustaria intentar otra actividad?</Text>
+        <Text style={styles.TitleText}>{gs['actividadNoFunciono'][lang]}</Text>
 
         <View style={{flexDirection:'row'}}>
-            <TouchableOpacity style={[styles.button, {backgroundColor: colors.blue}]} onPress={() => navigation.navigate(pantalla, { theDate: theDate })}>
+            <TouchableOpacity style={[styles.button, {backgroundColor: colors.blue}]} onPress={() => navigation.navigate("SelectorEmocion", { theDate: theDate })}>
                     <Text style={styles.buttonText}>{gs['si'][lang]}</Text>
             </TouchableOpacity>
 

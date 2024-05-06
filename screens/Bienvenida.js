@@ -54,6 +54,7 @@ function Bienvenida() {
                             DropSize = {dimensions.bodyHeight*1.3}
                             contText= {gs['sobreNosotrosCont'][lang]}
                             titleHeigth = {0.2}
+                            downImage = {<Image source={require('../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
                 />
                 <DropDown Color={colors.pink} 
                             Title={gs['baseTeorica'][lang]} 
@@ -62,6 +63,7 @@ function Bienvenida() {
                             DropSize = {dimensions.bodyHeight*3.75}
                             contText= {gs['baseTeoricaCont'][lang]}
                             titleHeigth = {0.2}
+                            downImage = {<Image source={require('../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
                 />
               </View>
           </ScrollView>

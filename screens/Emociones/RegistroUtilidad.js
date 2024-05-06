@@ -64,7 +64,7 @@ function RegistroUtilidad({route}) {
                     <Text style={styles.buttonText}>{gs['si'][lang]}</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={[styles.button, {backgroundColor: colors.pink}]} onPress={() => {navigation.navigate('NoFunciono', {pantalla:pantalla})}}>
+            <TouchableOpacity style={[styles.button, {backgroundColor: colors.pink}]} onPress={() => {navigation.navigate('NoFunciono', {pantalla:pantalla, theDate: theDate})}}>
                     <Text style={styles.buttonText}>No</Text>     
             </TouchableOpacity>
         </View>

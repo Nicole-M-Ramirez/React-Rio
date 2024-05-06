@@ -152,13 +152,13 @@ function Tristeza({route}) {
   const title = [gs['descanso'][lang],gs['diario'][lang],gs['meditacion'][lang],gs['dibujar'][lang],gs['musica'][lang],gs['aceptacion'][lang]]
   const functions = [
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Tristeza',
-                                                     img: <Image source={require('../../assets/descanso2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
+                                                     img: <Image source={require('../../assets/animaciones/DESCANSO.gif')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
                                                      texto:gs['descansoCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[0]
                                                     }),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Tristeza',
-                                                     img: <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
+                                                     img: <Image source={require('../../assets/animaciones/DIARIO.gif')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
                                                      texto:gs['diarioCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[1]}),
@@ -173,7 +173,7 @@ function Tristeza({route}) {
                                                      forDate: forDate,
                                                      titulo: title[3]}),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Tristeza',
-                                                     img: <Image source={require('../../assets/musica2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
+                                                     img: <Image source={require('../../assets/animaciones/SONIDOS.gif')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
                                                      texto:gs['musicaCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[4]}),
@@ -210,9 +210,19 @@ function Tristeza({route}) {
       </FooterView> */}
 
       <FooterView>
-          <View style={{width:'50%', position:'absolute',marginTop: dimensions.separator}}>
+          {/* <View style={{width:'50%', position:'absolute',marginTop: dimensions.separator}}>
             <BackLinkWithDate labelBack={"Regresar"} gotoScreen={'SelectorEmocion'} theDate={forDate}></BackLinkWithDate>
-          </View>         
+          </View>          */}
+          <TouchableOpacity  style={{height:'100%'}}  onPress={() => navigation.navigate('Detonante',{pantalla: 'Trsteza', forDate: forDate})}>
+            <View style={styles.hookedStyles}>
+              <View style={{width:'8%', 'height': '100%',  alignItems: 'flex-start',justifyContent: 'center',  }}>
+                <Image source={require('../../assets/back.png')}  style={styles.buttonsImage} />
+              </View>
+              <View style={{width:'92%', 'height': '100%', alignItems: 'flex-start',justifyContent: 'center', }}> 
+                <Text style={{color: 'white', textAlignVertical: 'center'}}>{gs['volver'][lang]}</Text>
+              </View>
+            </View>
+          </TouchableOpacity>
       </FooterView>
 
       <EmergencyView>
@@ -242,5 +252,46 @@ const styles = StyleSheet.create({
     height: ScreenHeight * 0.13,
     alignSelf: 'center',
     top: dimensions.buttonHeight /7
-  }
+  },
+  button:{
+    borderRadius:5,
+  },
+  // buttonText:{
+  //   color:'white',
+  //   fontSize: normalize(11),
+  //   // top: ScreenHeight * 0.15,
+  //   // left: ScreenWidth * 0.05
+  // },
+  // buttonImage :{
+  //   width: ScreenWidth * 0.25,
+  //   height: ScreenHeight * 0.15,
+  //   // top: ScreenHeight * 0.01,
+  //   // left: ScreenWidth * 0.08
+  //   // justifyContent: 'center',
+  //   // alignContent: 'center',
+  //   alignSelf: 'center',
+  //   top: dimensions.buttonHeight /10
+
+  // },
+  // titleText: {
+  //   color: "#4eb5a3",
+  //   fontSize: normalize(25),
+  //   fontWeight: '600',
+  //   width: dimensions.bodyWidth * 0.7
+  //   },
+
+    hookedStyles :{
+      flexDirection: 'row',
+      justifyContent: 'flex-start',
+      alignItems: 'flex-start',
+      direction: 'inherit',
+      flexWrap: 'nowrap',
+      height: '100%'
+    
+    },
+    buttonsImage :{
+      width: dimensions.bodyWidth * 0.024,
+      height: dimensions.footerHeight * 0.14,
+      position: 'absolute'
+    }
 });

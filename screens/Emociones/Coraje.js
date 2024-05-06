@@ -29,28 +29,28 @@ function Coraje({route}) {
   const title = [gs['diario'][lang], gs['caminar'][lang], gs['bano'][lang],gs['ejercicio'][lang],gs['cocinar'][lang]]
   const functions = [
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Coraje',
-                                                     img: <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34,}]} />,
+                                                     img: <Image source={require('../../assets/animaciones/DIARIO.gif')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34,}]} />,
                                                      texto:gs['diarioCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[0]
                                                     }),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Coraje',
-                                                     img: <Image source={require('../../assets/caminar2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
+                                                     img: <Image source={require('../../assets/animaciones/CAMINAR.gif')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
                                                      texto: gs['caminarCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[1]}),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Coraje',
-                                                     img: <Image source={require('../../assets/bano2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
+                                                     img: <Image source={require('../../assets/animaciones/DUCHA.gif')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
                                                      texto:gs['banoCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[2]}),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Coraje',
-                                                     img: <Image source={require('../../assets/ejercicio2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
+                                                     img: <Image source={require('../../assets/animaciones/EJERCICIO.gif')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
                                                      texto:gs['ejercicioCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[3]}),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Coraje',
-                                                     img: <Image source={require('../../assets/cocinar.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
+                                                     img: <Image source={require('../../assets/animaciones/COCINA.gif')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
                                                      texto:gs['cocinarCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[4]}),
@@ -79,9 +79,16 @@ function Coraje({route}) {
       {/* </View> */}
 
       <FooterView>
-          <View style={{width:'50%', position:'absolute',marginTop: dimensions.separator}}>
-            <BackLinkWithDate labelBack={gs['volver'][lang]} gotoScreen={'SelectorEmocion'} theDate={forDate}></BackLinkWithDate>
-          </View>         
+      <TouchableOpacity  style={{height:'100%'}}  onPress={() => navigation.navigate('Detonante',{pantalla: 'Coraje', forDate: forDate})}>
+            <View style={styles.hookedStyles}>
+              <View style={{width:'8%', 'height': '100%',  alignItems: 'flex-start',justifyContent: 'center',  }}>
+                <Image source={require('../../assets/back.png')}  style={styles.buttonsImage} />
+              </View>
+              <View style={{width:'92%', 'height': '100%', alignItems: 'flex-start',justifyContent: 'center', }}> 
+                <Text style={{color: 'white', textAlignVertical: 'center'}}>{gs['volver'][lang]}</Text>
+              </View>
+            </View>
+          </TouchableOpacity>        
       </FooterView>
 
       <EmergencyView>
@@ -120,4 +127,18 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     width: dimensions.bodyWidth * 0.7
     },
+    hookedStyles :{
+      flexDirection: 'row',
+      justifyContent: 'flex-start',
+      alignItems: 'flex-start',
+      direction: 'inherit',
+      flexWrap: 'nowrap',
+      height: '100%'
+    
+    },
+    buttonsImage :{
+      width: dimensions.bodyWidth * 0.024,
+      height: dimensions.footerHeight * 0.14,
+      position: 'absolute'
+    }
 });

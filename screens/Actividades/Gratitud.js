@@ -47,7 +47,7 @@ function Gratitud ({route}) {
         <View style={styles.scrollView}>
           <ScrollView>
            
-              <Image source={require('../../assets/comunidad2.png')} resizeMode='contain' style={styles.buttonTitleImage} />
+              <Image source={require('../../assets/animaciones/GRATITUD.gif')} resizeMode='contain' style={styles.buttonTitleImage} />
               <Text style={styles.titleText}>{gs['gratitud'][lang]}</Text>
               <View style={[styles.TextView]}>
                 <Text style={styles.text}>{gs['gratitudCont'][lang]}</Text>
@@ -86,7 +86,18 @@ function Gratitud ({route}) {
           <FooterView>
               <View style={{width:'50%', position:'absolute',top: dimensions.footerHeight*0.6,}}>
               <BackLinkWithDate labelBack={gs['volver'][lang]} gotoScreen={'Felicidad'} theDate={forDate}></BackLinkWithDate>
-              </View>         
+              </View> 
+
+              <TouchableOpacity  style={{left:dimensions.bodyWidth*0.7,width:dimensions.bodyWidth*0.25,height:dimensions.footerHeight*0.5,marginTop: dimensions.separator*6}}  onPress={() => navigation.navigate('RegistroUtilidad',{img:<Image source={require('../../assets/comunidad2.png')} resizeMode='contain' style={[styles.buttonRegistro,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />, forDate: forDate })}>
+          <View style={styles.hookedStyles}>
+            <View style={{width:'92%', 'height': dimensions.footerHeight*0.5, alignItems: 'flex-end',justifyContent: 'center', }}> 
+              <Text style={{color: 'white', textAlignVertical: 'center'}}>{gs['continuar'][lang]}</Text>
+            </View>
+            <View style={{width:'15%', 'height': dimensions.footerHeight*0.5,  alignItems: 'flex-end',justifyContent: 'center',  }}>
+              <Image source={require('../../assets/continuar2.png')}  style={styles.buttonCont} />
+            </View>
+          </View>
+        </TouchableOpacity>        
             </FooterView>
 
           <EmergencyView>
@@ -190,5 +201,17 @@ text:{
   //width: dimensions.bodyWidth *,
   //left: dimensions.bodyWidth*0.05,
   //top: dimensions.buttonHeight*0.01
+},
+buttonCont :{
+  width: dimensions.bodyWidth * 0.024,
+  height: dimensions.footerHeight * 0.14,
+  position: 'absolute'
+},
+buttonRegistro :{
+  width: dimensions.shortButtonHeight*1,
+  height: dimensions.shortButtonHeight*1,
+  //left : dimensions.bodyWidth *0.38,
+  top: dimensions.bodyHeight *0.04,
+  
 },
 });

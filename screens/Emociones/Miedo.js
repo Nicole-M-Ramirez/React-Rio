@@ -37,13 +37,13 @@ function Miedo({route}) {
   ]
   const functions = [
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Miedo',
-                                                     img: images[0],
+                                                     img: <Image source={require('../../assets/animaciones/DIARIO.gif')} resizeMode='contain' style={styles.buttonImage} />,
                                                      texto:gs['diarioCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[0]
                                                     }),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Miedo',
-                                                    img: images[1],
+                                                    img: <Image source={require('../../assets/animaciones/HABLAR.gif')} resizeMode='contain' style={styles.buttonImage} />,
                                                     texto:gs['hablarCont'][lang],
                                                     forDate: forDate,
                                                     titulo: title[1]
@@ -82,9 +82,16 @@ function Miedo({route}) {
       {/* </View> */}
 
       <FooterView>
-          <View style={{width:'50%', position:'absolute', top:dimensions.footerHeight*0.7}}>
-            <BackLinkWithDate labelBack={gs['volver'][lang]} gotoScreen={'SelectorEmocion'} theDate={forDate}></BackLinkWithDate>
-          </View>         
+      <TouchableOpacity  style={{height:'100%'}}  onPress={() => navigation.navigate('Detonante',{pantalla: 'Miedo', forDate: forDate})}>
+            <View style={styles.hookedStyles}>
+              <View style={{width:'8%', 'height': '100%',  alignItems: 'flex-start',justifyContent: 'center',  }}>
+                <Image source={require('../../assets/back.png')}  style={styles.buttonsImage} />
+              </View>
+              <View style={{width:'92%', 'height': '100%', alignItems: 'flex-start',justifyContent: 'center', }}> 
+                <Text style={{color: 'white', textAlignVertical: 'center'}}>{gs['volver'][lang]}</Text>
+              </View>
+            </View>
+          </TouchableOpacity>         
       </FooterView>
 
       <EmergencyView>
@@ -123,4 +130,19 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     width: dimensions.bodyWidth * 0.7
     },
+
+    hookedStyles :{
+      flexDirection: 'row',
+      justifyContent: 'flex-start',
+      alignItems: 'flex-start',
+      direction: 'inherit',
+      flexWrap: 'nowrap',
+      height: '100%'
+    
+    },
+    buttonsImage :{
+      width: dimensions.bodyWidth * 0.024,
+      height: dimensions.footerHeight * 0.14,
+      position: 'absolute'
+    }
 });

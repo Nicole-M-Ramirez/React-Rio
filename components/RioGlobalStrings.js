@@ -834,6 +834,7 @@ If you have medical insurance, you can contact a customer service representative
   //Confirmar actividad
   'actividadFunciono' : {'es' : '¿Le funcionó la actividad?', 'en' : 'Did the activity work for you?'},
   'confirmacion' : {'es': 'Confirmación', 'en': 'Confirmation'},
+  'actividadNoFunciono' : {'es' : '¿Le gustaria intentar otra actividad?', 'en' : 'Would you like to try another activity?'},
   
 
   //actividades

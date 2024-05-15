@@ -20,13 +20,22 @@ import { gs } from '../components/RioGlobalStrings';
 import { useSelector } from 'react-redux';
 import HeaderInicio from '../components/HeaderInicio';
 
+import { useDispatch} from 'react-redux';
+import { register } from '../redux/slices/counterSlice';
+
+
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
+
 
 function Expicacion2() {
   const navigation = useNavigation();
 
   const lang = useSelector(state => state.counter.language);
+
+  const dispatch = useDispatch();
+
+  dispatch(register());
 
   function buttonHandler () {
     navigation.navigate('Politica')

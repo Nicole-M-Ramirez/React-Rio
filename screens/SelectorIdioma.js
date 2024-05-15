@@ -34,6 +34,12 @@ function SelectorIdioma() {
     navigation.navigate('Politica',{pantalla: 'SelectorDeLenguage', regresarTitulo:'noAcepto'})
   }
   
+
+  // if ( useSelector(state => state.counter.registered? true: false )) {
+  //   console.log("User is registered ----> to calendar we go... <=======================")
+  //   navigation.navigate('MenuPrincipal');
+  // }
+  
   dispatch(registerFirstDate());
 
   return (

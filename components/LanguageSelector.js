@@ -34,7 +34,7 @@ function LanguageSelector (props) {
 
     if ( useSelector(state => state.counter.registered? true: false )) {
       console.log("User is registered ----> to calendar we go... <=======================")
-      navigation.navigate('Calendario');
+      navigation.navigate('MenuPrincipal');
     }
 
     return (

@@ -19,9 +19,9 @@ function HeaderView(props) {
         <Image source={require('../assets/hogar2.png')} resizeMode='contain' style={[styles.buttonImage]} />
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={()=>{navigation.navigate('Configuracion')}} style={{position:'absolute', width:dimensions.bodyWidth*0.09, top: dimensions.bodyHeight*0.075, right:dimensions.leftMargin-4}}>
+      {/* <TouchableOpacity onPress={()=>{navigation.navigate('Configuracion')}} style={{position:'absolute', width:dimensions.bodyWidth*0.09, top: dimensions.bodyHeight*0.075, right:dimensions.leftMargin-4}}>
         <Image source={require('../assets/actionMenu.png')} resizeMode='contain' style={[styles.buttonImage,{top:dimensions.headerHeight*0.13, position:'absolute',}]} />
-      </TouchableOpacity>
+      </TouchableOpacity> */}
 
       <View style={styles.style}>
           {props.children}

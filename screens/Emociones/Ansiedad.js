@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity, Dimensions, PixelRatio, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { colors, dimensions } from '../../components/constants';
+// import { useState } from 'react';
 
 import FiveGrid from '../../components/FiveGrid';
 import FooEmergencyther from '../../components/Emergency';
@@ -17,6 +18,7 @@ import BackLink from '../../components/BackLink';
 import BackLinkWithDate from '../../components/BackLinkWithDate';
 import { gs } from '../../components/RioGlobalStrings';
 import { useDispatch, useSelector } from 'react-redux';
+import BotonConfig from '../../components/BotonConfig';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
@@ -43,11 +45,12 @@ function Ansiedad({route}) {
     //                                                  texto: 'Conecta con tu espiritualidad de la manera que sea major para ti. Estos momentos pueden abrir un espacio para conectar contigo y con las metas que identificaste.',
     //                                                  forDate: forDate,
     //                                                  titulo: title[1]}),
-    () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Ansiedad',
-                                                     img: <Image source={require('../../assets/Respiracion-Profunda.gif')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
-                                                     texto:gs['respiracionCont'][lang],
-                                                     forDate: forDate,
-                                                     titulo: title[2]}),
+    // () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Ansiedad',
+    //                                                  img: <Image source={require('../../assets/Respiracion-Profunda.gif')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
+    //                                                  texto:gs['respiracionCont'][lang],
+    //                                                  forDate: forDate,
+    //                                                  titulo: title[2]}),
+    () => navigation.navigate('RespiracionInst',{forDate: forDate}),,
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Ansiedad',
                                                      img: <Image source={require('../../assets/atencionPlena.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
                                                      texto:gs['atencionCont'][lang],
@@ -70,6 +73,7 @@ function Ansiedad({route}) {
 
   return (
     <View>
+      <BotonConfig pantalla = 'MenuPrincipal' Back={() => navigation.navigate('Ansiedad', {forDate: forDate})}/>
       <HeaderView headerButtons = 'yes'>
         {/* <Encabezado/> */}
 
@@ -83,12 +87,16 @@ function Ansiedad({route}) {
       {/* </View> */}
 
       <FooterView>
-      <TouchableOpacity  style={{height:'100%'}}  onPress={() => navigation.navigate('Detonante',{pantalla: 'Ansiedad', forDate: forDate})}>
+      <View style={{top: dimensions.footerHeight*0.1}}>
+            <Text style={styles.titleText}>{gs['Ansiedad'][lang]}</Text>
+          </View>
+
+      <TouchableOpacity  style={{height:'100%'}}  onPress={() => navigation.navigate('Detonante',{pantalla: 'Ansiedad', forDate: forDate,Color : colors.mintGreen})}>
             <View style={styles.hookedStyles}>
-              <View style={{width:'8%', 'height': '100%',  alignItems: 'flex-start',justifyContent: 'center',  }}>
+              <View style={{width:'8%', 'height': '100%',  alignItems: 'flex-start',justifyContent: 'center', top: dimensions.footerHeight*-0.2  }}>
                 <Image source={require('../../assets/back.png')}  style={styles.buttonsImage} />
               </View>
-              <View style={{width:'92%', 'height': '100%', alignItems: 'flex-start',justifyContent: 'center', }}> 
+              <View style={{width:'92%', 'height': '100%', alignItems: 'flex-start',justifyContent: 'center', top: dimensions.footerHeight*-0.2, left:dimensions.bodyWidth*-0.03 }}> 
                 <Text style={{color: 'white', textAlignVertical: 'center'}}>{gs['volver'][lang]}</Text>
               </View>
             </View>
@@ -110,7 +118,7 @@ const styles = StyleSheet.create({
   },
   buttonText:{
     color:'white',
-    fontSize: normalize(11),
+    fontSize: normalize(13),
     // top: ScreenHeight * 0.15,
     // left: ScreenWidth * 0.05
   },
@@ -127,7 +135,7 @@ const styles = StyleSheet.create({
   },
   titleText: {
     color: "#4eb5a3",
-    fontSize: normalize(25),
+    fontSize: normalize(20),
     fontWeight: '600',
     width: dimensions.bodyWidth * 0.7
     },

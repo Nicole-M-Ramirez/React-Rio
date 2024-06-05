@@ -15,6 +15,7 @@ import TimeSince from '../../components/TimeSince';
 import { useSelector } from 'react-redux';
 import { gs } from '../../components/RioGlobalStrings';
 import BackLink from '../../components/BackLink';
+import BotonConfig from '../../components/BotonConfig';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
@@ -24,7 +25,7 @@ function MiEspacio() {
   const lang = useSelector(state => state.counter.language);
   const Colors = [colors.deepPurple, colors.pink, colors.blue, colors.greyBlue,colors.mintGreen, colors.purple]
 
-  const title = [gs['calendario'][lang], gs['diario'][lang], gs['logros'][lang], gs['metas'][lang],gs['exportar'][lang],gs['graficas'][lang]]
+  const title = [gs['calendario'][lang], gs['diario'][lang], gs['metas'][lang], gs['logros'][lang], gs['exportar'][lang],gs['graficas'][lang]]
 
   const today = new Date();
 
@@ -34,16 +35,16 @@ function MiEspacio() {
     // () => navigation.navigate('Diary'),
     () => navigation.navigate('Diary', {day:today.getDate(),month:today.getMonth(),year:today.getFullYear(), 
       dateString:today.toISOString().substr(0,10), fromScreen:'MiEspacio'}),
-    () => navigation.navigate('Logros'),
     () => navigation.navigate('Metas'),
+    () => navigation.navigate('Logros'),
     () => navigation.navigate('Exportar'),
     () => navigation.navigate('Graficas'),
   ]
   const images = [
     <Image source={require('../../assets/calendario2.png')} resizeMode='contain' style={styles.buttonImage} />,
     <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={styles.buttonImage} />,
-    <Image source={require('../../assets/logros2.png')} resizeMode='contain' style={styles.buttonImage} />,
     <Image source={require('../../assets/metas2.png')} resizeMode='contain' style={styles.buttonImage} />,
+    <Image source={require('../../assets/logros2.png')} resizeMode='contain' style={styles.buttonImage} />,
     <Image source={require('../../assets/exportar2.png')} resizeMode='contain' style={styles.buttonImage} />,
     <Image source={require('../../assets/graficas2.png')} resizeMode='contain' style={styles.buttonImage} />,
   ]
@@ -51,6 +52,7 @@ function MiEspacio() {
 
   return (
     <View>
+      <BotonConfig pantalla = 'MenuPrincipal' Back={()=>navigation.navigate('MiEspacio')}/>
       <HeaderView>
       <TimeSince/>
       </HeaderView>

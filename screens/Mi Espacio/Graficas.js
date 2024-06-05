@@ -5,6 +5,7 @@ import { colors, dimensions } from '../../components/constants';
 import { normalize } from '../../components/FondNormilize';
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useState } from 'react';
+import BotonConfig from '../../components/BotonConfig';
 
 import HeaderView from '../../components/HeaderView';
 import BodyView from '../../components/BodyView';
@@ -148,6 +149,7 @@ function Graficas() {
 
   return (
     <View>
+      <BotonConfig pantalla = 'Graficas' Back={()=>{navigation.navigate('Graficas')}}/>
       <HeaderView headerButtons = 'yes'>
         <TimeSince  />
       </HeaderView>

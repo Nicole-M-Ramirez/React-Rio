@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
   },
   buttonText:{
     color:'white',
-    fontSize: normalize(11),
+    fontSize: normalize(13),
     top: dimensions.shortButtonHeight/1.5,
     left: ScreenWidth * 0.04,
     fontFamily: 'HelveticaNeue-Medium'

@@ -17,6 +17,7 @@ import BackLink from '../../components/BackLink';
 import BackLinkWithDate from '../../components/BackLinkWithDate';
 import { gs } from '../../components/RioGlobalStrings';
 import { useSelector } from 'react-redux';
+import BotonConfig from '../../components/BotonConfig';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
@@ -69,6 +70,7 @@ function Miedo({route}) {
 
   return (
     <View>
+      <BotonConfig pantalla = 'MenuPrincipal' Back={() => navigation.navigate('Miedo', {forDate: forDate})}/>
       <HeaderView headerButtons = 'yes'>
         {/* <Encabezado/> */}
 
@@ -82,12 +84,16 @@ function Miedo({route}) {
       {/* </View> */}
 
       <FooterView>
-      <TouchableOpacity  style={{height:'100%'}}  onPress={() => navigation.navigate('Detonante',{pantalla: 'Miedo', forDate: forDate})}>
+        <View style={{top: dimensions.footerHeight*0.1}}>
+            <Text style={styles.titleText}>{gs['Miedo'][lang]}</Text>
+        </View>
+
+      <TouchableOpacity  style={{height:'100%'}}  onPress={() => navigation.navigate('Detonante',{pantalla: 'Miedo', forDate: forDate,Color : colors.deepPurple})}>
             <View style={styles.hookedStyles}>
-              <View style={{width:'8%', 'height': '100%',  alignItems: 'flex-start',justifyContent: 'center',  }}>
+              <View style={{width:'8%', 'height': '100%',  alignItems: 'flex-start',justifyContent: 'center', top: dimensions.footerHeight*-0.2  }}>
                 <Image source={require('../../assets/back.png')}  style={styles.buttonsImage} />
               </View>
-              <View style={{width:'92%', 'height': '100%', alignItems: 'flex-start',justifyContent: 'center', }}> 
+              <View style={{width:'92%', 'height': '100%', alignItems: 'flex-start',justifyContent: 'center', top: dimensions.footerHeight*-0.2, left:dimensions.bodyWidth*-0.03 }}> 
                 <Text style={{color: 'white', textAlignVertical: 'center'}}>{gs['volver'][lang]}</Text>
               </View>
             </View>
@@ -109,7 +115,7 @@ const styles = StyleSheet.create({
   },
   buttonText:{
     color:'white',
-    fontSize: normalize(11),
+    fontSize: normalize(13),
     // top: ScreenHeight * 0.15,
     // left: ScreenWidth * 0.05
   },
@@ -126,7 +132,7 @@ const styles = StyleSheet.create({
   },
   titleText: {
     color: "#4eb5a3",
-    fontSize: normalize(25),
+    fontSize: normalize(20),
     fontWeight: '600',
     width: dimensions.bodyWidth * 0.7
     },

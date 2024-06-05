@@ -45,6 +45,12 @@ import NoFunciono from "../screens/Emociones/NoFunciono";
 import EmocionesExpancion from "../screens/Emociones/EmocionesExpancion";
 import ActividadDiario from "../screens/Actividades/ActividadDiario";
 import ConfirmExport from "../screens/Mi Espacio/ConfirmExport";
+import ContactoPersona from "../screens/Contacto/ContactoPersona";
+import CrearContacto from "../screens/Contacto/CrearContacto";
+import BorrarContacto from "../screens/Contacto/BorrarContacto";
+import Respiracion from "../screens/Actividades/Respiracion";
+import RespiracionInst from "../screens/Actividades/RespiracionInst";
+import MeditacionTristeza from "../screens/Actividades/MeditacionTristeza";
 import { createStackNavigator } from "@react-navigation/stack";
 import { useSelector } from "react-redux";
 const Stack = createStackNavigator();
@@ -489,6 +495,60 @@ const StackComp = (props) => {
       <Stack.Screen
         name='ActividadDiario'
         component={ActividadDiario}
+        independent ={true}
+        options={{
+          headerTitle: "",
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name='ContactoPersona'
+        component={ContactoPersona}
+        independent ={true}
+        options={{
+          headerTitle: "",
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name='CrearContacto'
+        component={CrearContacto}
+        independent ={true}
+        options={{
+          headerTitle: "",
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name='BorrarContacto'
+        component={BorrarContacto}
+        independent ={true}
+        options={{
+          headerTitle: "",
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name='Respiracion'
+        component={Respiracion}
+        independent ={true}
+        options={{
+          headerTitle: "",
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name='RespiracionInst'
+        component={RespiracionInst}
+        independent ={true}
+        options={{
+          headerTitle: "",
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name='MeditacionTristeza'
+        component={MeditacionTristeza}
         independent ={true}
         options={{
           headerTitle: "",

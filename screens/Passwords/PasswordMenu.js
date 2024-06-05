@@ -40,11 +40,12 @@ function PasswordMenu() {
       </HeaderView>
 
       <BodyView>
-        <Text style={styles.textEx}>{gs['PassMenuTit'][lang]}</Text>
+        {/* <Text style={styles.textEx}>{gs['PassMenuTit'][lang]}</Text> */}
+        <Text style={styles.defText}>{gs['passwordWarning'][lang]}</Text>
 
         {passwordState === true ? 
             <View>
-                <TouchableOpacity style={[styles.buttonView,{backgroundColor:colors.pink, marginTop: dimensions.bodyHeight*0.07,}]} onPress={() => navigation.navigate('EditarPassword',{opcion: 'cambiar'})}>
+                <TouchableOpacity style={[styles.buttonView,{backgroundColor:colors.pink, marginTop: dimensions.bodyHeight*0.13,}]} onPress={() => navigation.navigate('EditarPassword',{opcion: 'cambiar'})}>
                     <Text style={styles.buttonsText}>{gs['CambiarPass'][lang]}</Text>
                     <View style={{position: 'absolute', zIndex: 0,  alignItems: 'flex-end',justifyContent: 'center',}}>
                         <Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />
@@ -60,7 +61,7 @@ function PasswordMenu() {
             </View>
         :
         <View>
-            <TouchableOpacity style={[styles.buttonView,{backgroundColor:colors.pink, marginTop: dimensions.bodyHeight*0.07,}]} onPress={() => navigation.navigate('NewPassword',{pantalla: 'Configuracion'})}>
+            <TouchableOpacity style={[styles.buttonView,{backgroundColor:colors.pink, marginTop: dimensions.bodyHeight*0.13,}]} onPress={() => navigation.navigate('NewPassword',{pantalla: 'Configuracion'})}>
                 <Text style={styles.buttonsText}>{gs['CrearPass'][lang]}</Text>
                 <View style={{position: 'absolute', zIndex: 0,  alignItems: 'flex-end',justifyContent: 'center',}}>
                     <Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />
@@ -133,7 +134,12 @@ const styles = StyleSheet.create({
     height: dimensions.buttonHeight/5,
     top: (dimensions.buttonHeight/3)*0.2,
     left: dimensions.buttonWidth*1.7,
-  }
+  },
+  defText: {
+    color: colors.mintGreen,
+    fontSize: normalize(15),
+    top: dimensions.bodyHeight*0.05
+},
 });
 
 

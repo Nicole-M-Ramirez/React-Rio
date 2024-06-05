@@ -135,14 +135,14 @@ const styles = StyleSheet.create({
   boxTexts: {
     color: 'white',
     margin: dimensions.bodyHeight * 0.04,
-    fontSize: normalize(11)
+    fontSize: normalize(13)
   },
   button:{
     
   },
   buttonText:{
     color:'white',
-    fontSize: normalize(12),
+    fontSize: normalize(13),
     fontWeight:'bold',
     //top: ScreenHeight * 0.01,
     //left: ScreenWidth * 0.04

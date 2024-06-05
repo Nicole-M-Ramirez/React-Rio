@@ -14,18 +14,25 @@ import FooterView from '../components/FooterView';
 import EmergencyView from '../components/EmergencyView';
 import Emergency from '../components/Emergency';
 import BackLink from '../components/BackLink';
+import TextMessage3 from '../components/TextMessage3';
 
 import { gs } from '../components/RioGlobalStrings';
 import { useSelector } from 'react-redux';
+import BotonConfig from '../components/BotonConfig';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
 
 
 function Emergencia({route}) {
+  const contacto = useSelector(state => state.counter.contacto);
   const navigation = useNavigation();
   const lang = useSelector(state => state.counter.language);
   const { forDate } = route.params;
+  const [popUp, setPopUp] = useState(true)
+
+  
+
   const actividades=[
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'SeguimientoUrgencia',
                                                      vieneDe: 'Emergencia',
@@ -58,11 +65,13 @@ function Emergencia({route}) {
 
   return (
     <View>
+       <BotonConfig pantalla = 'Emergencia' Back={()=>{navigation.navigate('Emergencia', {forDate: forDate})}}/>
     <HeaderView headerButtons = 'yes'>
       <TimeSince/>
     </HeaderView>
 
     <BodyView>
+      <TextMessage3/>
       <TouchableOpacity onPress={actividades[0]} style={[styles.button, {
                                                   backgroundColor:colors.mintGreen,
                                                   top: 1*(dimensions.buttonHeight + dimensions.separator),
@@ -145,7 +154,7 @@ function Emergencia({route}) {
           <Text style={[styles.smallButtonText, {top: ScreenHeight * 0.005}]}>{gs['personasSordas'][lang]}</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={()=>{Calling('7875080302')}} style={[styles.button, {
+        <TouchableOpacity onPress={()=>{Calling(contacto)}} style={[styles.button, {
                                                   backgroundColor:colors.mintGreen,
                                                   top: 2.33*(dimensions.buttonHeight + dimensions.separator),
                                                   left: 0,
@@ -239,7 +248,7 @@ const styles = StyleSheet.create({
        // backgroundColor:'grey',
         position:'absolute',
         color:'white',
-        fontSize: normalize(12),
+        fontSize: normalize(13),
         top: (dimensions.buttonHeight/3)*0.3,
         left: ScreenWidth * 0.15,
         position: 'absolute',
@@ -247,7 +256,7 @@ const styles = StyleSheet.create({
       },
       middleButtonText: {
         color:'white',
-        fontSize: normalize(12),
+        fontSize: normalize(13),
         top: ScreenHeight * 0.015,
         left: ScreenWidth * 0.15,
         position: 'absolute',

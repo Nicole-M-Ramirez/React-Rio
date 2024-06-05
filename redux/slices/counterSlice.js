@@ -2,12 +2,18 @@ import { createSlice } from '@reduxjs/toolkit';
 import { timeNowAsInt } from '../../components/RioGlobalFuncs';
 import { toDate } from '../../components/RioGlobalFuncs';
 import { getMetaIdx } from '../../components/RioGlobalFuncs';
+import { startTransition } from 'react';
 
 export const counterSlice = createSlice({
    name: 'counter',
    initialState: {
       setPassword: false,
+      pantallaConfig: '',
+      pantallConfigExtras:'',
       password: '12345',
+      setContacto: false,
+      contacto : '7870000000',
+      contPopUp: true,
       language: 'es',
       registered: false,
       dateReg: undefined,
@@ -239,17 +245,39 @@ export const counterSlice = createSlice({
          console.log('password:'+state.password)
          state.setPassword = true;
       },
+      updateContacto: (state, action)=>{
+         state.contacto = action.payload.cont;
+         console.log('contacto:'+state.contacto)
+         state.setContacto = true;
+      },
       updatePasswordDelete: (state, action)=>{
          state.setPassword = false;
          state.password = action.payload.pass;
          console.log('password borrado')
       },
+      updateContactDelete: (state, action)=>{
+         state.setContacto = false;
+         state.contacto = action.payload.cont;
+         console.log('contacto borrado')
+      },
+      updatePantallaConfig: (state, action)=>{
+         state.pantallaConfig = action.payload.pan;
+         state.pantallConfigExtras = action.payload.ex;
+         console.log('pantalla:'+state.pantallaConfig)
+         console.log('Extras:'+state.pantallConfigExtras)
+      },
       updateintentosActividad: (state, action)=>{
          state.intentosActividad = action.payload.intento;
+      },
+      updateContPopUp: (state, action)=>{
+         state.contPopUp = false;
+         console.log('contacto popup:'+state.contPopUp)
       },
    },
 });
 
+
 export const { registerFirstDate,updateDateData, addActivity, updateLastAuto, updateMetaCumplida, updateMetaCheck, updateMood, updateLang, decreaseByOne, register, updatePassword, updatePasswordDelete, reportCASIS, addMeta, updateMeta,updateintentosActividad } = counterSlice.actions;
+
 
 export default counterSlice.reducer;

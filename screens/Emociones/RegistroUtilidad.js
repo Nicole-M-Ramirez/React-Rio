@@ -14,6 +14,7 @@ import FooterView from '../../components/FooterView';
 import EmergencyView from '../../components/EmergencyView';
 import Emergency from '../../components/Emergency';
 import BackLink from '../../components/BackLink';
+import BotonConfig from '../../components/BotonConfig';
 
 import { gs } from '../../components/RioGlobalStrings';
 import { useSelector } from 'react-redux';
@@ -43,6 +44,7 @@ function RegistroUtilidad({route}) {
 
   return (
     <View>
+       <BotonConfig pantalla = 'RegistroUtilidad' Back={() => navigation.navigate('RegistroUtilidad', { theDate: theDate, img:img,pantalla:pantalla })}/> 
     <HeaderView headerButtons = 'yes'>
       <TimeSince/>
     </HeaderView>

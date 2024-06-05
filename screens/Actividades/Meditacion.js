@@ -208,6 +208,7 @@ import TrackPlayer from 'react-native-track-player';
 import { gs } from '../../components/RioGlobalStrings';
 import { useSelector } from 'react-redux';
 import BackLinkWithDate from '../../components/BackLinkWithDate';
+import BotonConfig from '../../components/BotonConfig';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
@@ -229,7 +230,7 @@ function Meditacion ({route}) {
     // Add a track to the queue
     await TrackPlayer.add({
         id: 'track1',
-        url: require('../../assets/Audio/MeditacionEs.m4a'),
+        url: require('../../assets/Audio/MeditacionEs.mp3'),
         title: 'Track Title',
         artist: 'Track Artist',
         artwork: require('../../assets/aceptacion.png')
@@ -288,7 +289,7 @@ const eraseAndLoad = async () => {
 
     await TrackPlayer.add({
       id: 'track1',
-      url: require('../../assets/Audio/MeditacionEsUrgencia.m4a'),
+      url: require('../../assets/Audio/MeditacionEs.mp3'),
       title: 'Track Title',
       artist: 'Track Artist',
       artwork: require('../../assets/aceptacion.png')
@@ -300,7 +301,7 @@ const eraseAndLoad = async () => {
 
     await TrackPlayer.add({
       id: 'track2',
-      url: require('../../assets/Audio/MeditacionEN-EMER.mp4'),
+      url: require('../../assets/Audio/MeditacionEn.mp3'),
       title: 'Track Title',
       artist: 'Track Artist',
       artwork: require('../../assets/aceptacion.png')
@@ -351,11 +352,13 @@ const eraseAndLoad = async () => {
   //setLenguajeAudio(lang)
 }
 
+
 //console.log('lenguage del Audio:'+lenguageAudio)
 
 
   return (
     <View>
+      <BotonConfig pantalla = 'Meditacion' Back={()=>{navigation.navigate('Meditacion',{pantalla:pantalla, forDate:forDate})}}/>
       <HeaderView headerButtons = 'yes'>
         <TimeSince/>
       </HeaderView>

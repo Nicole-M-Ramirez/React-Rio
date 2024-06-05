@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     BoxText: {
         position: 'absolute',
         color: 'white',
-        fontSize: normalize(15),
+        fontSize: normalize(13),
         top: dimensions.buttonHeight*0.15
     }
 });

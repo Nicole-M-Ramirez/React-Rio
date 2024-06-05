@@ -130,7 +130,7 @@ const [lenguageAudio, setLenguajeAudio] = useState("");
     // Add a track to the queue
     await TrackPlayer.add({
         id: 'track1',
-        url: require('../../assets/Audio/MeditacionEsUrgencia.m4a'),
+        url: require('../../assets/Audio/MeditacionUrEs.mp3'),
         title: 'Track Title',
         artist: 'Track Artist',
         artwork: require('../../assets/aceptacion.png')
@@ -146,7 +146,7 @@ const [lenguageAudio, setLenguajeAudio] = useState("");
     // Add a track to the queue
     await TrackPlayer.add({
         id: 'track2',
-        url: require('../../assets/Audio/MeditacionEN-EMER.mp4'),
+        url: require('../../assets/Audio/MeditacionUrEn.m4a'),
         title: 'Track Title',
         artist: 'Track Artist',
         artwork: require('../../assets/aceptacion.png')
@@ -189,7 +189,7 @@ const eraseAndLoad = async () => {
 
     await TrackPlayer.add({
       id: 'track1',
-      url: require('../../assets/Audio/MeditacionEsUrgencia.m4a'),
+      url: require('../../assets/Audio/MeditacionUrEs.mp3'),
       title: 'Track Title',
       artist: 'Track Artist',
       artwork: require('../../assets/aceptacion.png')
@@ -201,7 +201,7 @@ const eraseAndLoad = async () => {
 
     await TrackPlayer.add({
       id: 'track2',
-      url: require('../../assets/Audio/MeditacionEN-EMER.mp4'),
+      url: require('../../assets/Audio/MeditacionUrEn.m4a'),
       title: 'Track Title',
       artist: 'Track Artist',
       artwork: require('../../assets/aceptacion.png')

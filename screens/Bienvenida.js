@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
   title: {
     top: dimensions.headerHeight*0.25,
     left:dimensions.bodyWidth*0.71,
-    fontSize: normalize(20),
+    fontSize: normalize(13),
     color: colors.mintGreen
   },
   textEx: {
@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
   },
   buttonsText: {
     color: 'white',
-    fontSize: normalize(16),
+    fontSize: normalize(13),
     top: dimensions.buttonHeight/12,
     left: dimensions.separator*4,
   },
@@ -194,7 +194,7 @@ titleImage :{
 },
 titleText: {
 color: "#4eb5a3",
-fontSize: normalize(20),
+fontSize: normalize(13),
 fontWeight: '600',
 },
 buttonImage: {

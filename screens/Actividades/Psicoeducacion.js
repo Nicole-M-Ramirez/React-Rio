@@ -18,6 +18,7 @@ import BackLinkWithDate from '../../components/BackLinkWithDate';
 import NextLink from '../../components/NextLink';
 import { gs } from '../../components/RioGlobalStrings';
 import { useSelector } from 'react-redux';
+import BotonConfig from '../../components/BotonConfig';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
@@ -41,6 +42,7 @@ function Psicoeducacion({route}) {
   console.log("In ActividadEnProgreso forDate: " + forDate);
   return (
     <View>
+      <BotonConfig pantalla = 'Psicoeducacion' Back={()=>{navigation.navigate('Psicoeducacion',{forDate:forDate, pantalla:pantalla,img:img,texto:texto,titulo:titulo,vieneDe:vieneDe})}}/>
       <HeaderView>
         <TimeSince/>
       </HeaderView>

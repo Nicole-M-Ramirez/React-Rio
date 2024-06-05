@@ -15,6 +15,7 @@ import { normalize } from '../../components/FondNormilize';
 import BodyView from '../../components/BodyView';
 import TimeSince from '../../components/TimeSince';
 import FooterView from '../../components/FooterView';
+import BotonConfig from '../../components/BotonConfig';
 
 import { gs } from '../../components/RioGlobalStrings';
 
@@ -47,6 +48,7 @@ function Menu() {
 
   return (
     <View>
+      <BotonConfig pantalla = 'MenuPrincipal' Back={()=>{navigation.navigate('MenuPrincipal')}}/>
       <HeaderView headerButtons = 'yes'>
         {/* <Encabezado/> */}
 

@@ -233,7 +233,7 @@ const styles = StyleSheet.create({
   },
   textStyleLibre: {
     textAlign: "center",
-    fontSize: normalize(11),
+    fontSize: normalize(12),
     color: colors.mintGreen,
   },
 });

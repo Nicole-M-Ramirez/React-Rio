@@ -19,6 +19,7 @@ import ShortButton from '../../components/ShortButton';
 import BackLinkWithDate from '../../components/BackLinkWithDate';
 import { gs } from '../../components/RioGlobalStrings';
 import { useSelector } from 'react-redux';
+import BotonConfig from '../../components/BotonConfig';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
@@ -77,6 +78,7 @@ function EmocionesExpancion({route}) {
 
   return (
     <View>
+      <BotonConfig pantalla = 'MenuPrincipal' Back={() => navigation.navigate('EmocionExpancion', {forDate: forDate})}/>
       <HeaderView headerButtons = 'yes'>
         <TimeSince  />
       </HeaderView>

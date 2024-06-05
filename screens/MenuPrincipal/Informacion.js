@@ -21,6 +21,7 @@ import LongButtonSwitch from '../../components/LongButtonSwitch';
 import { updateLang } from '../../redux/slices/counterSlice';
 import BackLink from '../../components/BackLink';
 import DropDown from '../../components/DropDown';
+import BotonConfig from '../../components/BotonConfig';
 
 import { gs } from '../../components/RioGlobalStrings';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -37,6 +38,8 @@ function Informacion({route}) {
   const passwordState = useSelector(state => state.counter.setPassword);
   const lang = useSelector(state => state.counter.language);
   const dispatch = useDispatch();
+
+  console.log("Route de informacion:",)
   function CambiarPassword () {
     // navigation.navigate('Contrasena',{
     //   pantalla: 'NewPassword'
@@ -51,6 +54,7 @@ function Informacion({route}) {
 
   return (
     <View>
+      <BotonConfig pantalla = 'Informacion' Back={() => navigation.navigate('Informacion',{pantallaPasada:'MenuPrincipal',img:null})}/>
       <HeaderView headerButtons = 'yes'>
         {/* <Encabezado/> */}
 
@@ -67,12 +71,12 @@ function Informacion({route}) {
                         Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
             /> */}
             <DropDown Color={colors.mintGreen} 
-                        Title={gs['detonantes'][lang]} 
+                        Title={gs['mayorBenef'][lang]} 
                         Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion'})} 
                         Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*1.1}
-                        contText= {gs['detonantesCont'][lang]}
-                        titleHeigth = {0.2}
+                        DropSize = {dimensions.bodyHeight*1.4}
+                        contText= {gs['mayorBenefCont'][lang]}
+                        titleHeigth = {0.07}
                         downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
             />
             <DropDown Color={colors.mintGreen} 
@@ -82,15 +86,6 @@ function Informacion({route}) {
                         DropSize = {dimensions.bodyHeight*1.1}
                         contText= {gs['usoCompCont'][lang]}
                         titleHeigth = {0.2}
-                        downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
-            />
-            <DropDown Color={colors.mintGreen} 
-                        Title={gs['mayorBenef'][lang]} 
-                        Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion'})} 
-                        Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*1.4}
-                        contText= {gs['mayorBenefCont'][lang]}
-                        titleHeigth = {0.07}
                         downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
             />
             <DropDown Color={colors.mintGreen} 
@@ -130,12 +125,39 @@ function Informacion({route}) {
                         downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
             />
             <DropDown Color={colors.mintGreen} 
+                        Title={gs['detonantes'][lang]} 
+                        Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion'})} 
+                        Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
+                        DropSize = {dimensions.bodyHeight*1.1}
+                        contText= {gs['detonantesCont'][lang]}
+                        titleHeigth = {0.2}
+                        downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
+            />
+            <DropDown Color={colors.mintGreen} 
                         Title={gs['alerta'][lang]} 
                         Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion'})} 
                         Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
                         DropSize = {dimensions.bodyHeight*1.3}
                         contText= {gs['alertaCont'][lang]}
                         titleHeigth = {0.2}
+                        downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
+            />
+            <DropDown Color={colors.mintGreen} 
+                        Title={gs['riesgo'][lang]} 
+                        Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion'})} 
+                        Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
+                        DropSize = {dimensions.bodyHeight*1.0}
+                        contText= {gs['riesgoCont'][lang]}
+                        titleHeigth = {0.2}
+                        downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
+            />
+            <DropDown Color={colors.mintGreen} 
+                        Title={gs['regulacion'][lang]} 
+                        Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion'})} 
+                        Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
+                        DropSize = {dimensions.bodyHeight*1.0}
+                        contText= {gs['regulacionCont'][lang]}
+                        titleHeigth = {0.07}
                         downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
             />
             <DropDown Color={colors.mintGreen} 
@@ -154,24 +176,6 @@ function Informacion({route}) {
                         DropSize = {dimensions.bodyHeight*.8}
                         contText= {gs['queHacerCont'][lang]}
                         titleHeigth = {0.07}
-                        downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
-            />
-            <DropDown Color={colors.mintGreen} 
-                        Title={gs['regulacion'][lang]} 
-                        Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion'})} 
-                        Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*1.0}
-                        contText= {gs['regulacionCont'][lang]}
-                        titleHeigth = {0.07}
-                        downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
-            />
-            <DropDown Color={colors.mintGreen} 
-                        Title={gs['riesgo'][lang]} 
-                        Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion'})} 
-                        Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*1.0}
-                        contText= {gs['riesgoCont'][lang]}
-                        titleHeigth = {0.2}
                         downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
             />
           </ScrollView>

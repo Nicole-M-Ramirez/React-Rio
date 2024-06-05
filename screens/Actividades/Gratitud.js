@@ -26,6 +26,7 @@ import TimeSince from '../../components/TimeSince';
 import DropDown from '../../components/DropDown';
 import { gs } from '../../components/RioGlobalStrings';
 import { useSelector } from 'react-redux';
+import BotonConfig from '../../components/BotonConfig';
 
 
 const ScreenHeight = Dimensions.get("window").height
@@ -40,6 +41,7 @@ function Gratitud ({route}) {
 
   return(
     <View>
+      <BotonConfig pantalla = 'Gratitud' Back={()=>{navigation.navigate('Gratitud',{forDate:forDate})}}/>
       <HeaderView headerButtons = 'yes'>
         <TimeSince  />
       </HeaderView>

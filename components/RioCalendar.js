@@ -16,6 +16,7 @@ import FooterView from './FooterView';
 import BackLinkWithDate from './BackLinkWithDate';
 import BackLink from './BackLink';
 import { gs } from './RioGlobalStrings';
+import BotonConfig from './BotonConfig';
 //import { useSelector } from 'react-redux';
 
 const screenWidth =  Dimensions.get("window").width;
@@ -63,7 +64,7 @@ const RioCalendar = (props) => {
 
   return (  
 <View >
-
+<BotonConfig pantalla = 'RioCalendar' Back={()=>{navigation.navigate('RioCalendar')}}/>
 <HeaderView headerButtons = 'yes'>
   <TimeSince/>
 </HeaderView>

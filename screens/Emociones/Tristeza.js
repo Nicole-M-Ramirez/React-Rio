@@ -133,6 +133,7 @@ import { dimensions } from '../../components/constants';
 import BackLink from '../../components/BackLink';
 import BackLinkWithDate from '../../components/BackLinkWithDate';
 import { gs } from '../../components/RioGlobalStrings';
+import BotonConfig from '../../components/BotonConfig';
 // const ScreenHeight = Dimensions.get("window").height
 // const ScreenWidth = Dimensions.get("window").width
 
@@ -162,11 +163,12 @@ function Tristeza({route}) {
                                                      texto:gs['diarioCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[1]}),
-    () => navigation.navigate('Meditacion',{pantalla: 'Tristeza',
-                                                     img: <Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
-                                                     texto:gs['meditacion'][lang],
-                                                     forDate: forDate,
-                                                     titulo: title[2]}),
+    () => navigation.navigate('MeditacionTristeza', {pantalla:'Tristeza', forDate: forDate}),
+    // () => navigation.navigate('Meditacion',{pantalla: 'Tristeza',
+    //                                                  img: <Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
+    //                                                  texto:gs['meditacion'][lang],
+    //                                                  forDate: forDate,
+    //                                                  titulo: title[2]}),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Tristeza',
                                                      img: <Image source={require('../../assets/dibujo2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
                                                      texto:gs['dibujarCont'][lang],
@@ -195,6 +197,7 @@ function Tristeza({route}) {
 
   return (
     <View>
+      <BotonConfig pantalla = 'MenuPrincipal' Back={() => navigation.navigate('Tristeza', {forDate: forDate})}/>
       <HeaderView>
       <TimeSince/>
       </HeaderView>
@@ -210,15 +213,18 @@ function Tristeza({route}) {
       </FooterView> */}
 
       <FooterView>
+          <View style={{top: dimensions.footerHeight*0.1}}>
+            <Text style={styles.titleText}>{gs['Tristeza'][lang]}</Text>
+          </View>
           {/* <View style={{width:'50%', position:'absolute',marginTop: dimensions.separator}}>
             <BackLinkWithDate labelBack={"Regresar"} gotoScreen={'SelectorEmocion'} theDate={forDate}></BackLinkWithDate>
           </View>          */}
-          <TouchableOpacity  style={{height:'100%'}}  onPress={() => navigation.navigate('Detonante',{pantalla: 'Trsteza', forDate: forDate})}>
+          <TouchableOpacity  style={{height:'100%'}}  onPress={() => navigation.navigate('Detonante',{pantalla: 'Trsteza', forDate: forDate,Color : colors.blue})}>
             <View style={styles.hookedStyles}>
-              <View style={{width:'8%', 'height': '100%',  alignItems: 'flex-start',justifyContent: 'center',  }}>
+              <View style={{width:'8%', 'height': '100%',  alignItems: 'flex-start',justifyContent: 'center', top: dimensions.footerHeight*-0.2 }}>
                 <Image source={require('../../assets/back.png')}  style={styles.buttonsImage} />
               </View>
-              <View style={{width:'92%', 'height': '100%', alignItems: 'flex-start',justifyContent: 'center', }}> 
+              <View style={{width:'92%', 'height': '100%', alignItems: 'flex-start',justifyContent: 'center', top: dimensions.footerHeight*-0.2, left:dimensions.bodyWidth*-0.03 }}> 
                 <Text style={{color: 'white', textAlignVertical: 'center'}}>{gs['volver'][lang]}</Text>
               </View>
             </View>

@@ -19,6 +19,7 @@ const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
 import { gs } from '../../components/RioGlobalStrings';
 import { useSelector } from 'react-redux';
+import BotonConfig from '../../components/BotonConfig';
 
 function Coraje({route}) {
   const lang = useSelector(state => state.counter.language);
@@ -66,6 +67,7 @@ function Coraje({route}) {
 
   return (
     <View>
+      <BotonConfig pantalla = 'MenuPrincipal' Back={() => navigation.navigate('Coraje', {forDate: forDate})}/>
       <HeaderView headerButtons = 'yes'>
         {/* <Encabezado/> */}
 
@@ -79,12 +81,15 @@ function Coraje({route}) {
       {/* </View> */}
 
       <FooterView>
-      <TouchableOpacity  style={{height:'100%'}}  onPress={() => navigation.navigate('Detonante',{pantalla: 'Coraje', forDate: forDate})}>
+      <View style={{top: dimensions.footerHeight*0.1}}>
+            <Text style={styles.titleText}>{gs['Coraje'][lang]}</Text>
+          </View>
+      <TouchableOpacity  style={{height:'100%'}}  onPress={() => navigation.navigate('Detonante',{pantalla: 'Coraje', forDate: forDate,Color : colors.purple})}>
             <View style={styles.hookedStyles}>
-              <View style={{width:'8%', 'height': '100%',  alignItems: 'flex-start',justifyContent: 'center',  }}>
+              <View style={{width:'8%', 'height': '100%',  alignItems: 'flex-start',justifyContent: 'center', top: dimensions.footerHeight*-0.2  }}>
                 <Image source={require('../../assets/back.png')}  style={styles.buttonsImage} />
               </View>
-              <View style={{width:'92%', 'height': '100%', alignItems: 'flex-start',justifyContent: 'center', }}> 
+              <View style={{width:'92%', 'height': '100%', alignItems: 'flex-start',justifyContent: 'center', top: dimensions.footerHeight*-0.2, left:dimensions.bodyWidth*-0.03 }}> 
                 <Text style={{color: 'white', textAlignVertical: 'center'}}>{gs['volver'][lang]}</Text>
               </View>
             </View>
@@ -123,7 +128,7 @@ const styles = StyleSheet.create({
   },
   titleText: {
     color: "#4eb5a3",
-    fontSize: normalize(25),
+    fontSize: normalize(20),
     fontWeight: '600',
     width: dimensions.bodyWidth * 0.7
     },

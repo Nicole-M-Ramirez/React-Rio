@@ -33,7 +33,11 @@ function Configuracion() {
   const navigation = useNavigation();
   const passwordState = useSelector(state => state.counter.setPassword);
   const lang = useSelector(state => state.counter.language);
+  const pantalla = useSelector(state => state.counter.pantallaConfig);
+  const Back = useSelector(state => state.counter.pantallConfigExtras);
   const dispatch = useDispatch();
+
+  console.log("Configuracion extra",Back)
 
   function CambiarPassword () {
     // navigation.navigate('Contrasena',{
@@ -113,13 +117,30 @@ function Configuracion() {
                     Function ={() => navigation.navigate('Configuracion')} 
                     Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
         />
+        <LongButton Color={colors.pink} 
+                    Title={gs['PersonaContacto'][lang]} 
+                    Function ={() => navigation.navigate('ContactoPersona')} 
+                    Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
+        />
       </BodyView>
       </View>
 
       <FooterView> 
-        <View style={{height:'25%', width:'50%', position:'absolute',top: dimensions.footerHeight*0.7}}> 
-          <BackLink labelBack={gs['volver'][lang]} gotoScreen={'MenuPrincipal'}/> 
-        </View> 
+        {/* <View style={{height:'25%', width:'50%', position:'absolute',top: dimensions.footerHeight*0.7}}> 
+          <BackLink labelBack={gs['volver'][lang]} gotoScreen={pantalla}/> 
+        </View>  */}
+        <View style={{width:'50%', position:'absolute',marginTop: dimensions.separator*7}}>
+            <TouchableOpacity  style={{height:'100%'}}  onPress={() => {Back()}}>
+            <View style={styles.hookedStyles}>
+              <View style={{width:'8%', 'height': '100%',  alignItems: 'flex-start',justifyContent: 'center',  }}>
+                <Image source={require ('../../assets/back.png')}  style={styles.buttonBackImage} />
+              </View>
+              <View style={{width:'92%', 'height': '100%', alignItems: 'flex-start',justifyContent: 'center', }}> 
+                <Text style={{color: 'white', textAlignVertical: 'center'}}>{gs['volver'][lang]}</Text>
+              </View>
+            </View>
+            </TouchableOpacity>
+        </View>
         {/* <View style={{top:dimensions.footerHeight*.25, height:'75%',justifyContent: 'center' , alignItems: 'flex-start'}}> 
           <Text style={styles.titleText}>{gs['configuracion'][lang]}</Text> 
         </View>  */}
@@ -152,5 +173,19 @@ const styles = StyleSheet.create({
     height: dimensions.buttonHeight/5,
     top: dimensions.buttonHeight/40,
     left: dimensions.buttonWidth*1.8,
-  }
+  },
+  hookedStyles :{
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    direction: 'inherit',
+    flexWrap: 'nowrap',
+    height: '100%'
+  
+  },
+  buttonBackImage :{
+    width: dimensions.bodyWidth * 0.024,
+    height: dimensions.footerHeight * 0.14,
+    position: 'absolute'
+  },
 });

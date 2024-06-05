@@ -28,6 +28,7 @@ import { backgroundColor } from '../../components/react-native-calendars/src/sty
 import { formatDateYYMMDD } from '../../components/RioGlobalFuncs';
 import { metaToImageMap } from '../../components/RioGlobalFuncs';
 import { updateMetaCumplida } from '../../redux/slices/counterSlice';
+import BotonConfig from '../../components/BotonConfig';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
@@ -68,7 +69,7 @@ import { getMetaStringGlobal } from '../../components/RioGlobalFuncs';
 // }
 
 function Logros() {
-  
+  const navigation = useNavigation();
   const lang = useSelector(state => state.counter.language);
   // Determinar si hay una meta activa
   const metas = useSelector(state => state.counter.metas);
@@ -152,6 +153,7 @@ function Logros() {
 
   return (
     <View>
+      <BotonConfig pantalla = 'Logros' Back={()=>{navigation.navigate('Logros')}}/>
       <HeaderView headerButtons = 'yes'>
         <TimeSince  />
       </HeaderView>
@@ -238,7 +240,7 @@ function Logros() {
       </BodyView>
 
       <FooterView>
-          <View style={{width:'50%', position:'absolute',marginTop: dimensions.separator}}>
+          <View style={{width:'50%', position:'absolute', top: dimensions.footerHeight*0.6}}>
             <BackLink labelBack={gs['volver'][lang]} gotoScreen={'MiEspacio'}></BackLink>
           </View>
       </FooterView>
@@ -311,7 +313,7 @@ const styles = StyleSheet.create({
       //top: dimensions.bodyHeight * 0.36
     },
     LongButtonText: {
-      fontSize: normalize(14),
+      fontSize: normalize(13),
       color: 'white',
       marginTop: dimensions.separator*2,
       marginLeft: dimensions.separator*2

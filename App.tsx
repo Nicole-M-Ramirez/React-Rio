@@ -55,6 +55,7 @@ import Contrasena from './screens/Passwords/Contrasena';
 import PasswordMenu from './screens/Passwords/PasswordMenu';
 import EditarPassword from './screens/Passwords/EditarPassword';
 import ConfirmarBorrar from './screens/Passwords/ConfirmarBorrar';
+import ContactoPersona from './screens/Contacto/ContactoPersona'
 import StackComp from './components/StackComp';
 
 import store, { persistor } from './redux/store';

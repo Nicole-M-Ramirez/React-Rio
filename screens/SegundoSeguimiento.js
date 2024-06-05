@@ -16,6 +16,7 @@ import EmergencyView from '../components/EmergencyView';
 import Emergency from '../components/Emergency';
 import BackLink from '../components/BackLink';
 import NextLink from '../components/NextLink';
+import BotonConfig from '../components/BotonConfig';
 
 import { gs } from '../components/RioGlobalStrings';
 import { useSelector } from 'react-redux';
@@ -52,6 +53,7 @@ function SegundoSeguimiento({route}) {
 
   return (
     <View>
+      <BotonConfig pantalla = 'SegundoSeguimiento' Back={() => navigation.navigate('SegundoSeguimiento')}/> 
     <HeaderView headerButtons = 'yes'>
       <TimeSince/>
     </HeaderView>

@@ -15,6 +15,7 @@ import TimeSince from '../../components/TimeSince';
 import { dimensions } from '../../components/constants';
 import { gs } from '../../components/RioGlobalStrings';
 import { useDispatch, useSelector } from 'react-redux';
+import BotonConfig from '../../components/BotonConfig';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
@@ -31,19 +32,19 @@ function SelectorEmocion({route}) {
   const title = [gs['Felicidad'][lang], gs['Ansiedad'][lang], gs['Miedo'][lang], gs['Tristeza'][lang],gs['Coraje'][lang], gs['Otros'][lang]]
   const functions = [
     () => navigation.navigate('Detonante',{
-      pantalla: 'Felicidad', forDate: theDate
+      pantalla: 'Felicidad', forDate: theDate, Color : colors.pink
     }),
     () => navigation.navigate('Detonante',{
-      pantalla: 'Ansiedad', forDate: theDate
+      pantalla: 'Ansiedad', forDate: theDate, Color : colors.mintGreen
     }),
     () => navigation.navigate('Detonante',{
-      pantalla: 'Miedo', forDate: theDate
+      pantalla: 'Miedo', forDate: theDate, Color : colors.deepPurple
     }),
     () => navigation.navigate('Detonante',{
-      pantalla: 'Tristeza', forDate: theDate
+      pantalla: 'Tristeza', forDate: theDate, Color : colors.blue
     }),
     () => navigation.navigate('Detonante',{
-      pantalla: 'Coraje', forDate: theDate
+      pantalla: 'Coraje', forDate: theDate, Color : colors.purple
     }),
     () => navigation.navigate('EmocionExpancion',{
       pantalla:'EmocionExpancion', forDate: theDate
@@ -66,6 +67,7 @@ function SelectorEmocion({route}) {
 
   return (
     <View>
+      <BotonConfig pantalla = 'MenuPrincipal' Back={() => navigation.navigate('SelectorEmocion', { theDate: theDate })}/>
       <HeaderView>
       <TimeSince/>
       </HeaderView>

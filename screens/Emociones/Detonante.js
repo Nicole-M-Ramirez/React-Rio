@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity, Dimensions, TextInput, Image } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Dimensions, TextInput, Image, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { colors } from '../../components/constants';
 import React, { useState } from 'react';
@@ -18,6 +18,7 @@ import { dimensions } from '../../components/constants';
 import BackLink from '../../components/BackLink';
 //import { useSelector } from 'react-redux';
 import { gs } from '../../components/RioGlobalStrings';
+import BotonConfig from '../../components/BotonConfig';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
@@ -32,16 +33,18 @@ function Detonante({route}) {
   const [detonanteCreado, setDetonanteCreado] = useState("")
   const [comfirmarDetonante, setComfirmarDetonante] = useState(<View></View>)
   const { pantalla } = route.params;
+  const {Color} = route.params;
 
   const { forDate } = route.params;
   console.log("Doing detonantes for " + pantalla + "  for " + forDate);
 
   const dispatch = useDispatch();
-  const [pareja, setPareja] = useState(colors.purple);
-  const [familia, setFamilia] = useState(colors.purple);
-  const [amistades, setAmistades] = useState(colors.purple);
-  const [perdida, setPerdida] = useState(colors.purple);
-  const [estudios, setEstudios] = useState(colors.purple);
+  const [pareja, setPareja] = useState(Color);
+  const [familia, setFamilia] = useState(Color);
+  const [amistades, setAmistades] = useState(Color);
+  const [perdida, setPerdida] = useState(Color);
+  const [estudios, setEstudios] = useState(Color);
+  const [trabajo, setTrabajo] = useState(Color);
 
   const [detonantes, setDetonantes] = useState({'pareja': false, 'familia': false, 'amistades': false, 'perdida': false, 'estudios': false});
 
@@ -55,7 +58,7 @@ function Detonante({route}) {
 
   function toggleButton (state, setFunc) {
     if(state === 'white'){
-      setFunc(colors.purple)
+      setFunc(Color)
     }
     else{
       setFunc('white')
@@ -73,6 +76,8 @@ function Detonante({route}) {
       setDetonantes(prev => ({...prev, perdida: !prev[key]}))
       else if (key=='estudios')
       setDetonantes(prev => ({...prev, estudios: !prev[key]}))
+      else if (key=='trabajo')
+        setDetonantes(prev => ({...prev, trabajo: !prev[key]}))
   }
 
 
@@ -80,6 +85,7 @@ function Detonante({route}) {
 
   return (
     <View>
+      <BotonConfig pantalla = 'MenuPrincipal' Back={() => navigation.navigate('Detonante', { forDate: forDate, pantalla:pantalla, Color:Color })}/>
       <HeaderView>
       <TimeSince/>
       </HeaderView>
@@ -91,48 +97,61 @@ function Detonante({route}) {
         <Text> </Text>
         <View style={{borderBottomColor: colors.mintGreen, width: dimensions.bodyWidth, borderBottomWidth:3}}/>
 
-        <View style={[styles.buttonView,{backgroundColor:colors.purple}]}>
+        <View style={styles.scrollView}>
+        <ScrollView>
+
+        <View style={[styles.buttonView,{backgroundColor:Color}]}>
             <Text style={styles.buttonsText}>{gs['pareja'][lang]}</Text>
-            <TouchableOpacity style={[styles.innerCircle, {backgroundColor: detonantes['pareja'] ? 'white':colors.purple}]} 
+            <TouchableOpacity style={[styles.innerCircle, {backgroundColor: detonantes['pareja'] ? 'white':Color}]} 
             onPress={()=>{toggleButtonDict ('pareja')}}/>
             <View style={styles.outerCircle}/>
         </View>
 
-        <View style={[styles.buttonView,{backgroundColor:colors.purple}]}>
+        <View style={[styles.buttonView,{backgroundColor:Color}]}>
             <Text style={styles.buttonsText}>{gs['familia'][lang]}</Text>
-            <TouchableOpacity style={[styles.innerCircle, {backgroundColor: detonantes['familia'] ? 'white':colors.purple}]} 
+            <TouchableOpacity style={[styles.innerCircle, {backgroundColor: detonantes['familia'] ? 'white':Color}]} 
             onPress={()=>{toggleButtonDict ('familia')}}/>
             <View style={styles.outerCircle}></View>
         </View>
 
-        <View style={[styles.buttonView,{backgroundColor:colors.purple}]}>
+        <View style={[styles.buttonView,{backgroundColor:Color}]}>
             <Text style={styles.buttonsText}>{gs['amistades'][lang]}</Text>
-            <TouchableOpacity style={[styles.innerCircle, {backgroundColor: detonantes['amistades'] ? 'white':colors.purple}]} 
+            <TouchableOpacity style={[styles.innerCircle, {backgroundColor: detonantes['amistades'] ? 'white':Color}]} 
             onPress={()=>{toggleButtonDict ('amistades')}}/>            
             <View style={styles.outerCircle}></View>
         </View>
 
-        <View style={[styles.buttonView,{backgroundColor:colors.purple}]}>
+        <View style={[styles.buttonView,{backgroundColor:Color}]}>
             <Text style={styles.buttonsText}>{gs['perdida'][lang]}</Text>
-            <TouchableOpacity style={[styles.innerCircle, {backgroundColor: detonantes['perdida'] ? 'white':colors.purple}]} 
+            <TouchableOpacity style={[styles.innerCircle, {backgroundColor: detonantes['perdida'] ? 'white':Color}]} 
             onPress={()=>{toggleButtonDict ('perdida')}}/>
             <View style={styles.outerCircle}></View>
         </View>
 
-        <View style={[styles.buttonView,{backgroundColor:colors.purple}]}>
+        <View style={[styles.buttonView,{backgroundColor:Color}]}>
             <Text style={styles.buttonsText}>{gs['estUniversitarios'][lang]}</Text>
-            <TouchableOpacity style={[styles.innerCircle, {backgroundColor: detonantes['estudios'] ? 'white':colors.purple}]} 
+            <TouchableOpacity style={[styles.innerCircle, {backgroundColor: detonantes['estudios'] ? 'white':Color}]} 
             onPress={()=>{toggleButtonDict ('estudios')}}/>
             <View style={styles.outerCircle}></View>
         </View>
 
-        <View style={[styles.buttonView,{backgroundColor:colors.purple,height: dimensions.buttonHeight/2,}]}>
+        <View style={[styles.buttonView,{backgroundColor:Color}]}>
+            <Text style={styles.buttonsText}>{gs['trabajo'][lang]}</Text>
+            <TouchableOpacity style={[styles.innerCircle, {backgroundColor: detonantes['trabajo'] ? 'white':Color}]} 
+            onPress={()=>{toggleButtonDict ('trabajo')}}/>
+            <View style={styles.outerCircle}></View>
+        </View>
+
+        <View style={[styles.buttonView,{backgroundColor:Color,height: dimensions.buttonHeight/2,}]}>
             <Text style={styles.buttonsText}>{gs['otraOp'][lang]}</Text>
             <TextInput
               style={{marginLeft:dimensions.separator,top:(dimensions.buttonHeight/2)*0.12, color:'white'}}
               onChangeText={setDetonanteCreado}
               value={detonanteCreado}
             />
+        </View>
+
+        </ScrollView>
         </View>
       </BodyView>
 
@@ -251,6 +270,11 @@ const styles = StyleSheet.create({
           width: dimensions.bodyWidth * 0.024,
           height: dimensions.footerHeight * 0.14,
           position: 'absolute'
-        }
+        },
+        scrollView: {
+          top: dimensions.bodyHeight*0,
+          height: dimensions.bodyHeight*0.6,
+          //backgroundColor: 'grey',
+        },
 });
 

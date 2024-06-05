@@ -15,6 +15,7 @@ import TimeSince from '../../components/TimeSince';
 import { dimensions } from '../../components/constants';
 import { gs } from '../../components/RioGlobalStrings';
 import { useSelector } from 'react-redux';
+import BotonConfig from '../../components/BotonConfig';
 // import BackLink from '../../components/BackLink';
 import BackLinkWithDate from '../../components/BackLinkWithDate';
 import NextLink from '../../components/NextLink';
@@ -56,6 +57,7 @@ function ActividadEnProgreso({route}) {
 
   return (
     <View>
+      <BotonConfig pantalla = 'MenuPrincipal' Back={()=>{navigation.navigate('ActividadEnProgreso',{forDate:forDate, pantalla:pantalla,img:img,texto:texto,titulo:titulo,vieneDe:vieneDe})}}/>
       <HeaderView>
         <TimeSince/>
       </HeaderView>

@@ -18,6 +18,7 @@ import MetaPorTiem from '../../components/MetaPorTiem';
 import { useDispatch, useSelector } from 'react-redux';
 import { addMeta } from '../../redux/slices/counterSlice';
 import { gs } from '../../components/RioGlobalStrings';
+import BotonConfig from '../../components/BotonConfig';
 
 import { getMetaStringGlobal } from '../../components/RioGlobalFuncs';
 
@@ -149,8 +150,11 @@ function Metas() {
     setPorActividad(false);
   }
 
+  const navigation = useNavigation();
+
   return (
     <View>
+      <BotonConfig pantalla = 'Metas' Back={()=>{navigation.navigate('Metas')}}/>
       <HeaderView headerButtons = 'yes'>
         <TimeSince  />
       </HeaderView>
@@ -494,7 +498,7 @@ const styles = StyleSheet.create({
         top: dimensions.bodyHeight * 0.15
     },
     TopButtonText: {
-        fontSize: normalize(14),
+        fontSize: normalize(13),
         color: 'white',
         marginTop: dimensions.separator*2,
         marginLeft: dimensions.separator*2
@@ -510,7 +514,7 @@ const styles = StyleSheet.create({
       //top: dimensions.bodyHeight * 0.36
     },
     LongButtonText: {
-      fontSize: normalize(14),
+      fontSize: normalize(13),
       color: 'white',
       marginTop: dimensions.separator*3,
       marginLeft: dimensions.separator*2,
@@ -538,11 +542,11 @@ const styles = StyleSheet.create({
       marginBottom: 3,
       position: 'absolute',
       top: dimensions.footerHeight * 0.2,
-      left: dimensions.bodyWidth *0.64
+      left: dimensions.bodyWidth *0.6
     },
     activarText: {
       color: 'white',
-      fontSize: normalize(12),
+      fontSize: normalize(13),
       top: dimensions.footerHeight*0.4,
       left: dimensions.bodyWidth*0.15,
     },
@@ -551,7 +555,7 @@ const styles = StyleSheet.create({
       width: ScreenWidth * 0.025,
       height: ScreenHeight * 0.02,
       top: dimensions.buttonHeight*0.1,
-      left: dimensions.bodyWidth*0.32
+      left: dimensions.bodyWidth*0.34
     }
 });
 // 

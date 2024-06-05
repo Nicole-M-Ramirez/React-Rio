@@ -14,6 +14,7 @@ import BodyView from '../../components/BodyView';
 import TimeSince from '../../components/TimeSince';
 import FooterView from '../../components/FooterView';
 import BackLink from '../../components/BackLink';
+import BotonConfig from '../../components/BotonConfig';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
@@ -42,6 +43,7 @@ function Otros({route}) {
 
   return (
     <View>
+      <BotonConfig pantalla = 'MenuPrincipal' Back={() => navigation.navigate('Otros', {forDate: forDate})}/>
       <HeaderView headerButtons = 'yes'>
         {/* <Encabezado/> */}
 

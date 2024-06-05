@@ -19,9 +19,11 @@ import BackLinkForDiario from './BackLinkForDiario';
 import { getLatestMood, timeNowAsInt } from './RioGlobalFuncs';
 
 import { gs } from '../components/RioGlobalStrings';
+import BotonConfig from './BotonConfig';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { updateDateData, decreaseByOne, reportCASIS } from '../redux/slices/counterSlice';
+//import BotonConfig from './BotonConfig';
 
 const DismissKeyboard = ({ children }) => (
   <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
@@ -132,6 +134,7 @@ function Diary( props) {
   return (
     <>
     <View>
+      <BotonConfig pantalla = 'Diary' Back={()=>{navigation.navigate('Diary',{day:day,month:month,year:year, dateString:dateString, fromScreen:fromScreen, forDate:forDate, pantalla:pantalla, img:img})}}/>
       <HeaderView>
         <TimeSince/>
       </HeaderView>

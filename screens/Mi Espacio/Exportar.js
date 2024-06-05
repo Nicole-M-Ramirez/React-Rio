@@ -12,6 +12,7 @@ import FooterView from '../../components/FooterView';
 import Emergency from '../../components/Emergency';
 import TimeSince from '../../components/TimeSince';
 import BackLink from '../../components/BackLink';
+import BotonConfig from '../../components/BotonConfig';
 
 
 const ScreenHeight = Dimensions.get("window").height
@@ -126,6 +127,7 @@ function Exportar() {
 
   return (
     <View>
+      <BotonConfig pantalla = 'Exportar' Back={()=>{navigation.navigate('Exportar')}}/>
       <HeaderView headerButtons = 'yes'>
         <TimeSince  />
       </HeaderView>

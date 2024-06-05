@@ -18,6 +18,9 @@ import { useSelector } from 'react-redux';
 // import BackLink from '../../components/BackLink';
 import BackLinkWithDate from '../../components/BackLinkWithDate';
 import NextLink from '../../components/NextLink';
+import { addActivity } from '../../redux/slices/counterSlice';
+import { useDispatch } from 'react-redux';
+
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
@@ -33,6 +36,7 @@ function ActividadEnProgreso({route}) {
   const {vieneDe} = route.params;
   //const {continuacionExtra} = route.params;
   //const {forDate} = route.params;
+  const dispatch = useDispatch();
 
   const today = new Date();
 
@@ -45,6 +49,10 @@ function ActividadEnProgreso({route}) {
 
   console.log("In ActividadEnProgreso forDate: " + forDate +  "  VieneDe:"  + pantalla + " Titulo:" + titulo);
   let functionIdx = 0;
+  console.log("Voy a registrar esa actividad....");
+
+  dispatch(addActivity({"act": titulo, "theDate": forDate}));
+
   if (titulo == "Diario" || titulo == "Diary" ) {
     functions.push(
       () => navigation.navigate('Diary', {day:today.getDate(),month:today.getMonth(),year:today.getFullYear(), 

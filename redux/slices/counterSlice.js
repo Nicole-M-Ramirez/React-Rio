@@ -188,6 +188,38 @@ export const counterSlice = createSlice({
          //state.moodCounter[action.payload.mood].cantidad = state.moodCounter[action.payload.mood].cantidad + 1;
          //console.log("Now moodCounter for mood " + action.payload.mood + " is: "+ state.moodCounter[action.payload.mood].cantidad)
       },
+      addActivity: (state, action) => {
+
+          console.log("in STORE addActivity: " + action.payload.act +  " date: " + action.payload.theDate);
+          console.log("toDate:" + timeNowAsInt());
+          const d = action.payload.theDate;
+
+         let newAct = {'type':action.payload.act, 'time':timeNowAsInt()};
+
+         console.log("Ill try to insert this: " + JSON.stringify(newAct));
+
+         if (state.dateData[d] === undefined ) state.dateData[d] = {'text':'', act : [newAct]};
+         else if (state.dateData[d].act === undefined)  state.dateData[d].act = [newAct];
+         else  state.dateData[d].act.push(newAct);
+
+         //  console.log(action.payload.detonantes);
+         //  const d = action.payload.theDate;
+ 
+         //  if (state.dateData[d] === undefined) state.dateData[d] = {'text':'', mood : []}
+         //  else if (state.dateData[d].mood === undefined) state.dateData[d].mood = [];
+          
+ 
+ 
+         //  const mood = action.payload.mood;
+         //  const detonantes = action.payload.detonantes;
+         //  const time = timeNowAsInt();
+ 
+         //  const moodObject = {'type':  mood, 'time': time, 'detonantes': detonantes};
+         //  state.dateData[d].mood.push(moodObject);
+ 
+ 
+         //  console.log("updating mood counter for mood: " + action.payload.mood);
+       },
 
       decreaseByOne: (state, action ) => {
          state.value--;
@@ -218,6 +250,6 @@ export const counterSlice = createSlice({
    },
 });
 
-export const { registerFirstDate,updateDateData, updateLastAuto, updateMetaCumplida, updateMetaCheck, updateMood, updateLang, decreaseByOne, register, updatePassword, updatePasswordDelete, reportCASIS, addMeta, updateMeta,updateintentosActividad } = counterSlice.actions;
+export const { registerFirstDate,updateDateData, addActivity, updateLastAuto, updateMetaCumplida, updateMetaCheck, updateMood, updateLang, decreaseByOne, register, updatePassword, updatePasswordDelete, reportCASIS, addMeta, updateMeta,updateintentosActividad } = counterSlice.actions;
 
 export default counterSlice.reducer;

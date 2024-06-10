@@ -1,0 +1,2 @@
+[x] Guardar la actividad realizada. Done: 2024-06-04
+[ ] Guardar si la actividad realizada funcionó.

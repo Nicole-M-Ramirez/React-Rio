@@ -17,6 +17,8 @@ import { gs } from '../../components/RioGlobalStrings';
 import { useDispatch, useSelector } from 'react-redux';
 import BotonConfig from '../../components/BotonConfig';
 
+
+
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
 
@@ -24,6 +26,10 @@ function SelectorEmocion({route}) {
   const navigation = useNavigation();
   const { theDate } = route.params;
   const lang = useSelector(state => state.counter.language);
+
+
+  // Remueve esto despues, es solo para depurar
+  console.log("The whole state?: " + JSON.stringify(useSelector(state => state.counter.dateData)));
 
   console.log("You have entered the moods window in date: " + theDate);
 

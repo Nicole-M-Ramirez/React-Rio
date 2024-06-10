@@ -161,7 +161,7 @@ function Metas() {
 
       {/* <BodyView> */}
       <View style={{position:'relative', 
-        marginTop: dimensions.bodyTopMargin - dimensions.headerHeight + dimensions.separator*2, 
+        marginTop: dimensions.bodyTopMargin - dimensions.headerHeight + dimensions.separator*5.5, 
         marginLeft: dimensions.leftMargin,
         height: dimensions.bodyHeight,
         width: dimensions.bodyWidth}}>
@@ -547,8 +547,8 @@ const styles = StyleSheet.create({
     activarText: {
       color: 'white',
       fontSize: normalize(13),
-      top: dimensions.footerHeight*0.4,
-      left: dimensions.bodyWidth*0.15,
+      top: dimensions.footerHeight*0.42,
+      left: dimensions.bodyWidth*0.13,
     },
     activarImg: {
       //backgroundColor: 'pink',

@@ -33,19 +33,19 @@ function EmocionesExpancion({route}) {
  
   const Functions = [
     () => navigation.navigate('Detonante',{
-      pantalla: 'Felicidad'
+      pantalla: 'Felicidad', Color : colors.pink
     }),
     () => navigation.navigate('Detonante',{
-      pantalla: 'Ansiedad'
+      pantalla: 'Ansiedad', Color : colors.mintGreen
     }),
     () => navigation.navigate('Detonante',{
-      pantalla: 'Miedo'
+      pantalla: 'Miedo', Color : colors.deepPurple
     }),
     () => navigation.navigate('Detonante',{
-      pantalla: 'Tristeza'
+      pantalla: 'Tristeza', Color : colors.blue
     }),
     () => navigation.navigate('Detonante',{
-      pantalla: 'Coraje'
+      pantalla: 'Coraje', Color : colors.purple
     })
   ]
   
@@ -57,10 +57,10 @@ function EmocionesExpancion({route}) {
 
   const Images = [
     <Image source={require('../../assets/Felicidad.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.buttonHeight /4}]} />,
-    <Image source={require('../../assets/Ansiedad.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.bodyHeight*0.54}]} />,
-    <Image source={require('../../assets/Miedo.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.bodyHeight*0.98}]} />,
-    <Image source={require('../../assets/Tristeza.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.bodyHeight*1.44}]} />,
-    <Image source={require('../../assets/Coraje.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.bodyHeight*1.88}]} />
+    <Image source={require('../../assets/Ansiedad.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.bodyHeight*0.5}]} />,
+    <Image source={require('../../assets/Miedo.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.bodyHeight*0.92}]} />,
+    <Image source={require('../../assets/Tristeza.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.bodyHeight*1.32}]} />,
+    <Image source={require('../../assets/Coraje.png')} resizeMode='contain' style={[styles.buttonImage, {top: dimensions.bodyHeight*1.74}]} />
   ]
 
   const views = [];
@@ -111,7 +111,7 @@ export default EmocionesExpancion;
 
 const styles = StyleSheet.create({
     scrollView: {
-      top: dimensions.bodyHeight*0.19,
+      top: dimensions.bodyHeight*0.24,
       left:dimensions.leftMargin,
       height: dimensions.bodyHeight*0.99,
       //backgroundColor: 'grey',

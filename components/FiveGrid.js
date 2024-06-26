@@ -8,6 +8,7 @@ import { colors, dimensions } from '../components/constants';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
+import BotonMenuPrin from './BotonMenuPrin';
 
 
 function FiveGrid ({colors, title, functions,images}) {
@@ -15,7 +16,8 @@ function FiveGrid ({colors, title, functions,images}) {
 
   return (
     <>
-        <TouchableOpacity onPress={functions[0]} style={[styles.button, {
+      <BotonMenuPrin Color={colors[0]} TitleImage={images[0]} Title={title[0]} BackgroundImage={require('../assets/diarioVerde.png')} Function={functions[0]} Left={dimensions.bodyWidth*0.2}/>
+        {/* <TouchableOpacity onPress={functions[0]} style={[styles.button, {
                                                   backgroundColor:colors[0],
                                                   top: 0,
                                                   left: 0,
@@ -33,7 +35,7 @@ function FiveGrid ({colors, title, functions,images}) {
             {images[0]}              
             <Text style={styles.buttonText}>{title[0]}</Text>
           </TouchableOpacity>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <TouchableOpacity onPress={functions[1]} style={[styles.button, {
                                                   backgroundColor:colors[1],
                                                   top: dimensions.buttonHeight + dimensions.separator,

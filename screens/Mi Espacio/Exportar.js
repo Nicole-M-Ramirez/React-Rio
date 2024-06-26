@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity, Dimensions, Image, ScrollView} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Dimensions, Image, ScrollView,TextInput} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { colors, dimensions } from '../../components/constants';
 import { normalize } from '../../components/FondNormilize';
@@ -23,6 +23,7 @@ const ScreenWidth = Dimensions.get("window").width
 function Exportar() {
     const [buttonTipoColors, setButtonTipoColors] = useState(colors.mintGreen);
     const [buttonTiempoColor, setButtonTiempoColor] = useState(colors.mintGreen)
+    const [text, onChangeText] = React.useState(' ');
 
     const [circle1, setcircle1] = useState(colors.purple);
     const [circle2, setcircle2] = useState(colors.purple);
@@ -30,6 +31,7 @@ function Exportar() {
     const [circle4, setcircle4] = useState(colors.purple);
     const [circle5, setcircle5] = useState(colors.purple);
     const [circle6, setcircle6] = useState(colors.purple);
+    const [circle7, setcircle7] = useState(colors.purple);
 
     const [opciones, setOpciones] = useState({'Actividades': false, 'Logros': false, 'Graficas': false, 'Diario': false, 'Calendario': false});
     const [archivo, setarchivo] = useState({'PDF': false, 'CSV': false});
@@ -125,6 +127,17 @@ function Exportar() {
       //nav()
     }
 
+    function SevenCircle () {
+      if(circle7 === 'white'){
+        setcircle7(colors.purple)
+      }
+      else{
+        setcircle7('white')
+      }
+  
+      //nav()
+    }
+
   return (
     <View>
       <BotonConfig pantalla = 'Exportar' Back={()=>{navigation.navigate('Exportar')}}/>
@@ -196,17 +209,28 @@ function Exportar() {
                                          width: dimensions.bodyWidth,
                                          height : ScreenHeight * 0.062,
                                         }]}>
-          <Text style={[styles.buttonsText,{left:dimensions.separator*2}]}>example@email.com</Text>
+          {/* <Text style={[styles.buttonsText,{left:dimensions.separator*2}]}>example@email.com</Text> */}
+          <TextInput style={[styles.buttonsText,{left:dimensions.separator*2}]} placeholder="example@email.com" onChangeText={onChangeText} value={text}/>
         </View>
 
-        <View style={[styles.buttonView,{
+        {/* <View style={[styles.buttonView,{
                                          top: 3.5*(dimensions.bodyHeight*0.25),
                                          width : dimensions.buttonWidth,
                                          height : ScreenHeight * 0.062,
                                         }]}>
           <Text style={styles.buttonsText}>PDF</Text>
-          <TouchableOpacity style={[styles.innerCircle, {backgroundColor: circle1}]} onPress={()=>{firstCircle()}}/>
+          <TouchableOpacity style={[styles.innerCircle, {backgroundColor: circle1}]} onPress={()=>{SixCircle()}}/>
           <View style={styles.outerCircle}/>
+        </View> */}
+        <View style={[styles.buttonView,{
+                                         top: 3.5*(dimensions.bodyHeight*0.25),
+                                         width : dimensions.buttonWidth,
+                                         height : ScreenHeight * 0.062,
+                                         left: dimensions.bodyWidth*0
+                                        }]}>
+            <Text style={styles.buttonsText}>PDF</Text>
+            <TouchableOpacity style={[styles.innerCircle, {backgroundColor: circle6}]} onPress={()=>{SixCircle()}}/>
+            <View style={styles.outerCircle}/>
         </View>
 
         <View style={[styles.buttonView,{
@@ -216,7 +240,7 @@ function Exportar() {
                                          left: dimensions.bodyWidth*0.51
                                         }]}>
           <Text style={styles.buttonsText}>CSV</Text>
-          <TouchableOpacity style={[styles.innerCircle, {backgroundColor: circle4}]} onPress={()=>{ForthCircle()}}/>
+          <TouchableOpacity style={[styles.innerCircle, {backgroundColor: circle7}]} onPress={()=>{SevenCircle()}}/>
           <View style={styles.outerCircle}></View>
         </View>
       </BodyView>

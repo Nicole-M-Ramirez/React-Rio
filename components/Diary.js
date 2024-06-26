@@ -22,7 +22,7 @@ import { gs } from '../components/RioGlobalStrings';
 import BotonConfig from './BotonConfig';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { updateDateData, decreaseByOne, reportCASIS } from '../redux/slices/counterSlice';
+import { updateDateData, decreaseByOne, reportCASIS, addAutolecionData } from '../redux/slices/counterSlice';
 //import BotonConfig from './BotonConfig';
 
 const DismissKeyboard = ({ children }) => (
@@ -274,7 +274,7 @@ function Diary( props) {
         <View style={{top:0, left: dimensions.bodyWidth/2, position: 'absolute'}}>
         <TwoThirdsButton label ={gs['reportarAL'][lang]} topMargin = {0} 
           bg = {colors.emergencyRed} row = {0} col = {0} img={require('../assets/ingresar.png')} active={new Date(dateString) < new Date()}
-          onPress={ () =>showAlert(dispatch) }
+          onPress={ () =>{showAlert(dispatch); dispatch(addAutolecionData({"fec": dateString}));} }
           />
   
         </View>

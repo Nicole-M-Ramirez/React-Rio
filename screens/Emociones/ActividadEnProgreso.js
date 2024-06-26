@@ -42,7 +42,7 @@ function ActividadEnProgreso({route}) {
   const today = new Date();
 
   const functions = [
-    () => navigation.navigate('RegistroUtilidad',{img:img, forDate: forDate, pantalla : pantalla}),
+    () => navigation.navigate('RegistroUtilidad',{img:img, forDate: forDate, pantalla : pantalla, actividad: titulo}),
     () => navigation.navigate(continuacionExtra, {forDate:forDate}),
 
   ]
@@ -100,7 +100,7 @@ function ActividadEnProgreso({route}) {
             <TouchableOpacity  style={{left:dimensions.bodyWidth*0.7,width:dimensions.bodyWidth*0.25,height:dimensions.footerHeight*0.5,top:dimensions.footerHeight*0.5}}  onPress={functions[functionIdx]}>
               <View style={styles.hookedStyles}>
                 <View style={{width:'92%', 'height': dimensions.footerHeight*0.5, alignItems: 'flex-end',justifyContent: 'center', }}> 
-                  <Text style={{color: 'white', textAlignVertical: 'center'}}>{gs['continuar'][lang]}</Text>
+                  <Text style={{color: 'white', textAlignVertical: 'center'}}>{gs['finalizar'][lang]}</Text>
                 </View>
                 <View style={{width:'15%', 'height': dimensions.footerHeight*0.5,  alignItems: 'flex-end',justifyContent: 'center',  }}>
                   <Image source={require('../../assets/continuar2.png')}  style={styles.buttonTitleImage} />

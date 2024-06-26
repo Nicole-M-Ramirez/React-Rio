@@ -25,6 +25,7 @@ const ScreenWidth = Dimensions.get("window").width
 
 import { useDispatch, useSelector } from 'react-redux';
 import { updateMood, decreaseByOne } from '../../redux/slices/counterSlice';
+import { addDetonanteData } from '../../redux/slices/counterSlice';
 
 let det = [];
 
@@ -34,6 +35,7 @@ function Detonante({route}) {
   const [comfirmarDetonante, setComfirmarDetonante] = useState(<View></View>)
   const { pantalla } = route.params;
   const {Color} = route.params;
+  
 
   const { forDate } = route.params;
   console.log("Doing detonantes for " + pantalla + "  for " + forDate);
@@ -45,6 +47,8 @@ function Detonante({route}) {
   const [perdida, setPerdida] = useState(Color);
   const [estudios, setEstudios] = useState(Color);
   const [trabajo, setTrabajo] = useState(Color);
+
+  const [detonanteFinal, setDetonanteFinal] = useState('');
 
   const [detonantes, setDetonantes] = useState({'pareja': false, 'familia': false, 'amistades': false, 'perdida': false, 'estudios': false});
 
@@ -80,6 +84,10 @@ function Detonante({route}) {
         setDetonantes(prev => ({...prev, trabajo: !prev[key]}))
   }
 
+  function paraRecolectar(key) {
+
+  }
+
 
 
 
@@ -103,42 +111,42 @@ function Detonante({route}) {
         <View style={[styles.buttonView,{backgroundColor:Color}]}>
             <Text style={styles.buttonsText}>{gs['pareja'][lang]}</Text>
             <TouchableOpacity style={[styles.innerCircle, {backgroundColor: detonantes['pareja'] ? 'white':Color}]} 
-            onPress={()=>{toggleButtonDict ('pareja')}}/>
+            onPress={()=>{toggleButtonDict ('pareja'); setDetonanteFinal('pareja')}}/>
             <View style={styles.outerCircle}/>
         </View>
 
         <View style={[styles.buttonView,{backgroundColor:Color}]}>
             <Text style={styles.buttonsText}>{gs['familia'][lang]}</Text>
             <TouchableOpacity style={[styles.innerCircle, {backgroundColor: detonantes['familia'] ? 'white':Color}]} 
-            onPress={()=>{toggleButtonDict ('familia')}}/>
+            onPress={()=>{toggleButtonDict ('familia'); setDetonanteFinal('familia')}}/>
             <View style={styles.outerCircle}></View>
         </View>
 
         <View style={[styles.buttonView,{backgroundColor:Color}]}>
             <Text style={styles.buttonsText}>{gs['amistades'][lang]}</Text>
             <TouchableOpacity style={[styles.innerCircle, {backgroundColor: detonantes['amistades'] ? 'white':Color}]} 
-            onPress={()=>{toggleButtonDict ('amistades')}}/>            
+            onPress={()=>{toggleButtonDict ('amistades'); setDetonanteFinal('amistades')}}/>            
             <View style={styles.outerCircle}></View>
         </View>
 
         <View style={[styles.buttonView,{backgroundColor:Color}]}>
             <Text style={styles.buttonsText}>{gs['perdida'][lang]}</Text>
             <TouchableOpacity style={[styles.innerCircle, {backgroundColor: detonantes['perdida'] ? 'white':Color}]} 
-            onPress={()=>{toggleButtonDict ('perdida')}}/>
+            onPress={()=>{toggleButtonDict ('perdida'); setDetonanteFinal('perdida')}}/>
             <View style={styles.outerCircle}></View>
         </View>
 
         <View style={[styles.buttonView,{backgroundColor:Color}]}>
             <Text style={styles.buttonsText}>{gs['estUniversitarios'][lang]}</Text>
             <TouchableOpacity style={[styles.innerCircle, {backgroundColor: detonantes['estudios'] ? 'white':Color}]} 
-            onPress={()=>{toggleButtonDict ('estudios')}}/>
+            onPress={()=>{toggleButtonDict ('estudios'); setDetonanteFinal('estudios') }}/>
             <View style={styles.outerCircle}></View>
         </View>
 
         <View style={[styles.buttonView,{backgroundColor:Color}]}>
             <Text style={styles.buttonsText}>{gs['trabajo'][lang]}</Text>
             <TouchableOpacity style={[styles.innerCircle, {backgroundColor: detonantes['trabajo'] ? 'white':Color}]} 
-            onPress={()=>{toggleButtonDict ('trabajo')}}/>
+            onPress={()=>{toggleButtonDict ('trabajo'); setDetonanteFinal('trabajo')}}/>
             <View style={styles.outerCircle}></View>
         </View>
 
@@ -182,6 +190,10 @@ function Detonante({route}) {
             // updateMood(pantalla);
             dispatch(updateMood({"mood": pantalla, "detonantes": detonantes, "theDate": forDate}));
             // console.log("Openning the " + pantalla + " activities for date " + forDate);
+
+            dispatch(addDetonanteData({"det" : detonanteFinal, "fec": forDate}))
+            //paraRecolectar('Pareja');
+
             navigation.navigate(pantalla, {forDate: forDate}); 
           }}>
             <View style={styles.hookedStyles}>

@@ -16,6 +16,7 @@ import BodyView from '../../components/BodyView';
 import TimeSince from '../../components/TimeSince';
 import FooterView from '../../components/FooterView';
 import BotonConfig from '../../components/BotonConfig';
+import BotonMenuPrin from '../../components/BotonMenuPrin';
 
 import { gs } from '../../components/RioGlobalStrings';
 
@@ -59,7 +60,10 @@ function Menu() {
       <BodyView>
         {/* <FiveGrid colors={Colors} title={title} functions={functions} images={images}/> */}
         <View style={{top: dimensions.bodyHeight*0.02}}>
-        <TouchableOpacity onPress={functions[0]} style={[styles.button, {
+          <BotonMenuPrin Color={colors.blue} TitleImage={require('../../assets/autocuidado2.png')} Title={gs['actividades'][lang]} BackgroundImage={require('../../assets/A.png')} Function={() => navigation.navigate('SelectorEmocion', { theDate: theDate })} Left={dimensions.bodyWidth*0}/>
+          <BotonMenuPrin Color={colors.pink} TitleImage={require('../../assets/miPerfil2.png')} Title={gs['miEspacio'][lang]} BackgroundImage={require('../../assets/B.png')} Function={functions[1]} Left={dimensions.bodyWidth*0}/>
+          <BotonMenuPrin Color={colors.mintGreen} TitleImage={require('../../assets/infomacion2.png')} Title={gs['informacion'][lang]} BackgroundImage={require('../../assets/A.png')} Function={functions[2]} Left={dimensions.bodyWidth*0}/>
+        {/* <TouchableOpacity onPress={functions[0]} style={[styles.button, {
                                                   backgroundColor:colors.blue,
                                                   top: 0.,
                                                   left: 0,
@@ -74,12 +78,13 @@ function Menu() {
                                                   height : dimensions.buttonHeight,
                                                   // position: 'absolute' 
                                                 }]}>
-             <Image source={require('../../assets/autocuidado2.png')} resizeMode='contain' style={[styles.buttonImage, {alignSelf: 'flex-start', left: dimensions.buttonHeight/5}]} />             
+             <Image source={require('../../assets/autocuidado2.png')} resizeMode='contain' style={[styles.buttonImage, {alignSelf: 'flex-start', left: dimensions.buttonHeight/5}]} /> 
+             <Image source={require('../../assets/A.png')} resizeMode='contain' style={[{left: dimensions.bodyWidth*-1, width: dimensions.bodyWidth*4,height: ScreenHeight * 0.13,top: dimensions.bodyHeight*-0.2  }]} />           
             <Text style={styles.buttonText}>{gs['actividades'][lang]}</Text>
           </TouchableOpacity>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
-        <TouchableOpacity onPress={functions[1]} style={[styles.button, {
+        {/* <TouchableOpacity onPress={functions[1]} style={[styles.button, {
                                                   backgroundColor:colors.pink,
                                                   top: 0,
                                                   left: 0,
@@ -119,7 +124,7 @@ function Menu() {
              <Image source={require('../../assets/infomacion2.png')} resizeMode='contain' style={[styles.buttonImage, {alignSelf: 'flex-start', left: dimensions.buttonHeight/5}]} />             
             <Text style={[styles.buttonText, {top:dimensions.buttonHeight*0.17}]}>{gs['informacion'][lang]}</Text>
           </TouchableOpacity>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         </View>
 
       </BodyView>

@@ -34,7 +34,7 @@ function Emergencia({route}) {
   
 
   const actividades=[
-    () => navigation.navigate('ActividadEnProgreso',{pantalla: 'SeguimientoUrgencia',
+    () => navigation.navigate('RespiracionUrgencia',{pantalla: 'SeguimientoUrgencia',
                                                      vieneDe: 'Emergencia',
                                                      img: <Image source={require('../assets/Respiracion-Profunda.gif')} resizeMode='contain' style={[styles.ActividadImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
                                                      texto:gs['respiracionCont'][lang],

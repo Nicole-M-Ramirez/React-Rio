@@ -50,7 +50,7 @@ function Ansiedad({route}) {
     //                                                  texto:gs['respiracionCont'][lang],
     //                                                  forDate: forDate,
     //                                                  titulo: title[2]}),
-    () => navigation.navigate('RespiracionInst',{forDate: forDate}),,
+    () => navigation.navigate('RespiracionInst',{forDate: forDate}),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Ansiedad',
                                                      img: <Image source={require('../../assets/atencionPlena.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
                                                      texto:gs['atencionCont'][lang],
@@ -64,7 +64,8 @@ function Ansiedad({route}) {
   ]
 
   const images = [
-    <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage, {alignSelf: 'flex-start', left: dimensions.bodyWidth*0.59}]} />,
+    require('../../assets/diario2.png'),
+    //<Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage, {alignSelf: 'flex-start', left: dimensions.bodyWidth*0.59}]} />,
     <Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={styles.buttonImage} />,
     <Image source={require('../../assets/respirar2.png')} resizeMode='contain' style={styles.buttonImage} />,
     <Image source={require('../../assets/atencionPlena.png')} resizeMode='contain' style={styles.buttonImage} />,

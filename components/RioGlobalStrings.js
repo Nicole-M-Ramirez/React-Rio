@@ -5,6 +5,7 @@ export const gs = {
   'acepto':{'es':'Acepto','en':'Accept'},
   'noAcepto':{'es':'No Acepto','en':'Do not accept'},
   'continuar':{'es':'Continuar','en':'Continue'},
+  'finalizar':{'es':'Finalizar','en':'Finish'},
   'saltar':{'es':'Saltar', 'en':'Skip'},
   'volver':{'es':'Volver','en':'Back'},
   'si':{'es':'Sí','en':'Yes'},
@@ -482,31 +483,38 @@ These Terms and the Privacy Policy are effective on the date of your download an
 </ol>
 `
     },
-    'queAutolecionCont':{
-      'es':
-`Es cuando una persona se provoca daño corporal, pero sin la intención de provocar la muerte. Algunas de las formas más comunes de autolesionarse son el cortarse, pellizcarse hasta sangrar, golpearse, quemarse, entre otras). Puedes buscar más información entrando a los siguientes enlaces:
-<ul>
-  <li><a href="https://www.selfinjury.bctr.cornell.edu/">Programa de investigación sobre la 
-  autolesión ysu recuperación de la
-  Universidad de Cornell (SIRR): The
-  Cornell Research Program on
-  Self-Injury and Recovery (https://www.selfinjury.bctr.cornell.edu/)</a>
-<br>&nbsp;
-  <li><a href="https://www.selfinjury.bctr.cornell.edu/">Sociedad Internacional para el
-  Estudio de la Autolesión:
-  Home | ISSS (itriples.org)</a>
-</ul>`,
-      'en':
-`It is when a person intentionally harms their body without the intention of causing death. Some common forms of self-harm include cutting, pinching until bleeding, hitting oneself, burning, among others. You can find more information by visiting the following links:
+//     'queAutolecionCont':{
+//       'es':
+// `Es cuando una persona se provoca daño corporal, pero sin la intención de provocar la muerte. Algunas de las formas más comunes de autolesionarse son el cortarse, pellizcarse hasta sangrar, golpearse, quemarse, entre otras). Puedes buscar más información entrando a los siguientes enlaces:
+// <ul>
+//   <li><a href="https://www.selfinjury.bctr.cornell.edu/">Programa de investigación sobre la 
+//   autolesión ysu recuperación de la
+//   Universidad de Cornell (SIRR): The
+//   Cornell Research Program on
+//   Self-Injury and Recovery (https://www.selfinjury.bctr.cornell.edu/)</a>
+// <br>&nbsp;
+//   <li><a href="https://www.selfinjury.bctr.cornell.edu/">Sociedad Internacional para el
+//   Estudio de la Autolesión:
+//   Home | ISSS (itriples.org)</a>
+// </ul>`,
+//       'en':
+// `It is when a person intentionally harms their body without the intention of causing death. Some common forms of self-harm include cutting, pinching until bleeding, hitting oneself, burning, among others. You can find more information by visiting the following links:
 
-<ul>
-      <li><a href="https://www.selfinjury.bctr.cornell.edu/">Self-Injury and Recovery Research Program at Cornell University (SIRR): The Cornell Research Program on Self-Injury and Recovery (https://www.selfinjury.bctr.cornell.edu/)</a>
-      <br>&nbsp;
+// <ul>
+//       <li><a href="https://www.selfinjury.bctr.cornell.edu/">Self-Injury and Recovery Research Program at Cornell University (SIRR): The Cornell Research Program on Self-Injury and Recovery (https://www.selfinjury.bctr.cornell.edu/)</a>
+//       <br>&nbsp;
   
-      <li><a href="https://www.selfinjury.bctr.cornell.edu/">International Society for the Study of Self-Injury: Home | ISSS (itriples.org)</a>
-</ul>
-`
-    },
+//       <li><a href="https://www.selfinjury.bctr.cornell.edu/">International Society for the Study of Self-Injury: Home | ISSS (itriples.org)</a>
+// </ul>
+// `
+//     },
+'queAutolecionCont1': {
+      'es' : `Es cuando una persona se provoca daño corporal, pero sin la intención de provocar la muerte. Algunas de las formas más comunes de autolesionarse son el cortarse, pellizcarse hasta sangrar, golpearse, quemarse, entre otras). Puedes buscar más información entrando a los siguientes enlaces:`, 
+      'en' : `It is when a person intentionally harms their body without the intention of causing death. Some common forms of self-harm include cutting, pinching until bleeding, hitting oneself, burning, among others. You can find more information by visiting the following links:`
+},
+'queAutolecionCont2': {'es' : 'Programa de investigación sobre la autolesión ysu recuperación de la Universidad de Cornell (SIRR): The Cornell Research Program on Self-Injury and Recovery', 'en' : 'Self-Injury and Recovery Research Program at Cornell University (SIRR): The Cornell Research Program on Self-Injury and Recovery'},
+'queAutolecionCont3': {'es' : 'Sociedad Internacional para el Estudio de la Autolesión: Home | ISSS', 'en' : 'International Society for the Study of Self-Injury: Home | ISSS'},
+
     'porqueAutolesionCont':{
       'es':
 `Las personas se pueden autolesionar por diversas razones:
@@ -866,7 +874,27 @@ If you have medical insurance, you can contact a customer service representative
 
   //Contacto pop-up
   'ExplicacionContacto' : {'es': 'Ve a Configuración y añade tu contacto de emergencia. Luego al oprimir el botón de persona contacto, podrás realizar una llamada a esta persona en caso de que necesites ayuda.', 'en':'Go to Settings and add your emergency contact. Then by pressing the contact person button, you can make a call to this person in case you need help.'},
-  'ConfirmarExplicacion' : {'es':'Entendido','en':'Got It'}
+  'ConfirmarExplicacion' : {'es':'Entendido','en':'Got It'},
+
+  'respiracionInst' : {'es' : 'A continuación, verás la imagen de un círculo que te ayudará a enfocarte en tu respiración. Inhala lentamente mientras el círculo aumenta de tamaño. Pausa unos segundos y luego exhala despacio a medida que el círculo se reduzca.',
+                       'en' : 'Next, you will see the image of a circle that will help you focus on your breathing. Inhale slowly as the circle increases in size. Pause for a few seconds and then exhale slowly as the circle decreases.'
+   },
+
+   'MetaspopUp' : {'es' : 'Selecciona la meta que deseas alcanzar y dirígete al área de "Logros" para marcar tu progreso.' , 'en' : 'Select the goal you wish to accomplish and go to the "Accomplishments" section to mark your progress.'},
+
+   //GRAFICAS
+
+   'emociones' : {'es' : 'Emociones' , 'en' : 'Emotions'},
+   'frecAutolecion' : {'es' : 'Frecuencia de autoleciones' , 'en' : 'Frequency of self-harm'},
+   'frecActividades' : {'es' : 'Actividades Frecuentadas' , 'en' : 'Activities frequented'},
+   'escojerTipo' : {'es' : 'Escoger Tipo' , 'en' : 'Choose Type'},
+   'escojerTiempo' : {'es' : 'Escoger Tiempo' , 'en' : 'Choose Time'},
+   'tipo1' : {'es' : 'Tipo 1: Barras' , 'en' : 'Type 1: Bar Chart'},
+   'tipo2' : {'es' : 'Tipo 2: Pie Chart' , 'en' : 'Type 2: Pie Chart'},
+   'tiempo1' : {'es' : 'Tiempo 1: 15 días' , 'en' : 'Time 1: 15 days'},
+   'tiempo2' : {'es' : 'Tiempo 2: 30 días' , 'en' : 'Time 2: 30 days'},
+   'Graficas' : {'es' : 'Gráficas', 'en' : 'Graphs'},
+   'crear' : {'es' : 'Crear', 'en' : 'Create'},
 
 
 }

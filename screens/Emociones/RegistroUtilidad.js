@@ -15,6 +15,8 @@ import EmergencyView from '../../components/EmergencyView';
 import Emergency from '../../components/Emergency';
 import BackLink from '../../components/BackLink';
 import BotonConfig from '../../components/BotonConfig';
+import { addActividadesData, addAutolecionData } from '../../redux/slices/counterSlice';
+import { useDispatch } from 'react-redux';
 
 import { gs } from '../../components/RioGlobalStrings';
 import { useSelector } from 'react-redux';
@@ -24,12 +26,16 @@ const ScreenWidth = Dimensions.get("window").width
 
 
 function RegistroUtilidad({route}) {
+  const dispatch = useDispatch();
   const navigation = useNavigation();
   const lang = useSelector(state => state.counter.language);
   const {img} = route.params;
   const today = new Date();
   const theDate = today.toISOString().substring(0,10);
   const {pantalla} = route.params;
+  const {actividad} = route.params; 
+
+  dispatch(addActividadesData({"act" : actividad, "fec": theDate}));
 
   function Calling (phoneNumber) {
 

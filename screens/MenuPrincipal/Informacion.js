@@ -22,6 +22,7 @@ import { updateLang } from '../../redux/slices/counterSlice';
 import BackLink from '../../components/BackLink';
 import DropDown from '../../components/DropDown';
 import BotonConfig from '../../components/BotonConfig';
+import DropDownLink from '../../components/DropDownLink';
 
 import { gs } from '../../components/RioGlobalStrings';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -88,12 +89,12 @@ function Informacion({route}) {
                         titleHeigth = {0.2}
                         downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
             />
-            <DropDown Color={colors.mintGreen} 
+            <DropDownLink Color={colors.mintGreen} 
                         Title={gs['queAutolecion'][lang]} 
                         Function ={() => navigation.navigate('Informacion')} 
                         Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*0.9}
-                        contText= {gs['queAutolecionCont'][lang]}
+                        DropSize = {dimensions.bodyHeight*0.8}
+                        contText= {gs['queAutolecionCont1'][lang]}
                         titleHeigth = {0.2}
                         downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
             />

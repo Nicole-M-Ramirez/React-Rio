@@ -19,6 +19,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addMeta } from '../../redux/slices/counterSlice';
 import { gs } from '../../components/RioGlobalStrings';
 import BotonConfig from '../../components/BotonConfig';
+import TextMessageMetas from '../../components/TextMessageMetas';
 
 import { getMetaStringGlobal } from '../../components/RioGlobalFuncs';
 
@@ -74,7 +75,7 @@ const getMetaActiva = (metas) => {
 
 
 function Metas() {
-
+  const [popUp, setPopUp] = useState(true)
   const showAlert = (dispatch, meta, oldMeta) => {
 
     let msg;
@@ -158,6 +159,8 @@ function Metas() {
       <HeaderView headerButtons = 'yes'>
         <TimeSince  />
       </HeaderView>
+
+      <TextMessageMetas/>
 
       {/* <BodyView> */}
       <View style={{position:'relative', 

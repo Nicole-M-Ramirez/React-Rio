@@ -27,7 +27,9 @@ import DropDown from '../../components/DropDown';
 import { gs } from '../../components/RioGlobalStrings';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
+import TrackPlayer from 'react-native-track-player';
 import { useIsFocused } from '@react-navigation/native';
+import { stop } from 'react-native-track-player/lib/src/trackPlayer';
 import BotonConfig from '../../components/BotonConfig';
 
 
@@ -36,10 +38,145 @@ const ScreenWidth = Dimensions.get("window").width
 
 
 
-function Respiracion ({route}) {
+function RespiracionUrgencia({route}) {
   const { forDate } = route.params;
   const navigation = useNavigation();
   const lang = useSelector(state => state.counter.language);
+  const [track, setTrack] = useState(require('../../assets/Audio/InstCirculoEs.m4a'))
+  const [lenguageAudio, setLenguajeAudio] = useState("");
+  const isFocused = useIsFocused();
+
+  const setupEs = async () => {
+    // Set up the player
+    await TrackPlayer.setupPlayer();
+
+    await setLenguajeAudio('es')
+
+    // Add a track to the queue
+    await TrackPlayer.add({
+        id: 'track1',
+        url: require('../../assets/Audio/InstCirculoEs.m4a'),
+        title: 'Track Title',
+        artist: 'Track Artist',
+        artwork: require('../../assets/aceptacion.png')
+    });
+  };
+
+  const setupEn = async () => {
+    // Set up the player
+    await TrackPlayer.setupPlayer();
+
+    await setLenguajeAudio('en')
+
+    // Add a track to the queue
+    await TrackPlayer.add({
+        id: 'track2',
+        url: require('../../assets/Audio/InstCirculoEn.m4a'),
+        title: 'Track Title',
+        artist: 'Track Artist',
+        artwork: require('../../assets/aceptacion.png')
+    });
+  };
+
+  if (lang === 'es') {
+    //setLenguajeAudio('esp')
+    setupEs();
+  }
+  else {
+    setupEn();
+  }
+
+  const [audioSelect, setAudioSelect] = useState ("play")
+
+const play = async () => {
+  await TrackPlayer.play();
+  await setAudioSelect("pause")
+}
+
+const pause = async () => {
+  await TrackPlayer.pause();
+  await setAudioSelect("play")
+}
+const stop = async () => {
+  await TrackPlayer.stop();
+  await setAudioSelect("pause")
+}
+
+const reset = async () => {
+  await TrackPlayer.stop();
+  await TrackPlayer.play();
+  await setAudioSelect("pause")
+}
+
+const eraseAndLoad = async () => {
+    await TrackPlayer.stop
+    let activeTrack =  await TrackPlayer.getActiveTrackIndex();
+  
+    if (lang === 'es') {
+      //setupEs();
+      //await TrackPlayer.setupPlayer();
+  
+      await TrackPlayer.add({
+        id: 'track1',
+        url: require('../../assets/Audio/InstCirculoEs.m4a'),
+        title: 'Track Title',
+        artist: 'Track Artist',
+        artwork: require('../../assets/aceptacion.png')
+    });
+    }
+    else {
+      //setupEn();
+      //await TrackPlayer.setupPlayer();
+  
+      await TrackPlayer.add({
+        id: 'track2',
+        url: require('../../assets/Audio/InstCirculoEn.m4a'),
+        title: 'Track Title',
+        artist: 'Track Artist',
+        artwork: require('../../assets/aceptacion.png')
+    });
+    }
+  
+    let TrackAhora = await TrackPlayer.getActiveTrackIndex();
+    console.log('El track ahora antes del skip:', TrackAhora)
+  
+    await TrackPlayer.skipToNext();
+    let TrackDespues = await TrackPlayer.getActiveTrackIndex();
+    console.log('El track ahora antes del skip:', TrackDespues)
+  
+    await TrackPlayer.remove(TrackAhora);
+  
+    let listaAhora = await TrackPlayer.getQueue()
+    console.log('Lista despues de borrar:', listaAhora)
+  
+    let Activo = await TrackPlayer.getActiveTrack()
+    console.log('track activo ahora despues de borra: ', Activo)
+  
+    await TrackPlayer.play();
+    await setAudioSelect("pause")
+  
+    setLenguajeAudio(lang)
+  }
+
+  //eraseAndLoad();
+
+  if(isFocused){
+    //play()
+    // reset()
+    if(lang == lenguageAudio){
+      play()
+      //reset()
+    } 
+    else {
+      eraseAndLoad()
+    }
+  }
+  else if(!isFocused){
+    // pause()
+    // reset()
+    // //eraseAndLoad()
+    stop()
+  }
 
   const [imagen, setImagen] = useState(<Image source={require('../../assets/play.png')} resizeMode='contain' style={styles.buttonTitleImage} />)
   const [imName, setImName] = useState("Play")
@@ -54,29 +191,35 @@ function Respiracion ({route}) {
         setImName("Play")
     }
   }
+  
 
   return(
     <View>
-      <BotonConfig pantalla = 'Respiracion' Back={()=>{navigation.navigate('Respiracion',{forDate:forDate})}}/>
+      <BotonConfig pantalla = 'RespiracionInst' Back={()=>{navigation.navigate('RespiracionInst',{forDate:forDate})}}/>
       <HeaderView headerButtons = 'yes'>
         <TimeSince  />
       </HeaderView>
 
       <View style={styles.scrollView}>
-        <TouchableOpacity style={{top:dimensions.bodyHeight*0.25}} onPress={()=>{changeImage()}}>
+        <TouchableOpacity style={{top:dimensions.bodyHeight*0}} onPress={()=>{changeImage()}}>
           {imagen}
         </TouchableOpacity>
-      </View>
+        <Text style={styles.titleText}>{gs['respiracion'][lang]}</Text>
+        <View style={[styles.TextView]}>
+            <Text style={styles.text}>{gs['respiracionInst'][lang]}</Text>
+        </View>
+
+     </View>
 
           <FooterView>
               <View style={{width:'50%', position:'absolute',top: dimensions.footerHeight*0.6,}}>
-              <BackLinkWithDate labelBack={gs['volver'][lang]} gotoScreen={'RespiracionInst'} theDate={forDate}></BackLinkWithDate>
+              <BackLinkWithDate labelBack={gs['volver'][lang]} gotoScreen={'Emergencia'} theDate={forDate}></BackLinkWithDate>
               </View> 
 
-              <TouchableOpacity  style={{left:dimensions.bodyWidth*0.7,width:dimensions.bodyWidth*0.25,height:dimensions.footerHeight*0.5,marginTop: dimensions.separator*6}}  onPress={() => navigation.navigate('RegistroUtilidad',{img:<Image source={require('../../assets/Respiracion-Profunda.gif')} resizeMode='contain' style={[styles.buttonRegistro,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />, forDate: forDate })}>
+              <TouchableOpacity  style={{left:dimensions.bodyWidth*0.7,width:dimensions.bodyWidth*0.25,height:dimensions.footerHeight*0.5,marginTop: dimensions.separator*6}}  onPress={() => navigation.navigate('SeguimientoUrgencia', {forDate : forDate})}>
           <View style={styles.hookedStyles}>
             <View style={{width:'92%', 'height': dimensions.footerHeight*0.5, alignItems: 'flex-end',justifyContent: 'center', }}> 
-              <Text style={{color: 'white', textAlignVertical: 'center'}}>{gs['finalizar'][lang]}</Text>
+              <Text style={{color: 'white', textAlignVertical: 'center'}}>{gs['continuar'][lang]}</Text>
             </View>
             <View style={{width:'15%', 'height': dimensions.footerHeight*0.5,  alignItems: 'flex-end',justifyContent: 'center',  }}>
               <Image source={require('../../assets/continuar2.png')}  style={styles.buttonCont} />
@@ -92,7 +235,7 @@ function Respiracion ({route}) {
   )
  }
 
-export default Respiracion;
+export default RespiracionUrgencia;
 
 const styles = StyleSheet.create({
   title: {
@@ -134,7 +277,7 @@ titleText: {
 color: "#4eb5a3",
 fontSize: normalize(20),
 fontWeight: '600',
-top: dimensions.bodyHeight*0.07
+top: dimensions.bodyHeight*0.08
 },
 buttonImage: {
   width: dimensions.buttonWidth/5,
@@ -185,7 +328,7 @@ text:{
   fontSize: normalize(13),
   //width: dimensions.bodyWidth *,
   //left: dimensions.bodyWidth*0.05,
-  //top: dimensions.buttonHeight*0.01
+  top: dimensions.buttonHeight*0
 },
 buttonCont :{
   width: dimensions.bodyWidth * 0.024,

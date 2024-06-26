@@ -71,7 +71,7 @@ function RespiracionInst ({route}) {
     // Add a track to the queue
     await TrackPlayer.add({
         id: 'track2',
-        url: require('../../assets/Audio/InstCirculoEn.m4a'),
+        url: require('../../assets/Audio/InstCirculoEn.mp3'),
         title: 'Track Title',
         artist: 'Track Artist',
         artwork: require('../../assets/aceptacion.png')
@@ -130,7 +130,7 @@ const eraseAndLoad = async () => {
   
       await TrackPlayer.add({
         id: 'track2',
-        url: require('../../assets/Audio/InstCirculoEn.m4a'),
+        url: require('../../assets/Audio/InstCirculoEn.mp3'),
         title: 'Track Title',
         artist: 'Track Artist',
         artwork: require('../../assets/aceptacion.png')
@@ -189,7 +189,7 @@ const eraseAndLoad = async () => {
         <View style={styles.scrollView}>
               <Text style={styles.titleText}>{gs['respiracion'][lang]}</Text>
               <View style={[styles.TextView]}>
-                <Text style={styles.text}>{gs['respiracionCont'][lang]}</Text>
+                <Text style={styles.text}>{gs['respiracionInst'][lang]}</Text>
               </View>
 
           </View>

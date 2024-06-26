@@ -14,15 +14,29 @@ export const counterSlice = createSlice({
       setContacto: false,
       contacto : '7870000000',
       contPopUp: true,
+      metaPopUp: true,
       language: 'es',
       registered: false,
       dateReg: undefined,
       lastAuto: undefined ,//"Sun Nov 12 2023 10:52:04 GMT-0400", 
-      users: [
-         { id: 1, name: 'John' },
-         { id: 2, name: 'Jane' },
-         { id: 3, name: 'Bob' }
+      //detonantesData : [{detonante:'dummy', fecha:'dummy'}],
+      detData: [
+         // { id: 1, name: 'John' },
+         // { id: 2, name: 'Jane' },
+         // { id: 3, name: 'Bob' }
       ],
+      emoData: [
+         // { id: 1, name: 'John' },
+         // { id: 2, name: 'Jane' },
+         // { id: 3, name: 'Bob' }
+      ],
+      autoLecionData: [
+         // { id: 1, name: 'John' },
+         // { id: 2, name: 'Jane' },
+         // { id: 3, name: 'Bob' }
+      ],
+      actData: [],
+      
       intentosActividad: false,
 
       // 2023-10-11: Formato viejo
@@ -273,11 +287,48 @@ export const counterSlice = createSlice({
          state.contPopUp = false;
          console.log('contacto popup:'+state.contPopUp)
       },
+      updateMetaPopUp: (state, action)=>{
+         state.metaPopUp = false;
+         console.log('meta popup:'+state.metaPopUp)
+      },
+      addDetonanteData : (state, action)=>{
+         console.log("detonante: ", action.payload.det)
+         console.log("fecha: ", action.payload.fec)
+         //const detData = {detoante: action.payload.det, 'fecha' : action.payload.fec};
+         //state.deton.push({detoante: action.payload.det, 'fecha' : action.payload.fec})
+         state.detData.push({detonante: action.payload.det, fecha: action.payload.fec})
+         //state.detonantesData = 
+         console.log("tabla de detonantes" + state.detData);
+      },
+      addEmocionData : (state, action)=>{
+         console.log("emocion: ", action.payload.emo)
+         console.log("fecha: ", action.payload.fec)
+         //const detData = {detoante: action.payload.det, 'fecha' : action.payload.fec};
+         //state.deton.push({detoante: action.payload.det, 'fecha' : action.payload.fec})
+         state.emoData.push({emocion: action.payload.emo, fecha: action.payload.fec})
+         //state.detonantesData = 
+         console.log("tabla de emociones" + state.emoData);
+      },
+      addAutolecionData : (state, action)=>{
+         //console.log("fech")
+         //const fecha = action.payload.fec
+         state.autoLecionData.push({fecha: action.payload.fec});
+         console.log("tabla de autoleciones" + state.autoLecionData);
+      },
+      addActividadesData : (state, action)=>{
+         console.log("actividad: ", action.payload.act)
+         console.log("fecha: ", action.payload.fec)
+         //const detData = {detoante: action.payload.det, 'fecha' : action.payload.fec};
+         //state.deton.push({detoante: action.payload.det, 'fecha' : action.payload.fec})
+         state.actData.push({actividades: action.payload.act, fecha: action.payload.fec})
+         //state.detonantesData = 
+         console.log("tabla de actividades" + state.actData);
+      },
    },
 });
 
 
-export const { registerFirstDate,updateDateData, addActivity, updateLastAuto, updateMetaCumplida, updateMetaCheck, updateMood, updateLang, decreaseByOne, register, updatePassword, updatePasswordDelete, reportCASIS, addMeta, updateMeta,updateintentosActividad } = counterSlice.actions;
+export const { registerFirstDate,updateDateData, addActivity, updateLastAuto, updateMetaCumplida, updateMetaCheck, updateMood, updateLang, decreaseByOne, register, updatePassword, updatePasswordDelete, reportCASIS, addMeta, updateMeta,updateintentosActividad,updatePantallaConfig, updateContPopUp, updateMetaPopUp, updateContacto, addDetonanteData, addEmocionData,addAutolecionData,addActividadesData} = counterSlice.actions;
 
 
 export default counterSlice.reducer;

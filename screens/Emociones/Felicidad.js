@@ -18,14 +18,19 @@ import BackLinkWithDate from '../../components/BackLinkWithDate';
 import { gs } from '../../components/RioGlobalStrings';
 import { useDispatch, useSelector } from 'react-redux';
 import BotonConfig from '../../components/BotonConfig';
+import { addEmocionData } from '../../redux/slices/counterSlice';
+//import { useDispatch, useSelector } from 'react-redux';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
 
 function Felicidad({route}) {
+  const dispatch = useDispatch();
   const { forDate } = route.params;
   const navigation = useNavigation();
   const lang = useSelector(state => state.counter.language);
+  
+  dispatch(addEmocionData({"emo" : "felicidad", "fec": forDate})); 
 
 
   const Colors = [colors.deepPurple,colors.mintGreen,colors.pink,colors.blue,colors.purple]
@@ -45,7 +50,7 @@ function Felicidad({route}) {
     //                                                  forDate: forDate,
     //                                                  titulo: title[1]}),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Felicidad',
-                                                     img: <Image source={require('../../assets/dibujo2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
+                                                     img: <Image source={require('../../assets/animaciones/DIBUJAR.gif')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
                                                      texto:gs['dibujarCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[2],
@@ -65,7 +70,8 @@ function Felicidad({route}) {
   ]
 
   const images = [
-    <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage, {alignSelf: 'flex-start', left: dimensions.buttonHeight/5}]} />,
+    require('../../assets/diario2.png'),
+    // <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage, {alignSelf: 'flex-start', left: dimensions.buttonHeight/5}]} />,
     <Image source={require('../../assets/comunidad2.png')} resizeMode='contain' style={styles.buttonImage} />,
     <Image source={require('../../assets/dibujo2.png')} resizeMode='contain' style={styles.buttonImage} />,
     <Image source={require('../../assets/musica2.png')} resizeMode='contain' style={styles.buttonImage} />,

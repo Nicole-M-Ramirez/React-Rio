@@ -12,7 +12,7 @@ function BackLinkForDiario({labelBack, gotoScreen, theDate, img, pantalla}) {
   const navigation = useNavigation();
 
   return (
-    <TouchableOpacity  style={{height:'100%'}}  onPress={() => navigation.navigate(gotoScreen, {forDate: theDate, img:img, pantalla: pantalla})}>
+    <TouchableOpacity  style={{height:'100%'}}  onPress={() => navigation.navigate(gotoScreen, {forDate: theDate, img:img, pantalla: pantalla, actividad: "diario"})}>
     <View style={styles.hookedStyles}>
       <View style={{width:'8%', 'height': '100%',  alignItems: 'flex-start',justifyContent: 'center',  }}>
         <Image source={require('../assets/back.png')}  style={styles.buttonImage} />

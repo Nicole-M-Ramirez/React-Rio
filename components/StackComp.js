@@ -51,6 +51,7 @@ import BorrarContacto from "../screens/Contacto/BorrarContacto";
 import Respiracion from "../screens/Actividades/Respiracion";
 import RespiracionInst from "../screens/Actividades/RespiracionInst";
 import MeditacionTristeza from "../screens/Actividades/MeditacionTristeza";
+import RespiracionUrgencia from "../screens/Actividades/RespiracionUrgencias";
 import { createStackNavigator } from "@react-navigation/stack";
 import { useSelector } from "react-redux";
 const Stack = createStackNavigator();
@@ -549,6 +550,15 @@ const StackComp = (props) => {
       <Stack.Screen
         name='MeditacionTristeza'
         component={MeditacionTristeza}
+        independent ={true}
+        options={{
+          headerTitle: "",
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name='RespiracionUrgencia'
+        component={RespiracionUrgencia}
         independent ={true}
         options={{
           headerTitle: "",

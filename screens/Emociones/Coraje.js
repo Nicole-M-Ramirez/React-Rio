@@ -58,7 +58,8 @@ function Coraje({route}) {
   ]
 
   const images = [
-    <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage, {alignSelf: 'flex-start', left: dimensions.bodyWidth*0.59}]} />,
+    require('../../assets/diario2.png'),
+    //<Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage, {alignSelf: 'flex-start', left: dimensions.bodyWidth*0.59}]} />,
     <Image source={require('../../assets/caminar2.png')} resizeMode='contain' style={styles.buttonImage} />,
     <Image source={require('../../assets/bano2.png')} resizeMode='contain' style={styles.buttonImage} />,
     <Image source={require('../../assets/ejercicio2.png')} resizeMode='contain' style={styles.buttonImage} />,

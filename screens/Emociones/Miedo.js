@@ -30,7 +30,8 @@ function Miedo({route}) {
   const Colors = [colors.deepPurple,colors.blue,colors.pink,colors.mintGreen,colors.purple]
   const title = [gs['diario'][lang],gs['hablar'][lang],gs['respirar'][lang],gs['espiritualidad'][lang],gs['atenPlena'][lang],]
   const images = [
-    <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage, {alignSelf: 'flex-start', left: dimensions.bodyWidth*0.59}]} />,
+    require('../../assets/diario2.png'),
+    //<Image source={require('../../assets/diario2.png')} resizeMode='contain' style={[styles.buttonImage, {alignSelf: 'flex-start', left: dimensions.bodyWidth*0.59}]} />,
     <Image source={require('../../assets/hablar.png')} resizeMode='contain' style={styles.buttonImage} />,
     <Image source={require('../../assets/respirar2.png')} resizeMode='contain' style={styles.buttonImage} />,
     <Image source={require('../../assets/Espiritualidad.png')} resizeMode='contain' style={styles.buttonImage} />,
@@ -55,7 +56,7 @@ function Miedo({route}) {
                                                      forDate: forDate,
                                                      titulo: title[2]}),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Miedo',
-                                                     img:images[3],
+                                                     img:<Image source={require('../../assets/animaciones/ESPIRITUALIDAD.gif')} resizeMode='contain' style={styles.buttonImage} />,
                                                      texto:gs['espiritualidadCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[3]}),

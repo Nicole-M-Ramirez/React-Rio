@@ -166,33 +166,23 @@ function Emergencia({route}) {
           <Text style={styles.middleButtonText}>{gs['contactoPersonal'][lang]}</Text>
         </TouchableOpacity>
 
+        <View style={{position:'absolute',top: dimensions.bodyHeight*1.02}}>
+            <BackLink labelBack={"Regresar"} gotoScreen={'MenuPrincipal'}></BackLink>
+        </View>
+
+        <View style={{height:dimensions.footerHeight*0.7,width:dimensions.bodyWidth*1, top:dimensions.bodyHeight*1.06}}>
+          <Text style={styles.titleText}>{gs['tituloUrgencia'][lang]}</Text>
+        </View>
+
+        <View style={{width: dimensions.bodyWidth,top: dimensions.bodyHeight*1.16,position: 'absolute', borderTopWidth: dimensions.headerHeight *0.03, borderColor: colors.mintGreen,}}/>
+
+        <Text style={styles.text}>{gs['tituloFoother'][lang]}</Text>
+
     </BodyView>
 
-    <FooterView>
-    <View style={{position:'absolute',marginTop: dimensions.separator}}>
-      {/* <TouchableOpacity  style={{height:'100%'}}  onPress={() => navigation.navigate('MenuPrincipal')}>
-        <View style={styles.hookedStyles}>
-          <View style={{width:'8%', 'height': '100%',  alignItems: 'flex-start',justifyContent: 'center',  }}>
-            <Image source={require ('../assets/back.png')}  style={styles.backButtonImage} />
-          </View>
-          <View style={{width:'92%', 'height': '100%', alignItems: 'flex-start',justifyContent: 'center', }}> 
-            <Text style={{color: 'white', textAlignVertical: 'center'}}>{gs['volver'][lang]}</Text>
-          </View>
-        </View>
-      </TouchableOpacity> */}
-                {/* <View style={{width:'50%', position:'absolute',marginTop: dimensions.separator}}> */}
-            <BackLink labelBack={"Regresar"} gotoScreen={'MenuPrincipal'}></BackLink>
-          {/* </View> */}
-    </View>
-
-      <View style={{position:'absolute',marginTop: dimensions.separator*2,height:dimensions.footerHeight*0.7,width:dimensions.bodyWidth*1, top:dimensions.footerHeight*0.2}}>
-        <Text style={styles.titleText}>{gs['tituloUrgencia'][lang]}</Text>
-      </View>
-    </FooterView>
-
-    <EmergencyView>
+    {/* <EmergencyView>
       <Text style={styles.text}>{gs['tituloFoother'][lang]}</Text>
-    </EmergencyView>
+    </EmergencyView> */}
   </View>
   );
 }
@@ -204,7 +194,8 @@ const styles = StyleSheet.create({
       color: colors.mintGreen,
       fontSize:normalize(10),
       width: dimensions.bodyWidth *.6,
-      paddingTop: dimensions.emergencyHeight  * 0.1,
+      //paddingTop: dimensions.emergencyHeight  * 0.1,
+      top: dimensions.bodyHeight*1.06
     },
     titleText: {
       //backgroundColor:'grey',

@@ -728,6 +728,7 @@ If you have medical insurance, you can contact a customer service representative
   'estUniversitarios' : {'es' : 'Estudios Universitarios', 'en' : 'University studies'},
   'trabajo' : {'es' : 'Trabajo', 'en' : 'Work'},
   'otraOp' : {'es' : 'Otros/Crear opción:', 'en' : 'Other/Create option:'},
+  'otros' :{'es' : 'Otro', 'en' : 'Other'},
 
   //nombres Actividades
   'diario' : {'es' : 'Diario', 'en' : 'Diary'},
@@ -895,6 +896,18 @@ If you have medical insurance, you can contact a customer service representative
    'tiempo2' : {'es' : 'Tiempo 2: 30 días' , 'en' : 'Time 2: 30 days'},
    'Graficas' : {'es' : 'Gráficas', 'en' : 'Graphs'},
    'crear' : {'es' : 'Crear', 'en' : 'Create'},
+
+   //PAGINA BIENVENIDA
+   'saludos' : {'es' : 'Te damos la bienvenida a RIO, una aplicación móvil desarrollada por un grupo de investigadores de las Universidad de Puerto Rico, Recinto de Rio Piedras. ', 'en' : 'We welcome you to RIO, a mobile application developed by a group of researchers from the University of Puerto Rico, Rio Piedras Campus.'},
+   'warningPass' : {'es' : 'Es importante que el usuario sepa que si pierde u olvida su contraseña la misma NO podrá ser recuperada.', 'en' : 'It is important that the user knows that if they lose or forget their password it CANNOT be recovered.'},
+   'bullet1' : {'es' : 'Es una herramienta psicoeducativa que puede proporcionar apoyo general y orientación, NO está enfocado para realizar diagnósticos clínicos ni evalúa el riesgo de autolesión de manera precisa.', 'en' : 'It is a psychoeducational tool that can provide general support and guidance, it is NOT intended to make clinical diagnoses nor does it accurately assess the risk of self-harm.'},
+   'bullet2' : {'es' : 'NO es un sustituto de la evaluación psicológica profesional.', 'en' : 'It is NOT a substitute for professional psychological evaluation.'},
+   'bullet3' : {'es' : 'NO recopila datos personales de los usuarios. Los datos registrados se quedarán guardados en el dispositivo del usuario.', 'en' : " DOES NOT collect personal data from users. The recorded data will be saved on the user's device."},
+   'minorWarning' : {'es' : 'Al utilizar RIO usted representa que NO es un menor de trece (13) años. Si usted tiene menos de trece (13) años, no podrá utilizar RIO.', 'en' : 'By using RIO you represent that you are NOT a minor under thirteen (13) years of age. If you are under thirteen (13) years old, you will not be able to use RIO.'},
+   'aceptar1' : {'es' : `Al oprimir (aceptar) usted acepta nuestros`, 'en' : `By clicking (accept) you accept our`},
+   'aceptar2' : {'es' : `términos de uso y política de privacidad.`, 'en' : `Terms of use and privacy policy.`},
+   'aceptarTerminos' : {'es' : 'Aceptar', 'en' : 'Acept'},
+   '' : {'es' : '', 'en' : ''},
 
 
 }

@@ -29,8 +29,9 @@ function TextMessage3(){
         <View style={{position:'absolute', zIndex:1}}>
             {popUp === true && contPopUp === true ?
             <>
-                <View style={{top:dimensions.bodyHeight*-0.2,width:dimensions.bodyWidth/2, height:ScreenHeight, backgroundColor:'rgba(24, 54, 74, 0.8)', left: dimensions.bodyWidth*0.5,position:'absolute', zIndex:0}}/>
+                <View style={{top:dimensions.bodyHeight*-0.2,width:dimensions.bodyWidth/2, height:ScreenHeight, backgroundColor:'rgba(24, 54, 74, 0.8)', left: dimensions.bodyWidth*0.5,position:'absolute', zIndex:0, }}/>
                 <View style={{top:dimensions.bodyHeight*-0.2,width:dimensions.bodyWidth/2, height:ScreenHeight*0.61, backgroundColor:'rgba(24, 54, 74, 0.8)'}}/>
+                <View style={{top:dimensions.bodyHeight*0.03,width:dimensions.bodyWidth/2, height:ScreenHeight*0.61, backgroundColor:'rgba(24, 54, 74, 0.8)'}}/>
                 <View style={[styles.triangleCorner]} />
                 <View style={styles.rectangle}>
                     <View style={{left:'5%',top:'7%',width:'90%', height:'90%'}} >

@@ -32,7 +32,7 @@ import Metas from "../screens/Mi Espacio/Metas";
 import SetMetas from "../screens/Mi Espacio/SetMetas";
 import Logros from "../screens/Mi Espacio/Logros";
 import Graficas from "../screens/Mi Espacio/Graficas";
-import Barras from "../screens/Mi Espacio/Barras";
+//import Barras from "../screens/Mi Espacio/Barras";
 import Piechart from "../screens/Mi Espacio/PieChart";
 import Exportar from "../screens/Mi Espacio/Exportar";
 import ActividadEnProgreso from "../screens/Emociones/ActividadEnProgreso";
@@ -51,8 +51,10 @@ import BorrarContacto from "../screens/Contacto/BorrarContacto";
 import Respiracion from "../screens/Actividades/Respiracion";
 import RespiracionInst from "../screens/Actividades/RespiracionInst";
 import MeditacionTristeza from "../screens/Actividades/MeditacionTristeza";
+import BarrasDetonante from "../screens/Graficas/BarrasDetonante";
 import RespiracionUrgencia from "../screens/Actividades/RespiracionUrgencias";
 import { createStackNavigator } from "@react-navigation/stack";
+import PaginaBienvenida from "../screens/PaginaBienvenida";
 import { useSelector } from "react-redux";
 const Stack = createStackNavigator();
 
@@ -289,15 +291,6 @@ const StackComp = (props) => {
       <Stack.Screen
         name='Graficas'
         component={Graficas}
-        independent ={true}
-        options={{
-          headerTitle: "",
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name='Barras'
-        component={Barras}
         independent ={true}
         options={{
           headerTitle: "",
@@ -559,6 +552,24 @@ const StackComp = (props) => {
       <Stack.Screen
         name='RespiracionUrgencia'
         component={RespiracionUrgencia}
+        independent ={true}
+        options={{
+          headerTitle: "",
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name='PaginaBienvenida'
+        component={PaginaBienvenida}
+        independent ={true}
+        options={{
+          headerTitle: "",
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name='BarrasDetonante'
+        component={BarrasDetonante}
         independent ={true}
         options={{
           headerTitle: "",

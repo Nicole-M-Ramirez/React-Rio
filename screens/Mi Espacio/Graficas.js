@@ -364,91 +364,114 @@ function Graficas () {
   const autoLecionData = useSelector(state => state.counter.autoLecionData);
   const actData = useSelector(state => state.counter.actData);
 
+  const [graficaData, setGraficaData] = useState('');
+  const [graficaTipo, setGraficaTipo] = useState('');
+  const [graficaTiempo, setGraficaTiempo] = useState('');
+  // let graficaData = ''
+  // let graficaTipo = ''
+  // let graficaTiempo = ''
+
   function firstCircle () {
     if(circle1 === 'white'){
       setcircle1(colors.mintGreen)
+      setGraficaData('')
     }
     else{
       setcircle1('white')
       setcircle2(colors.mintGreen)
       setcircle3(colors.mintGreen)
       setcircle4(colors.mintGreen)
+      setGraficaData('detonante')
     }
   }
 
   function secondCircle () {
     if(circle2 === 'white'){
       setcircle2(colors.mintGreen)
+      setGraficaData('')
     }
     else{
       setcircle2('white')
       setcircle1(colors.mintGreen)
       setcircle3(colors.mintGreen)
       setcircle4(colors.mintGreen)
+      setgraficaData('emocion')
     }
   }
 
   function thirdCircle () {
     if(circle3 === 'white'){
       setcircle3(colors.mintGreen)
+      setGraficaData('')
     }
     else{
       setcircle3('white')
       setcircle2(colors.mintGreen)
       setcircle1(colors.mintGreen)
       setcircle4(colors.mintGreen)
+      setGraficaData('autolesion')
     }
   }
 
   function forthCircle () {
     if(circle4 === 'white'){
       setcircle4(colors.mintGreen)
+      setGraficaData('')
     }
     else{
       setcircle4('white')
       setcircle2(colors.mintGreen)
       setcircle3(colors.mintGreen)
       setcircle1(colors.mintGreen)
+      setGraficaData('actividad')
     }
   }
 
   function circuloTipo1 () {
     if(tipo1 === 'white'){
       setTipo1(colors.mintGreen)
+      setGraficaTipo('')
     }
     else{
       setTipo1('white')
       setTipo2(colors.mintGreen)
+      setGraficaTipo('barra')
     }
   }
 
   function circuloTipo2 () {
     if(tipo2 === 'white'){
       setTipo2(colors.mintGreen)
+      setGraficaTipo('')
     }
     else{
       setTipo2('white')
       setTipo1(colors.mintGreen)
+      setGraficaTipo('pie')
     }
   }
 
   function circuloTiempo1 () {
     if(tiempo1 === 'white'){
       setTiempo1(colors.mintGreen)
+      setGraficaTiempo('')
     }
     else{
       setTiempo1('white')
       setTiempo2(colors.mintGreen)
+      setGraficaTiempo('15')
     }
   }
 
   function circuloTiempo2 () {
     if(tiempo2 === 'white'){
       setTiempo2(colors.mintGreen)
+      setGraficaTiempo('')
     }
     else{
       setTiempo2('white')
       setTiempo1(colors.mintGreen)
+      setGraficaTiempo('30')
     }
   }
 
@@ -458,6 +481,26 @@ function Graficas () {
     console.log("Data de emociones: " + JSON.stringify(emoData))
     console.log("Data de autolecion: " + JSON.stringify(autoLecionData))
     console.log("Data de actividades: " + JSON.stringify(actData))
+  }
+
+  function crearGraf () {
+    if(graficaData === '' && graficaTipo === '' && graficaTiempo === '' ){
+      console.log('no suficiente info')
+    }
+    else{
+      // console.log(graficaData)
+      // console.log(graficaTipo)
+      // console.log(graficaTiempo)
+      if(graficaTipo === 'barra'){
+        if(graficaData === 'detonante'){
+          navigation.navigate('BarrasDetonante', {tiempo: graficaTiempo, data : detData })
+        }
+
+      }
+      else{
+        console.log('aun en proceso')
+      }
+    }
   }
 
   return(
@@ -567,7 +610,7 @@ function Graficas () {
           <Text style={styles.titleText}>{gs['Graficas'][lang]}</Text>
         </View>
 
-        <TouchableOpacity  style={{left:dimensions.bodyWidth*0.7,width:dimensions.bodyWidth*0.25,height:dimensions.footerHeight*0.5, top: dimensions.bodyHeight*-0.13}}  onPress={()=>{verDets()}}>
+        <TouchableOpacity  style={{left:dimensions.bodyWidth*0.7,width:dimensions.bodyWidth*0.25,height:dimensions.footerHeight*0.5, top: dimensions.bodyHeight*-0.13}}  onPress={()=>{crearGraf()}}>
           <View style={styles.hookedStyles}>
             <View style={{width:'92%', 'height': dimensions.footerHeight*0.5, alignItems: 'flex-end',justifyContent: 'center', }}> 
               <Text style={{color: 'white', textAlignVertical: 'center'}}>{gs['crear'][lang]}</Text>

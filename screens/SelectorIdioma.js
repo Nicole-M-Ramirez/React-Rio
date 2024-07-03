@@ -31,7 +31,8 @@ function SelectorIdioma() {
 
   function buttonHandler (lang) {
     dispatch(updateLang({"lang": lang}));
-    navigation.navigate('Politica',{pantalla: 'SelectorDeLenguage', regresarTitulo:'noAcepto'})
+    //navigation.navigate('Politica',{pantalla: 'SelectorDeLenguage', regresarTitulo:'noAcepto'})
+    navigation.navigate('PaginaBienvenida')
   }
   
 

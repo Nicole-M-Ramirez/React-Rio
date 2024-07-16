@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity, Dimensions, Image, ScrollView,TextInput} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Dimensions, Image, ScrollView,TextInput,KeyboardAvoidingView,} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { colors, dimensions } from '../../components/constants';
 import { normalize } from '../../components/FondNormilize';
@@ -146,6 +146,15 @@ function Exportar() {
       </HeaderView>
 
       <BodyView>
+        <KeyboardAvoidingView
+          automaticallyAdjustContentInsets={false}
+          behavior={null}
+          contentContainerStyle={{ flex: 1 }}
+          style={{
+            backgroundColor: 'backgroundColor',
+            flex: 1,
+            height: '100%',
+          }}>
         <Image source={require('../../assets/exportar2.png')} resizeMode='contain' style={styles.titleImage} />
 
         <View style={[styles.buttonView,{
@@ -212,6 +221,9 @@ function Exportar() {
           {/* <Text style={[styles.buttonsText,{left:dimensions.separator*2}]}>example@email.com</Text> */}
           <TextInput style={[styles.buttonsText,{left:dimensions.separator*2}]} placeholder="example@email.com" onChangeText={onChangeText} value={text}/>
         </View>
+    
+        </KeyboardAvoidingView>
+        
 
         {/* <View style={[styles.buttonView,{
                                          top: 3.5*(dimensions.bodyHeight*0.25),

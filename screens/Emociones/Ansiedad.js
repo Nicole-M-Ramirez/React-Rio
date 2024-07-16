@@ -19,14 +19,18 @@ import BackLinkWithDate from '../../components/BackLinkWithDate';
 import { gs } from '../../components/RioGlobalStrings';
 import { useDispatch, useSelector } from 'react-redux';
 import BotonConfig from '../../components/BotonConfig';
+import { addEmocionData } from '../../redux/slices/counterSlice';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
 
 function Ansiedad({route}) {
+  const dispatch = useDispatch();
   const { forDate } = route.params;
   const navigation = useNavigation();
   const lang = useSelector(state => state.counter.language);
+
+  dispatch(addEmocionData({"emo" : "ansiedad", "fec": forDate})); 
 
 
   const Colors = [colors.deepPurple,colors.mintGreen,colors.pink,colors.blue,colors.purple]

@@ -328,7 +328,7 @@ export const counterSlice = createSlice({
 });
 
 
-export const { registerFirstDate,updateDateData, addActivity, updateLastAuto, updateMetaCumplida, updateMetaCheck, updateMood, updateLang, decreaseByOne, register, updatePassword, updatePasswordDelete, reportCASIS, addMeta, updateMeta,updateintentosActividad,updatePantallaConfig, updateContPopUp, updateMetaPopUp, updateContacto, addDetonanteData, addEmocionData,addAutolecionData,addActividadesData} = counterSlice.actions;
+export const { registerFirstDate,updateDateData, addActivity, updateLastAuto, updateMetaCumplida, updateMetaCheck, updateMood, updateLang, decreaseByOne, register, updatePassword, updatePasswordDelete, reportCASIS, addMeta, updateMeta,updateintentosActividad,updatePantallaConfig, updateContPopUp, updateMetaPopUp, updateContacto, addDetonanteData, addEmocionData,addAutolecionData,addActividadesData, updateContactDelete} = counterSlice.actions;
 
 
 export default counterSlice.reducer;

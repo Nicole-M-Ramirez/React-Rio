@@ -20,8 +20,14 @@ const ScreenWidth = Dimensions.get("window").width
 import { gs } from '../../components/RioGlobalStrings';
 import { useSelector } from 'react-redux';
 import BotonConfig from '../../components/BotonConfig';
+import { addEmocionData } from '../../redux/slices/counterSlice';
+import { useDispatch } from 'react-redux';
+
 
 function Coraje({route}) {
+  const dispatch = useDispatch();
+  dispatch(addEmocionData({"emo" : "coraje", "fec": forDate})); 
+
   const lang = useSelector(state => state.counter.language);
   const { forDate } = route.params;
   const navigation = useNavigation();
@@ -46,7 +52,7 @@ function Coraje({route}) {
                                                      forDate: forDate,
                                                      titulo: title[2]}),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Coraje',
-                                                     img: <Image source={require('../../assets/animaciones/EJERCICIO.gif')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
+                                                     img: <Image source={require('../../assets/animaciones/EJERCICIO2.gif')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
                                                      texto:gs['ejercicioCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[3]}),

@@ -38,10 +38,10 @@ var BarChart = /** @class */ (function (_super) {
             return barPercentage;
         };
         _this.renderBars = function (_a) {
-            var data = _a.data, width = _a.width, height = _a.height, paddingTop = _a.paddingTop, paddingRight = _a.paddingRight, barRadius = _a.barRadius, withCustomBarColorFromData = _a.withCustomBarColorFromData;
+            var data = _a.data, width =_a.width, height = _a.height, paddingTop = _a.paddingTop, paddingRight = _a.paddingRight, barRadius = _a.barRadius, withCustomBarColorFromData = _a.withCustomBarColorFromData;
             var baseHeight = _this.calcBaseHeight(data, height);
             return data.map(function (x, i) {
-                var barHeight = _this.calcHeight(x, data, height);
+                var barHeight = 1.13 * _this.calcHeight(x, data, height);
                 var barWidth = 32 * _this.getBarPercentage();
                 // return (<Rect key={Math.random()} x={paddingRight +
                 //     (i * (width - paddingRight)) / data.length +
@@ -105,7 +105,7 @@ var BarChart = /** @class */ (function (_super) {
                 return (
                     
                 <>
-                    <Text key={Math.random()} x={barHeight+paddingRight +(0* (width - paddingRight)) / data.length +barHeight*0.} y={80-baseHeight / 4 + i * barWidth+17} fill={_this.props.chartConfig.color(0.6)} fontSize="15" textAnchor="middle">
+                    <Text key={Math.random()} x={barHeight+1.2*paddingRight +(0* (width -paddingRight)) / data.length +barHeight*0.} y={80-baseHeight / 4 + i * barWidth+17} fill={_this.props.chartConfig.color(0.6)} fontSize="15" textAnchor="middle">
                         {renderLabel(data[i])}
                     </Text>
 

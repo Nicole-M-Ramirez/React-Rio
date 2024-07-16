@@ -167,7 +167,7 @@ function Emergencia({route}) {
         </TouchableOpacity>
 
         <View style={{position:'absolute',top: dimensions.bodyHeight*1.02}}>
-            <BackLink labelBack={"Regresar"} gotoScreen={'MenuPrincipal'}></BackLink>
+            <BackLink labelBack={gs['volver'][lang]} gotoScreen={'MenuPrincipal'}></BackLink>
         </View>
 
         <View style={{height:dimensions.footerHeight*0.7,width:dimensions.bodyWidth*1, top:dimensions.bodyHeight*1.06}}>

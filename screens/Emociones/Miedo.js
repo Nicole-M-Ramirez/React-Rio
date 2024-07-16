@@ -18,11 +18,17 @@ import BackLinkWithDate from '../../components/BackLinkWithDate';
 import { gs } from '../../components/RioGlobalStrings';
 import { useSelector } from 'react-redux';
 import BotonConfig from '../../components/BotonConfig';
+import { addEmocionData } from '../../redux/slices/counterSlice';
+import { useDispatch } from 'react-redux';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
 
 function Miedo({route}) {
+  const dispatch = useDispatch();
+  dispatch(addEmocionData({"emo" : "miedo", "fec": forDate})); 
+  
+
   const { forDate } = route.params;
   const navigation = useNavigation();
   const lang = useSelector(state => state.counter.language);

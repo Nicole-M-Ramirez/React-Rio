@@ -6,7 +6,7 @@ import {
   ActivityIndicator,
   Button,
   TouchableOpacity,
-  Dimensions, Image, ScrollView, Alert
+  Dimensions, Image, ScrollView, Alert, ImageBackground
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { colors } from '../../components/constants';
@@ -19,6 +19,7 @@ import Emergency from '../../components/Emergency';
 import EmergencyView from '../../components/EmergencyView';
 import TimeSince from '../../components/TimeSince';
 import { useEffect } from 'react';
+
 
 import { useIsFocused } from '@react-navigation/native';
 // import SoundPlayer from 'react-native-sound-player';
@@ -254,14 +255,25 @@ const eraseAndLoad = async () => {
 
 //console.log('lenguage del Audio:'+lenguageAudio)
 
+const stop = async () => {
+  await TrackPlayer.stop();
+  //await setAudioSelect("pause")
+}
+
+if(!isFocused){
+  stop()
+  //eraseAndLoad()
+  
+}
+
 
 
 
   return (
-    <View>
-      <HeaderView headerButtons = 'yes'>
+    <ImageBackground source={require('../../assets/test3.gif')} resizeMode="cover" style={styles.imageBackground} >
+      {/* <HeaderView headerButtons = 'yes'>
         <TimeSince/>
-      </HeaderView>
+      </HeaderView> */}
 
       <BodyView>
         <View style={styles.scrollView}>
@@ -307,7 +319,7 @@ const eraseAndLoad = async () => {
       <EmergencyView>
           <Emergency/>
       </EmergencyView>
-    </View>
+      </ImageBackground>
   )
 }
 
@@ -343,5 +355,9 @@ const styles = StyleSheet.create({
     width: dimensions.bodyWidth * 0.024,
     height: dimensions.footerHeight * 0.14,
     position: 'absolute'
-  }
+  },
+  imageBackground: {
+    flex: 1,
+    justifyContent: 'center',
+  },
 });

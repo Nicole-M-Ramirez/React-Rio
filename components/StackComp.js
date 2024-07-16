@@ -56,6 +56,8 @@ import RespiracionUrgencia from "../screens/Actividades/RespiracionUrgencias";
 import { createStackNavigator } from "@react-navigation/stack";
 import PaginaBienvenida from "../screens/PaginaBienvenida";
 import { useSelector } from "react-redux";
+import BarrasEmociones from "../screens/Graficas/BarrasEmociones";
+import BarrasActividades from "../screens/Graficas/BarrasActividades";
 const Stack = createStackNavigator();
 
 const StackComp = (props) => {
@@ -570,6 +572,24 @@ const StackComp = (props) => {
       <Stack.Screen
         name='BarrasDetonante'
         component={BarrasDetonante}
+        independent ={true}
+        options={{
+          headerTitle: "",
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name='BarrasEmociones'
+        component={BarrasEmociones}
+        independent ={true}
+        options={{
+          headerTitle: "",
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name='BarrasActividades'
+        component={BarrasActividades}
         independent ={true}
         options={{
           headerTitle: "",

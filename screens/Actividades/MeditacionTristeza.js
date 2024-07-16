@@ -6,7 +6,7 @@ import {
   ActivityIndicator,
   Button,
   TouchableOpacity,
-  Dimensions, Image, ScrollView, Alert
+  Dimensions, Image, ScrollView, Alert,ImageBackground
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { colors } from '../../components/constants';
@@ -26,6 +26,7 @@ import { gs } from '../../components/RioGlobalStrings';
 import { useSelector } from 'react-redux';
 import BackLinkWithDate from '../../components/BackLinkWithDate';
 import BotonConfig from '../../components/BotonConfig';
+import { useIsFocused } from '@react-navigation/native';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
@@ -35,6 +36,7 @@ function MeditacionTristeza ({route}) {
   const {forDate} = route.params
   const navigation = useNavigation();
   const lang = useSelector(state => state.counter.language);
+  const isFocused = useIsFocused();
 
   const [lenguageAudio, setLenguajeAudio] = useState("");
 
@@ -172,13 +174,24 @@ const eraseAndLoad = async () => {
 
 //console.log('lenguage del Audio:'+lenguageAudio)
 
+const stop = async () => {
+  await TrackPlayer.stop();
+  //await setAudioSelect("pause")
+}
+
+if(!isFocused){
+  stop()
+  //eraseAndLoad()
+  
+}
+
 
   return (
-    <View>
-      <BotonConfig pantalla = 'MeditacionTristeza' Back={()=>{navigation.navigate('MeditacionTristeza', {pantalla:'Tristeza', forDate: forDate})}}/>
+    <ImageBackground source={require('../../assets/test3.gif')} resizeMode="cover" style={styles.imageBackground} >
+      {/* <BotonConfig pantalla = 'MeditacionTristeza' Back={()=>{navigation.navigate('MeditacionTristeza', {pantalla:'Tristeza', forDate: forDate})}}/>
       <HeaderView headerButtons = 'yes'>
         <TimeSince/>
-      </HeaderView>
+      </HeaderView> */}
 
       <BodyView>
         <View style={styles.scrollView}>
@@ -213,7 +226,7 @@ const eraseAndLoad = async () => {
           <BackLinkWithDate labelBack={gs['volver'][lang]} gotoScreen={pantalla} forDate={forDate}></BackLinkWithDate>
         </View>
 
-        <TouchableOpacity  style={{left:dimensions.bodyWidth*0.7,width:dimensions.bodyWidth*0.25,height:dimensions.footerHeight*0.5,marginTop: dimensions.separator*5}}  onPress={() => navigation.navigate('RegistroUtilidad',{img:<Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />, forDate: forDate })}>
+        <TouchableOpacity  style={{left:dimensions.bodyWidth*0.7,width:dimensions.bodyWidth*0.25,height:dimensions.footerHeight*0.5,marginTop: dimensions.separator*5}}  onPress={() => navigation.navigate('RegistroUtilidad',{img:<Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />, forDate: forDate, actividad: gs['meditacion'][lang] })}>
           <View style={styles.hookedStyles}>
             <View style={{width:'92%', 'height': dimensions.footerHeight*0.5, alignItems: 'flex-end',justifyContent: 'center', }}> 
               <Text style={{color: 'white', textAlignVertical: 'center'}}>{gs['continuar'][lang]}</Text>
@@ -228,7 +241,7 @@ const eraseAndLoad = async () => {
       <EmergencyView>
           <Emergency/>
       </EmergencyView>
-    </View>
+      </ImageBackground>
   )
 }
 
@@ -269,5 +282,9 @@ const styles = StyleSheet.create({
     width: dimensions.bodyWidth * 0.024,
     height: dimensions.footerHeight * 0.14,
     position: 'absolute'
-  }
+  },
+  imageBackground: {
+    flex: 1,
+    justifyContent: 'center',
+  },
 });

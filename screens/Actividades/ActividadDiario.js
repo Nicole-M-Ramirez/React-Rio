@@ -35,7 +35,7 @@ function ActividadDiario({route}) {
   //const {forDate} = route.params;
 
   const functions = [
-    () => navigation.navigate('Diary',{img:img, forDate: forDate, pantalla : pantalla}),
+    () => navigation.navigate('Diary',{img:img, forDate: forDate, pantalla : pantalla, actividad: gs['diario'][lang]}),
     () => navigation.navigate(continuacionExtra, {forDate:forDate}),
   ]
 

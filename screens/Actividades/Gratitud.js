@@ -90,7 +90,7 @@ function Gratitud ({route}) {
               <BackLinkWithDate labelBack={gs['volver'][lang]} gotoScreen={'Felicidad'} theDate={forDate}></BackLinkWithDate>
               </View> 
 
-              <TouchableOpacity  style={{left:dimensions.bodyWidth*0.7,width:dimensions.bodyWidth*0.25,height:dimensions.footerHeight*0.5,marginTop: dimensions.separator*6}}  onPress={() => navigation.navigate('RegistroUtilidad',{img:<Image source={require('../../assets/comunidad2.png')} resizeMode='contain' style={[styles.buttonRegistro,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />, forDate: forDate, actividad: "gratitud" })}>
+              <TouchableOpacity  style={{left:dimensions.bodyWidth*0.7,width:dimensions.bodyWidth*0.25,height:dimensions.footerHeight*0.5,marginTop: dimensions.separator*6}}  onPress={() => navigation.navigate('RegistroUtilidad',{img:<Image source={require('../../assets/comunidad2.png')} resizeMode='contain' style={[styles.buttonRegistro,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />, forDate: forDate, actividad: gs['gratitud'][lang] })}>
           <View style={styles.hookedStyles}>
             <View style={{width:'92%', 'height': dimensions.footerHeight*0.5, alignItems: 'flex-end',justifyContent: 'center', }}> 
               <Text style={{color: 'white', textAlignVertical: 'center'}}>{gs['finalizar'][lang]}</Text>

@@ -395,7 +395,7 @@ function Graficas () {
       setcircle1(colors.mintGreen)
       setcircle3(colors.mintGreen)
       setcircle4(colors.mintGreen)
-      setgraficaData('emocion')
+      setGraficaData('emocion')
     }
   }
 
@@ -484,6 +484,10 @@ function Graficas () {
   }
 
   function crearGraf () {
+    console.log(graficaData)
+    console.log(graficaTipo)
+    console.log(graficaTiempo)
+
     if(graficaData === '' && graficaTipo === '' && graficaTiempo === '' ){
       console.log('no suficiente info')
     }
@@ -493,7 +497,15 @@ function Graficas () {
       // console.log(graficaTiempo)
       if(graficaTipo === 'barra'){
         if(graficaData === 'detonante'){
-          navigation.navigate('BarrasDetonante', {tiempo: graficaTiempo, data : detData })
+          navigation.navigate('BarrasDetonante', {tiempo: graficaTiempo, Data : detData })
+        }
+
+        if(graficaData === 'emocion'){
+          navigation.navigate('BarrasEmociones', {tiempo: graficaTiempo, Data : emoData })
+        }
+
+        if(graficaData === 'actividad'){
+          navigation.navigate('BarrasActividades', {tiempo: graficaTiempo, Data : actData })
         }
 
       }

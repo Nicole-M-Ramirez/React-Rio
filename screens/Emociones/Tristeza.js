@@ -134,6 +134,9 @@ import BackLink from '../../components/BackLink';
 import BackLinkWithDate from '../../components/BackLinkWithDate';
 import { gs } from '../../components/RioGlobalStrings';
 import BotonConfig from '../../components/BotonConfig';
+import { addEmocionData } from '../../redux/slices/counterSlice';
+import { useDispatch } from 'react-redux';
+
 // const ScreenHeight = Dimensions.get("window").height
 // const ScreenWidth = Dimensions.get("window").width
 
@@ -143,6 +146,9 @@ const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
 
 function Tristeza({route}) {
+  const dispatch = useDispatch();
+  dispatch(addEmocionData({"emo" : "tristeza", "fec": forDate})); 
+
   const { forDate } = route.params;
   const lang = useSelector(state => state.counter.language);
 

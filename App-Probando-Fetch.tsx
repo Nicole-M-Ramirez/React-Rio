@@ -1,15 +1,15 @@
-// import { StatusBar } from 'expo-status-bar';
+import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, AppState } from 'react-native';
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native'
-// import {createStackNavigator} from '@react-navigation/stack'
+import {createStackNavigator} from '@react-navigation/stack'
 import {colors} from './components/constants';
 
 
-// import Contrasena from './screens/Passwords/Contrasena';
-// import PasswordMenu from './screens/Passwords/PasswordMenu';
-// import EditarPassword from './screens/Passwords/EditarPassword';
-// import ConfirmarBorrar from './screens/Passwords/ConfirmarBorrar';
-// import ContactoPersona from './screens/Contacto/ContactoPersona'
+import Contrasena from './screens/Passwords/Contrasena';
+import PasswordMenu from './screens/Passwords/PasswordMenu';
+import EditarPassword from './screens/Passwords/EditarPassword';
+import ConfirmarBorrar from './screens/Passwords/ConfirmarBorrar';
+import ContactoPersona from './screens/Contacto/ContactoPersona'
 
 import StackComp from './components/StackComp';
 
@@ -23,35 +23,29 @@ import { useEffect, createContext, useContext, useState } from 'react';
 
 import { updateMetaCumplida } from './redux/slices/counterSlice';
 import { getActiveMeta } from './components/RioGlobalFuncs';
-import { DAY_IN_MS } from './components/constants';
-
-
-import {
-  TimestampTrigger,
-  TriggerType,
-} from '@notifee/react-native';
-
 import notifee from '@notifee/react-native';
+// import BackgroundTask from 'react-native-background-task';
 import BackgroundFetch from "react-native-background-fetch";
+
 
 import BackgroundService from 'react-native-background-actions';
 
-// const sleep = (time) => new Promise((resolve) => setTimeout(() => resolve(), time));
+const sleep = (time) => new Promise((resolve) => setTimeout(() => resolve(), time));
 
 // You can do anything in your task such as network requests, timers and so on,
 // as long as it doesn't touch UI. Once your task completes (i.e. the promise is resolved),
 // React Native will go into "paused" mode (unless there are other tasks running,
 // or there is a foreground app).
-// const veryIntensiveTask = async (taskDataArguments) => {
-//     // Example of an infinite loop task
-//     const { delay } = taskDataArguments;
-//     await new Promise( async (resolve) => {
-//         for (let i = 0; BackgroundService.isRunning(); i++) {
-//             console.log('tick ' + i);
-//             await sleep(delay);
-//         }
-//     });
-// };
+const veryIntensiveTask = async (taskDataArguments) => {
+    // Example of an infinite loop task
+    const { delay } = taskDataArguments;
+    await new Promise( async (resolve) => {
+        for (let i = 0; BackgroundService.isRunning(); i++) {
+            console.log(i);
+            await sleep(delay);
+        }
+    });
+};
 
 BackgroundService.on('expiration', () => {
   console.log('I am being closed :(');
@@ -120,12 +114,12 @@ export const TimeProvider = ({ children }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setElapsedTime((prevTime) => prevTime + 1);
-      // console.log("Soy el más nuevo timer");
+      // console.log("Soy el nuevo timer");
       // let gdateLastArray = useSelector(state => state.counter.lastAuto);
 
 
 
-    }, 3000); // Update every minute (60000 ms)
+    }, 1000); // Update every minute (60000 ms)
 
     return () => clearInterval(interval);
   }, []);
@@ -174,12 +168,16 @@ const getMostRecentDate = (dictionary) => {
 
   return mostRecentDate;
 }
+//===========
 
+// const MS_IN_A_DAY = 24 * 60 * 60 * 1000;
+// const MS_IN_A_SEC = 1000;
 
 export const Tmp = () => {
   const elapsedTime = useElapsedTime();
   const metas = useSelector(state => state.counter.metas);
   let activeMeta = getActiveMeta(metas);
+  // console.log("in Tmp!" + JSON.stringify(metas));
   const dispatch = useDispatch();
 
   async function onDisplayNotification(message) {
@@ -205,82 +203,23 @@ export const Tmp = () => {
         },
       },
     });
-
-    
   }
 
+  console.log("Active meta: " + activeMeta);
 
-  /* 
-
-  async function onSchedNotification(message, dateForNotification ) {
-    // Request permissions (required for iOS)
-    await notifee.requestPermission();
-
-    let date = new Date();
-    // date.setSeconds(date.getSeconds() + 60);
-    const milliseconds = 5 * 60 * 1000; // 10 seconds = 10000 milliseconds
-    date = dateForNotification; //new Date(date.getTime() + milliseconds);
-    console.log("----------------- setting a sched alamr..... ------ for " + date);
-
-    const trigger: TimestampTrigger = {
-      type: TriggerType.TIMESTAMP, // This is the type of trigger, we have other types of triggers as well
-      timestamp: +date, // +date converts the date to timestamp
-    };
-
-    // Create a channel (required for Android)
-    const channelId = await notifee.createChannel({
-      id: 'default',
-      name: 'Default Channel',
-    });
-
-    // Display a notification
-    await notifee.createTriggerNotification({
-      
-        id: dateForNotification.toString(),
-        title: `🔔 You asked for this reminder -  ${message}`,
-        body: 'Tap on it to check',
-        android: {
-          channelId: 'reminder',
-          pressAction: {
-            id: 'default',
-          },
-        },
-        data: {
-          id: '1',
-          action: 'reminder',
-          details: {
-            name: "caca",
-            date: dateForNotification.toString(),
-          },
-        },
-      }, trigger);
-    
-
-    
-  }
-  */
-  
-
-  if (activeMeta !== undefined) console.log("Active meta: " + activeMeta);
-
-
-  // 2024-07-25: Si la meta es de una cantidad de DIAS, entonces si ha transcurrido 
-  //             esa cantidad de dias, podemos declarar que la meta fue cumplida
 
   if (activeMeta !== undefined && activeMeta.meta.includes('dia')) {
-    
-    // Calcular cuando se supone que se cumpla la meta.
     let targetDate = new Date(activeMeta.date);
-    targetDate = new Date(targetDate.getTime() + DAY_IN_MS * parseInt(activeMeta.meta.substring(0,2)));
-    
-    console.log("targetDate: " + targetDate);
-
+    targetDate = targetDate.addMinutes(parseInt(activeMeta.meta.substring(0,2)));
     const currentDate = new Date();
-    
     if (targetDate <= currentDate) {
-      console.log("SE CUMPLIO LA META, FELICIDADES!!!!!!!!!");      
+      console.log("SE CUMPLIO LA META, FELICIDADES!!!!!!!!!");
+      onDisplayNotification("SE CUMPLIO LA META, FELICIDADES!!!!!!!!!");
+
       dispatch(updateMetaCumplida({ activeMeta: activeMeta}));  //necesitamos saber cual es la meta!
     }
+
+
   }
 
   else if (activeMeta !== undefined && !activeMeta.meta.includes('dia')) { 
@@ -297,15 +236,18 @@ export const Tmp = () => {
     
     const remider =  timeSinceCheck - 10000 > 0 && timeSinceCheck - 10000 < 3000;  
 
-    console.log("meta Date: " + activeMeta.date);
-    console.log("timeSinceCheck: " + timeSinceCheck);
-    console.log("reminder: " + remider);
-    
+    // if (mostRecentDate = null && mostRecentDate) {
+      console.log("meta Date: " + activeMeta.date);
+      
+
+      console.log("timeSinceCheck: " + timeSinceCheck);
+      console.log("reminder: " + remider);
+    // }
     let now = new Date();
     console.log("Hay una meta de marcar activa desde: " + targetDate + " son las : " + now);
     console.log("-------");
 
-    // if (remider) onDisplayNotification("TIENES UNA META PENDIENTE HAZLA!!");
+    if (remider) onDisplayNotification("TIENES UNA META PENDIENTE HAZLA!!");
   }
 
 
@@ -315,30 +257,32 @@ export const Tmp = () => {
 
 export default function App() {
   console.log("PURGING THE PERSISTOR!!!");
-  persistor.purge(); 
-  persistor.flush();
+  // persistor.purge(); 
+  // persistor.flush();
 
   // BackgroundTask.schedule();
 
 
-  // 2024-07-25: Este useEffect es util para saber en que estado se encuentra el app
   useEffect(() => {
     const handleChange = AppState.addEventListener("change", changedState => {
+
         console.log("===================chaged state:" + changedState);
+        // setState(currentState.current);
     });
+
     return () => {
         handleChange.remove();
     };
-  }, []);
+}, []);
 
 
 
-  // const rafa = async () => { await BackgroundService.start(veryIntensiveTask, options);}
+  const rafa = async () => { await BackgroundService.start(veryIntensiveTask, options);}
 
-  // rafa();
+  rafa();
   
 
-/*
+
   const initBackgroundFetch = async () => {
     // BackgroundFetch event handler.
     const onEvent = async (taskId) => {
@@ -368,7 +312,7 @@ export default function App() {
     
   }, []);
 
-  */
+
 
   return (
     <>

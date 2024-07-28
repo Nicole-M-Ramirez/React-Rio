@@ -1,4 +1,7 @@
 {
   "name": "ReactRio",
-  "displayName": "ReactRio"
+  "displayName": "ReactRio",
+  "plugins": [
+    "@notifee/react-native"
+  ]
 }

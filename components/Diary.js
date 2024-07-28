@@ -23,6 +23,8 @@ import BotonConfig from './BotonConfig';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { updateDateData, decreaseByOne, reportCASIS, addAutolecionData } from '../redux/slices/counterSlice';
+import notifee from '@notifee/react-native';
+
 //import BotonConfig from './BotonConfig';
 
 const DismissKeyboard = ({ children }) => (
@@ -30,6 +32,16 @@ const DismissKeyboard = ({ children }) => (
     {children}
   </TouchableWithoutFeedback>
 );
+
+
+
+const getMetaActivaObj = (metas) => {
+  for (let i = metas.length - 1; i >=0; i--) {
+    // console.log(metas[i].meta);
+    if (metas[i].active == true) return metas[i];
+  }
+  return undefined;
+} 
 
 function Diary( props) {
   const lang = useSelector(state => state.counter.language);
@@ -51,10 +63,12 @@ function Diary( props) {
   const {img} = props.route.params;
 
 
+  
   const showAlert = (dispatch, meta, oldMeta) => {
 
     let msg;
     msg = gs['reportarAL'][lang];
+    if ( meta !==undefined ) msg = msg + ". Hay una meta activa!";
     Alert.alert(
       gs['confirmacion'][lang],
       msg,
@@ -67,7 +81,25 @@ function Diary( props) {
           text: gs['si'][lang],
           _onPress: () => {
             console.log("Confirmed autolesion!!: " + meta);
+            
             dispatch(reportCASIS({"theDate":dateString}));
+
+            // 2024-07-24 
+
+            // If there is an active Meta and the CASIS falls before the scheduled deadline we 
+            // must cancel the congratulations alarm
+            console.log("IN Diary: reporting CASIS at: " + dateString);
+            console.log("IN Diary: reporting CASIS at: " + new Date(dateString));
+            
+            if (meta !== undefined) {
+              
+              if (meta.active) { 
+                console.log("IN DIARY Canceling the trigget notification: " + meta.notifID);
+                notifee.cancelTriggerNotification(meta.notifID);
+              }
+            }
+
+
             // dispatch(addMeta({ "theDate": new Date().toString().split("(")[0], meta: meta }));
           },
           get onPress() {
@@ -125,6 +157,13 @@ function Diary( props) {
 
   const formatedDate = day.toString().padStart(2, '0')  + '.' + month.toString().padStart(2, '0') + '.' + year % 100;
   const imageSource = require('../assets/back.png');
+
+  const metasFromStore = useSelector(state => state.counter.metas);
+  // console.log("All the metas in the store:")
+  // for (let i = 0; i < metasFromStore.length; i++)
+  //   console.log(metasFromStore[i]);
+  const metaActiva = getMetaActivaObj(metasFromStore);
+  console.log("IN DIARY, META ACTIVA: " + JSON.stringify(metaActiva));
 
   // {day => {
   //   navigation.navigate('Diary', {day:day.day,month:day.month,year:day.year, dateString:day.dateString, key:'vengo de dia', 
@@ -274,7 +313,7 @@ function Diary( props) {
         <View style={{top:0, left: dimensions.bodyWidth/2, position: 'absolute'}}>
         <TwoThirdsButton label ={gs['reportarAL'][lang]} topMargin = {0} 
           bg = {colors.emergencyRed} row = {0} col = {0} img={require('../assets/ingresar.png')} active={new Date(dateString) < new Date()}
-          onPress={ () =>{showAlert(dispatch); dispatch(addAutolecionData({"fec": dateString}));} }
+          onPress={ () =>{showAlert(dispatch, metaActiva); dispatch(addAutolecionData({"fec": dateString}));} }
           />
   
         </View>

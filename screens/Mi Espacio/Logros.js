@@ -30,6 +30,9 @@ import { metaToImageMap } from '../../components/RioGlobalFuncs';
 import { updateMetaCumplida } from '../../redux/slices/counterSlice';
 import BotonConfig from '../../components/BotonConfig';
 
+
+import notifee from '@notifee/react-native';
+
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
 
@@ -361,9 +364,16 @@ const CircleComponent = ({activeMeta}) => {
     console.log("in Metas() circleState: " , circleState);
     // determinar si todas son ciertas
     const values = Object.values(circleState);
-    if (values.every(value => value === true) == true) { 
-      console.log("SE CUMPLIIOOOOOOOOO!");
+    if (values.every(value => value != false) == true) { 
+      console.log("SE CUMPLIIOOOOOOOOO LA META !" + JSON.stringify(activeMeta));
       dispatch(updateMetaCumplida({ activeMeta: activeMeta}));  
+
+
+      for (let i =0; i < activeMeta.notifID.length; i = i+1 ) {
+        console.log("======== I am going to cancel the notification: " + activeMeta.notifID[i]);
+        notifee.cancelTriggerNotification(activeMeta.notifID[i]);
+      }
+
 
 
     }
@@ -379,49 +389,51 @@ const CircleComponent = ({activeMeta}) => {
     console.log("In Toggle Circle")
     // dispatch(updateMetaCheck({ activeMeta: activeMeta, idx: key, checkState: !circleState[key] }))  
     // setCircleState(prev => ({...prev, key: !prev[key]}));
+    // if (key==1) {
+    //   dispatch(updateMetaCheck({ activeMeta: activeMeta, idx: 1, checkState: !circleState[1] }))  
+    //   setCircleState(prev => ({...prev, 1: !prev[key]}));
+    // }
+    const now = new Date();
     if (key==1) {
-      dispatch(updateMetaCheck({ activeMeta: activeMeta, idx: 1, checkState: !circleState[1] }))  
-      setCircleState(prev => ({...prev, 1: !prev[key]}));
+      dispatch(updateMetaCheck({ activeMeta: activeMeta, idx: 1, checkState: circleState[1]? false: now }))  
+      setCircleState(prev => ({...prev, 1: prev[key]? false : now}));
     }
     else if (key==2){
-      dispatch(updateMetaCheck({ activeMeta: activeMeta, idx: 2, checkState: !circleState[2] }))  
-      setCircleState(prev => ({...prev, 2: !prev[key]}));
+      dispatch(updateMetaCheck({ activeMeta: activeMeta, idx: 2, checkState: circleState[2]? false: now }))  
+      setCircleState(prev => ({...prev, 2: prev[key]? false : now}));
     }
     else if (key==3){
-      dispatch(updateMetaCheck({ activeMeta: activeMeta, idx: 3, checkState: !circleState[3] }))  
-      setCircleState(prev => ({...prev, 3: !prev[key]}));
+      dispatch(updateMetaCheck({ activeMeta: activeMeta, idx: 3, checkState: circleState[3]? false: now }))  
+      setCircleState(prev => ({...prev, 3: prev[key]? false : now}));
     }
     else if (key==4){
-      dispatch(updateMetaCheck({ activeMeta: activeMeta, idx: 4, checkState: !circleState[4] }))  
-      setCircleState(prev => ({...prev, 4: !prev[key]}));
+      dispatch(updateMetaCheck({ activeMeta: activeMeta, idx: 4, checkState: circleState[4]? false: now }))  
+      setCircleState(prev => ({...prev, 4: prev[key]? false : now}));
     }
     else if (key==5){
-      dispatch(updateMetaCheck({ activeMeta: activeMeta, idx: 5, checkState: !circleState[5] }))  
-      setCircleState(prev => ({...prev, 5: !prev[key]}));
+      dispatch(updateMetaCheck({ activeMeta: activeMeta, idx: 5, checkState: circleState[5]? false: now }))  
+      setCircleState(prev => ({...prev, 5: prev[key]? false : now}));
     }
-    else if (key==6){
-      dispatch(updateMetaCheck({ activeMeta: activeMeta, idx: 6, checkState: !circleState[6] }))  
-      setCircleState(prev => ({...prev, 6: !prev[key]}));
+    else if (key==6){      
+      dispatch(updateMetaCheck({ activeMeta: activeMeta, idx: 6, checkState: circleState[6]? false: now }))  
+      setCircleState(prev => ({...prev, 6: prev[key]? false : now}));
+
     }
     else if (key==7){
-      dispatch(updateMetaCheck({ activeMeta: activeMeta, idx: 7, checkState: !circleState[7] }))  
-      setCircleState(prev => ({...prev, 7: !prev[key]}));
+      dispatch(updateMetaCheck({ activeMeta: activeMeta, idx: 7, checkState: circleState[7]? false: now }))  
+      setCircleState(prev => ({...prev, 7: prev[key]? false : now}));
     }
     else if (key==8){
-      dispatch(updateMetaCheck({ activeMeta: activeMeta, idx: 8, checkState: !circleState[8] }))  
-      setCircleState(prev => ({...prev, 8: !prev[key]}));
-    }
-    else if (key==8){
-      dispatch(updateMetaCheck({ activeMeta: activeMeta, idx: 8, checkState: !circleState[8] }))  
-      setCircleState(prev => ({...prev, 8: !prev[key]}));
+      dispatch(updateMetaCheck({ activeMeta: activeMeta, idx: 8, checkState: circleState[8]? false: now }))  
+      setCircleState(prev => ({...prev, 8: prev[key]? false : now}));
     }
     else if (key==9){
-      dispatch(updateMetaCheck({ activeMeta: activeMeta, idx: 9, checkState: !circleState[9] }))  
-      setCircleState(prev => ({...prev, 9: !prev[key]}));
+      dispatch(updateMetaCheck({ activeMeta: activeMeta, idx: 9, checkState: circleState[9]? false: now }))  
+      setCircleState(prev => ({...prev, 9: prev[key]? false : now}));
     }
     else if (key==10){
-      dispatch(updateMetaCheck({ activeMeta: activeMeta, idx: 10, checkState: !circleState[10] }))  
-      setCircleState(prev => ({...prev, 10: !prev[key]}));
+      dispatch(updateMetaCheck({ activeMeta: activeMeta, idx: 10, checkState: circleState[10]? false: now }))  
+      setCircleState(prev => ({...prev, 10: prev[key]? false : now}));
     }
       console.log("************************** ");
       console.log("in Metas() circleState: " , circleState);

@@ -196,7 +196,21 @@ function Metas() {
                   let tmp = new Date(now.getTime() + i * DAY_IN_MS);
                   // let msg = "Dia " + i + " de tu meta " + meta;
                   let msg =  gs['notifActividad'][lang]
-                  let subtitle = gs['notifDiaActividadPre'][lang] +  gs['notifDia'][lang] + ' ' + i +  gs['notifDiaActividadPost'][lang] + meta;
+                  let subtitle = gs['notifDiaActividadPre'][lang] +  gs['notifDia'][lang] + ' ' + i +  gs['notifDiaActividadPost'][lang] + times + ' ';
+                  
+                  const justMeta = meta.slice(0,-2);
+                  let key = undefined;
+                  if (justMeta == 'meditar') key = (times == 1 ? 'diaMeditacion' : 'diasMeditacion');
+                  else if (justMeta == 'caminar') key = (times == 1 ? 'diaEjercicio' : 'diasEjercicio');
+                  else if (justMeta == 'escribir') key = (times == 1 ? 'diaEscribir' : 'diasEscribir');
+                  else if (justMeta == 'meditar') key = (times == 1 ? 'diaEjercicio' : 'diasEjercicio');
+                  else if (justMeta == 'dibujar') key = (times == 1 ? 'diaDibujar' : 'diasDibujar');
+                  else if (justMeta == 'descansar') key = (times == 1 ? 'diaAutocuidado' : 'diasAutocuidado');
+                  
+                  subtitle += gs[key][lang];   
+
+
+                  
                   onSchedNotification(msg, tmp, subtitle);
                   nid.push(tmp.toString());
                 }

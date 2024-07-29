@@ -20,9 +20,12 @@ import { addMeta } from '../../redux/slices/counterSlice';
 import { gs } from '../../components/RioGlobalStrings';
 import BotonConfig from '../../components/BotonConfig';
 import TextMessageMetas from '../../components/TextMessageMetas';
-
+import { cancelMeta } from '../../redux/slices/counterSlice';
 import { getMetaStringGlobal } from '../../components/RioGlobalFuncs';
+import { DAY_IN_MS } from '../../components/constants';
 
+
+import notifee, { TriggerType} from '@notifee/react-native';
 
 //import { useSelector } from 'react-redux';
 
@@ -72,15 +75,70 @@ const getMetaActiva = (metas) => {
   return undefined;
 } 
 
+const getMetaActivaObj = (metas) => {
+  for (let i = metas.length - 1; i >=0; i--) {
+    // console.log(metas[i].meta);
+    if (metas[i].active == true) return metas[i];
+  }
+  return undefined;
+} 
+
 
 
 function Metas() {
+
+  // 2024-07-24 - Notifee
+  async function onSchedNotification(message, dateForNotification, subtitle ) {
+    // Request permissions (required for iOS)
+    await notifee.requestPermission();
+
+    let date = new Date();
+    // date.setSeconds(date.getSeconds() + 60);
+    const milliseconds = 5 * 60 * 1000; // 10 seconds = 10000 milliseconds
+    date = dateForNotification; //new Date(date.getTime() + milliseconds);
+    console.log("----------------- setting a sched alamr..... ------ for " + date);
+
+    const trigger = {
+      type: TriggerType.TIMESTAMP, // This is the type of trigger, we have other types of triggers as well
+      timestamp: +date, // +date converts the date to timestamp
+    };
+
+    // Create a channel (required for Android)
+    const channelId = await notifee.createChannel({
+      id: 'default',
+      name: 'Default Channel',
+    });
+
+    // Display a notification
+    await notifee.createTriggerNotification({
+      
+        id: dateForNotification.toString(),
+        title: `${message}`,
+        body: subtitle,
+        android: {
+          channelId: 'reminder',
+          pressAction: {
+            id: 'default',
+          },
+        },
+        data: {
+          id: '1',
+          action: 'reminder',
+          details: {
+            name: "caca",
+            date: dateForNotification.toString(),
+          },
+        },
+      }, trigger);
+  }
+
+
   const [popUp, setPopUp] = useState(true)
   const showAlert = (dispatch, meta, oldMeta) => {
 
     let msg;
     if (oldMeta == undefined) msg = gs['activarMeta'][lang] 
-    else msg = gs['activarMeta2'][lang]+" (" + getMetaStringGlobal(oldMeta,lang) +  ")?"
+    else msg = gs['activarMeta2'][lang]+" (" + getMetaStringGlobal(oldMeta.meta,lang) +  ")?"
     Alert.alert(
       'Confirmación',
       msg,
@@ -94,11 +152,73 @@ function Metas() {
           text: gs['si'][lang],
           onPress: ()=> { 
             console.log("Confirmed!!: " + meta);
+
+            if (oldMeta) { 
+              console.log("habia otra meta así que debemos cancelar su alarma");
+              console.log(oldMeta);
+              // cancelMeta();
+              // dispatch(cancelMeta({ "nid": oldMeta.notifID}));
+              console.log("Will kill the alarm.......");
+              if (oldMeta.notifID !== undefined)
+                console.log("The meta whose alarms I will cancel: " + JSON.stringify(oldMeta));
+                if (typeof oldMeta.notifID == "string")  notifee.cancelTriggerNotification(oldMeta.notifID);
+                else {
+                  for (let i =0; i < oldMeta.notifID.length; i = i+1 ) {
+                    console.log("======== I am going to cancel the notification: " + oldMeta.notifID[i]);
+                    notifee.cancelTriggerNotification(oldMeta.notifID[i]);
+                  }
+                }
+            }
+
             // console.log(meta);
             // console.log(meta.includes("dia"));
   
             // if (meta.includes("dia")) {
-              dispatch(addMeta({"theDate":new Date().toString().split("(")[0], meta: meta}))
+              const now = new Date();
+              console.log("Setting and alarm for meta: " + meta);
+              let duration = 0
+              if (meta.includes("dia")) { 
+                duration = parseInt(meta.slice(0,2)); 
+                const deadline = new Date(now.getTime() + duration * DAY_IN_MS);
+
+                dispatch(addMeta({"theDate":new Date().toString().split("(")[0], meta: meta, nid: deadline.toString()}));
+                // let msg = "Felicidades, cumpliste tu meta: " + meta;
+                let msg = gs['notifFelicidades'][lang];
+                let subtitle = gs['notifCumplioDiasPre'][lang] + duration + gs['notifDia'][lang] + (duration > 1 ? 's':'') + gs['notifCumplioDiasPost'][lang];
+                onSchedNotification(msg, deadline, subtitle);
+              }
+              else {
+                // extract the number of times
+                times = parseInt(meta.slice(-2));
+                console.log("TIMES: " + times);
+                let nid = [];
+                for (let i = 1; i <= times; i = i + 1) {
+                  let tmp = new Date(now.getTime() + i * DAY_IN_MS);
+                  // let msg = "Dia " + i + " de tu meta " + meta;
+                  let msg =  gs['notifActividad'][lang]
+                  let subtitle = gs['notifDiaActividadPre'][lang] +  gs['notifDia'][lang] + ' ' + i +  gs['notifDiaActividadPost'][lang] + times + ' ';
+                  
+                  const justMeta = meta.slice(0,-2);
+                  let key = undefined;
+                  if (justMeta == 'meditar') key = (times == 1 ? 'diaMeditacion' : 'diasMeditacion');
+                  else if (justMeta == 'caminar') key = (times == 1 ? 'diaEjercicio' : 'diasEjercicio');
+                  else if (justMeta == 'escribir') key = (times == 1 ? 'diaEscribir' : 'diasEscribir');
+                  else if (justMeta == 'meditar') key = (times == 1 ? 'diaEjercicio' : 'diasEjercicio');
+                  else if (justMeta == 'dibujar') key = (times == 1 ? 'diaDibujar' : 'diasDibujar');
+                  else if (justMeta == 'descansar') key = (times == 1 ? 'diaAutocuidado' : 'diasAutocuidado');
+                  
+                  subtitle += gs[key][lang];   
+
+
+                  
+                  onSchedNotification(msg, tmp, subtitle);
+                  nid.push(tmp.toString());
+                }
+                console.log("nid: " + JSON.stringify(nid));
+                
+                dispatch(addMeta({"theDate":new Date().toString().split("(")[0], meta: meta, nid: nid}));
+
+              }
             // }
             // else {
             //   dispatch(addMeta({"theDate":new Date().toString().split("(")[0], meta: meta, check: {'1': false, '2': false,'3': false, '4': false, '5': false}}))
@@ -114,11 +234,11 @@ function Metas() {
   const lang = useSelector(state => state.counter.language);
 
   const metasFromStore = useSelector(state => state.counter.metas);
-  console.log("All the metas in the store:")
-  for (let i = 0; i < metasFromStore.length; i++)
-    console.log(metasFromStore[i]);
-  const metaActiva = getMetaActiva(metasFromStore)
-  console.log("meta activa: " +  metaActiva);
+  // console.log("All the metas in the store:")
+  // for (let i = 0; i < metasFromStore.length; i++)
+  //   console.log(metasFromStore[i]);
+  const metaActiva = getMetaActivaObj(metasFromStore)
+  if (metaActiva !== undefined) console.log("meta activa: " +  metaActiva.meta);
 
   const [buttonActividadColors, setButtonActividadColors] = useState(colors.mintGreen);
   const [buttonTiempoColor, setButtonTiempoColor] = useState(colors.wine)

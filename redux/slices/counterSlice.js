@@ -128,6 +128,7 @@ export const counterSlice = createSlice({
       addMeta: (state,action) => {
          const m = action.payload.meta;
          const d = action.payload.theDate;
+         const nid = action.payload.nid;
          console.log("in addMeta: " + d + " " + m);
 
          // poner en logrado falso, el resto de las metas que están activas y no han sido logradas
@@ -143,18 +144,19 @@ export const counterSlice = createSlice({
          console.log("The amount of days is: " + daysQty);
 
          // Que clase de charrería!! Pero estaba arroyao así que ....
-         if (m.includes("dia"))
-            state.metas.push({date: d, meta: m, active: true, lograda: false});
+         if (m.includes("dia")) {
+            state.metas.push({date: d, meta: m, active: true, lograda: false, notifID: nid});
+         }
          else if (daysQty == 1)
-            state.metas.push({date: d, meta: m, active: true, lograda: false, check: {'1': false}});
+            state.metas.push({date: d, meta: m, active: true, lograda: false, notifID: nid, check: {'1': false}});
          else if (daysQty == 3)
-            state.metas.push({date: d, meta: m, active: true, lograda: false, check: {'1': false, '2': false,'3': false}});
+            state.metas.push({date: d, meta: m, active: true, lograda: false, notifID: nid, check: {'1': false, '2': false,'3': false}});
          else if (daysQty == 5)
-            state.metas.push({date: d, meta: m, active: true, lograda: false, check: {'1': false, '2': false,'3': false, '4': false, '5': false}});
+            state.metas.push({date: d, meta: m, active: true, lograda: false, notifID: nid, check: {'1': false, '2': false,'3': false, '4': false, '5': false}});
          else if (daysQty == 7)
-            state.metas.push({date: d, meta: m, active: true, lograda: false, check: {'1': false, '2': false,'3': false, '4': false, '5': false, '6': false, '7': false}});
+            state.metas.push({date: d, meta: m, active: true, lograda: false, notifID: nid,  check: {'1': false, '2': false,'3': false, '4': false, '5': false, '6': false, '7': false}});
          else 
-            state.metas.push({date: d, meta: m, active: true, lograda: false, check: {'1': false, '2': false,'3': false, '4': false, '5': false, '6': false, '7': false,'8': false,'9': false,'10': false}});
+            state.metas.push({date: d, meta: m, active: true, lograda: false, notifID: nid,  check: {'1': false, '2': false,'3': false, '4': false, '5': false, '6': false, '7': false,'8': false,'9': false,'10': false}});
 
       },
       updateMetaCheck: (state,action) => {
@@ -172,6 +174,23 @@ export const counterSlice = createSlice({
          if (found >= 0) {
             console.log("will update: " + JSON.stringify(state.metas[found]) );
             state.metas[found].check[idx] = checkState;
+         }
+      },
+
+      cancelMeta: (state,action) => {
+         console.log("========= in CANCEL CANCEL meta my payload: " + JSON.stringify(action.payload));
+         let nid = action.payload.nid;
+         console.log("I am supposed to find the meta with : "  + nid );
+         console.log("And kill it" );
+         let found = -1;
+         for (let i = state.metas.length -1; i >= 0 && found < 0; i--) {
+            console.log(i)
+            if (state.metas[i].nid == nid) found = i;
+         }
+         
+         if (found >= 0) {
+            console.log("will cancel: " + JSON.stringify(state.metas[found]) );
+            state.metas[found].active = false;
          }
       },
 
@@ -328,7 +347,7 @@ export const counterSlice = createSlice({
 });
 
 
-export const { registerFirstDate,updateDateData, addActivity, updateLastAuto, updateMetaCumplida, updateMetaCheck, updateMood, updateLang, decreaseByOne, register, updatePassword, updatePasswordDelete, reportCASIS, addMeta, updateMeta,updateintentosActividad,updatePantallaConfig, updateContPopUp, updateMetaPopUp, updateContacto, addDetonanteData, addEmocionData,addAutolecionData,addActividadesData, updateContactDelete} = counterSlice.actions;
+export const { cancelMeta, registerFirstDate,updateDateData, addActivity, updateLastAuto, updateMetaCumplida, updateMetaCheck, updateMood, updateLang, decreaseByOne, register, updatePassword, updatePasswordDelete, reportCASIS, addMeta, updateMeta,updateintentosActividad,updatePantallaConfig, updateContPopUp, updateMetaPopUp, updateContacto, addDetonanteData, addEmocionData,addAutolecionData,addActividadesData, updateContactDelete} = counterSlice.actions;
 
 
 export default counterSlice.reducer;

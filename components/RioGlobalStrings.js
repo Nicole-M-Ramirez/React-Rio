@@ -909,6 +909,14 @@ If you have medical insurance, you can contact a customer service representative
    'aceptarTerminos' : {'es' : 'Aceptar', 'en' : 'Acept'},
    '' : {'es' : '', 'en' : ''},
 
+   // Mensajes de Notificaciones
+   'notifFelicidades' : {'es': '🎉🎉🎉 ¡Felicidades! 🎉🎉🎉', 'en': '🎉🎉🎉 Congratulations! 🎉🎉🎉'},
+   'notifCumplioDiasPre' : {'es': 'Completaste el reto de ', 'en': 'You finished the goal of '},
+   'notifCumplioDiasPost' : {'es': ' sin CASIS.', 'en': ' without CASIS!'},
+   'notifDia' : {'es': ' día', 'en': ' day'},
+   'notifActividad': {'es': '🔔🔔🔔 Recuerda tu meta 🔔🔔🔔', 'en': '🔔🔔🔔 Remember your goal 🔔🔔🔔'},
+   'notifDiaActividadPre': {'es': 'Es el', 'en': "It's"},
+   'notifDiaActividadPost': {'es': ' de la meta: ', 'en': ' of your goal: '},
 
 }
 

@@ -9,6 +9,8 @@ import { gs } from '../components/RioGlobalStrings';
 import { normalize } from "./FondNormilize";
 //import { useSelector } from 'react-redux';
 
+import { useElapsedTime } from "../App";
+
 const MINUTE_MS = 10000;
 
 const LetterAndQty = ({letter, qty}) => {
@@ -69,10 +71,45 @@ Date.prototype.addMinutes = function(min) {
   return date;
 }
 
+import notifee from '@notifee/react-native';
+
 const TimeSince = (props) => {
     // console.log(JSON.stringify(props));
     // const theDate = new Date(2023, 3, 1, 12, 13, 14);
     // console.log(theDate.toString());
+
+    const elapsedTime = useElapsedTime();
+    // console.log("Ealpsed time: " + elapsedTime);
+
+    // async function onDisplayNotification() {
+    //   // Request permissions (required for iOS)
+    //   await notifee.requestPermission()
+  
+    //   // Create a channel (required for Android)
+    //   const channelId = await notifee.createChannel({
+    //     id: 'default',
+    //     name: 'Default Channel',
+    //   });
+  
+    //   // Display a notification
+    //   await notifee.displayNotification({
+    //     title: 'Notification Title',
+    //     body: 'Main body content of the notification',
+    //     android: {
+    //       channelId,
+    //       smallIcon: 'name-of-a-small-icon', // optional, defaults to 'ic_launcher'.
+    //       // pressAction is needed if you want the notification to open the app when pressed
+    //       pressAction: {
+    //         id: 'default',
+    //       },
+    //     },
+    //   });
+    // }
+
+
+
+
+    
 
     const dispatch = useDispatch();
     let gdateLastArray = useSelector(state => state.counter.lastAuto);
@@ -82,12 +119,8 @@ const TimeSince = (props) => {
     // const firstAutoReg = useSelector(state => state.counter.firstAutoReg);
     const dateReg = useSelector(state => state.counter.dateReg);
 
-    // console.log("The firstAutoReg is: " + firstAutoReg);
-    // console.log("In Time Since: gdateLastArray: " + gdateLastArray + " dateReg: " + dateReg);
 
     if (gdateLastArray === undefined) { 
-      
-
       gdateLastArray = dateReg;
     }
 
@@ -100,20 +133,34 @@ const TimeSince = (props) => {
     
 
     // Logica para marcar meta cumplida si se llega al día esperado sin CASIS
+    // y ... 
+    // Logica para determinar si le acordamos al usuario de que tiene pendiente unas metas (2024-07-022)
 
-    if (activeMeta !== undefined && activeMeta.meta.includes('dia')) {
-      // const activeMetaDate = activeMeta.date;
-      let targetDate = new Date(activeMeta.date);
-      targetDate = targetDate.addMinutes(parseInt(activeMeta.meta.substring(0,2)));
-      // targetDate.addDays(parseInt(activeMeta.meta.substring(0,2)));
-      // console.log("*****Checking the date of the meta: " + targetDate);
-      const currentDate = new Date();
-      if (targetDate <= currentDate) {
-        console.log("SE CUMPLIO LA META, FELICIDADES!!!!!!!!!");
-        dispatch(updateMetaCumplida({ activeMeta: activeMeta}));  //necesitamos saber cual es la meta!
-      }
+    // if (activeMeta !== undefined && activeMeta.meta.includes('dia')) {
+    //   // const activeMetaDate = activeMeta.date;
+    //   let targetDate = new Date(activeMeta.date);
+    //   targetDate = targetDate.addMinutes(parseInt(activeMeta.meta.substring(0,2)));
+    //   // targetDate.addDays(parseInt(activeMeta.meta.substring(0,2)));
+    //   // console.log("*****Checking the date of the meta: " + targetDate);
+    //   const currentDate = new Date();
+    //   if (targetDate <= currentDate) {
+    //     console.log("SE CUMPLIO LA META, FELICIDADES!!!!!!!!!");
+    //     onDisplayNotification();
 
-    }
+    //     dispatch(updateMetaCumplida({ activeMeta: activeMeta}));  //necesitamos saber cual es la meta!
+    //   }
+
+
+    // }
+    // if (activeMeta !== undefined && !activeMeta.meta.includes('dia')) { 
+    //   // Tenemos activada una de las metas de marcar manualmente. Calcular si debemos avisarle al usuario.
+    //   // ¿Cuantos días hace que la activó?
+    //   let targetDate = new Date(activeMeta.date);
+    //   let now = new Date();
+    //   console.log("Hay una meta de marcar activa desde: " + targetDate + " son las : " + now);
+    //   console.log("-------");
+    // }
+
 
 
     // console.log("======= gdateLastArray =======>" + gdateLastArray);
@@ -121,6 +168,13 @@ const TimeSince = (props) => {
     // const gDateLast = new Date(gdateLastArray[0],gdateLastArray[1],gdateLastArray[2], gdateLastArray[3], gdateLastArray[4], gdateLastArray[5]);
 
     const gDateLast = new Date(gdateLastArray)
+    // console.log("FROM TIME SINCE ====, lastDate:" + gDateLast);
+    const timeNow = new Date();
+    const diffTimeSince = Math.abs(new Date() - gDateLast);
+    // console.log("ms Diff:" + diffTimeSince / 60000 );
+
+    // new Date(now.getTime() + duration * 1000);
+
 
     // console.log("======= gDateLast =======>" + gDateLast.toString());
     
@@ -131,6 +185,7 @@ const TimeSince = (props) => {
   const [minutes, setMinutes] = useState("");
   const [hours, setHours] = useState("");
   const [days, setDays] = useState("");
+
   const computeValues = () => {
 
     const diffTime = Math.abs(new Date() - gDateLast);
@@ -166,25 +221,36 @@ const TimeSince = (props) => {
           .padStart(2, "0")
     );
   };
+  
+  
 
   // To execute on initialization
-  useEffect(() => {
-    computeValues();
-  }, []);
+  // useEffect(() => {
+  //   computeValues();
+  // }, []);
 
-  useEffect(() => {
-    computeValues();
-  }, [gDateLast]);
+  // useEffect(() => {
+  //   computeValues();
+  // }, [gDateLast]);
 
   // To execute every minute
-  useEffect(() => {
-    const interval = setInterval(() => {
-      computeValues();
-    }, MINUTE_MS);
-    return () => clearInterval(interval);
-  }, [props.dateLast]);
+
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     computeValues();
+  //   }, MINUTE_MS);
+  //   return () => clearInterval(interval);
+  // }, [props.dateLast]);
 
   // return <Text style={s.timeSince}>{currentDate}</Text>;
+
+  const diffTime = Math.abs(new Date() - gDateLast);
+  const diffSecs = parseInt(diffTime / 1000);
+  const diffMins = parseInt( ( diffTime / 60000) % 60).toString().padStart(2, "0");
+  const diffHours = parseInt((diffSecs / 3600) % 24).toString().padStart(2, "0");
+  const diffDays = parseInt(diffSecs / (24 * 3600)).toString().padStart(2, "0");
+
+
   return (
     <View style={{  width: '100%'}}>
     <View style={{flexDirection: 'row', alignItems: 'center', 
@@ -197,11 +263,11 @@ const TimeSince = (props) => {
     </View>
     <View style={{flexDirection: 'row', alignItems: 'center', 
         justifyContent: 'flex-end', left: dimensions.bodyWidth/2, position: 'absolute', width: '50%'}}>
-        <LetterAndQty letter="D" qty={days}/>
+        <LetterAndQty letter="D" qty={diffDays}/>
         <LetterAndQty letter="" qty="."/>
-        <LetterAndQty letter="H" qty={hours}/>
+        <LetterAndQty letter="H" qty={diffHours}/>
         <LetterAndQty letter="" qty="."/>
-        <LetterAndQty letter="M" qty={minutes}/>
+        <LetterAndQty letter="M" qty={diffMins}/>
     </View>
     </View>
   

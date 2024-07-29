@@ -509,6 +509,18 @@ function Graficas () {
         }
 
       }
+      else if(graficaTipo === 'pie') {
+        if(graficaData === 'detonante'){
+          navigation.navigate('PieDetonantes', {tiempo: graficaTiempo, Data : detData })
+        }
+        if(graficaData === 'emocion'){
+          navigation.navigate('PieEmociones', {tiempo: graficaTiempo, Data : emoData })
+        }
+
+        if(graficaData === 'actividad'){
+          navigation.navigate('PieActividades', {tiempo: graficaTiempo, Data : actData })
+        }
+      }
       else{
         console.log('aun en proceso')
       }

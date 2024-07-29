@@ -154,8 +154,8 @@ const styles = StyleSheet.create({
   
   },
   buttonTitleImage :{
-    width: dimensions.bodyWidth * 0.024,
-    height: dimensions.footerHeight * 0.14,
+    width: dimensions.bodyWidth * 0.026,
+    height: dimensions.footerHeight * 0.15,
     position: 'absolute'
   }
 });

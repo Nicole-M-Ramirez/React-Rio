@@ -58,6 +58,11 @@ import PaginaBienvenida from "../screens/PaginaBienvenida";
 import { useSelector } from "react-redux";
 import BarrasEmociones from "../screens/Graficas/BarrasEmociones";
 import BarrasActividades from "../screens/Graficas/BarrasActividades";
+import PieDetonantes from "../screens/Graficas/PieDetonantes";
+import PieActividades from "../screens/Graficas/PieActividades";
+import PieEmociones from "../screens/Graficas/PieEmociones";
+import Barras from "../screens/Mi Espacio/Barras";
+
 const Stack = createStackNavigator();
 
 const StackComp = (props) => {
@@ -590,6 +595,33 @@ const StackComp = (props) => {
       <Stack.Screen
         name='BarrasActividades'
         component={BarrasActividades}
+        independent ={true}
+        options={{
+          headerTitle: "",
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name='PieDetonantes'
+        component={PieDetonantes}
+        independent ={true}
+        options={{
+          headerTitle: "",
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name='PieEmociones'
+        component={PieEmociones}
+        independent ={true}
+        options={{
+          headerTitle: "",
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name='PieActividades'
+        component={PieActividades}
         independent ={true}
         options={{
           headerTitle: "",

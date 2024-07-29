@@ -186,7 +186,7 @@ function Tristeza({route}) {
                                                      forDate: forDate,
                                                      titulo: title[4]}),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Tristeza',
-                                                     img: <Image source={require('../../assets/animaciones/ACEPTACION.gif')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
+                                                     img: <Image source={require('../../assets/animaciones/ACEPTACION.gif')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.6, height:dimensions.bodyHeight*0.45}]} />,
                                                      texto:gs['aceptacionCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[5]}),

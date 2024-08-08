@@ -17,6 +17,7 @@ import TimeSince from '../../components/TimeSince';
 import LongButton from '../../components/LongButton';
 import BackLink from '../../components/BackLink';
 import { gs } from '../../components/RioGlobalStrings';
+import moment from 'moment';
 
 function LineaAutoLesion ({route}) {
     const MoodCount = useSelector(state => state.counter.moodCounter);
@@ -29,28 +30,63 @@ function LineaAutoLesion ({route}) {
     const DataAceptada = []
 
     
-    console.log(Data[1].fecha)
-    var counts = {};
-    for (var i = 0; i < Data.length; i++) {
-    counts[Data[i]] = 1 + (counts[Data[i]] || 0);
+    //console.log(Data[1].fecha)
+    // var counts = {};
+    // for (var i = 0; i < Data.length; i++) {
+    // counts[Data[i]] = 1 + (counts[Data[i]] || 0);
 
-    }
+    // }
 
 
 
-    console.log(JSON.stringify(counts))
+    // console.log(counts)
 
     const l = [""]
     const d = [0]
 
-    for(var i = 0; i < counts.length; i++){}
+    // for(var i = 0; i < counts.length; i++){}
 
-    for(let i = 0; i < Data.length; i++){
-        const fecha = Data[i].fecha
-        const cantidad = 0
+    // for(let i = 0; i < Data.length; i++){
+    //     const fecha = Data[i].fecha
+    //     const cantidad = 0
 
 
-    }
+    // }
+
+    count = 1
+
+    for (i = 0; i < Data.length; i++){
+      const fecha = Data[i].fecha
+      let fec = Data[i].fecha
+      fec = fec.replace('-', "");
+      fec = fec.replace('-', "");
+
+      let dateBetween = moment(fec, "YYYYMMDD").fromNow()
+      console.log(dateBetween)
+      let dateNum = dateBetween.slice(0, 2);
+      console.log(dateNum)
+
+      if(dateBetween.includes('hours') || dateNum <= tiempo && count<=10){
+        if(i === 0){
+          l[i]=fecha
+          d[i]+=1
+        }
+  
+        if(!l.includes(fecha)){
+          l.push(fecha)
+          d.push(1)
+        }
+        else{
+          let indx = l.indexOf(fecha)
+          d[indx]+=1
+        }
+
+        count+=1
+      }
+      }
+
+
+
 
 
     const data = {
@@ -76,15 +112,20 @@ function LineaAutoLesion ({route}) {
             style={{
                 //transform: [{ rotate: '90deg'}]
                 left: dimensions.bodyWidth *-0.2,
-                top: dimensions.bodyHeight *0.2
+                top: dimensions.bodyHeight *0.05,
+                //height:dimensions.bodyHeight *0.6,
+                //backgroundColor:'white'
               }}
                 data={data}
-                width={dimensions.bodyWidth*1.3}
+                width={dimensions.bodyWidth*1.2}
                 height={dimensions.bodyHeight*0.55}
                 bezier
                 //withHorizontalLabels={false}
+                verticalLabelRotation={50}
                 chartConfig={{
+                    //backgroundColor:'white',
                     backgroundColor: "transparent",
+                    //height:dimensions.bodyHeight *0.5,
                     backgroundGradientTo: colors.backgroudDarkBlue,
                     backgroundGradientToOpacity: 5,
                     backgroundGradientFrom: colors.backgroudDarkBlue,

@@ -43,9 +43,15 @@ export const counterSlice = createSlice({
          {emocion: 'felicidad', fecha: '2024-08-07'},
       ],
       autoLecionData: [
-         // { id: 1, name: 'John' },
-         // { id: 2, name: 'Jane' },
-         // { id: 3, name: 'Bob' }
+         {fecha: '2024-07-23'},
+         {fecha: '2024-07-31'},
+         {fecha: '2024-08-01'},
+         {fecha: '2024-08-02'},
+         {fecha: '2024-08-03'},
+         {fecha: '2024-08-04'},
+         {fecha: '2024-08-05'},
+         {fecha: '2024-08-06'},
+         {fecha: '2024-08-07'},
       ],
       actData: [
          {actividades: 'Diary' , fecha: '2024-07-23'},

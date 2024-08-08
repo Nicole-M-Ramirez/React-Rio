@@ -33,6 +33,8 @@ import React from "react";
 import { Animated, ScrollView, StyleSheet, TextInput, View } from "react-native";
 import { Circle, G, Path, Polygon, Polyline, Rect, Svg } from "react-native-svg";
 import AbstractChart from "../AbstractChart";
+import { colors, dimensions } from '../../../components/constants';
+import { normalize } from '../../../components/FondNormilize';
 import { LegendItem } from "./LegendItem";
 var AnimatedCircle = Animated.createAnimatedComponent(Circle);
 var LineChart = /** @class */ (function (_super) {

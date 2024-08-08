@@ -62,6 +62,7 @@ import PieDetonantes from "../screens/Graficas/PieDetonantes";
 import PieActividades from "../screens/Graficas/PieActividades";
 import PieEmociones from "../screens/Graficas/PieEmociones";
 import Barras from "../screens/Mi Espacio/Barras";
+import LineaAutoLesion from "../screens/Graficas/LineaAutoLesion";
 
 const Stack = createStackNavigator();
 
@@ -622,6 +623,15 @@ const StackComp = (props) => {
       <Stack.Screen
         name='PieActividades'
         component={PieActividades}
+        independent ={true}
+        options={{
+          headerTitle: "",
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name='LineasAutoLesion'
+        component={LineaAutoLesion}
         independent ={true}
         options={{
           headerTitle: "",

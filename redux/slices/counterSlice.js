@@ -21,21 +21,43 @@ export const counterSlice = createSlice({
       lastAuto: undefined ,//"Sun Nov 12 2023 10:52:04 GMT-0400", 
       //detonantesData : [{detonante:'dummy', fecha:'dummy'}],
       detData: [
-         // { id: 1, name: 'John' },
-         // { id: 2, name: 'Jane' },
-         // { id: 3, name: 'Bob' }
+         {detonante: 'trabajo', fecha: '2024-07-23'},
+         {detonante: 'trabajo', fecha: '2024-07-31'},
+         {detonante: 'trabajo', fecha: '2024-08-01'},
+         {detonante: 'trabajo', fecha: '2024-08-02'},
+         {detonante: 'trabajo', fecha: '2024-08-03'},
+         {detonante: 'trabajo', fecha: '2024-08-04'},
+         {detonante: 'trabajo', fecha: '2024-08-05'},
+         {detonante: 'trabajo', fecha: '2024-08-06'},
+         {detonante: 'trabajo', fecha: '2024-08-07'},
       ],
       emoData: [
-         // { id: 1, name: 'John' },
-         // { id: 2, name: 'Jane' },
-         // { id: 3, name: 'Bob' }
+         {emocion: 'felicidad', fecha: '2024-07-23'},
+         {emocion: 'felicidad', fecha: '2024-07-31'},
+         {emocion: 'felicidad', fecha: '2024-08-01'},
+         {emocion: 'felicidad', fecha: '2024-08-02'},
+         {emocion: 'felicidad', fecha: '2024-08-03'},
+         {emocion: 'felicidad', fecha: '2024-08-04'},
+         {emocion: 'felicidad', fecha: '2024-08-05'},
+         {emocion: 'felicidad', fecha: '2024-08-06'},
+         {emocion: 'felicidad', fecha: '2024-08-07'},
       ],
       autoLecionData: [
          // { id: 1, name: 'John' },
          // { id: 2, name: 'Jane' },
          // { id: 3, name: 'Bob' }
       ],
-      actData: [],
+      actData: [
+         {actividades: 'Diary' , fecha: '2024-07-23'},
+         {actividades: 'Diary' , fecha: '2024-07-01'},
+         {actividades: 'Diary' , fecha: '2024-08-01'},
+         {actividades: 'Diary' , fecha: '2024-08-02'},
+         {actividades: 'Diary' , fecha: '2024-08-03'},
+         {actividades: 'Diary' , fecha: '2024-08-04'},
+         {actividades: 'Diary' , fecha: '2024-08-05'},
+         {actividades: 'Diary' , fecha: '2024-08-06'},
+         {actividades: 'Diary' , fecha: '2024-08-07'},
+      ],
       
       intentosActividad: false,
 

@@ -46,6 +46,8 @@ const getMetaActivaObj = (metas) => {
 function Diary( props) {
   const lang = useSelector(state => state.counter.language);
   const navigation = useNavigation();
+
+  
   
 
 
@@ -61,6 +63,8 @@ function Diary( props) {
   const { forDate } = props.route.params;
   const {pantalla} = props.route.params;
   const {img} = props.route.params;
+
+  
 
 
   
@@ -83,6 +87,7 @@ function Diary( props) {
             console.log("Confirmed autolesion!!: " + meta);
             
             dispatch(reportCASIS({"theDate":dateString}));
+            dispatch(addAutolecionData({"fec": dateString}));
 
             // 2024-07-24 
 

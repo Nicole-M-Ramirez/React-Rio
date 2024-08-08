@@ -355,6 +355,7 @@ function Graficas () {
   const [dropTiempo, setDropTiempo] = useState(false);
   const [tipo1, setTipo1] = useState(colors.mintGreen);
   const [tipo2, setTipo2] = useState(colors.mintGreen);
+  const [tipo3, setTipo3] = useState(colors.mintGreen);
   const [tiempo1, setTiempo1] = useState(colors.mintGreen);
   const [tiempo2, setTiempo2] = useState(colors.mintGreen);
 
@@ -366,7 +367,26 @@ function Graficas () {
 
   const [graficaData, setGraficaData] = useState('');
   const [graficaTipo, setGraficaTipo] = useState('');
-  const [graficaTiempo, setGraficaTiempo] = useState('');
+  const [graficaTiempo, setGraficaTiempo] = useState();
+
+  const [drop, setDrop] = useState(<>
+    <TouchableOpacity style={[styles.buttonView,{backgroundColor:colors.mintGreen}]} onPress={()=>setDropTipo(false)}>
+      <Text style={[styles.buttonsText,{left:dimensions.bodyWidth*0.04}]}>{gs['escojerTipo'][lang]}</Text>
+      <Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />
+    </TouchableOpacity>
+
+    <View style={[styles.buttonView,{backgroundColor:colors.mintGreen}]}>
+      <Text style={styles.buttonsText}>{gs['tipo1'][lang]}</Text>
+      <TouchableOpacity style={[styles.innerCircle, {backgroundColor: tipo1,  left:dimensions.bodyWidth*0.894}]} onPress={()=>{circuloTipo1()}}/>
+      <View style={[styles.outerCircle, {left:dimensions.bodyWidth*0.88}]}/>
+    </View>
+
+    <View style={[styles.buttonView,{backgroundColor:colors.mintGreen}]}>
+      <Text style={styles.buttonsText}>{gs['tipo2'][lang]}</Text>
+      <TouchableOpacity style={[styles.innerCircle, {backgroundColor: tipo2, left:dimensions.bodyWidth*0.894}]} onPress={()=>{circuloTipo2()}}/>
+      <View style={[styles.outerCircle, {left:dimensions.bodyWidth*0.88}]}/>
+    </View>
+  </>);
   // let graficaData = ''
   // let graficaTipo = ''
   // let graficaTiempo = ''
@@ -382,6 +402,24 @@ function Graficas () {
       setcircle3(colors.mintGreen)
       setcircle4(colors.mintGreen)
       setGraficaData('detonante')
+      setDrop(<>
+        <TouchableOpacity style={[styles.buttonView,{backgroundColor:colors.mintGreen}]} onPress={()=>setDropTipo(false)}>
+          <Text style={[styles.buttonsText,{left:dimensions.bodyWidth*0.04}]}>{gs['escojerTipo'][lang]}</Text>
+          <Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />
+        </TouchableOpacity>
+    
+        <View style={[styles.buttonView,{backgroundColor:colors.mintGreen}]}>
+          <Text style={styles.buttonsText}>{gs['tipo1'][lang]}</Text>
+          <TouchableOpacity style={[styles.innerCircle, {backgroundColor: tipo1,  left:dimensions.bodyWidth*0.894}]} onPress={()=>{circuloTipo1()}}/>
+          <View style={[styles.outerCircle, {left:dimensions.bodyWidth*0.88}]}/>
+        </View>
+    
+        <View style={[styles.buttonView,{backgroundColor:colors.mintGreen}]}>
+          <Text style={styles.buttonsText}>{gs['tipo2'][lang]}</Text>
+          <TouchableOpacity style={[styles.innerCircle, {backgroundColor: tipo2, left:dimensions.bodyWidth*0.894}]} onPress={()=>{circuloTipo2()}}/>
+          <View style={[styles.outerCircle, {left:dimensions.bodyWidth*0.88}]}/>
+        </View>
+      </>)
     }
   }
 
@@ -396,6 +434,24 @@ function Graficas () {
       setcircle3(colors.mintGreen)
       setcircle4(colors.mintGreen)
       setGraficaData('emocion')
+      setDrop(<>
+        <TouchableOpacity style={[styles.buttonView,{backgroundColor:colors.mintGreen}]} onPress={()=>setDropTipo(false)}>
+          <Text style={[styles.buttonsText,{left:dimensions.bodyWidth*0.04}]}>{gs['escojerTipo'][lang]}</Text>
+          <Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />
+        </TouchableOpacity>
+    
+        <View style={[styles.buttonView,{backgroundColor:colors.mintGreen}]}>
+          <Text style={styles.buttonsText}>{gs['tipo1'][lang]}</Text>
+          <TouchableOpacity style={[styles.innerCircle, {backgroundColor: tipo1,  left:dimensions.bodyWidth*0.894}]} onPress={()=>{circuloTipo1()}}/>
+          <View style={[styles.outerCircle, {left:dimensions.bodyWidth*0.88}]}/>
+        </View>
+    
+        <View style={[styles.buttonView,{backgroundColor:colors.mintGreen}]}>
+          <Text style={styles.buttonsText}>{gs['tipo2'][lang]}</Text>
+          <TouchableOpacity style={[styles.innerCircle, {backgroundColor: tipo2, left:dimensions.bodyWidth*0.894}]} onPress={()=>{circuloTipo2()}}/>
+          <View style={[styles.outerCircle, {left:dimensions.bodyWidth*0.88}]}/>
+        </View>
+      </>)
     }
   }
 
@@ -410,6 +466,24 @@ function Graficas () {
       setcircle1(colors.mintGreen)
       setcircle4(colors.mintGreen)
       setGraficaData('autolesion')
+      setDrop(<>
+        <TouchableOpacity style={[styles.buttonView,{backgroundColor:colors.mintGreen}]} onPress={()=>setDropTipo(false)}>
+          <Text style={[styles.buttonsText,{left:dimensions.bodyWidth*0.04}]}>{gs['escojerTipo'][lang]}</Text>
+          <Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />
+        </TouchableOpacity>
+    
+        <View style={[styles.buttonView,{backgroundColor:colors.mintGreen}]}>
+          <Text style={styles.buttonsText}>{gs['tipo3'][lang]}</Text>
+          <TouchableOpacity style={[styles.innerCircle, {backgroundColor: tipo3,  left:dimensions.bodyWidth*0.894}]} onPress={()=>{circuloTipo3()}}/>
+          <View style={[styles.outerCircle, {left:dimensions.bodyWidth*0.88}]}/>
+        </View>
+    
+        {/* <View style={[styles.buttonView,{backgroundColor:colors.mintGreen}]}>
+          <Text style={styles.buttonsText}>{gs['tipo2'][lang]}</Text>
+          <TouchableOpacity style={[styles.innerCircle, {backgroundColor: tipo2, left:dimensions.bodyWidth*0.894}]} onPress={()=>{circuloTipo2()}}/>
+          <View style={[styles.outerCircle, {left:dimensions.bodyWidth*0.88}]}/>
+        </View> */}
+      </>)
     }
   }
 
@@ -424,6 +498,24 @@ function Graficas () {
       setcircle3(colors.mintGreen)
       setcircle1(colors.mintGreen)
       setGraficaData('actividad')
+      setDrop(<>
+        <TouchableOpacity style={[styles.buttonView,{backgroundColor:colors.mintGreen}]} onPress={()=>setDropTipo(false)}>
+          <Text style={[styles.buttonsText,{left:dimensions.bodyWidth*0.04}]}>{gs['escojerTipo'][lang]}</Text>
+          <Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />
+        </TouchableOpacity>
+    
+        <View style={[styles.buttonView,{backgroundColor:colors.mintGreen}]}>
+          <Text style={styles.buttonsText}>{gs['tipo1'][lang]}</Text>
+          <TouchableOpacity style={[styles.innerCircle, {backgroundColor: tipo1,  left:dimensions.bodyWidth*0.894}]} onPress={()=>{circuloTipo1()}}/>
+          <View style={[styles.outerCircle, {left:dimensions.bodyWidth*0.88}]}/>
+        </View>
+    
+        <View style={[styles.buttonView,{backgroundColor:colors.mintGreen}]}>
+          <Text style={styles.buttonsText}>{gs['tipo2'][lang]}</Text>
+          <TouchableOpacity style={[styles.innerCircle, {backgroundColor: tipo2, left:dimensions.bodyWidth*0.894}]} onPress={()=>{circuloTipo2()}}/>
+          <View style={[styles.outerCircle, {left:dimensions.bodyWidth*0.88}]}/>
+        </View>
+      </>)
     }
   }
 
@@ -435,6 +527,7 @@ function Graficas () {
     else{
       setTipo1('white')
       setTipo2(colors.mintGreen)
+      setTipo3(colors.mintGreen)
       setGraficaTipo('barra')
     }
   }
@@ -447,7 +540,21 @@ function Graficas () {
     else{
       setTipo2('white')
       setTipo1(colors.mintGreen)
+      setTipo3(colors.mintGreen)
       setGraficaTipo('pie')
+    }
+  }
+
+  function circuloTipo3 () {
+    if(tipo3 === 'white'){
+      setTipo3(colors.mintGreen)
+      setGraficaTipo('')
+    }
+    else{
+      setTipo3('white')
+      setTipo1(colors.mintGreen)
+      setTipo2(colors.mintGreen)
+      setGraficaTipo('linea')
     }
   }
 
@@ -459,7 +566,7 @@ function Graficas () {
     else{
       setTiempo1('white')
       setTiempo2(colors.mintGreen)
-      setGraficaTiempo('15')
+      setGraficaTiempo(15)
     }
   }
 
@@ -471,7 +578,7 @@ function Graficas () {
     else{
       setTiempo2('white')
       setTiempo1(colors.mintGreen)
-      setGraficaTiempo('30')
+      setGraficaTiempo(30)
     }
   }
 
@@ -520,6 +627,9 @@ function Graficas () {
         if(graficaData === 'actividad'){
           navigation.navigate('PieActividades', {tiempo: graficaTiempo, Data : actData })
         }
+      }
+      else if(graficaTipo === 'linea') {
+        navigation.navigate('LineasAutoLesion', {tiempo: graficaTiempo, Data : autoLecionData })
       }
       else{
         console.log('aun en proceso')
@@ -573,7 +683,7 @@ function Graficas () {
                 </TouchableOpacity>
                 :
                 <>
-                  <TouchableOpacity style={[styles.buttonView,{backgroundColor:colors.mintGreen}]} onPress={()=>setDropTipo(false)}>
+                  {/* <TouchableOpacity style={[styles.buttonView,{backgroundColor:colors.mintGreen}]} onPress={()=>setDropTipo(false)}>
                     <Text style={[styles.buttonsText,{left:dimensions.bodyWidth*0.04}]}>{gs['escojerTipo'][lang]}</Text>
                     <Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />
                   </TouchableOpacity>
@@ -588,7 +698,8 @@ function Graficas () {
                     <Text style={styles.buttonsText}>{gs['tipo2'][lang]}</Text>
                     <TouchableOpacity style={[styles.innerCircle, {backgroundColor: tipo2, left:dimensions.bodyWidth*0.894}]} onPress={()=>{circuloTipo2()}}/>
                     <View style={[styles.outerCircle, {left:dimensions.bodyWidth*0.88}]}/>
-                  </View>
+                  </View> */}
+                  {drop}
                 </>
               }
 

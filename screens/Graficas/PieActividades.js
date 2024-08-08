@@ -17,6 +17,7 @@ import TimeSince from '../../components/TimeSince';
 import LongButton from '../../components/LongButton';
 import BackLink from '../../components/BackLink';
 import { gs } from '../../components/RioGlobalStrings';
+import moment from 'moment';
 
 
 const ScreenHeight = Dimensions.get("window").height
@@ -49,28 +50,60 @@ const {tiempo} = route.params;
   
 
 
-  for(let i = 0; i < titulosAct.length; i++){
+  for(let i = 0; i < Data.length; i++){
     let act = Data[i].actividades
+    let fec = Data[i].fecha
+    fec = fec.replace('-', "");
+    fec = fec.replace('-', "");
+    console.log(fec)
 
-    if(act === titulosAct[0]){
-      cantidad[0] = cantidad[0] + 1
+
+    let dateBetween = moment(fec, "YYYYMMDD").fromNow()
+    console.log(dateBetween)
+    let dateNum = dateBetween.slice(0, 2);
+    console.log(dateNum)
+
+    if(dateBetween.includes('hours') || dateNum <= tiempo){
+      if(act === titulosAct[0]){
+        cantidad[0] = cantidad[0] + 1
+      }
+  
+      if(act === titulosAct[1]){
+        cantidad[1] = cantidad[1] + 1
+      }
+  
+      if(act === titulosAct[2]){
+        cantidad[2] = cantidad[2] + 1
+      }
+  
+      if(act === titulosAct[3]){
+        cantidad[3] = cantidad[3] + 1
+      }
+  
+      if(act === titulosAct[4]){
+        cantidad[4] = cantidad[4] + 1
+      }
     }
 
-    if(act === titulosAct[1]){
-      cantidad[1] = cantidad[1] + 1
-    }
+    // if(act === titulosAct[0]){
+    //   cantidad[0] = cantidad[0] + 1
+    // }
 
-    if(act === titulosAct[2]){
-      cantidad[2] = cantidad[2] + 1
-    }
+    // if(act === titulosAct[1]){
+    //   cantidad[1] = cantidad[1] + 1
+    // }
 
-    if(act === titulosAct[3]){
-      cantidad[3] = cantidad[3] + 1
-    }
+    // if(act === titulosAct[2]){
+    //   cantidad[2] = cantidad[2] + 1
+    // }
 
-    if(act === titulosAct[4]){
-      cantidad[4] = cantidad[4] + 1
-    }
+    // if(act === titulosAct[3]){
+    //   cantidad[3] = cantidad[3] + 1
+    // }
+
+    // if(act === titulosAct[4]){
+    //   cantidad[4] = cantidad[4] + 1
+    // }
 
   }
 

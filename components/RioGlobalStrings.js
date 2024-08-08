@@ -892,6 +892,7 @@ If you have medical insurance, you can contact a customer service representative
    'escojerTiempo' : {'es' : 'Escoger Tiempo' , 'en' : 'Choose Time'},
    'tipo1' : {'es' : 'Tipo 1: Barras' , 'en' : 'Type 1: Bar Chart'},
    'tipo2' : {'es' : 'Tipo 2: Pie Chart' , 'en' : 'Type 2: Pie Chart'},
+   'tipo3' : {'es' : 'Tipo 1: Lineas' , 'en' : 'Type 1: Line Chart'},
    'tiempo1' : {'es' : 'Tiempo 1: 15 días' , 'en' : 'Time 1: 15 days'},
    'tiempo2' : {'es' : 'Tiempo 2: 30 días' , 'en' : 'Time 2: 30 days'},
    'Graficas' : {'es' : 'Gráficas', 'en' : 'Graphs'},

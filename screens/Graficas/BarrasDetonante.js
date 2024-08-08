@@ -452,6 +452,7 @@ import TimeSince from '../../components/TimeSince';
 import LongButton from '../../components/LongButton';
 import BackLink from '../../components/BackLink';
 import { gs } from '../../components/RioGlobalStrings';
+import moment from 'moment';
 
 
 
@@ -474,31 +475,66 @@ function Barras({route}) {
 
   for(let i = 0; i < Data.length; i++) {
     let det = Data[i].detonante
+    let fec = Data[i].fecha
+    fec = fec.replace('-', "");
+    fec = fec.replace('-', "");
+    console.log(fec)
     console.log(det)
 
-    if(det === 'pareja'){
-      cantidad[0] = cantidad[0] + 1
+    let dateBetween = moment(fec, "YYYYMMDD").fromNow()
+    console.log(dateBetween)
+    let dateNum = dateBetween.slice(0, 2);
+    console.log(dateNum)
+
+    if(dateBetween.includes('hours') || dateNum <= tiempo){
+      if(det === 'pareja'){
+        cantidad[0] = cantidad[0] + 1
+      }
+  
+      if(det === 'familia'){
+        cantidad[1] = cantidad[1] + 1
+      }
+  
+      if(det === 'amistades'){
+        cantidad[2] = cantidad[2] + 1
+      }
+  
+      if(det === 'perdida'){
+        cantidad[3] = cantidad[3] + 1
+      }
+  
+      if(det === 'estudios'){
+        cantidad[4] = cantidad[4] + 1
+      }
+  
+      if(det === 'trabajo'){
+        cantidad[5] = cantidad[5] + 1
+      }
     }
 
-    if(det === 'familia'){
-      cantidad[1] = cantidad[1] + 1
-    }
+    // if(det === 'pareja'){
+    //   cantidad[0] = cantidad[0] + 1
+    // }
 
-    if(det === 'amistades'){
-      cantidad[2] = cantidad[2] + 1
-    }
+    // if(det === 'familia'){
+    //   cantidad[1] = cantidad[1] + 1
+    // }
 
-    if(det === 'perdida'){
-      cantidad[3] = cantidad[3] + 1
-    }
+    // if(det === 'amistades'){
+    //   cantidad[2] = cantidad[2] + 1
+    // }
 
-    if(det === 'estudios'){
-      cantidad[4] = cantidad[4] + 1
-    }
+    // if(det === 'perdida'){
+    //   cantidad[3] = cantidad[3] + 1
+    // }
 
-    if(det === 'trabajo'){
-      cantidad[5] = cantidad[5] + 1
-    }
+    // if(det === 'estudios'){
+    //   cantidad[4] = cantidad[4] + 1
+    // }
+
+    // if(det === 'trabajo'){
+    //   cantidad[5] = cantidad[5] + 1
+    // }
 
   }
 

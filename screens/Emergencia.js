@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Dimensions, PixelRatio, TouchableOpacity, Image} from 'react-native';
+import { StyleSheet, Text, View, Dimensions, PixelRatio, TouchableOpacity, Image, Alert} from 'react-native';
 import React, { useState } from 'react';
 import { colors } from '../components/constants';
 import { dimensions } from '../components/constants';
@@ -16,6 +16,11 @@ import Emergency from '../components/Emergency';
 import BackLink from '../components/BackLink';
 import TextMessage3 from '../components/TextMessage3';
 
+import TwoThirdsButton from '../components/TwoThirdsButton';
+import { useDispatch } from 'react-redux';
+import { updateDateData, decreaseByOne, reportCASIS, addAutolecionData } from '../redux/slices/counterSlice';
+
+
 import { gs } from '../components/RioGlobalStrings';
 import { useSelector } from 'react-redux';
 import BotonConfig from '../components/BotonConfig';
@@ -25,11 +30,64 @@ const ScreenWidth = Dimensions.get("window").width
 
 
 function Emergencia({route}) {
+  const today = new Date();
   const contacto = useSelector(state => state.counter.contacto);
   const navigation = useNavigation();
   const lang = useSelector(state => state.counter.language);
   const { forDate } = route.params;
   const [popUp, setPopUp] = useState(true)
+  const dispatch = useDispatch();
+
+  const showAlert = (dispatch, meta, oldMeta) => {
+
+    let msg;
+    msg = gs['reportarAL'][lang];
+    if ( meta !==undefined ) msg = msg + ". Hay una meta activa!";
+    Alert.alert(
+      gs['confirmacion'][lang],
+      msg,
+      [
+        {
+          text: 'No',
+          style: 'cancel',
+        },
+        {
+          text: gs['si'][lang],
+          _onPress: () => {
+            //console.log("Confirmed autolesion!!: " + met);
+            
+            dispatch(reportCASIS({"theDate":forDate}));
+            dispatch(addAutolecionData({"fec": forDate}));
+
+            // 2024-07-24 
+
+            // If there is an active Meta and the CASIS falls before the scheduled deadline we 
+            // must cancel the congratulations alarm
+            //console.log("IN Diary: reporting CASIS at: " + theDate);
+            //console.log("IN Diary: reporting CASIS at: " + new Date(today));
+            
+            if (meta !== undefined) {
+              
+              if (meta.active) { 
+                console.log("IN DIARY Canceling the trigget notification: " + meta.notifID);
+                notifee.cancelTriggerNotification(meta.notifID);
+              }
+            }
+
+
+            // dispatch(addMeta({ "theDate": new Date().toString().split("(")[0], meta: meta }));
+          },
+          get onPress() {
+            return this._onPress;
+          },
+          set onPress(value) {
+            this._onPress = value;
+          },
+        },
+      ],
+      { cancelable: false }
+    );
+  };
 
   
 
@@ -170,8 +228,8 @@ function Emergencia({route}) {
             <BackLink labelBack={gs['volver'][lang]} gotoScreen={'MenuPrincipal'}></BackLink>
         </View>
 
-        <View style={{height:dimensions.footerHeight*0.7,width:dimensions.bodyWidth*1, top:dimensions.bodyHeight*1.06}}>
-          <Text style={styles.titleText}>{gs['tituloUrgencia'][lang]}</Text>
+        <View style={{height:dimensions.footerHeight*0.7,width:1, top:dimensions.bodyHeight*1.06}}>
+          <Text style={styles.titleText}></Text>
         </View>
 
         <View style={{width: dimensions.bodyWidth,top: dimensions.bodyHeight*1.16,position: 'absolute', borderTopWidth: dimensions.headerHeight *0.03, borderColor: colors.mintGreen,}}/>
@@ -179,6 +237,16 @@ function Emergencia({route}) {
         <Text style={styles.text}>{gs['tituloFoother'][lang]}</Text>
 
     </BodyView>
+
+    <FooterView>
+    <View style={{top:0, left: dimensions.bodyWidth/2, position: 'absolute'}}>
+        <TwoThirdsButton label ={gs['reportarAL'][lang]} topMargin = {16} 
+          bg = {colors.emergencyRed} row = {0} col = {0} img={require('../assets/ingresar.png')} active={new Date(today) < new Date()}
+          onPress={ () =>{showAlert(dispatch); dispatch(addAutolecionData({"fec": forDate}));} }
+          />
+  
+        </View>
+    </FooterView>
 
     {/* <EmergencyView>
       <Text style={styles.text}>{gs['tituloFoother'][lang]}</Text>
@@ -200,9 +268,9 @@ const styles = StyleSheet.create({
     titleText: {
       //backgroundColor:'grey',
       color: "#4eb5a3",
-      fontSize: normalize(14),
+      fontSize: normalize(10),
       fontWeight: '600',
-      width: dimensions.bodyWidth * 0.8,
+      width: dimensions.bodyWidth * 0.4,
       top: dimensions.footerHeight * 0
       },
       button:{

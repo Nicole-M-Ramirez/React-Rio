@@ -29,6 +29,7 @@ function Menu() {
   const today = new Date();
   const theDate = today.toISOString().substring(0,10);
   const lang = useSelector(state => state.counter.language);
+  console.log(theDate)
 
   console.log("Lang is: " +lang);
   // const theDate = today.toString().padStart(2, '0')  + '.' + month.toString().padStart(2, '0') + '.' + year % 100;
@@ -41,7 +42,7 @@ function Menu() {
         navigation.navigate('Contrasena',{pantalla: 'MiEspacio', volver:'MenuPrincipal'})
       }
       else{
-        navigation.navigate('MiEspacio')
+        navigation.navigate('MiEspacio',{theDate: theDate})
       }
     },
     () => navigation.navigate('Informacion',{pantallaPasada:'MenuPrincipal',img:null}),

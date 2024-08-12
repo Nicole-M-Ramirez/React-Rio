@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     width: dimensions.buttonWidth,
     flexDirection: 'row',
     borderRadius: 5,
-    position: 'absolute'
+    position: 'absolute',
   },
   imageView: {
     height: '100%', 

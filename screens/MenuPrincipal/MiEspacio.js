@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity, Dimensions, PixelRatio,Image } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Dimensions, PixelRatio,Image, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { colors, dimensions } from '../../components/constants';
 
@@ -16,11 +16,16 @@ import { useSelector } from 'react-redux';
 import { gs } from '../../components/RioGlobalStrings';
 import BackLink from '../../components/BackLink';
 import BotonConfig from '../../components/BotonConfig';
+import TwoThirdsButton from '../../components/TwoThirdsButton';
+import { useDispatch } from 'react-redux';
+import { updateDateData, decreaseByOne, reportCASIS, addAutolecionData } from '../../redux/slices/counterSlice';
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
 
-function MiEspacio() {
+function MiEspacio({route}) {
+  const { theDate } = route.params;
+  const dispatch = useDispatch();
   const navigation = useNavigation();
   const lang = useSelector(state => state.counter.language);
   const Colors = [colors.deepPurple, colors.pink, colors.blue, colors.greyBlue,colors.mintGreen, colors.purple]
@@ -28,6 +33,59 @@ function MiEspacio() {
   const title = [gs['calendario'][lang], gs['diario'][lang], gs['metas'][lang], gs['logros'][lang], gs['exportar'][lang],gs['graficas'][lang]]
 
   const today = new Date();
+
+  console.log(today)
+
+  const showAlert = (dispatch, meta, oldMeta) => {
+
+    let msg;
+    msg = gs['reportarAL'][lang];
+    if ( meta !==undefined ) msg = msg + ". Hay una meta activa!";
+    Alert.alert(
+      gs['confirmacion'][lang],
+      msg,
+      [
+        {
+          text: 'No',
+          style: 'cancel',
+        },
+        {
+          text: gs['si'][lang],
+          _onPress: () => {
+            //console.log("Confirmed autolesion!!: " + met);
+            
+            dispatch(reportCASIS({"theDate":theDate}));
+            dispatch(addAutolecionData({"fec": theDate}));
+
+            // 2024-07-24 
+
+            // If there is an active Meta and the CASIS falls before the scheduled deadline we 
+            // must cancel the congratulations alarm
+            //console.log("IN Diary: reporting CASIS at: " + theDate);
+            //console.log("IN Diary: reporting CASIS at: " + new Date(today));
+            
+            if (meta !== undefined) {
+              
+              if (meta.active) { 
+                console.log("IN DIARY Canceling the trigget notification: " + meta.notifID);
+                notifee.cancelTriggerNotification(meta.notifID);
+              }
+            }
+
+
+            // dispatch(addMeta({ "theDate": new Date().toString().split("(")[0], meta: meta }));
+          },
+          get onPress() {
+            return this._onPress;
+          },
+          set onPress(value) {
+            this._onPress = value;
+          },
+        },
+      ],
+      { cancelable: false }
+    );
+  };
 
   console.log("MiEspaciox");
   const functions = [
@@ -83,6 +141,13 @@ function MiEspacio() {
          {/* <View style={{top:dimensions.footerHeight*0.55,width:'50%', position:'absolute',marginTop: dimensions.separator}}>
             <BackLink labelBack={gs['volver'][lang]} gotoScreen={}></BackLink>
           </View> */}
+          <View style={{top:0, left: dimensions.bodyWidth/2, position: 'absolute'}}>
+        <TwoThirdsButton label ={gs['reportarAL'][lang]} topMargin = {16} 
+          bg = {colors.emergencyRed} row = {0} col = {0} img={require('../../assets/ingresar.png')} active={new Date(today) < new Date()}
+          onPress={ () =>{showAlert(dispatch); dispatch(addAutolecionData({"fec": theDate}));} }
+          />
+  
+        </View>
         
       </FooterView>
 
@@ -94,6 +159,8 @@ function MiEspacio() {
 }
 
 export default MiEspacio;
+
+
 
 const styles = StyleSheet.create({
   titleText: {

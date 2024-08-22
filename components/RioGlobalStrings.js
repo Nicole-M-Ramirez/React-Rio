@@ -18,7 +18,7 @@ export const gs = {
   },
 
   //heather
-  'libreCasis':{'es' : 'Libre de CASIS', 'en' : 'Free of CASIS'},
+  'libreCasis':{'es' : 'Libre de NSSI', 'en' : 'Free of NSSI'},
 
   'politicaDePrivacidad':{'es':'Política de Privacidad','en':'Privacy Policy'},
 
@@ -444,7 +444,7 @@ These Terms and the Privacy Policy are effective on the date of your download an
 <ol style="padding-left: 70px;" type="I">
   <li>Information for individuals who self-harm</li>
   <ol style="padding-left: 55px;" type="i">
-      <li style="margin-top: .40em;">Inform your professional about thisapplication.</li>
+      <li style="margin-top: .40em;">Inform your professional about this application.</li>
       <li style="margin-top: .40em;">Let them know that this application offers tracking that can be useful for both of you.</li>
       <li style="margin-top: .40em;">Agree on what information you are willing to share.</li>
   </ol>
@@ -614,8 +614,8 @@ If you have medical insurance, you can contact a customer service representative
       'en':
 `
 <ol style="padding-left: 90px;" type="i">
-      <li style="margin-top: .40em;">They differ in three basic aspects: intention, repetition, and letha
-      <li style="margin-top: .40em;">Youth who engage in self-harm behavior are more prone to engage in suicidal beha
+      <li style="margin-top: .40em;">They differ in three basic aspects: intention, repetition, and lethality
+      <li style="margin-top: .40em;">Youth who engage in self-harm behavior are more prone to engage in suicidal behavior
       <li style="margin-top: .40em;">A history of self-injurious behavior is one of the most potent predictors of completed suicide.
 </ol>
 `
@@ -664,7 +664,7 @@ If you have medical insurance, you can contact a customer service representative
       <li style="margin-top: .40em;">Having experienced trauma, including situations of physical, sexual, or emotional abuse.
       <li style="margin-top: .40em;">LGBTQ+ population - due to stigma, discrimination, and prejudice against this population.
       <li style="margin-top: .40em;">Having a negative body image.
-      <li style="margin-top: .40em;">Having difficulties in relating toother people.
+      <li style="margin-top: .40em;">Having difficulties in relating to other people.
 </ol>
 `
     },
@@ -913,7 +913,7 @@ If you have medical insurance, you can contact a customer service representative
    // Mensajes de Notificaciones
    'notifFelicidades' : {'es': '🎉🎉🎉 ¡Felicidades! 🎉🎉🎉', 'en': '🎉🎉🎉 Congratulations! 🎉🎉🎉'},
    'notifCumplioDiasPre' : {'es': 'Completaste el reto de ', 'en': 'You finished the goal of '},
-   'notifCumplioDiasPost' : {'es': ' sin CASIS.', 'en': ' without CASIS!'},
+   'notifCumplioDiasPost' : {'es': ' sin NSSI.', 'en': ' without NSSI!'},
    'notifDia' : {'es': ' día', 'en': ' day'},
    'notifActividad': {'es': '🔔🔔🔔 Recuerda tu meta 🔔🔔🔔', 'en': '🔔🔔🔔 Remember your goal 🔔🔔🔔'},
    'notifDiaActividadPre': {'es': 'Es el', 'en': "It's"},

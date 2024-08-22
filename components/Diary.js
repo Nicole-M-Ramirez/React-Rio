@@ -24,11 +24,18 @@ import BotonConfig from './BotonConfig';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateDateData, decreaseByOne, reportCASIS, addAutolecionData } from '../redux/slices/counterSlice';
 import notifee from '@notifee/react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 
 //import BotonConfig from './BotonConfig';
 
+// const DismissKeyboard = ({ children }) => (
+//   <TouchableWithoutFeedback  onPress={() => Keyboard.dismiss()}>
+//     {children}
+//   </TouchableWithoutFeedback>
+// );
+
 const DismissKeyboard = ({ children }) => (
-  <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+  <TouchableWithoutFeedback  onPress={Keyboard.dismiss} accessible={false}>
     {children}
   </TouchableWithoutFeedback>
 );
@@ -177,13 +184,14 @@ function Diary( props) {
   
   return (
     <>
+    <DismissKeyboard>
     <View>
       <BotonConfig pantalla = 'Diary' Back={()=>{navigation.navigate('Diary',{day:day,month:month,year:year, dateString:dateString, fromScreen:fromScreen, forDate:forDate, pantalla:pantalla, img:img})}}/>
       <HeaderView>
         <TimeSince/>
       </HeaderView>
 
-      <BodyView >
+      <View style={{left:dimensions.leftMargin, top:dimensions.bodyHeight*0.23}} >
 
 
       <View style={{ top:0, height: dimensions.bodyHeight/8, flexDirection: 'row', width: dimensions.bodyWidth,  position:  'absolute'
@@ -279,7 +287,7 @@ function Diary( props) {
 
 
       { diarioSelected && <DismissKeyboard>
-         <View style={styles.container}>
+         <View style={styles.container} >
         <Text style={styles.textContainer}>{gs['comoTeSientes'][lang]}</Text>
         <TextInput
             multiline={true}
@@ -306,7 +314,7 @@ function Diary( props) {
 {/* () => navigation.navigate('RegistroUtilidad',{img:img, forDate: forDate, pantalla : pantalla}), */}
 
         </View>
-        </BodyView>
+        </View>
         <FooterView>
         <View style={{top:0}}>
         <View style={{top:0, position: 'absolute'}}>
@@ -332,6 +340,7 @@ function Diary( props) {
       
       
       </View>
+      </DismissKeyboard>
     </>
   );
 }
@@ -340,7 +349,9 @@ export default Diary;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white'
+    backgroundColor: 'grey',
+    width: dimensions.width,
+    height: dimensions.bodyHeight
   },
   topLine:{
     borderBottomColor:"black",
@@ -423,7 +434,8 @@ const styles = StyleSheet.create({
     borderRadius:5,
     position: 'absolute',
     color: 'white',
-    padding: '3%'
+    padding: '3%',
+    //backgroundColor:'grey',
     //padding: 10,
   },
   container: {

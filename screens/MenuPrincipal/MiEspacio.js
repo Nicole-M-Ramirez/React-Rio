@@ -24,7 +24,7 @@ const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
 
 function MiEspacio({route}) {
-  const { theDate } = route.params;
+  //const { theDate } = route.params;
   const dispatch = useDispatch();
   const navigation = useNavigation();
   const lang = useSelector(state => state.counter.language);
@@ -32,7 +32,9 @@ function MiEspacio({route}) {
 
   const title = [gs['calendario'][lang], gs['diario'][lang], gs['metas'][lang], gs['logros'][lang], gs['exportar'][lang],gs['graficas'][lang]]
 
+  //const today = new Date();
   const today = new Date();
+  const theDate = today.toISOString().substring(0,10);
 
   console.log(today)
 

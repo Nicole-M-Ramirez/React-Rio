@@ -74,14 +74,14 @@ export const counterSlice = createSlice({
       // '2023-03-23':{'text':'', 'auto': '1345'}
       // },
       dateData: {
-         '2023-11-10':{'text':'una entrada el 10 de octubre', 
-                       'mood': [ {'type': 'Coraje', 'time': 2334, 
-                                  'detonantes': {"pareja":true,"familia":false,"amistades":false,"perdida":false,"estudios":false}}, 
-                                 {'type': 'Felicidad', 'time': 1122,
-                                 'detonantes': {"pareja":true,"familia":false,"amistades":false,"perdida":false,"estudios":false}}
-                              ],
-                        'act': [{'type':'Respiración', 'time':1145}, {'type':'Caminar', 'time':1225}],
-                        'casis': [1120, 1234] }
+         // '2023-11-10':{'text':'una entrada el 10 de octubre', 
+         //               'mood': [ {'type': 'Coraje', 'time': 2334, 
+         //                          'detonantes': {"pareja":true,"familia":false,"amistades":false,"perdida":false,"estudios":false}}, 
+         //                         {'type': 'Felicidad', 'time': 1122,
+         //                         'detonantes': {"pareja":true,"familia":false,"amistades":false,"perdida":false,"estudios":false}}
+         //                      ],
+         //                'act': [{'type':'Respiración', 'time':1145}, {'type':'Caminar', 'time':1225}],
+         //                'casis': [1120, 1234] }
       },
       value: 42,
       moodCounter: {'Felicidad':{'cantidad': 0},'Ansiedad':{'cantidad': 0},
@@ -89,10 +89,11 @@ export const counterSlice = createSlice({
                     'Coraje':{'cantidad': 0},'Otros':{'cantidad': 0},
       },
       metas: 
-         [{date: 'Wed Oct 11 2023 13:55:07 GMT-0400', meta: '05dias', active: false, lograda: false, dateComplete: 'none'},
-         {date: 'Wed Oct 10 2023 13:55:07 GMT-0400', meta: 'caminar07', active: false, lograda: true, dateComplete: 'Wed Oct 10 2023 15:55:07 GMT-0400'},
-         {date: 'Wed Oct 4 2023 13:55:07 GMT-0400', meta: '10dias', active: false, lograda: true, dateComplete: 'Wed Oct 6 2023 15:55:07 GMT-0400'}]      ,
-      otraCosa: []
+         // [{date: 'Wed Oct 11 2023 13:55:07 GMT-0400', meta: '05dias', active: false, lograda: false, dateComplete: 'none'},
+         // {date: 'Wed Oct 10 2023 13:55:07 GMT-0400', meta: 'caminar07', active: false, lograda: true, dateComplete: 'Wed Oct 10 2023 15:55:07 GMT-0400'},
+         // {date: 'Wed Oct 4 2023 13:55:07 GMT-0400', meta: '10dias', active: false, lograda: true, dateComplete: 'Wed Oct 6 2023 15:55:07 GMT-0400'}]      ,
+         [],
+         otraCosa: []
    },
    reducers: {
       updateDateData: (state,action) => {

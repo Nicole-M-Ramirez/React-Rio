@@ -76,8 +76,13 @@ function ActividadEnProgreso({route}) {
         </View>
 
         <Text style={styles.titleText}>{titulo}</Text>
-        <View style={[styles.TextView,{}]}>
-            <Text style={styles.text}>{texto}</Text>
+        <View style={styles.scrollView}>
+          <ScrollView>
+            <View style={[styles.TextView,{}]}>
+                <Text style={styles.text}>{texto}</Text>
+                <Text></Text>
+            </View>
+          </ScrollView>
         </View>
       </BodyView>
 
@@ -128,8 +133,8 @@ const styles = StyleSheet.create({
   },
   TextView: {
     width: dimensions.bodyWidth,
-    height: dimensions.bodyHeight,
-    marginTop: dimensions.bodyHeight *0.2,
+    //height: dimensions.bodyHeight*0.45,
+    //marginTop: dimensions.bodyHeight *0.2,
   },
   text:{
     color:'white',
@@ -157,6 +162,13 @@ const styles = StyleSheet.create({
     width: dimensions.bodyWidth * 0.026,
     height: dimensions.footerHeight * 0.15,
     position: 'absolute'
-  }
+  },
+  scrollView: {
+    //left: dimensions.leftMargin,
+    top: dimensions.bodyHeight*0.2,
+    height: dimensions.bodyHeight*0.4,
+    width:dimensions.bodyWidth,
+    //backgroundColor: 'grey',
+  },
 });
 

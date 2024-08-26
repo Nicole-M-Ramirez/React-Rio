@@ -588,18 +588,22 @@ function Barras({route}) {
       </HeaderView>
 
       <BodyView>
-        <View style={{borderLeftColor:colors.mintGreen,borderLeftWidth:3, height:dimensions.bodyHeight*0.54,position:'absolute',zIndex:3, borderRadius:6, top:dimensions.bodyHeight*0.018 }}></View>
+        {/* <View style={{borderLeftColor:colors.mintGreen,borderLeftWidth:5, height:dimensions.bodyHeight*0.52,position:'absolute',zIndex:3, borderRadius:6, top:dimensions.bodyHeight*0.018, }}></View> */}
         <Text style={{color:colors.mintGreen, fontSize:normalize(50),top:dimensions.bodyHeight*0.43, position:'absolute', zIndex:3, left: dimensions.bodyWidth*-0.015}}>.    .    .    .     .</Text>
         <BarChart
           style={{
             //transform: [{ rotate: '90deg'}]
-            left: dimensions.bodyWidth *-0.29,
-            top: dimensions.bodyHeight *0
+            //zIndex: 4,
+            position:'absolute',
+            left: ScreenWidth*-0.19,
+            //left: (dimensions.bodyWidth*0.75)*-0.24,
+            top: dimensions.bodyHeight *0.01
           }}
           data={data}
           width={dimensions.bodyHeight}
-          height={dimensions.bodyWidth-30}
+          height={dimensions.bodyWidth*0.8}
           chartConfig={{
+            position:'absolute',
             backgroundColor: "transparent",
             backgroundGradientTo: colors.backgroudDarkBlue,
             backgroundGradientToOpacity: 5,
@@ -624,36 +628,38 @@ function Barras({route}) {
         
 
         {/* <View style={styles.rectangle} /> */}
-        <View style={{height: dimensions.bodyHeight*0.05}}></View>
+        <View style={{position:'absolute', top:dimensions.bodyHeight*0.6}}>
+          {/* <View style={{height: dimensions.bodyHeight*0.05}}></View> */}
 
-        <View style={{flexDirection:'row', marginBottom:dimensions.bodyHeight*0.01}}>
-          <View style={{backgroundColor:colors.purple, height:dimensions.bodyHeight*0.05, width:dimensions.bodyWidth*0.1, borderRadius:6}}></View>
-          <Text style={{color:colors.mintGreen, left:dimensions.bodyWidth*0.04, fontSize:normalize(13), fontWeight:'700', top:dimensions.bodyHeight*0.005}}>{gs['pareja'][lang]}</Text>
-        </View>
-        
-        <View style={{flexDirection:'row', marginBottom:dimensions.bodyHeight*0.01}}>
-          <View style={{backgroundColor:colors.pink, height:dimensions.bodyHeight*0.05, width:dimensions.bodyWidth*0.1, borderRadius:6}}></View>
-          <Text style={{color:colors.mintGreen, left:dimensions.bodyWidth*0.04, fontSize:normalize(13), fontWeight:'700', top:dimensions.bodyHeight*0.005}}>{gs['familia'][lang]}</Text>
-        </View>
+          <View style={{flexDirection:'row', marginBottom:dimensions.bodyHeight*0.01}}>
+            <View style={{backgroundColor:colors.purple, height:dimensions.bodyHeight*0.05, width:dimensions.bodyWidth*0.1, borderRadius:6}}></View>
+            <Text style={{color:colors.mintGreen, left:dimensions.bodyWidth*0.04, fontSize:normalize(13), fontWeight:'700', top:dimensions.bodyHeight*0.005}}>{gs['pareja'][lang]}</Text>
+          </View>
+          
+          <View style={{flexDirection:'row', marginBottom:dimensions.bodyHeight*0.01}}>
+            <View style={{backgroundColor:colors.pink, height:dimensions.bodyHeight*0.05, width:dimensions.bodyWidth*0.1, borderRadius:6}}></View>
+            <Text style={{color:colors.mintGreen, left:dimensions.bodyWidth*0.04, fontSize:normalize(13), fontWeight:'700', top:dimensions.bodyHeight*0.005}}>{gs['familia'][lang]}</Text>
+          </View>
 
-        <View style={{flexDirection:'row', marginBottom:dimensions.bodyHeight*0.01}}>
-          <View style={{backgroundColor:colors.blue, height:dimensions.bodyHeight*0.05, width:dimensions.bodyWidth*0.1, borderRadius:6}}></View>
-          <Text style={{color:colors.mintGreen, left:dimensions.bodyWidth*0.04, fontSize:normalize(13), fontWeight:'700', top:dimensions.bodyHeight*0.005}}>{gs['amistades'][lang]}</Text>
-        </View>
+          <View style={{flexDirection:'row', marginBottom:dimensions.bodyHeight*0.01}}>
+            <View style={{backgroundColor:colors.blue, height:dimensions.bodyHeight*0.05, width:dimensions.bodyWidth*0.1, borderRadius:6}}></View>
+            <Text style={{color:colors.mintGreen, left:dimensions.bodyWidth*0.04, fontSize:normalize(13), fontWeight:'700', top:dimensions.bodyHeight*0.005}}>{gs['amistades'][lang]}</Text>
+          </View>
 
-        <View style={{flexDirection:'row', marginBottom:dimensions.bodyHeight*0.01}}>
-          <View style={{backgroundColor:colors.deepPurple, height:dimensions.bodyHeight*0.05, width:dimensions.bodyWidth*0.1, borderRadius:6}}></View>
-          <Text style={{color:colors.mintGreen, left:dimensions.bodyWidth*0.04, fontSize:normalize(13), fontWeight:'700', top:dimensions.bodyHeight*0.005}}>{gs['perdida'][lang]}</Text>
-        </View>
+          <View style={{flexDirection:'row', marginBottom:dimensions.bodyHeight*0.01}}>
+            <View style={{backgroundColor:colors.deepPurple, height:dimensions.bodyHeight*0.05, width:dimensions.bodyWidth*0.1, borderRadius:6}}></View>
+            <Text style={{color:colors.mintGreen, left:dimensions.bodyWidth*0.04, fontSize:normalize(13), fontWeight:'700', top:dimensions.bodyHeight*0.005}}>{gs['perdida'][lang]}</Text>
+          </View>
 
-        <View style={{flexDirection:'row', marginBottom:dimensions.bodyHeight*0.01}}>
-          <View style={{backgroundColor:colors.mintGreen, height:dimensions.bodyHeight*0.05, width:dimensions.bodyWidth*0.1, borderRadius:6}}></View>
-          <Text style={{color:colors.mintGreen, left:dimensions.bodyWidth*0.04, fontSize:normalize(13), fontWeight:'700', top:dimensions.bodyHeight*0.005}}>{gs['estUniversitarios'][lang]}</Text>
-        </View>
+          <View style={{flexDirection:'row', marginBottom:dimensions.bodyHeight*0.01}}>
+            <View style={{backgroundColor:colors.mintGreen, height:dimensions.bodyHeight*0.05, width:dimensions.bodyWidth*0.1, borderRadius:6}}></View>
+            <Text style={{color:colors.mintGreen, left:dimensions.bodyWidth*0.04, fontSize:normalize(13), fontWeight:'700', top:dimensions.bodyHeight*0.005}}>{gs['estUniversitarios'][lang]}</Text>
+          </View>
 
-        <View style={{flexDirection:'row', marginBottom:dimensions.bodyHeight*0.01}}>
-          <View style={{backgroundColor:colors.greyBlue, height:dimensions.bodyHeight*0.05, width:dimensions.bodyWidth*0.1, borderRadius:6}}></View>
-          <Text style={{color:colors.mintGreen, left:dimensions.bodyWidth*0.04, fontSize:normalize(13), fontWeight:'700', top:dimensions.bodyHeight*0.005}}>{gs['trabajo'][lang]}</Text>
+          <View style={{flexDirection:'row', marginBottom:dimensions.bodyHeight*0.01}}>
+            <View style={{backgroundColor:colors.greyBlue, height:dimensions.bodyHeight*0.05, width:dimensions.bodyWidth*0.1, borderRadius:6}}></View>
+            <Text style={{color:colors.mintGreen, left:dimensions.bodyWidth*0.04, fontSize:normalize(13), fontWeight:'700', top:dimensions.bodyHeight*0.005}}>{gs['trabajo'][lang]}</Text>
+          </View>
         </View>
 
         

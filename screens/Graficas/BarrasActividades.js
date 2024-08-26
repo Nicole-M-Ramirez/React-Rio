@@ -162,17 +162,18 @@ function BarrasActividades({route}) {
       </HeaderView>
 
       <BodyView>
-        <View style={{borderLeftColor:colors.mintGreen,borderLeftWidth:3, height:dimensions.bodyHeight*0.54,position:'absolute',zIndex:3, borderRadius:6, top:dimensions.bodyHeight*0.018 }}></View>
+        {/* <View style={{borderLeftColor:colors.mintGreen,borderLeftWidth:3, height:dimensions.bodyHeight*0.54,position:'absolute',zIndex:3, borderRadius:6, top:dimensions.bodyHeight*0.018 }}></View> */}
         <Text style={{color:colors.mintGreen, fontSize:normalize(50),top:dimensions.bodyHeight*0.43, position:'absolute', zIndex:3, left: dimensions.bodyWidth*-0.015}}>.    .    .    .     .</Text>
         <BarChart
           style={{
-            //transform: [{ rotate: '90deg'}]
-            left: dimensions.bodyWidth *-0.29,
-            top: dimensions.bodyHeight *0
+            position:'absolute',
+            left: ScreenWidth*-0.19,
+            //left: (dimensions.bodyWidth*0.75)*-0.24,
+            top: dimensions.bodyHeight *0.01
           }}
           data={data}
           width={dimensions.bodyHeight}
-          height={dimensions.bodyWidth-30}
+          height={dimensions.bodyWidth*0.8}
           chartConfig={{
             backgroundColor: "transparent",
             backgroundGradientTo: colors.backgroudDarkBlue,
@@ -198,31 +199,34 @@ function BarrasActividades({route}) {
         
 
         {/* <View style={styles.rectangle} /> */}
-        <View style={{height: dimensions.bodyHeight*0.05}}></View>
+        {/* <View style={{height: dimensions.bodyHeight*0.05}}></View> */}
+        <View style={{position:'absolute', top:dimensions.bodyHeight*0.6}}>
 
-        <View style={{flexDirection:'row', marginBottom:dimensions.bodyHeight*0.01}}>
-          <View style={{backgroundColor:colors.pink, height:dimensions.bodyHeight*0.05, width:dimensions.bodyWidth*0.1, borderRadius:6}}></View>
-          <Text style={{color:colors.mintGreen, left:dimensions.bodyWidth*0.04, fontSize:normalize(13), fontWeight:'700', top:dimensions.bodyHeight*0.005}}>{titulosAct[0]}</Text>
-        </View>
-        
-        <View style={{flexDirection:'row', marginBottom:dimensions.bodyHeight*0.01}}>
-          <View style={{backgroundColor:colors.mintGreen, height:dimensions.bodyHeight*0.05, width:dimensions.bodyWidth*0.1, borderRadius:6}}></View>
-          <Text style={{color:colors.mintGreen, left:dimensions.bodyWidth*0.04, fontSize:normalize(13), fontWeight:'700', top:dimensions.bodyHeight*0.005}}>{titulosAct[1]}</Text>
-        </View>
+          <View style={{flexDirection:'row', marginBottom:dimensions.bodyHeight*0.01}}>
+            <View style={{backgroundColor:colors.pink, height:dimensions.bodyHeight*0.05, width:dimensions.bodyWidth*0.1, borderRadius:6}}></View>
+            <Text style={{color:colors.mintGreen, left:dimensions.bodyWidth*0.04, fontSize:normalize(13), fontWeight:'700', top:dimensions.bodyHeight*0.005}}>{titulosAct[0]}</Text>
+          </View>
+          
+          <View style={{flexDirection:'row', marginBottom:dimensions.bodyHeight*0.01}}>
+            <View style={{backgroundColor:colors.mintGreen, height:dimensions.bodyHeight*0.05, width:dimensions.bodyWidth*0.1, borderRadius:6}}></View>
+            <Text style={{color:colors.mintGreen, left:dimensions.bodyWidth*0.04, fontSize:normalize(13), fontWeight:'700', top:dimensions.bodyHeight*0.005}}>{titulosAct[1]}</Text>
+          </View>
 
-        <View style={{flexDirection:'row', marginBottom:dimensions.bodyHeight*0.01}}>
-          <View style={{backgroundColor:colors.purple, height:dimensions.bodyHeight*0.05, width:dimensions.bodyWidth*0.1, borderRadius:6}}></View>
-          <Text style={{color:colors.mintGreen, left:dimensions.bodyWidth*0.04, fontSize:normalize(13), fontWeight:'700', top:dimensions.bodyHeight*0.005}}>{titulosAct[2]}</Text>
-        </View>
+          <View style={{flexDirection:'row', marginBottom:dimensions.bodyHeight*0.01}}>
+            <View style={{backgroundColor:colors.purple, height:dimensions.bodyHeight*0.05, width:dimensions.bodyWidth*0.1, borderRadius:6}}></View>
+            <Text style={{color:colors.mintGreen, left:dimensions.bodyWidth*0.04, fontSize:normalize(13), fontWeight:'700', top:dimensions.bodyHeight*0.005}}>{titulosAct[2]}</Text>
+          </View>
 
-        <View style={{flexDirection:'row', marginBottom:dimensions.bodyHeight*0.01}}>
-          <View style={{backgroundColor:colors.blue, height:dimensions.bodyHeight*0.05, width:dimensions.bodyWidth*0.1, borderRadius:6}}></View>
-          <Text style={{color:colors.mintGreen, left:dimensions.bodyWidth*0.04, fontSize:normalize(13), fontWeight:'700', top:dimensions.bodyHeight*0.005}}>{titulosAct[3]}</Text>
-        </View>
+          <View style={{flexDirection:'row', marginBottom:dimensions.bodyHeight*0.01}}>
+            <View style={{backgroundColor:colors.blue, height:dimensions.bodyHeight*0.05, width:dimensions.bodyWidth*0.1, borderRadius:6}}></View>
+            <Text style={{color:colors.mintGreen, left:dimensions.bodyWidth*0.04, fontSize:normalize(13), fontWeight:'700', top:dimensions.bodyHeight*0.005}}>{titulosAct[3]}</Text>
+          </View>
 
-        <View style={{flexDirection:'row', marginBottom:dimensions.bodyHeight*0.01}}>
-          <View style={{backgroundColor:colors.deepPurple, height:dimensions.bodyHeight*0.05, width:dimensions.bodyWidth*0.1, borderRadius:6}}></View>
-          <Text style={{color:colors.mintGreen, left:dimensions.bodyWidth*0.04, fontSize:normalize(13), fontWeight:'700', top:dimensions.bodyHeight*0.005}}>{titulosAct[4]}</Text>
+          <View style={{flexDirection:'row', marginBottom:dimensions.bodyHeight*0.01}}>
+            <View style={{backgroundColor:colors.deepPurple, height:dimensions.bodyHeight*0.05, width:dimensions.bodyWidth*0.1, borderRadius:6}}></View>
+            <Text style={{color:colors.mintGreen, left:dimensions.bodyWidth*0.04, fontSize:normalize(13), fontWeight:'700', top:dimensions.bodyHeight*0.005}}>{titulosAct[4]}</Text>
+          </View>
+
         </View>
 
         {/* <View style={{flexDirection:'row', marginBottom:dimensions.bodyHeight*0.01}}>

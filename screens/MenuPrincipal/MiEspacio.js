@@ -28,9 +28,9 @@ function MiEspacio({route}) {
   const dispatch = useDispatch();
   const navigation = useNavigation();
   const lang = useSelector(state => state.counter.language);
-  const Colors = [colors.deepPurple, colors.pink, colors.blue, colors.greyBlue,colors.mintGreen, colors.purple]
+  const Colors = [colors.deepPurple, colors.pink, colors.blue, colors.greyBlue, colors.purple,colors.backgroudDarkBlue]
 
-  const title = [gs['calendario'][lang], gs['diario'][lang], gs['metas'][lang], gs['logros'][lang], gs['exportar'][lang],gs['graficas'][lang]]
+  const title = [gs['calendario'][lang], gs['diario'][lang], gs['metas'][lang], gs['logros'][lang],gs['graficas'][lang],""]
 
   //const today = new Date();
   const today = new Date();
@@ -97,16 +97,18 @@ function MiEspacio({route}) {
       dateString:today.toISOString().substr(0,10), fromScreen:'MiEspacio'}),
     () => navigation.navigate('Metas'),
     () => navigation.navigate('Logros'),
-    () => navigation.navigate('Exportar'),
     () => navigation.navigate('Graficas'),
+    //() => navigation.navigate('Exportar'),
+    ()=>{null},
   ]
   const images = [
     <Image source={require('../../assets/calendario2.png')} resizeMode='contain' style={styles.buttonImage} />,
     <Image source={require('../../assets/diario2.png')} resizeMode='contain' style={styles.buttonImage} />,
     <Image source={require('../../assets/metas2.png')} resizeMode='contain' style={styles.buttonImage} />,
     <Image source={require('../../assets/logros2.png')} resizeMode='contain' style={styles.buttonImage} />,
-    <Image source={require('../../assets/exportar2.png')} resizeMode='contain' style={styles.buttonImage} />,
+    //<Image source={require('../../assets/exportar2.png')} resizeMode='contain' style={styles.buttonImage} />,
     <Image source={require('../../assets/graficas2.png')} resizeMode='contain' style={styles.buttonImage} />,
+    <Image source={null} resizeMode='contain' style={styles.buttonImage} />,
   ]
 
 

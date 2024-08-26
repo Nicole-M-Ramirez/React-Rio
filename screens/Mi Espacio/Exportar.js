@@ -1,9 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity, Dimensions, Image, ScrollView,TextInput,KeyboardAvoidingView,} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Dimensions, Image, ScrollView,TextInput,KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { colors, dimensions } from '../../components/constants';
 import { normalize } from '../../components/FondNormilize';
-import React, { useState } from 'react';
+import React, { useState , Linking } from 'react';
+import { SendEmail } from '../../components/SendEmail';
 
 import HeaderView from '../../components/HeaderView';
 import BodyView from '../../components/BodyView';
@@ -18,7 +19,11 @@ import BotonConfig from '../../components/BotonConfig';
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
 
-
+const DismissKeyboard = ({ children }) => (
+  <TouchableWithoutFeedback  onPress={Keyboard.dismiss} accessible={false}>
+    {children}
+  </TouchableWithoutFeedback>
+);
 
 function Exportar() {
     const [buttonTipoColors, setButtonTipoColors] = useState(colors.mintGreen);
@@ -37,6 +42,18 @@ function Exportar() {
     const [archivo, setarchivo] = useState({'PDF': false, 'CSV': false});
   
     const navigation = useNavigation();
+
+  //   handleEmail = () => {
+  //     const to = ['nicoleds3d@gmail.com'] // string or array of email addresses
+  //     email(to, {
+  //         // Optional additional arguments
+  //         cc: 'nicoleds3d@gmail.com', // string or array of email addresses
+  //        bcc: 'nicoleds3d@gmail.com', // string or array of email addresses
+  //         subject: 'Practica de envio',
+  //         body: 'Mesaje de prueba para envio de email desde la aplicacion RIO',
+  //         checkCanOpen: false // Call Linking.canOpenURL prior to Linking.openURL
+  //     }).catch(console.error)
+  // }
 
     function toggleButton (state, setFunc) {
       if(state === 'white'){
@@ -138,14 +155,28 @@ function Exportar() {
       //nav()
     }
 
+    function enviarMensaje () {
+      //console.log(text)
+      //handleEmail()
+      //navigation.navigate('ConfirmExport')
+      SendEmail(
+        'nicoleds3d@gmail.com',
+        'Mensaje de Prueba',
+        'Este mensaje es uno de prueba para probar la funcionalidad de envio de emails desde la aplicacion RIO'
+    ).then(() => {
+        console.log('Our email successful provided to device mail ');
+    });
+    }
+
   return (
+    <DismissKeyboard>
     <View>
       <BotonConfig pantalla = 'Exportar' Back={()=>{navigation.navigate('Exportar')}}/>
       <HeaderView headerButtons = 'yes'>
         <TimeSince  />
       </HeaderView>
 
-      <BodyView>
+      <View style={{left:dimensions.leftMargin, top:dimensions.bodyHeight*0.25}}>
         <KeyboardAvoidingView
           automaticallyAdjustContentInsets={false}
           behavior={null}
@@ -155,6 +186,7 @@ function Exportar() {
             flex: 1,
             height: '100%',
           }}>
+        
         <Image source={require('../../assets/exportar2.png')} resizeMode='contain' style={styles.titleImage} />
 
         <View style={[styles.buttonView,{
@@ -219,7 +251,7 @@ function Exportar() {
                                          height : ScreenHeight * 0.062,
                                         }]}>
           {/* <Text style={[styles.buttonsText,{left:dimensions.separator*2}]}>example@email.com</Text> */}
-          <TextInput style={[styles.buttonsText,{left:dimensions.separator*2}]} placeholder="example@email.com" onChangeText={onChangeText} value={text}/>
+          <TextInput style={[styles.buttonsText,{left:dimensions.separator*2}]} autoCapitalize={'none'} placeholder="example@email.com" onChangeText={onChangeText} value={text}/>
         </View>
     
         </KeyboardAvoidingView>
@@ -255,7 +287,7 @@ function Exportar() {
           <TouchableOpacity style={[styles.innerCircle, {backgroundColor: circle7}]} onPress={()=>{SevenCircle()}}/>
           <View style={styles.outerCircle}></View>
         </View>
-      </BodyView>
+      </View>
 
       <FooterView> 
         <View style={{height:'25%', width:'50%', position:'absolute',marginBottom: dimensions.separator}}> 
@@ -266,7 +298,7 @@ function Exportar() {
           <Text style={styles.titleText}>MiEspacio</Text> 
         </View>
 
-        <TouchableOpacity style={styles.activarButton} onPress={() => navigation.navigate('ConfirmExport')}>
+        <TouchableOpacity style={styles.activarButton} onPress={()=>enviarMensaje()}>
           <Text style={styles.activarText}>Enviar</Text>
           <Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.activarImg} />
         </TouchableOpacity>
@@ -276,6 +308,7 @@ function Exportar() {
           <Emergency/>
       </EmergencyView>
     </View>
+    </DismissKeyboard>
   );
 }
 

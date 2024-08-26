@@ -79,7 +79,7 @@ const RioCalendar = (props) => {
   // Minimum date that can be selected, dates before minDate will be grayed out. Default = undefined
   minDate={'2023-03-10'}
   // Maximum date that can be selected, dates after maxDate will be grayed out. Default = undefined
-  maxDate={'2024-07-30'}
+  maxDate={'2030-07-30'}
   // Handler which gets executed on day press. Default = undefined
 disableArrowLeft={false}
 disableArrowRight={false}
@@ -158,13 +158,18 @@ disableArrowRight={false}
 
 />
 </View>
+< View style={{width:'50%', position:'absolute',top:dimensions.bodyHeight*1.15}}>
+    <BackLink labelBack={gs['volver'][lang]} gotoScreen={'MiEspacio'} ></BackLink>
+  </View> 
+
 </View>
 
-<FooterView>
+
+{/* <FooterView>
   <View style={{width:'50%', position:'absolute',top:dimensions.footerHeight*0.5}}>
     <BackLink labelBack={gs['volver'][lang]} gotoScreen={'MiEspacio'} ></BackLink>
   </View> 
-</FooterView>
+</FooterView> */}
 <EmergencyView>
           <Emergency/>
         </EmergencyView>

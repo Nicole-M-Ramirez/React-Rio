@@ -1,7 +1,7 @@
 import {Dimensions, PixelRatio} from 'react-native';
 
 
-export const DAY_IN_MS = 3000; //24 * 3600000;
+export const DAY_IN_MS = 24 * 3600000;
 
 export const colors = {
     backgroudDarkBlue : '#18354a',

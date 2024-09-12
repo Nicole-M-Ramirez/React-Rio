@@ -79,7 +79,7 @@ function Diary( props) {
 
     let msg;
     msg = gs['reportarAL'][lang];
-    if ( meta !==undefined ) msg = msg + ". Hay una meta activa!";
+    //if ( meta !==undefined ) {msg = msg + ". Hay una meta activa!"} else {msg = msg};
     Alert.alert(
       gs['confirmacion'][lang],
       msg,
@@ -103,13 +103,13 @@ function Diary( props) {
             console.log("IN Diary: reporting CASIS at: " + dateString);
             console.log("IN Diary: reporting CASIS at: " + new Date(dateString));
             
-            if (meta !== undefined) {
+            // if (meta !== undefined) {
               
-              if (meta.active) { 
-                console.log("IN DIARY Canceling the trigget notification: " + meta.notifID);
-                notifee.cancelTriggerNotification(meta.notifID);
-              }
-            }
+            //   if (meta.active) { 
+            //     console.log("IN DIARY Canceling the trigget notification: " + meta.notifID);
+            //     notifee.cancelTriggerNotification(meta.notifID);
+            //   }
+            // }
 
 
             // dispatch(addMeta({ "theDate": new Date().toString().split("(")[0], meta: meta }));

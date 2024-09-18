@@ -174,7 +174,7 @@ function Informacion({route}) {
                         Title={gs['queHacer'][lang]} 
                         Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion'})} 
                         Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*.8}
+                        DropSize = {dimensions.bodyHeight*1}
                         contText= {gs['queHacerCont'][lang]}
                         titleHeigth = {0.07}
                         downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}

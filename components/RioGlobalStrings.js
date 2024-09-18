@@ -622,10 +622,23 @@ If you have medical insurance, you can contact a customer service representative
     },
     'queHacerCont':{
       'es':
-`Es importante que busques ayuda profesional. Aunque las autolesiones tienden a ser heridas superficiales que no representan riesgo, el tener ideas suicidas incrementan el riesgo de letalidad. El aislamiento aumenta también el nivel de peligrosidad. La autolesión es una conducta que puede detenerse con la ayuda profesional adecuada. Si tienes plan médico puedes comunicarte con servicio al cliente para que te orienten sobre profesionales cercanos a donde vives.
+`
+Si estás experimentando ideas suicidas, es crucial que busques ayuda profesional de inmediato. Puedes llamar a la Línea PAS al 1 (800) 981-0023 o al 911. Si es posible, dirígete a una sala de emergencias o pide a alguien que te lleve de inmediato.
+
+Aunque las autolesiones suelen ser superficiales y no representan un riesgo inmediato, tener ideas suicidas incrementa significativamente el riesgo de letalidad. El aislamiento también aumenta el nivel de peligrosidad. La autolesión es una conducta que puede detenerse con la ayuda profesional adecuada.
+
+Si tienes un plan médico, puedes comunicarte con el servicio al cliente para que te orienten sobre profesionales cercanos a tu lugar de residencia. Además, recuerda que puedes usar el botón de urgencia en esta app, el cual te facilita el acceso directo a líneas de ayuda. Úsalo de inmediato para recibir asistencia profesional.
+
+Tu seguridad y bienestar son lo más importante.
 `,
       'en':
-`It is important to seek professional help. Although they tend to be superficial wounds that do not represent a significant risk, having suicidal thoughts increases the risk of lethality while engaging in self-injurious behavior. Isolation also increases the level of danger. Self-harm is a behavior that can be stopped with appropriate professional help. If you have medical insurance, you can contact a customer service representative that can aid in guiding you to professionals near your area.`
+`If you are experiencing suicidal thoughts, it is crucial that you seek professional help immediately. You can call the PAS Line at 1 (800) 981-0023 or 911. If possible, go to an emergency room or ask someone to take you there immediately.
+
+Although self-harm is usually superficial and does not pose an immediate risk, having suicidal thoughts significantly increases the risk of lethality. Isolation also increases the level of danger. Self-harm is a behavior that can be stopped with proper professional help.
+
+If you have health insurance, you can contact customer service to get information about professionals near your residence. Also, remember that you can use the emergency button in this app, which provides direct access to help hotlines. Use it immediately to receive professional assistance.
+
+Your safety and well-being are the most important.`
     },
     'regulacionCont':{
       'es':

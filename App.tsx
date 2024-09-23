@@ -315,8 +315,8 @@ export const Tmp = () => {
 
 export default function App() {
   console.log("PURGING THE PERSISTOR!!!");
-  // persistor.purge(); 
-  // persistor.flush();
+  //persistor.purge(); 
+  //persistor.flush();
 
   // BackgroundTask.schedule();
 

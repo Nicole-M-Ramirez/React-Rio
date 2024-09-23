@@ -26,12 +26,13 @@ const ScreenWidth = Dimensions.get("window").width
 
 function Miedo({route}) {
   const dispatch = useDispatch();
-  dispatch(addEmocionData({"emo" : "miedo", "fec": forDate})); 
+  // dispatch(addEmocionData({"emo" : "miedo", "fec": forDate})); 
   
 
   const { forDate } = route.params;
   const navigation = useNavigation();
   const lang = useSelector(state => state.counter.language);
+  dispatch(addEmocionData({"emo" : "miedo", "fec": forDate})); 
 
   const Colors = [colors.deepPurple,colors.blue,colors.pink,colors.mintGreen,colors.purple]
   const title = [gs['diario'][lang],gs['hablar'][lang],gs['respirar'][lang],gs['espiritualidad'][lang],gs['atenPlena'][lang],]

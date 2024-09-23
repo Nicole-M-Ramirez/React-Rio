@@ -15,6 +15,8 @@ import TimeSince from '../../components/TimeSince';
 import BackLink from '../../components/BackLink';
 import BotonConfig from '../../components/BotonConfig';
 
+import RNHTMLtoPDF from 'react-native-html-to-pdf';
+
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
@@ -54,6 +56,27 @@ function Exportar() {
   //         checkCanOpen: false // Call Linking.canOpenURL prior to Linking.openURL
   //     }).catch(console.error)
   // }
+
+  async function CreatePDF() {
+    let options = {
+      html: `
+      <!DOCTYPE html>
+      <html>
+        <script src=${"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"}></script>
+        <body>
+          <h1>Exportacion de Data de RIO</h1>
+          <h2></h2>
+        </body>
+      </html>
+      `,
+      fileName: 'test',
+      directory: 'Files',
+    };
+
+    let file = await RNHTMLtoPDF.convert(options)
+    console.log(file.filePath);
+    alert(file.filePath);
+  }
 
     function toggleButton (state, setFunc) {
       if(state === 'white'){
@@ -298,7 +321,7 @@ function Exportar() {
           <Text style={styles.titleText}>MiEspacio</Text> 
         </View>
 
-        <TouchableOpacity style={styles.activarButton} onPress={()=>enviarMensaje()}>
+        <TouchableOpacity style={styles.activarButton} onPress={()=>CreatePDF()}>
           <Text style={styles.activarText}>Enviar</Text>
           <Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.activarImg} />
         </TouchableOpacity>

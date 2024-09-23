@@ -475,11 +475,17 @@ function BarrasEmociones({route}) {
 
   for(let i = 0; i < Data.length; i++) {
     let emo = Data[i].emocion
-    let fec = Data[i].fecha
-    fec = fec.replace('-', "");
-    fec = fec.replace('-', "");
-    console.log(fec)
+    let fecha = Data[i].fecha
+    //let originalString = fec;
+    //let newString = originalString.split("-").join("");
+    //fec = fec.replace('-', "");
+    //fec = fec.replace('-', "");
+    var fechs = fec
+    fecha = Array.from(new Set(fecha.split('-'))).toString();
+    console.log(fecha)
     console.log(emo)
+
+    let fec = fecha
 
     let dateBetween = moment(fec, "YYYYMMDD").fromNow()
     console.log(dateBetween)

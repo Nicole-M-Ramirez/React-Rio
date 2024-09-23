@@ -147,10 +147,11 @@ const ScreenWidth = Dimensions.get("window").width
 
 function Tristeza({route}) {
   const dispatch = useDispatch();
-  dispatch(addEmocionData({"emo" : "tristeza", "fec": forDate})); 
+  // dispatch(addEmocionData({"emo" : "tristeza", "fec": forDate})); 
 
   const { forDate } = route.params;
   const lang = useSelector(state => state.counter.language);
+  dispatch(addEmocionData({"emo" : "tristeza", "fec": forDate})); 
 
 
   const navigation = useNavigation();

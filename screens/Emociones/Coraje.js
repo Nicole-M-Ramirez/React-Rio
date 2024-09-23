@@ -26,11 +26,13 @@ import { useDispatch } from 'react-redux';
 
 function Coraje({route}) {
   const dispatch = useDispatch();
-  dispatch(addEmocionData({"emo" : "coraje", "fec": forDate})); 
+  
 
   const lang = useSelector(state => state.counter.language);
   const { forDate } = route.params;
   const navigation = useNavigation();
+  console.log("forDate en coraje: ", forDate)
+  dispatch(addEmocionData({"emo" : "coraje", "fec": forDate})); 
 
   const Colors = [colors.deepPurple,colors.purple,colors.blue,colors.mintGreen,colors.greyBlue]
   const title = [gs['diario'][lang], gs['caminar'][lang], gs['bano'][lang],gs['ejercicio'][lang],gs['cocinar'][lang]]

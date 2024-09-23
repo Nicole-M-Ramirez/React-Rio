@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<body>
+<h1>Exportacion de Data de RIO</h1>
+<h2>Graficas de Barras:</h2>
+<canvas id="Detonantes" style="width:100%;max-width:600px"></canvas>
+<canvas id="Actividades" style="width:100%;max-width:600px"></canvas>
+<canvas id="Emociones" style="width:100%;max-width:600px"></canvas>
+
+<h2>Graficas de Pie: </h2>
+<canvas id="DetonantesPie" style="width:100%;max-width:600px"></canvas>
+<canvas id="ActividadesPie" style="width:100%;max-width:600px"></canvas>
+<canvas id="EmocionesPie" style="width:100%;max-width:600px"></canvas>
+
+
+<script>
+const xValuesDet = ["Pareja", "Familia", "Amistades", "Perdida", "Estudios", "Trabajo"];
+const xValuesAct = [" ", " ", " ", " ", " "];
+const xValuesEmo = ["Felicidad", "Ansiedad", "Miedo", "Tristeza", "Coraje"];
+const yValueDet = [10, 49, 44, 24, 25,1];
+const yValueAct = [10, 49, 44, 24, 25,1];
+const yValueEmo = [10, 49, 44, 24, 25,1];
+const barColors = ["#8f79b2", "#da88b9","#1e76ba","#524566","#4eb5a3","#5b8caf"];
+
+new Chart("Detonantes", {
+  type: "bar",
+  data: {
+    labels: xValuesDet,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValueDet
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "Detonantes"
+    }
+  }
+}
+);
+
+new Chart("Actividades", {
+  type: "bar",
+  data: {
+    labels: xValuesAct,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValueAct
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "Actividades"
+    }
+  }
+}
+);
+
+new Chart("Emociones", {
+  type: "bar",
+  data: {
+    labels: xValuesEmo,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValueEmo
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "Emociones"
+    }
+  }
+}
+);
+
+new Chart("DetonantesPie", {
+  type: "pie",
+  data: {
+    labels: xValuesDet,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValueDet
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "World Wide Wine Production 2018"
+    }
+  }
+});
+new Chart("DetonantesPie", {
+  type: "pie",
+  data: {
+    labels: xValuesDet,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValueDet
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Detonantes"
+    }
+  }
+});
+new Chart("ActividadesPie", {
+  type: "pie",
+  data: {
+    labels: xValuesAct,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValueAct
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Actividades"
+    }
+  }
+});
+new Chart("EmocionesPie", {
+  type: "pie",
+  data: {
+    labels: xValuesEmo,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValueEmo
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Emociones"
+    }
+  }
+});
+</script>
+
+</body>
+</html>

@@ -1,10 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity, Dimensions, Image, ScrollView,TextInput,KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Dimensions, Image, ScrollView,TextInput,KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard, Alert} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { colors, dimensions } from '../../components/constants';
 import { normalize } from '../../components/FondNormilize';
 import React, { useState , Linking } from 'react';
 import { SendEmail } from '../../components/SendEmail';
+import email from 'react-native-email'
+
 
 import HeaderView from '../../components/HeaderView';
 import BodyView from '../../components/BodyView';
@@ -14,6 +16,7 @@ import Emergency from '../../components/Emergency';
 import TimeSince from '../../components/TimeSince';
 import BackLink from '../../components/BackLink';
 import BotonConfig from '../../components/BotonConfig';
+import Mailer from 'react-native-mail';
 
 import RNHTMLtoPDF from 'react-native-html-to-pdf';
 
@@ -42,6 +45,14 @@ function Exportar() {
 
     const [opciones, setOpciones] = useState({'Actividades': false, 'Logros': false, 'Graficas': false, 'Diario': false, 'Calendario': false});
     const [archivo, setarchivo] = useState({'PDF': false, 'CSV': false});
+
+    const xValuesDet = ["Pareja", "Familia", "Amistades", "Perdida", "Estudios", "Trabajo"];
+    const xValuesAct = [" ", " ", " ", " ", " "];
+    const xValuesEmo = ["Felicidad", "Ansiedad", "Miedo", "Tristeza", "Coraje"];
+    const yValueDet = [10, 49, 44, 24, 25,1];
+    const yValueAct = [10, 49, 44, 24, 25,1];
+    const yValueEmo = [10, 49, 44, 24, 25,1];
+    const barColors = ["#8f79b2", "#da88b9","#1e76ba","#524566","#4eb5a3","#5b8caf"];
   
     const navigation = useNavigation();
 
@@ -62,10 +73,35 @@ function Exportar() {
       html: `
       <!DOCTYPE html>
       <html>
-        <script src=${"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"}></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
         <body>
           <h1>Exportacion de Data de RIO</h1>
-          <h2></h2>
+          <h2>Graficas de Barras:</h2>
+
+          <canvas id="Detonantes" style="width:100%;max-width:600px"></canvas>
+
+          <script>
+            
+
+            new Chart("Detonantes", {
+              type: "bar",
+              data: {
+                labels: xValuesDet,
+                datasets: [{
+                  backgroundColor: barColors,
+                  data: yValueDet
+                }]
+              },
+              options: {
+                legend: {display: false},
+                title: {
+                  display: true,
+                  text: "Detonantes"
+                }
+              }
+            }
+          );
+          </script>
         </body>
       </html>
       `,
@@ -178,17 +214,66 @@ function Exportar() {
       //nav()
     }
 
-    function enviarMensaje () {
-      //console.log(text)
-      //handleEmail()
-      //navigation.navigate('ConfirmExport')
-      SendEmail(
-        'nicoleds3d@gmail.com',
-        'Mensaje de Prueba',
-        'Este mensaje es uno de prueba para probar la funcionalidad de envio de emails desde la aplicacion RIO'
-    ).then(() => {
-        console.log('Our email successful provided to device mail ');
-    });
+  //   function enviarMensaje () {
+  //     //console.log(text)
+  //     //handleEmail()
+  //     //navigation.navigate('ConfirmExport')
+  //     SendEmail(
+  //       'nicoleds3d@gmail.com',
+  //       'Mensaje de Prueba',
+  //       'Este mensaje es uno de prueba para probar la funcionalidad de envio de emails desde la aplicacion RIO'
+  //   ).then(() => {
+  //       console.log('Our email successful provided to device mail ');
+  //   });
+  //   }
+
+  //   handleEmail = () => {
+  //     const to = ['nicoleds3d@gmail.com'] // string or array of email addresses
+  //     email(to, {
+  //         // Optional additional arguments
+  //         cc: ['nicoleds3d@gmail.com'], // string or array of email addresses
+  //         bcc: 'nicoleds3d@gmail.com', // string or array of email addresses
+  //         subject: 'Show how to use',
+  //         body: 'Some body right here',
+  //         checkCanOpen: false // Call Linking.canOpenURL prior to Linking.openURL
+  //     }).catch(console.error)
+  // }
+
+    handleEmail = () => {
+      Mailer.mail({
+        subject: 'Export.html',
+        recipients: ['nicoleds3d@gmail.com'],
+        ccRecipients: ['nicoleds3d@gmail.com'],
+        bccRecipients: ['nicoleds#d@gmail.com'],
+        body: '<b>Si pude exportar el file de html!</b>',
+        customChooserTitle: 'This is my new title', // Android only (defaults to "Send Mail")
+        isHTML: true,
+        attachments: [{
+          path: '/Users/usuario/Desktop/React-Rio/components/Export.html',
+          name: 'Export.html',
+          type: 'html',
+        }]
+        //   // Specify either `path` or `uri` to indicate where to find the file data.
+        //   // The API used to create or locate the file will usually indicate which it returns.
+        //   // An absolute path will look like: /cacheDir/photos/some image.jpg
+        //   // A URI starts with a protocol and looks like: content://appname/cacheDir/photos/some%20image.jpg
+        //   //path: '/Users/usuario/Desktop/React-Rio/components/Export.html', // The absolute path of the file from which to read data.
+        //   //uri: '', // The uri of the file from which to read the data.
+        //   // Specify either `type` or `mimeType` to indicate the type of data.
+        //   //type: '', // Mime Type: jpg, png, doc, ppt, html, pdf, csv
+        //   //mimeType: '', // - use only if you want to use custom type
+        //   //name: '', // Optional: Custom filename for attachment
+      }, (error, event) => {
+        Alert.alert(
+          error,
+          event,
+          [
+            {text: 'Ok', onPress: () => console.log('OK: Email Error Response')},
+            {text: 'Cancel', onPress: () => console.log('CANCEL: Email Error Response')}
+          ],
+          { cancelable: true }
+        )
+      });
     }
 
   return (
@@ -321,7 +406,7 @@ function Exportar() {
           <Text style={styles.titleText}>MiEspacio</Text> 
         </View>
 
-        <TouchableOpacity style={styles.activarButton} onPress={()=>CreatePDF()}>
+        <TouchableOpacity style={styles.activarButton} onPress={()=>handleEmail()}>
           <Text style={styles.activarText}>Enviar</Text>
           <Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.activarImg} />
         </TouchableOpacity>

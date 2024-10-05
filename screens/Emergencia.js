@@ -224,9 +224,9 @@ function Emergencia({route}) {
           <Text style={styles.middleButtonText}>{gs['contactoPersonal'][lang]}</Text>
         </TouchableOpacity>
 
-        <View style={{position:'absolute',top: dimensions.bodyHeight*1.02}}>
+        {/* <View style={{position:'absolute',top: dimensions.bodyHeight*1.02}}>
             <BackLink labelBack={gs['volver'][lang]} gotoScreen={'MenuPrincipal'}></BackLink>
-        </View>
+        </View> */}
 
         <View style={{height:dimensions.footerHeight*0.7,width:1, top:dimensions.bodyHeight*1.06}}>
           <Text style={styles.titleText}></Text>
@@ -239,13 +239,17 @@ function Emergencia({route}) {
     </BodyView>
 
     <FooterView>
-    <View style={{top:0, left: dimensions.bodyWidth/2, position: 'absolute'}}>
-        <TwoThirdsButton label ={gs['reportarAL'][lang]} topMargin = {16} 
-          bg = {colors.emergencyRed} row = {0} col = {0} img={require('../assets/ingresar.png')} active={new Date(today) < new Date()}
-          onPress={ () =>{showAlert(dispatch); dispatch(addAutolecionData({"fec": forDate}));} }
-          />
-  
-        </View>
+      <View style={{position:'absolute',top: dimensions.footerHeight*0.2}}>
+        <BackLink labelBack={gs['volver'][lang]} gotoScreen={'MenuPrincipal'}></BackLink>
+      </View>
+
+      <View style={{top:0, left: dimensions.bodyWidth/2, position: 'absolute'}}>
+          <TwoThirdsButton label ={gs['reportarAL'][lang]} topMargin = {16} 
+            bg = {colors.emergencyRed} row = {0} col = {0} img={require('../assets/ingresar.png')} active={new Date(today) < new Date()}
+            onPress={ () =>{showAlert(dispatch); dispatch(addAutolecionData({"fec": forDate}));} }
+            />
+    
+      </View>
     </FooterView>
 
     {/* <EmergencyView>

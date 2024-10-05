@@ -1,8 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity, Dimensions, TextInput, Image, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Dimensions, TextInput, Image, ScrollView, Keyboard , TouchableWithoutFeedback} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { colors } from '../../components/constants';
 import React, { useState } from 'react';
+
 
 import NextLink from '../../components/NextLink';
 import SixGrid from '../../components/SixGrid';
@@ -33,8 +34,15 @@ function Detonante({route}) {
   const lang = useSelector(state => state.counter.language);
   const [detonanteCreado, setDetonanteCreado] = useState("")
   const [comfirmarDetonante, setComfirmarDetonante] = useState(<View></View>)
+  const [subirView, setSubirView] = useState(0)
   const { pantalla } = route.params;
   const {Color} = route.params;
+
+  const DismissKeyboard = ({ children }) => (
+    <TouchableWithoutFeedback  onPress={Keyboard.dismiss} accessible={false}>
+      {children}
+    </TouchableWithoutFeedback>
+  );
   
 
   const { forDate } = route.params;
@@ -92,13 +100,17 @@ function Detonante({route}) {
 
 
   return (
+    
     <View>
+      <View style={{top: dimensions.bodyHeight*subirView}}>
       <BotonConfig pantalla = 'MenuPrincipal' Back={() => navigation.navigate('Detonante', { forDate: forDate, pantalla:pantalla, Color:Color })}/>
       <HeaderView>
       <TimeSince/>
       </HeaderView>
 
+      
       <BodyView>
+        
         <Text style={styles.titleText}>{gs['DetTitulo'][lang]}</Text>
         <Text> </Text>
         <Text style={styles.defText}>{gs['DetContenido'][lang]}</Text>
@@ -156,12 +168,17 @@ function Detonante({route}) {
               style={{marginLeft:dimensions.separator,top:(dimensions.buttonHeight/2)*0.12, color:'white'}}
               onChangeText={setDetonanteCreado}
               value={detonanteCreado}
+              enablesReturnKeyAutomatically={true}
+              onFocus={()=>{setSubirView(-0.5)}}
+              //onSelectionChange={()=>{setSubirView(0)}}
+              onPressOute={()=>{setSubirView(0); setDetonanteFinal('otro')}}
             />
         </View>
 
         </ScrollView>
         </View>
       </BodyView>
+      </View>
 
       
 

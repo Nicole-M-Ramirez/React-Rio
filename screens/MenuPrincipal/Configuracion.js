@@ -107,16 +107,16 @@ function Configuracion() {
                     Function ={() => navigation.navigate('BaseTeorica',{pantalla: 'Configuracion'})} 
                     Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
         />
-        <LongButton Color={colors.pink} 
+        {/* <LongButton Color={colors.pink} 
                     Title={gs['contactanos'][lang]} 
                     Function ={() => navigation.navigate('Configuracion')} 
                     Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-        />
-        <LongButton Color={colors.pink} 
+        /> */}
+        {/* <LongButton Color={colors.pink} 
                     Title={gs['comparte'][lang]} 
                     Function ={() => navigation.navigate('Configuracion')} 
                     Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-        />
+        /> */}
         <LongButton Color={colors.pink} 
                     Title={gs['PersonaContacto'][lang]} 
                     Function ={() => navigation.navigate('ContactoPersona')} 

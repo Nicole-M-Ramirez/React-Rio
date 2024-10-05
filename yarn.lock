@@ -1508,6 +1508,11 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@mattermost/react-native-turbo-mailer@^0.2.4":
+  version "0.2.4"
+  resolved "https://registry.npmjs.org/@mattermost/react-native-turbo-mailer/-/react-native-turbo-mailer-0.2.4.tgz"
+  integrity sha512-6W37UvLxg7vhP5YJXZfzKvPy4r9bozqSSuB4gbC2EjvWrGB4LfwKWljgw+Gb/E8x3ceMCib2SPPMz+thzs7DHw==
+
 "@nicolo-ribaudo/eslint-scope-5-internals@5.1.1-v1":
   version "5.1.1-v1"
   resolved "https://registry.npmjs.org/@nicolo-ribaudo/eslint-scope-5-internals/-/eslint-scope-5-internals-5.1.1-v1.tgz"

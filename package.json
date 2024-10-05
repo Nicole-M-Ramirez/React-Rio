@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@mattermost/react-native-turbo-mailer": "^0.2.4",
     "@notifee/react-native": "^7.8.2",
     "@react-native-async-storage/async-storage": "^1.23.1",
     "@react-native-community/push-notification-ios": "^1.11.0",

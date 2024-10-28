@@ -18,6 +18,7 @@ import BackLink from '../../components/BackLink';
 import BotonConfig from '../../components/BotonConfig';
 import Mailer from 'react-native-mail';
 import TurboMailer from '@mattermost/react-native-turbo-mailer';
+import MailAttachment from 'react-native-mail-attachment';
 
 
 import RNHTMLtoPDF from 'react-native-html-to-pdf';
@@ -33,6 +34,10 @@ const DismissKeyboard = ({ children }) => (
 );
 
 function Exportar() {
+  const recipient = 'recipient@example.com';
+  const subject = 'Subject';
+  const body = 'Email body';
+  const attachmentUri = '../../assets/html/Export.html';
     const [buttonTipoColors, setButtonTipoColors] = useState(colors.mintGreen);
     const [buttonTiempoColor, setButtonTiempoColor] = useState(colors.mintGreen)
     const [text, onChangeText] = React.useState(' ');
@@ -241,15 +246,64 @@ function Exportar() {
   //     }).catch(console.error)
   // }
 
-    handleEmail = async () => {
-      await TurboMailer.sendMail({
-        subject: "subject here",
-        recipients: ["nicole.ramirez10@upr.edu", "rafael.arce@upr.edu"],
-        body: "Verificando si se puede enviar un email con un file",
-        attachments: [{
-            path: '../../components/Export.html',
-        }],
-    });
+  const file = require('../../assets/html/Export.html');
+  handleEmail = async () => {
+    MailAttachment.sendEmailWithAttachment(recepient,subject, body,attachmentUri)
+  }
+
+    // handleEmail = async () => {
+    //   await TurboMailer.sendMail({
+    //     subject: "subject here",
+    //     recipients: ["nicole.ramirez10@upr.edu", "rafael.arce@upr.edu"],
+    //     body: "Verificando si se puede enviar un email con un file",
+    //     attachments: [{
+    //       path: file,
+    //     }]
+    //   })
+    // }
+    //   await TurboMailer.sendMail({
+    //     subject: "subject here",
+    //     recipients: ["nicole.ramirez10@upr.edu", "rafael.arce@upr.edu"],
+    //     body: "Verificando si se puede enviar un email con un file",
+    //     attachments: [{
+    //         path: require('../../components/Export.html'),
+    //     }],
+    // });
+
+    // const file = require('../../assets/Export.html')
+
+    // handleEmail = () => {
+    //   Mailer.mail({
+    //     subject: 'Enviando email con attachments',
+    //     recipients: ['nicoleds3d@gmail.com'],
+    //     ccRecipients: ['nicole.ramirez10@upr.edu'],
+    //     bccRecipients: ['nicolemramirez2001@gmail.com'],
+    //     body: '<b>Verificando que puedo enviar email con attacments</b>',
+    //     isHTML: true,
+    //     attachments: [{
+    //       // Specify either `path` or `uri` to indicate where to find the file data.
+    //       // The API used to create or locate the file will usually indicate which it returns.
+    //       // An absolute path will look like: /cacheDir/photos/some image.jpg
+    //       // A URI starts with a protocol and looks like: content://appname/cacheDir/photos/some%20image.jpg
+    //       path: file, // The absolute path of the file from which to read data.
+    //       uri: '', // The uri of the file from which to read the data.
+    //       // Specify either `type` or `mimeType` to indicate the type of data.
+    //       type: 'html', // Mime Type: jpg, png, doc, ppt, html, pdf, csv
+    //       mimeType: '', // - use only if you want to use custom type
+    //       name: '', // Optional: Custom filename for attachment
+    //     }]
+    //   }, (error, event) => {
+    //     Alert.alert(
+    //       error,
+    //       event,
+    //       [
+    //         {text: 'Ok', onPress: () => console.log('OK: Email Error Response')},
+    //         {text: 'Cancel', onPress: () => console.log('CANCEL: Email Error Response')}
+    //       ],
+    //       { cancelable: true }
+    //     )
+    //   });
+    // }
       
       // Mailer.mail({
       //   subject: 'Export.html',
@@ -285,7 +339,7 @@ function Exportar() {
       //     { cancelable: true }
       //   )
       // });
-    }
+    
 
   return (
     <DismissKeyboard>

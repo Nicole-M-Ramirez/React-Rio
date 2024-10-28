@@ -1,9 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity, Dimensions, TextInput, Image, ScrollView, Keyboard , TouchableWithoutFeedback} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Dimensions, TextInput, Image, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { colors } from '../../components/constants';
 import React, { useState } from 'react';
-
 
 import NextLink from '../../components/NextLink';
 import SixGrid from '../../components/SixGrid';
@@ -34,15 +33,8 @@ function Detonante({route}) {
   const lang = useSelector(state => state.counter.language);
   const [detonanteCreado, setDetonanteCreado] = useState("")
   const [comfirmarDetonante, setComfirmarDetonante] = useState(<View></View>)
-  const [subirView, setSubirView] = useState(0)
   const { pantalla } = route.params;
   const {Color} = route.params;
-
-  const DismissKeyboard = ({ children }) => (
-    <TouchableWithoutFeedback  onPress={Keyboard.dismiss} accessible={false}>
-      {children}
-    </TouchableWithoutFeedback>
-  );
   
 
   const { forDate } = route.params;
@@ -55,7 +47,7 @@ function Detonante({route}) {
   const [perdida, setPerdida] = useState(Color);
   const [estudios, setEstudios] = useState(Color);
   const [trabajo, setTrabajo] = useState(Color);
-
+  const [altura, setAltura] = useState(0);
   const [detonanteFinal, setDetonanteFinal] = useState('');
 
   const [detonantes, setDetonantes] = useState({'pareja': false, 'familia': false, 'amistades': false, 'perdida': false, 'estudios': false});
@@ -100,17 +92,13 @@ function Detonante({route}) {
 
 
   return (
-    
     <View>
-      <View style={{top: dimensions.bodyHeight*subirView}}>
       <BotonConfig pantalla = 'MenuPrincipal' Back={() => navigation.navigate('Detonante', { forDate: forDate, pantalla:pantalla, Color:Color })}/>
       <HeaderView>
       <TimeSince/>
       </HeaderView>
 
-      
       <BodyView>
-        
         <Text style={styles.titleText}>{gs['DetTitulo'][lang]}</Text>
         <Text> </Text>
         <Text style={styles.defText}>{gs['DetContenido'][lang]}</Text>
@@ -120,6 +108,7 @@ function Detonante({route}) {
         <View style={styles.scrollView}>
         <ScrollView>
 
+        <View style={{top:dimensions.bodyHeight*-(altura)}}>
         <View style={[styles.buttonView,{backgroundColor:Color}]}>
             <Text style={styles.buttonsText}>{gs['pareja'][lang]}</Text>
             <TouchableOpacity style={[styles.innerCircle, {backgroundColor: detonantes['pareja'] ? 'white':Color}]} 
@@ -167,18 +156,15 @@ function Detonante({route}) {
             <TextInput
               style={{marginLeft:dimensions.separator,top:(dimensions.buttonHeight/2)*0.12, color:'white'}}
               onChangeText={setDetonanteCreado}
+              onBlur = {()=>{setAltura(0)}}
+              onFocus = {()=>{setAltura(0.5)}}
               value={detonanteCreado}
-              enablesReturnKeyAutomatically={true}
-              onFocus={()=>{setSubirView(-0.5)}}
-              //onSelectionChange={()=>{setSubirView(0)}}
-              onPressOute={()=>{setSubirView(0); setDetonanteFinal('otro')}}
             />
         </View>
-
+        </View>
         </ScrollView>
         </View>
       </BodyView>
-      </View>
 
       
 

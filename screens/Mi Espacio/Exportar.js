@@ -3,13 +3,20 @@ import { StyleSheet, Text, View, TouchableOpacity, Dimensions, Image, ScrollView
 import { useNavigation } from '@react-navigation/native';
 import { colors, dimensions } from '../../components/constants';
 import { normalize } from '../../components/FondNormilize';
+import { createHTML } from '../../components/CreateHTML';
 import React, { useState , Linking } from 'react';
-import { SendEmail } from '../../components/SendEmail';
-import email from 'react-native-email'
+//import { SendEmail } from '../../components/SendEmail';
+//import email from 'react-native-email'
+//import RNFS, { DocumentDirectoryPath, DownloadDirectoryPath } from 'react-native-fs';
+//import { useEffect} from 'react';
+//import { CreateHTML } from '../../components/CreateHTML';
+import { useDispatch, useSelector } from 'react-redux';
+
+
 
 
 import HeaderView from '../../components/HeaderView';
-import BodyView from '../../components/BodyView';
+//import BodyView from '../../components/BodyView';
 import EmergencyView from '../../components/EmergencyView';
 import FooterView from '../../components/FooterView';
 import Emergency from '../../components/Emergency';
@@ -17,11 +24,13 @@ import TimeSince from '../../components/TimeSince';
 import BackLink from '../../components/BackLink';
 import BotonConfig from '../../components/BotonConfig';
 import Mailer from 'react-native-mail';
-import TurboMailer from '@mattermost/react-native-turbo-mailer';
-import MailAttachment from 'react-native-mail-attachment';
+//import TurboMailer from '@mattermost/react-native-turbo-mailer';
+//import MailAttachment from 'react-native-mail-attachment';
 
 
-import RNHTMLtoPDF from 'react-native-html-to-pdf';
+
+
+//import RNHTMLtoPDF from 'react-native-html-to-pdf';
 
 
 const ScreenHeight = Dimensions.get("window").height
@@ -33,262 +42,119 @@ const DismissKeyboard = ({ children }) => (
   </TouchableWithoutFeedback>
 );
 
+let options = [false, false, false, false, false]
 function Exportar() {
-  const recipient = 'recipient@example.com';
-  const subject = 'Subject';
-  const body = 'Email body';
-  const attachmentUri = '../../assets/html/Export.html';
-    const [buttonTipoColors, setButtonTipoColors] = useState(colors.mintGreen);
-    const [buttonTiempoColor, setButtonTiempoColor] = useState(colors.mintGreen)
+  // const detData = useSelector(state => state.counter.detData);
+  // const emoData = useSelector(state => state.counter.emoData);
+  // const autoLecionData = useSelector(state => state.counter.autoLecionData);
+  // const actData = useSelector(state => state.counter.actData);
+ 
+    //let options = [false,false,false,false,false]
     const [text, onChangeText] = React.useState(' ');
-
     const [circle1, setcircle1] = useState(colors.purple);
     const [circle2, setcircle2] = useState(colors.purple);
     const [circle3, setcircle3] = useState(colors.purple);
     const [circle4, setcircle4] = useState(colors.purple);
     const [circle5, setcircle5] = useState(colors.purple);
-    const [circle6, setcircle6] = useState(colors.purple);
-    const [circle7, setcircle7] = useState(colors.purple);
+    //const [options, setOptions] = useState()
+    const navigation = useNavigation([false,false,false,false,false]);
 
-    const [opciones, setOpciones] = useState({'Actividades': false, 'Logros': false, 'Graficas': false, 'Diario': false, 'Calendario': false});
-    const [archivo, setarchivo] = useState({'PDF': false, 'CSV': false});
-
-    const xValuesDet = ["Pareja", "Familia", "Amistades", "Perdida", "Estudios", "Trabajo"];
-    const xValuesAct = [" ", " ", " ", " ", " "];
-    const xValuesEmo = ["Felicidad", "Ansiedad", "Miedo", "Tristeza", "Coraje"];
-    const yValueDet = [10, 49, 44, 24, 25,1];
-    const yValueAct = [10, 49, 44, 24, 25,1];
-    const yValueEmo = [10, 49, 44, 24, 25,1];
-    const barColors = ["#8f79b2", "#da88b9","#1e76ba","#524566","#4eb5a3","#5b8caf"];
-  
-    const navigation = useNavigation();
-
-  //   handleEmail = () => {
-  //     const to = ['nicoleds3d@gmail.com'] // string or array of email addresses
-  //     email(to, {
-  //         // Optional additional arguments
-  //         cc: 'nicoleds3d@gmail.com', // string or array of email addresses
-  //        bcc: 'nicoleds3d@gmail.com', // string or array of email addresses
-  //         subject: 'Practica de envio',
-  //         body: 'Mesaje de prueba para envio de email desde la aplicacion RIO',
-  //         checkCanOpen: false // Call Linking.canOpenURL prior to Linking.openURL
-  //     }).catch(console.error)
-  // }
-
-  async function CreatePDF() {
-    let options = {
-      html: `
-      <!DOCTYPE html>
-      <html>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-        <body>
-          <h1>Exportacion de Data de RIO</h1>
-          <h2>Graficas de Barras:</h2>
-
-          <canvas id="Detonantes" style="width:100%;max-width:600px"></canvas>
-
-          <script>
-            
-
-            new Chart("Detonantes", {
-              type: "bar",
-              data: {
-                labels: xValuesDet,
-                datasets: [{
-                  backgroundColor: barColors,
-                  data: yValueDet
-                }]
-              },
-              options: {
-                legend: {display: false},
-                title: {
-                  display: true,
-                  text: "Detonantes"
-                }
-              }
-            }
-          );
-          </script>
-        </body>
-      </html>
-      `,
-      fileName: 'test',
-      directory: 'Files',
-    };
-
-    let file = await RNHTMLtoPDF.convert(options)
-    console.log(file.filePath);
-    alert(file.filePath);
-  }
-
-    function toggleButton (state, setFunc) {
-      if(state === 'white'){
-        setFunc(colors.purple)
-      }
-      else{
-        setFunc('white')
-      }
-    }
-
-    function TipoPressHandle () {
-        setButtonTipoColors(colors.darkForest)
-        setButtonTiempoColor(colors.mintGreen)
-    }
-    
-    function tiempoPressHandler () {
-        setButtonTipoColors(colors.mintGreen)
-        setButtonTiempoColor(colors.darkForest)
-  }
-  
-    function nav () {
-      navigation.navigate(pantalla)
-    }
   
     function firstCircle () {
+      console.log('primero')
       if(circle1 === 'white'){
         setcircle1(colors.purple)
+        //setOptions([false,false,false,false,false])
+        options[0] = false
       }
       else{
         setcircle1('white')
+        options[0] = true
       }
   
       //nav()
     }
   
     function SecondCircle () {
+      console.log('segundo')
       if(circle2 === 'white'){
+        //setOptions([false,false,false,false,false])
         setcircle2(colors.purple)
+        options[1] = false
       }
       else{
         setcircle2('white')
+        options[1] = true
       }
   
       //nav()
     }
   
     function ThridCircle () {
+      console.log('tercero')
       if(circle3 === 'white'){
+        //setOptions([false,false,false,false,false])
         setcircle3(colors.purple)
+        options[2] = false
       }
       else{
         setcircle3('white')
+        options[2] = true
       }
   
       //nav()
     }
   
     function ForthCircle () {
+      console.log('cuarto')
       if(circle4 === 'white'){
+        //setOptions([false,false,false,false,false])
         setcircle4(colors.purple)
+        options[3] = false
       }
       else{
         setcircle4('white')
+        options[3] = true
       }
   
       //nav()
     }
   
     function FifhtCircle () {
+      console.log('quinto')
       if(circle5 === 'white'){
+        //setOptions([false,false,false,false,false])
         setcircle5(colors.purple)
+        options[4] = false
       }
       else{
         setcircle5('white')
+        options[4] = true
       }
   
       //nav()
     }
 
-    function SixCircle () {
-      if(circle6 === 'white'){
-        setcircle6(colors.purple)
-      }
-      else{
-        setcircle6('white')
-      }
-  
-      //nav()
-    }
-
-    function SevenCircle () {
-      if(circle7 === 'white'){
-        setcircle7(colors.purple)
-      }
-      else{
-        setcircle7('white')
-      }
-  
-      //nav()
-    }
-
-  //   function enviarMensaje () {
-  //     //console.log(text)
-  //     //handleEmail()
-  //     //navigation.navigate('ConfirmExport')
-  //     SendEmail(
-  //       'nicoleds3d@gmail.com',
-  //       'Mensaje de Prueba',
-  //       'Este mensaje es uno de prueba para probar la funcionalidad de envio de emails desde la aplicacion RIO'
-  //   ).then(() => {
-  //       console.log('Our email successful provided to device mail ');
-  //   });
-  //   }
-
-  //   handleEmail = () => {
-  //     const to = ['nicoleds3d@gmail.com'] // string or array of email addresses
-  //     email(to, {
-  //         // Optional additional arguments
-  //         cc: ['nicoleds3d@gmail.com'], // string or array of email addresses
-  //         bcc: 'nicoleds3d@gmail.com', // string or array of email addresses
-  //         subject: 'Show how to use',
-  //         body: 'Some body right here',
-  //         checkCanOpen: false // Call Linking.canOpenURL prior to Linking.openURL
-  //     }).catch(console.error)
-  // }
-
-  const file = require('../../assets/html/Export.html');
-  handleEmail = async () => {
-    MailAttachment.sendEmailWithAttachment(recepient,subject, body,attachmentUri)
-  }
-
-    // handleEmail = async () => {
-    //   await TurboMailer.sendMail({
-    //     subject: "subject here",
-    //     recipients: ["nicole.ramirez10@upr.edu", "rafael.arce@upr.edu"],
-    //     body: "Verificando si se puede enviar un email con un file",
-    //     attachments: [{
-    //       path: file,
-    //     }]
-    //   })
-    // }
-    //   await TurboMailer.sendMail({
-    //     subject: "subject here",
-    //     recipients: ["nicole.ramirez10@upr.edu", "rafael.arce@upr.edu"],
-    //     body: "Verificando si se puede enviar un email con un file",
-    //     attachments: [{
-    //         path: require('../../components/Export.html'),
-    //     }],
-    // });
-
-    // const file = require('../../assets/Export.html')
 
     // handleEmail = () => {
+    //   console.log("En handleEmail")
     //   Mailer.mail({
-    //     subject: 'Enviando email con attachments',
-    //     recipients: ['nicoleds3d@gmail.com'],
-    //     ccRecipients: ['nicole.ramirez10@upr.edu'],
-    //     bccRecipients: ['nicolemramirez2001@gmail.com'],
-    //     body: '<b>Verificando que puedo enviar email con attacments</b>',
+    //     subject: 'need help',
+    //     recipients: ['support@example.com'],
+    //     ccRecipients: ['supportCC@example.com'],
+    //     bccRecipients: ['supportBCC@example.com'],
+    //     body: '<b>A Bold Body</b>',
+    //     customChooserTitle: 'This is my new title', // Android only (defaults to "Send Mail")
     //     isHTML: true,
     //     attachments: [{
     //       // Specify either `path` or `uri` to indicate where to find the file data.
     //       // The API used to create or locate the file will usually indicate which it returns.
     //       // An absolute path will look like: /cacheDir/photos/some image.jpg
     //       // A URI starts with a protocol and looks like: content://appname/cacheDir/photos/some%20image.jpg
-    //       path: file, // The absolute path of the file from which to read data.
+    //       path: '', // The absolute path of the file from which to read data.
     //       uri: '', // The uri of the file from which to read the data.
     //       // Specify either `type` or `mimeType` to indicate the type of data.
-    //       type: 'html', // Mime Type: jpg, png, doc, ppt, html, pdf, csv
+    //       type: '', // Mime Type: jpg, png, doc, ppt, html, pdf, csv
     //       mimeType: '', // - use only if you want to use custom type
     //       name: '', // Optional: Custom filename for attachment
     //     }]
@@ -304,42 +170,201 @@ function Exportar() {
     //     )
     //   });
     // }
+
+    const detData = useSelector(state => state.counter.detData);
+    const emoData = useSelector(state => state.counter.emoData);
+    //const autoLecionData = useSelector(state => state.counter.autoLecionData);
+    const actData = useSelector(state => state.counter.actData);
+
+    function CreateHtml (){
+      let Data = [detData, emoData, actData]
+      // if (options[2] === true){
+      //   Data = [detData, emoData, actData]
+      // }
       
-      // Mailer.mail({
-      //   subject: 'Export.html',
-      //   recipients: ['nicoleds3d@gmail.com'],
-      //   ccRecipients: ['nicoleds3d@gmail.com'],
-      //   bccRecipients: ['nicoleds#d@gmail.com'],
-      //   body: '<b>Si pude exportar el file de html!</b>',
-      //   customChooserTitle: 'This is my new title', // Android only (defaults to "Send Mail")
-      //   isHTML: true,
-      //   attachments: [{
-      //     path: '/Users/usuario/Desktop/React-Rio/components/Export.html',
-      //     name: 'Export.html',
-      //     type: 'html',
-      //   }]
-      //   //   // Specify either `path` or `uri` to indicate where to find the file data.
-      //   //   // The API used to create or locate the file will usually indicate which it returns.
-      //   //   // An absolute path will look like: /cacheDir/photos/some image.jpg
-      //   //   // A URI starts with a protocol and looks like: content://appname/cacheDir/photos/some%20image.jpg
-      //   //   //path: '/Users/usuario/Desktop/React-Rio/components/Export.html', // The absolute path of the file from which to read data.
-      //   //   //uri: '', // The uri of the file from which to read the data.
-      //   //   // Specify either `type` or `mimeType` to indicate the type of data.
-      //   //   //type: '', // Mime Type: jpg, png, doc, ppt, html, pdf, csv
-      //   //   //mimeType: '', // - use only if you want to use custom type
-      //   //   //name: '', // Optional: Custom filename for attachment
-      // }, (error, event) => {
-      //   Alert.alert(
-      //     error,
-      //     event,
-      //     [
-      //       {text: 'Ok', onPress: () => console.log('OK: Email Error Response')},
-      //       {text: 'Cancel', onPress: () => console.log('CANCEL: Email Error Response')}
-      //     ],
-      //     { cancelable: true }
-      //   )
-      // });
-    
+
+      // console.log(JSON.stringify(detData))
+      // console.log(detData[0].detonante)
+
+      // let det = detData[0].detonante
+      
+      // console.log("det: "+det)
+      // console.log(options)
+      createHTML(options, Data)
+    }
+
+    function CreateEmail () {
+      console.log("En handleEmail")
+          Mailer.mail({
+            subject: 'need help',
+            recipients: ['nicole.ramirez10@upr.edu'],
+            ccRecipients: ['rafael.arce@upr.edu'],
+            bccRecipients: ['supportBCC@example.com'],
+            body: `
+            <b>
+    <table width="400" cellspacing="0" cellpadding="0" border="0" style="font-family: Arial, sans-serif;">
+    <tr>
+        <td align="center" style="padding-bottom: 10px;">
+            <strong>Detonantes</strong>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                    <td align="center">
+                        <table cellspacing="5" cellpadding="0" border="0" height="250">
+                            <tr valign="bottom" align="center">
+                                <td width="60">
+                                    <div style="height:100px; width:50px; background-color:#8f79b2;"></div>
+                                    Pareja
+                                </td>
+                                <td width="60">
+                                    <div style="height:150px; width:50px; background-color:#da88b9;"></div>
+                                    Familia
+                                </td>
+                                <td width="60">
+                                    <div style="height:200px; width:50px; background-color:#1e76ba;"></div>
+                                    Amistades
+                                </td>
+                                <td width="60">
+                                    <div style="height:130px; width:50px; background-color:#524566;"></div>
+                                    Perdida
+                                </td>
+                                <td width="60">
+                                    <div style="height:130px; width:50px; background-color:#4eb5a3;"></div>
+                                    Estudios
+                                </td>
+                                <td width="60">
+                                    <div style="height:130px; width:50px; background-color:#5b8caf;"></div>
+                                    Trabajo
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<table width="400" cellspacing="0" cellpadding="0" border="0" style="font-family: Arial, sans-serif;">
+    <tr>
+        <td align="center" style="padding-bottom: 10px;">
+            <strong>Emociones</strong>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                    <td align="center">
+                        <table cellspacing="5" cellpadding="0" border="0" height="250">
+                            <tr valign="bottom" align="center">
+                                <td width="60">
+                                    <div style="height:100px; width:50px; background-color:#8f79b2;"></div>
+                                    Felicidad
+                                </td>
+                                <td width="60">
+                                    <div style="height:150px; width:50px; background-color:#da88b9;"></div>
+                                    Ansiedad
+                                </td>
+                                <td width="60">
+                                    <div style="height:200px; width:50px; background-color:#1e76ba;"></div>
+                                    Miedo
+                                </td>
+                                <td width="60">
+                                    <div style="height:130px; width:50px; background-color:#524566;"></div>
+                                    Tristeza
+                                </td>
+                                <td width="60">
+                                    <div style="height:130px; width:50px; background-color:#4eb5a3;"></div>
+                                    Coraje
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<table width="400" cellspacing="0" cellpadding="0" border="0" style="font-family: Arial, sans-serif;">
+    <tr>
+        <td align="center" style="padding-bottom: 10px;">
+            <strong>Actividades</strong>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                    <td align="center">
+                        <table cellspacing="5" cellpadding="0" border="0" height="250">
+                            <tr valign="bottom" align="center">
+                                <td width="60">
+                                    <div style="height:100px; width:50px; background-color:#8f79b2;"></div>
+                                    Musica
+                                </td>
+                                <td width="60">
+                                    <div style="height:150px; width:50px; background-color:#da88b9;"></div>
+                                    Meditacion
+                                </td>
+                                <td width="60">
+                                    <div style="height:200px; width:50px; background-color:#1e76ba;"></div>
+                                    Mascota
+                                </td>
+                                <td width="60">
+                                    <div style="height:130px; width:50px; background-color:#524566;"></div>
+                                    Ducha
+                                </td>
+                                <td width="60">
+                                    <div style="height:130px; width:50px; background-color:#4eb5a3;"></div>
+                                    Ejercicio
+                                </td>
+                                <td width="60">
+                                    <div style="height:130px; width:50px; background-color:#5b8caf;"></div>
+                                    Correr
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</b>
+            `,
+            customChooserTitle: 'This is my new title', // Android only (defaults to "Send Mail")
+            isHTML: true,
+            // attachments: [{
+            //   // Specify either `path` or `uri` to indicate where to find the file data.
+            //   // The API used to create or locate the file will usually indicate which it returns.
+            //   // An absolute path will look like: /cacheDir/photos/some image.jpg
+            //   // A URI starts with a protocol and looks like: content://appname/cacheDir/photos/some%20image.jpg
+            //   path: '', // The absolute path of the file from which to read data.
+            //   uri: '', // The uri of the file from which to read the data.
+            //   // Specify either `type` or `mimeType` to indicate the type of data.
+            //   type: '', // Mime Type: jpg, png, doc, ppt, html, pdf, csv
+            //   mimeType: '', // - use only if you want to use custom type
+            //   name: '', // Optional: Custom filename for attachment
+            // }]
+          }, (error, event) => {
+            Alert.alert(
+              error,
+              event,
+              [
+                {text: 'Ok', onPress: () => console.log('OK: Email Error Response')},
+                {text: 'Cancel', onPress: () => console.log('CANCEL: Email Error Response')}
+              ],
+              { cancelable: true }
+            )
+          });
+    }
+
+  
 
   return (
     <DismissKeyboard>
@@ -439,7 +464,7 @@ function Exportar() {
           <TouchableOpacity style={[styles.innerCircle, {backgroundColor: circle1}]} onPress={()=>{SixCircle()}}/>
           <View style={styles.outerCircle}/>
         </View> */}
-        <View style={[styles.buttonView,{
+        {/* <View style={[styles.buttonView,{
                                          top: 3.5*(dimensions.bodyHeight*0.25),
                                          width : dimensions.buttonWidth,
                                          height : ScreenHeight * 0.062,
@@ -459,7 +484,7 @@ function Exportar() {
           <Text style={styles.buttonsText}>CSV</Text>
           <TouchableOpacity style={[styles.innerCircle, {backgroundColor: circle7}]} onPress={()=>{SevenCircle()}}/>
           <View style={styles.outerCircle}></View>
-        </View>
+        </View> */}
       </View>
 
       <FooterView> 
@@ -471,7 +496,7 @@ function Exportar() {
           <Text style={styles.titleText}>MiEspacio</Text> 
         </View>
 
-        <TouchableOpacity style={styles.activarButton} onPress={()=>handleEmail()}>
+        <TouchableOpacity style={styles.activarButton} onPress={()=>{CreateHtml()}}>
           <Text style={styles.activarText}>Enviar</Text>
           <Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.activarImg} />
         </TouchableOpacity>

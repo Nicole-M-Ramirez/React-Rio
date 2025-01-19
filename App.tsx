@@ -314,9 +314,10 @@ export const Tmp = () => {
 
 
 export default function App() {
+  //!!!!ESTO TIENE QUE ESTAR COMENTADO PARA QUE EL APP NO SE BORRE CADA VEZ QUE HACE RELOAD!!!
   console.log("PURGING THE PERSISTOR!!!");
-  //persistor.purge(); 
-  //persistor.flush();
+  persistor.purge(); 
+  persistor.flush();
 
   // BackgroundTask.schedule();
 

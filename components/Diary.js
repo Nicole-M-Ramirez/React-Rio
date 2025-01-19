@@ -53,6 +53,7 @@ const getMetaActivaObj = (metas) => {
 function Diary( props) {
   const lang = useSelector(state => state.counter.language);
   const navigation = useNavigation();
+  const [altura, setAltura] = useState(0);
 
   
   
@@ -186,10 +187,13 @@ function Diary( props) {
     <>
     <DismissKeyboard>
     <View>
+      <View style={{top:dimensions.bodyHeight*-(altura)}}>
       <BotonConfig pantalla = 'Diary' Back={()=>{navigation.navigate('Diary',{day:day,month:month,year:year, dateString:dateString, fromScreen:fromScreen, forDate:forDate, pantalla:pantalla, img:img})}}/>
       <HeaderView>
         <TimeSince/>
       </HeaderView>
+      {/* <View style={{top:dimensions.bodyHeight*-(altura)}}> */}
+      
 
       <View style={{left:dimensions.leftMargin, top:dimensions.bodyHeight*0.23}} >
 
@@ -290,6 +294,8 @@ function Diary( props) {
          <View style={styles.container} >
         <Text style={styles.textContainer}>{gs['comoTeSientes'][lang]}</Text>
         <TextInput
+            onBlur = {()=>{setAltura(0)}}
+            onFocus = {()=>{setAltura(0.5)}}
             multiline={true}
             autoCapitalize={'sentences'}
             style={styles.inputText}
@@ -315,6 +321,8 @@ function Diary( props) {
 
         </View>
         </View>
+        </View>
+        {/* </View> */}
         <FooterView>
         <View style={{top:0}}>
         <View style={{top:0, position: 'absolute'}}>
@@ -463,5 +471,10 @@ const styles = StyleSheet.create({
     // top: 0,
     // position: 'absolute',
     color: colors.mintGreen
-  }
+  },
+  scrollView: {
+    top: dimensions.bodyHeight*0,
+    height: dimensions.bodyHeight*0.6,
+    //backgroundColor: 'grey',
+  },
 });

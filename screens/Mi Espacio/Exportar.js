@@ -175,7 +175,7 @@ function Exportar() {
     const emoData = useSelector(state => state.counter.emoData);
     //const autoLecionData = useSelector(state => state.counter.autoLecionData);
     const actData = useSelector(state => state.counter.actData);
-
+    let html = ``
     function CreateHtml (){
       let Data = [detData, emoData, actData]
       // if (options[2] === true){
@@ -190,7 +190,8 @@ function Exportar() {
       
       // console.log("det: "+det)
       // console.log(options)
-      createHTML(options, Data)
+      html = createHTML(options, Data)
+      console.log(html)
     }
 
     function CreateEmail () {
@@ -200,143 +201,144 @@ function Exportar() {
             recipients: ['nicole.ramirez10@upr.edu'],
             ccRecipients: ['rafael.arce@upr.edu'],
             bccRecipients: ['supportBCC@example.com'],
-            body: `
-            <b>
-    <table width="400" cellspacing="0" cellpadding="0" border="0" style="font-family: Arial, sans-serif;">
-    <tr>
-        <td align="center" style="padding-bottom: 10px;">
-            <strong>Detonantes</strong>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <table width="100%" cellspacing="0" cellpadding="0" border="0">
-                <tr>
-                    <td align="center">
-                        <table cellspacing="5" cellpadding="0" border="0" height="250">
-                            <tr valign="bottom" align="center">
-                                <td width="60">
-                                    <div style="height:100px; width:50px; background-color:#8f79b2;"></div>
-                                    Pareja
-                                </td>
-                                <td width="60">
-                                    <div style="height:150px; width:50px; background-color:#da88b9;"></div>
-                                    Familia
-                                </td>
-                                <td width="60">
-                                    <div style="height:200px; width:50px; background-color:#1e76ba;"></div>
-                                    Amistades
-                                </td>
-                                <td width="60">
-                                    <div style="height:130px; width:50px; background-color:#524566;"></div>
-                                    Perdida
-                                </td>
-                                <td width="60">
-                                    <div style="height:130px; width:50px; background-color:#4eb5a3;"></div>
-                                    Estudios
-                                </td>
-                                <td width="60">
-                                    <div style="height:130px; width:50px; background-color:#5b8caf;"></div>
-                                    Trabajo
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-</table>
+            body: html,
+//             body: `
+//             <b>
+//     <table width="400" cellspacing="0" cellpadding="0" border="0" style="font-family: Arial, sans-serif;">
+//     <tr>
+//         <td align="center" style="padding-bottom: 10px;">
+//             <strong>Detonantes</strong>
+//         </td>
+//     </tr>
+//     <tr>
+//         <td>
+//             <table width="100%" cellspacing="0" cellpadding="0" border="0">
+//                 <tr>
+//                     <td align="center">
+//                         <table cellspacing="5" cellpadding="0" border="0" height="250">
+//                             <tr valign="bottom" align="center">
+//                                 <td width="60">
+//                                     <div style="height:100px; width:50px; background-color:#8f79b2;"></div>
+//                                     Pareja
+//                                 </td>
+//                                 <td width="60">
+//                                     <div style="height:150px; width:50px; background-color:#da88b9;"></div>
+//                                     Familia
+//                                 </td>
+//                                 <td width="60">
+//                                     <div style="height:200px; width:50px; background-color:#1e76ba;"></div>
+//                                     Amistades
+//                                 </td>
+//                                 <td width="60">
+//                                     <div style="height:130px; width:50px; background-color:#524566;"></div>
+//                                     Perdida
+//                                 </td>
+//                                 <td width="60">
+//                                     <div style="height:130px; width:50px; background-color:#4eb5a3;"></div>
+//                                     Estudios
+//                                 </td>
+//                                 <td width="60">
+//                                     <div style="height:130px; width:50px; background-color:#5b8caf;"></div>
+//                                     Trabajo
+//                                 </td>
+//                             </tr>
+//                         </table>
+//                     </td>
+//                 </tr>
+//             </table>
+//         </td>
+//     </tr>
+// </table>
 
-<table width="400" cellspacing="0" cellpadding="0" border="0" style="font-family: Arial, sans-serif;">
-    <tr>
-        <td align="center" style="padding-bottom: 10px;">
-            <strong>Emociones</strong>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <table width="100%" cellspacing="0" cellpadding="0" border="0">
-                <tr>
-                    <td align="center">
-                        <table cellspacing="5" cellpadding="0" border="0" height="250">
-                            <tr valign="bottom" align="center">
-                                <td width="60">
-                                    <div style="height:100px; width:50px; background-color:#8f79b2;"></div>
-                                    Felicidad
-                                </td>
-                                <td width="60">
-                                    <div style="height:150px; width:50px; background-color:#da88b9;"></div>
-                                    Ansiedad
-                                </td>
-                                <td width="60">
-                                    <div style="height:200px; width:50px; background-color:#1e76ba;"></div>
-                                    Miedo
-                                </td>
-                                <td width="60">
-                                    <div style="height:130px; width:50px; background-color:#524566;"></div>
-                                    Tristeza
-                                </td>
-                                <td width="60">
-                                    <div style="height:130px; width:50px; background-color:#4eb5a3;"></div>
-                                    Coraje
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-</table>
+// <table width="400" cellspacing="0" cellpadding="0" border="0" style="font-family: Arial, sans-serif;">
+//     <tr>
+//         <td align="center" style="padding-bottom: 10px;">
+//             <strong>Emociones</strong>
+//         </td>
+//     </tr>
+//     <tr>
+//         <td>
+//             <table width="100%" cellspacing="0" cellpadding="0" border="0">
+//                 <tr>
+//                     <td align="center">
+//                         <table cellspacing="5" cellpadding="0" border="0" height="250">
+//                             <tr valign="bottom" align="center">
+//                                 <td width="60">
+//                                     <div style="height:100px; width:50px; background-color:#8f79b2;"></div>
+//                                     Felicidad
+//                                 </td>
+//                                 <td width="60">
+//                                     <div style="height:150px; width:50px; background-color:#da88b9;"></div>
+//                                     Ansiedad
+//                                 </td>
+//                                 <td width="60">
+//                                     <div style="height:200px; width:50px; background-color:#1e76ba;"></div>
+//                                     Miedo
+//                                 </td>
+//                                 <td width="60">
+//                                     <div style="height:130px; width:50px; background-color:#524566;"></div>
+//                                     Tristeza
+//                                 </td>
+//                                 <td width="60">
+//                                     <div style="height:130px; width:50px; background-color:#4eb5a3;"></div>
+//                                     Coraje
+//                                 </td>
+//                             </tr>
+//                         </table>
+//                     </td>
+//                 </tr>
+//             </table>
+//         </td>
+//     </tr>
+// </table>
 
-<table width="400" cellspacing="0" cellpadding="0" border="0" style="font-family: Arial, sans-serif;">
-    <tr>
-        <td align="center" style="padding-bottom: 10px;">
-            <strong>Actividades</strong>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <table width="100%" cellspacing="0" cellpadding="0" border="0">
-                <tr>
-                    <td align="center">
-                        <table cellspacing="5" cellpadding="0" border="0" height="250">
-                            <tr valign="bottom" align="center">
-                                <td width="60">
-                                    <div style="height:100px; width:50px; background-color:#8f79b2;"></div>
-                                    Musica
-                                </td>
-                                <td width="60">
-                                    <div style="height:150px; width:50px; background-color:#da88b9;"></div>
-                                    Meditacion
-                                </td>
-                                <td width="60">
-                                    <div style="height:200px; width:50px; background-color:#1e76ba;"></div>
-                                    Mascota
-                                </td>
-                                <td width="60">
-                                    <div style="height:130px; width:50px; background-color:#524566;"></div>
-                                    Ducha
-                                </td>
-                                <td width="60">
-                                    <div style="height:130px; width:50px; background-color:#4eb5a3;"></div>
-                                    Ejercicio
-                                </td>
-                                <td width="60">
-                                    <div style="height:130px; width:50px; background-color:#5b8caf;"></div>
-                                    Correr
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-</table>
-</b>
-            `,
+// <table width="400" cellspacing="0" cellpadding="0" border="0" style="font-family: Arial, sans-serif;">
+//     <tr>
+//         <td align="center" style="padding-bottom: 10px;">
+//             <strong>Actividades</strong>
+//         </td>
+//     </tr>
+//     <tr>
+//         <td>
+//             <table width="100%" cellspacing="0" cellpadding="0" border="0">
+//                 <tr>
+//                     <td align="center">
+//                         <table cellspacing="5" cellpadding="0" border="0" height="250">
+//                             <tr valign="bottom" align="center">
+//                                 <td width="60">
+//                                     <div style="height:100px; width:50px; background-color:#8f79b2;"></div>
+//                                     Musica
+//                                 </td>
+//                                 <td width="60">
+//                                     <div style="height:150px; width:50px; background-color:#da88b9;"></div>
+//                                     Meditacion
+//                                 </td>
+//                                 <td width="60">
+//                                     <div style="height:200px; width:50px; background-color:#1e76ba;"></div>
+//                                     Mascota
+//                                 </td>
+//                                 <td width="60">
+//                                     <div style="height:130px; width:50px; background-color:#524566;"></div>
+//                                     Ducha
+//                                 </td>
+//                                 <td width="60">
+//                                     <div style="height:130px; width:50px; background-color:#4eb5a3;"></div>
+//                                     Ejercicio
+//                                 </td>
+//                                 <td width="60">
+//                                     <div style="height:130px; width:50px; background-color:#5b8caf;"></div>
+//                                     Correr
+//                                 </td>
+//                             </tr>
+//                         </table>
+//                     </td>
+//                 </tr>
+//             </table>
+//         </td>
+//     </tr>
+// </table>
+// </b>
+//             `,
             customChooserTitle: 'This is my new title', // Android only (defaults to "Send Mail")
             isHTML: true,
             // attachments: [{

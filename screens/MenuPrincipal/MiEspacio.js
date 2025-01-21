@@ -28,11 +28,11 @@ function MiEspacio({route}) {
   const dispatch = useDispatch();
   const navigation = useNavigation();
   const lang = useSelector(state => state.counter.language);
-  //const Colors = [colors.deepPurple, colors.pink, colors.blue, colors.greyBlue, colors.purple,colors.mintGreen]
-  const Colors = [colors.deepPurple, colors.pink, colors.blue, colors.greyBlue, colors.purple,null]
+  const Colors = [colors.deepPurple, colors.pink, colors.blue, colors.greyBlue, colors.purple,colors.mintGreen]
+  //const Colors = [colors.deepPurple, colors.pink, colors.blue, colors.greyBlue, colors.purple,null]
 
-  //const title = [gs['calendario'][lang], gs['diario'][lang], gs['metas'][lang], gs['logros'][lang],gs['graficas'][lang],gs['exportar'][lang]]
-  const title = [gs['calendario'][lang], gs['diario'][lang], gs['metas'][lang], gs['logros'][lang],gs['graficas'][lang],null]
+  const title = [gs['calendario'][lang], gs['diario'][lang], gs['metas'][lang], gs['logros'][lang],gs['graficas'][lang],gs['exportar'][lang]]
+  //const title = [gs['calendario'][lang], gs['diario'][lang], gs['metas'][lang], gs['logros'][lang],gs['graficas'][lang],null]
 
   //const today = new Date();
   const today = new Date();
@@ -100,8 +100,8 @@ function MiEspacio({route}) {
     () => navigation.navigate('Metas'),
     () => navigation.navigate('Logros'),
     () => navigation.navigate('Graficas'),
-    //() => navigation.navigate('Exportar'),
-    ()=>{null},
+    () => navigation.navigate('Exportar'),
+    //()=>{null},
   ]
   const images = [
     <Image source={require('../../assets/calendario2.png')} resizeMode='contain' style={styles.buttonImage} />,
@@ -109,9 +109,8 @@ function MiEspacio({route}) {
     <Image source={require('../../assets/metas2.png')} resizeMode='contain' style={styles.buttonImage} />,
     <Image source={require('../../assets/logros2.png')} resizeMode='contain' style={styles.buttonImage} />,
     <Image source={require('../../assets/graficas2.png')} resizeMode='contain' style={styles.buttonImage} />,
-    //<Image source={require('../../assets/exportar2.png')} resizeMode='contain' style={styles.buttonImage} />,
-    
-    <Image source={null} resizeMode='contain' style={styles.buttonImage} />,
+    <Image source={require('../../assets/exportar2.png')} resizeMode='contain' style={styles.buttonImage} />,
+    //<Image source={null} resizeMode='contain' style={styles.buttonImage} />,
   ]
 
 

@@ -199,14 +199,14 @@ function Exportar() {
       html = createHTML(options, Data)
       console.log(html)
 
-      // if(text != ''){
-      //   //CreateEmail()
-      // }
-      // else{
-      //   console.log("Not email found")
-      // }
+      if(text != ''){
+        CreateEmail()
+      }
+      else{
+        console.log("Not email found")
+      }
       //CreateEmail()
-      
+
       html = ``
       options = [false, false, false, false, false]
       setcircle1(colors.purple)

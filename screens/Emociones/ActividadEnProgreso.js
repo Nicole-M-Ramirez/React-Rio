@@ -35,6 +35,9 @@ function ActividadEnProgreso({route}) {
   const {texto} = route.params;
   const {titulo} = route.params;
   const {vieneDe} = route.params;
+  const {nombre} = route.params;
+  const {detonante} =route.params;
+  console.log("pantalla: ", pantalla)
   //const {continuacionExtra} = route.params;
   //const {forDate} = route.params;
   const dispatch = useDispatch();
@@ -42,8 +45,8 @@ function ActividadEnProgreso({route}) {
   const today = new Date();
 
   const functions = [
-    () => navigation.navigate('RegistroUtilidad',{img:img, forDate: forDate, pantalla : pantalla, actividad: titulo}),
-    () => navigation.navigate(continuacionExtra, {forDate:forDate}),
+    () => navigation.navigate('RegistroUtilidad',{img:img, forDate: forDate, pantalla : pantalla, actividad: titulo, nombre: nombre,detonante: detonante,}),
+    () => navigation.navigate(continuacionExtra, {forDate:forDate, nombre:nombre, detonante: detonante}),
 
   ]
 
@@ -52,13 +55,13 @@ function ActividadEnProgreso({route}) {
   let functionIdx = 0;
   console.log("Voy a registrar esa actividad....");
 
-  dispatch(addActivity({"act": titulo, "theDate": forDate}));
+  //dispatch(addActivity({"act": titulo, "theDate": forDate}));
 
   if (titulo == "Diario" || titulo == "Diary" ) {
     functions.push(
       () => navigation.navigate('Diary', {day:today.getDate(),month:today.getMonth(),year:today.getFullYear(), 
       dateString:today.toISOString().substr(0,10), 
-      fromScreen:'RegistroUtilidad', pantalla:pantalla, img:img, forDate:forDate }));
+      fromScreen:'RegistroUtilidad', pantalla:pantalla, img:img, forDate:forDate, actividad:"Diario", detonante: detonante }));
     functionIdx = 2;
   }
 

@@ -51,6 +51,7 @@ function Configuracion() {
       navigation.navigate('PasswordMenu')
     }
   }
+  
 
   return (
     <View>
@@ -120,6 +121,11 @@ function Configuracion() {
         <LongButton Color={colors.pink} 
                     Title={gs['PersonaContacto'][lang]} 
                     Function ={() => navigation.navigate('ContactoPersona')} 
+                    Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
+        />
+        <LongButton Color={colors.pink} 
+                    Title={"Acelerar Tiempo"} 
+                    Function ={() => navigation.navigate('AcelerarTiempo')} 
                     Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
         />
       </BodyView>

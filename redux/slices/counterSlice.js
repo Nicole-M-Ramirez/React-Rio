@@ -7,10 +7,11 @@ import { startTransition } from 'react';
 export const counterSlice = createSlice({
    name: 'counter',
    initialState: {
+      timeAceleration:3600,
       setPassword: false,
       pantallaConfig: '',
       pantallConfigExtras:'',
-      password: '12345',
+      password: '1234',
       setContacto: false,
       contacto : '7870000000',
       contPopUp: true,
@@ -21,48 +22,52 @@ export const counterSlice = createSlice({
       lastAuto: undefined ,//"Sun Nov 12 2023 10:52:04 GMT-0400", 
       //detonantesData : [{detonante:'dummy', fecha:'dummy'}],
       detData: [
-         {detonante: 'trabajo', fecha: '2025-01-13'},
-         {detonante: 'trabajo', fecha: '2025-01-13'},
-         {detonante: 'trabajo', fecha: '2025-01-13'},
-         {detonante: 'trabajo', fecha: '2025-01-13'},
-         {detonante: 'trabajo', fecha: '2025-01-13'},
-         {detonante: 'trabajo', fecha: '2025-01-13'},
-         {detonante: 'trabajo', fecha: '2025-01-13'},
-         {detonante: 'trabajo', fecha: '2025-01-13'},
-         {detonante: 'trabajo', fecha: '2025-01-13'},
+         // {detonante: 'trabajo', fecha: '2025-01-13'},
+         // {detonante: 'trabajo', fecha: '2025-01-13'},
+         // {detonante: 'trabajo', fecha: '2025-01-13'},
+         // {detonante: 'trabajo', fecha: '2025-01-13'},
+         // {detonante: 'trabajo', fecha: '2025-01-13'},
+         // {detonante: 'trabajo', fecha: '2025-01-13'},
+         // {detonante: 'trabajo', fecha: '2025-01-13'},
+         // {detonante: 'trabajo', fecha: '2025-01-13'},
+         // {detonante: 'trabajo', fecha: '2025-01-13'},
       ],
       emoData: [
-         {emocion: 'felicidad', fecha: '2024-07-23'},
-         {emocion: 'felicidad', fecha: '2024-07-31'},
-         {emocion: 'felicidad', fecha: '2024-08-01'},
-         {emocion: 'felicidad', fecha: '2024-08-02'},
-         {emocion: 'felicidad', fecha: '2024-08-03'},
-         {emocion: 'felicidad', fecha: '2024-08-04'},
-         {emocion: 'felicidad', fecha: '2024-08-05'},
-         {emocion: 'felicidad', fecha: '2024-08-06'},
-         {emocion: 'felicidad', fecha: '2024-08-07'},
+         // {emocion: 'felicidad', fecha: '2024-07-23'},
+         // {emocion: 'felicidad', fecha: '2024-07-31'},
+         // {emocion: 'felicidad', fecha: '2024-08-01'},
+         // {emocion: 'felicidad', fecha: '2024-08-02'},
+         // {emocion: 'felicidad', fecha: '2024-08-03'},
+         // {emocion: 'felicidad', fecha: '2024-08-04'},
+         // {emocion: 'felicidad', fecha: '2024-08-05'},
+         // {emocion: 'felicidad', fecha: '2024-08-06'},
+         // {emocion: 'felicidad', fecha: '2024-08-07'},
       ],
       autoLecionData: [
-         {fecha: '2024-07-23'},
-         {fecha: '2024-07-31'},
-         {fecha: '2024-08-01'},
-         {fecha: '2024-08-02'},
-         {fecha: '2024-08-03'},
-         {fecha: '2024-08-04'},
-         {fecha: '2024-08-05'},
-         {fecha: '2024-08-06'},
-         {fecha: '2024-08-07'},
+         // {fecha: '2024-07-23'},
+         // {fecha: '2024-07-31'},
+         // {fecha: '2024-08-01'},
+         // {fecha: '2024-08-02'},
+         // {fecha: '2024-08-03'},
+         // {fecha: '2024-08-04'},
+         // {fecha: '2024-08-05'},
+         // {fecha: '2024-08-06'},
+         // {fecha: '2024-08-07'},
       ],
       actData: [
-         {actividades: 'Diary' , fecha: '2024-07-23'},
-         {actividades: 'Diary' , fecha: '2024-07-01'},
-         {actividades: 'Diary' , fecha: '2024-08-01'},
-         {actividades: 'Diary' , fecha: '2024-08-02'},
-         {actividades: 'Diary' , fecha: '2024-08-03'},
-         {actividades: 'Diary' , fecha: '2024-08-04'},
-         {actividades: 'Diary' , fecha: '2024-08-05'},
-         {actividades: 'Diary' , fecha: '2024-08-06'},
-         {actividades: 'Diary' , fecha: '2024-08-07'},
+         // {actividades: 'Diary' , fecha: '2024-07-23'},
+         // {actividades: 'Diary' , fecha: '2024-07-01'},
+         // {actividades: 'Diary' , fecha: '2024-08-01'},
+         // {actividades: 'Diary' , fecha: '2024-08-02'},
+         // {actividades: 'Diary' , fecha: '2024-08-03'},
+         // {actividades: 'Diary' , fecha: '2024-08-04'},
+         // {actividades: 'Diary' , fecha: '2024-08-05'},
+         // {actividades: 'Diary' , fecha: '2024-08-06'},
+         // {actividades: 'Diary' , fecha: '2024-08-07'},
+      ],
+      logroData: [
+         // {logro: 'mediar1', fecha: "24-08-07"},
+         // {logro: 'mediar5', fecha: "24-08-12"},
       ],
       
       intentosActividad: false,
@@ -83,6 +88,31 @@ export const counterSlice = createSlice({
          //                'act': [{'type':'Respiración', 'time':1145}, {'type':'Caminar', 'time':1225}],
          //                'casis': [1120, 1234] }
       },
+      diarioData:[
+         // {fecha: '2024-01-24', texto:'Hoy bañe a mi tortuga'},
+         // {fecha: '2024-01-26', texto:'Hoy bañe a mi tortuga'},
+      ],
+      actDataPlus: [
+         {actividad: "Diario", vecesUtilizada: 0, funciono: 0, nofunciono:0},
+         {actividad: "Dibujo", vecesUtilizada: 0, funciono: 0, nofunciono:0},
+         {actividad: "Musica", vecesUtilizada: 0, funciono: 0, nofunciono:0},
+         {actividad: "Psicoeducacion", vecesUtilizada: 0, funciono: 0, nofunciono:0},
+         {actividad: "Gratitud", vecesUtilizada: 0, funciono: 0, nofunciono:0},
+         {actividad: "Meditacion", vecesUtilizada: 0, funciono: 0, nofunciono:0},
+         {actividad: "Gratitud", vecesUtilizada: 0, funciono: 0, nofunciono:0},
+         {actividad: "Meditacion", vecesUtilizada: 0, funciono: 0, nofunciono:0},
+         {actividad: "Respiracion", vecesUtilizada: 0, funciono: 0, nofunciono:0},
+         {actividad: "Atencion Plena", vecesUtilizada: 0, funciono: 0, nofunciono:0},
+         {actividad: "Mascota", vecesUtilizada: 0, funciono: 0, nofunciono:0},
+         {actividad: "Caminar", vecesUtilizada: 0, funciono: 0, nofunciono:0},
+         {actividad: "Baño", vecesUtilizada: 0, funciono: 0, nofunciono:0},
+         {actividad: "Ejercicio", vecesUtilizada: 0, funciono: 0, nofunciono:0},
+         {actividad: "Cocinar", vecesUtilizada: 0, funciono: 0, nofunciono:0},
+         {actividad: "Hablar", vecesUtilizada: 0, funciono: 0, nofunciono:0},
+         {actividad: "Espiritualidad", vecesUtilizada: 0, funciono: 0, nofunciono:0},
+         {actividad: "Descanso", vecesUtilizada: 0, funciono: 0, nofunciono:0},
+         {actividad: "Aceptacion", vecesUtilizada: 0, funciono: 0, nofunciono:0},
+      ],
       value: 42,
       moodCounter: {'Felicidad':{'cantidad': 0},'Ansiedad':{'cantidad': 0},
                     'Miedo':{'cantidad': 0},'Tristeza':{'cantidad': 0},
@@ -96,6 +126,9 @@ export const counterSlice = createSlice({
          otraCosa: []
    },
    reducers: {
+      updateTimeAceleration: (state,action)=>{
+         state.timeAceleration = action.payload.time
+      },
       updateDateData: (state,action) => {
          state.value++;
          if (state.dateData[action.payload.theDate] !== undefined) {
@@ -339,6 +372,32 @@ export const counterSlice = createSlice({
          state.metaPopUp = false;
          console.log('meta popup:'+state.metaPopUp)
       },
+      updateActUso: (state, action)=>{
+         data = state.actDataPlus
+
+         let nombres = []
+         let vecesUsada = []
+         let funciono = []
+         let nofunciono = []
+         for (i = 0; i < data.length; i++){
+            nombres.push(data[i].actividad)
+            vecesUsada.push(data[i].vecesUtilizada)
+            funciono.push(data[i].funciono)
+            nofunciono.push(data[i].nofunciono)
+         }
+
+         let index = nombres.indexOf(action.payload.nombre)
+
+         if (action.payload.opcion === "si"){
+            state.actDataPlus[index] = {actividad: nombres[index], vecesUtilizada: vecesUsada[index]+1, funciono: funciono[index]+1, nofunciono:nofunciono[index]}
+         }
+         else{
+            state.actDataPlus[index] = {actividad: nombres[index], vecesUtilizada: vecesUsada[index]+1, funciono: funciono[index], nofunciono:nofunciono[index]+1}
+         }
+
+         console.log("actividad actualizada: ", state.actDataPlus)
+
+      },
       addDetonanteData : (state, action)=>{
          console.log("detonante: ", action.payload.det)
          console.log("fecha: ", action.payload.fec)
@@ -346,7 +405,7 @@ export const counterSlice = createSlice({
          //state.deton.push({detoante: action.payload.det, 'fecha' : action.payload.fec})
          state.detData.push({detonante: action.payload.det, fecha: action.payload.fec})
          //state.detonantesData = 
-         console.log("tabla de detonantes" + state.detData);
+         console.log("tabla de detonantes:", state.detData);
       },
       addEmocionData : (state, action)=>{
          console.log("emocion: ", action.payload.emo)
@@ -355,7 +414,7 @@ export const counterSlice = createSlice({
          //state.deton.push({detoante: action.payload.det, 'fecha' : action.payload.fec})
          state.emoData.push({emocion: action.payload.emo, fecha: action.payload.fec})
          //state.detonantesData = 
-         console.log("tabla de emociones" + state.emoData);
+         console.log("tabla de emociones:",state.emoData);
       },
       addAutolecionData : (state, action)=>{
          //console.log("fech")
@@ -372,11 +431,53 @@ export const counterSlice = createSlice({
          //state.detonantesData = 
          console.log("tabla de actividades" + state.actData);
       },
+      addDiaryEntry : (state, action)=>{
+         console.log("fecha: ", action.payload.fecha)
+         console.log("texto: ", action.payload.texto)
+
+         let diario = state.diarioData
+         let fechas = []
+
+         for (i = 0; i < diario.length; i++){
+            fechas.push(diario[i].fecha)
+          }
+
+          if (fechas.includes(action.payload.fecha)){
+            let index = fechas.indexOf(action.payload.fecha)
+            console.log("incluido")
+             //console.log(diario)
+            //diario[index] = {fecha : '2025-01-04', texto: 'adios' }
+            state.diarioData[index] = {fecha : action.payload.fecha, texto : action.payload.texto};
+            //console.log(diario)
+            //diario.splice(2, 0, "lene");
+          }
+          else{
+            state.diarioData.push({fecha: action.payload.fecha, texto: action.payload.texto})
+          }
+
+
+         // let data = state.diarioData
+
+         // if (data.fecha.includes(action.payload.fecha)){
+         //    let index = data.fecha.
+         // }
+         // state.diarioData.push({fecha: action.payload.fecha, texto: action.payload.texto})
+         console.log("lista de entradas en el diario: ", state.diarioData)
+      },
+      addLogro : (state, action)=>{
+         console.log("logro: ", action.payload.logro)
+         console.log("fecha: ", action.payload.fecha)
+         //const detData = {detoante: action.payload.det, 'fecha' : action.payload.fec};
+         //state.deton.push({detoante: action.payload.det, 'fecha' : action.payload.fec})
+         state.actData.push({logro: action.payload.logro, fecha: action.payload.fecha})
+         //state.detonantesData = 
+         console.log("tabla de logros cumplidos" + state.logroData);
+      },
    },
 });
 
 
-export const { cancelMeta, registerFirstDate,updateDateData, addActivity, updateLastAuto, updateMetaCumplida, updateMetaCheck, updateMood, updateLang, decreaseByOne, register, updatePassword, updatePasswordDelete, reportCASIS, addMeta, updateMeta,updateintentosActividad,updatePantallaConfig, updateContPopUp, updateMetaPopUp, updateContacto, addDetonanteData, addEmocionData,addAutolecionData,addActividadesData, updateContactDelete} = counterSlice.actions;
+export const { addLogro, cancelMeta, registerFirstDate,updateDateData, addActivity, updateLastAuto, updateMetaCumplida, updateMetaCheck, updateMood, updateLang, decreaseByOne, register, updatePassword, updatePasswordDelete, reportCASIS, addMeta, updateMeta,updateintentosActividad,updatePantallaConfig, updateContPopUp, updateMetaPopUp, updateContacto, addDetonanteData, addEmocionData,addAutolecionData,addActividadesData, updateContactDelete, addDiaryEntry, updateActUso,updateTimeAceleration} = counterSlice.actions;
 
 
 export default counterSlice.reducer;

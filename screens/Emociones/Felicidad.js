@@ -27,10 +27,11 @@ const ScreenWidth = Dimensions.get("window").width
 function Felicidad({route}) {
   const dispatch = useDispatch();
   const { forDate } = route.params;
+  const {detonante} = route.params;
   const navigation = useNavigation();
   const lang = useSelector(state => state.counter.language);
   
-  dispatch(addEmocionData({"emo" : "felicidad", "fec": forDate})); 
+  //dispatch(addEmocionData({"emo" : "felicidad", "fec": forDate})); 
 
 
   const Colors = [colors.deepPurple,colors.mintGreen,colors.pink,colors.blue,colors.purple]
@@ -41,9 +42,11 @@ function Felicidad({route}) {
                                                      texto:gs['diarioCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[0],
-                                                     continuacionExtra : 'Diary'
+                                                     continuacionExtra : 'Diary',
+                                                     nombre: "Diario",
+                                                     detonante: detonante,
                                                     }),
-    () => navigation.navigate('Gratitud',{forDate: forDate}),
+    () => navigation.navigate('Gratitud',{pantalla: 'Felicidad',detonante: detonante,forDate: forDate}),
     // () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Felicidad',
     //                                                  img: <Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
     //                                                  texto: 'Conecta con tu espiritualidad de la manera que sea major para ti. Estos momentos pueden abrir un espacio para conectar contigo y con las metas que identificaste.',
@@ -54,17 +57,23 @@ function Felicidad({route}) {
                                                      texto:gs['dibujarCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[2],
+                                                     nombre: "Dibujo",
+                                                     detonante: detonante,
                                                      continuacionExtra :null}),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Felicidad',
                                                      img: <Image source={require('../../assets/animaciones/SONIDOS.gif')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
                                                      texto:gs['musicaCont'][lang],
                                                      forDate: forDate,
+                                                     nombre: "Musica",
+                                                     detonante: detonante,
                                                      titulo: title[3]}),
     () => navigation.navigate('Psicoeducacion',{pantalla: 'Felicidad',
                                                      img: <Image source={require('../../assets/infomacion2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
                                                      texto:gs['psicoeducacionCont'][lang],
                                                      forDate: forDate,
                                                      titulo: title[4],
+                                                     detonante: detonante,
+                                                     nombre: "Psicoeducacion",
                                                      continuacionExtra :null}),
     () => navigation.navigate('Felicidad', {forDate: forDate}),
   ]

@@ -37,7 +37,7 @@ function Contrasena({route}) {
   const [circle2, setcircle2] = useState('');
   const [circle3, setcircle3] = useState('');
   const [circle4, setcircle4] = useState('');
-  const [circle5, setcircle5] = useState('');
+  //const [circle5, setcircle5] = useState('');
   const [title, setTitle] = useState(<Image source={require('../assets/miPerfil2.png')} resizeMode='contain' style={styles.titleImage} />);
   //const [circle, setCircle] = useState(['','','','',''])
 
@@ -64,9 +64,9 @@ function Contrasena({route}) {
     if(count === 4){
       setcircle4(colors.greyBlue)
     }
-    if(count === 5){
-      setcircle5(colors.greyBlue)
-    }
+    // if(count === 5){
+    //   setcircle5(colors.greyBlue)
+    // }
   }
 
   function emptyCircle(count){
@@ -82,9 +82,9 @@ function Contrasena({route}) {
     if(count === 4){
       setcircle4(colors.backgroudDarkBlue)
     }
-    if(count === 5){
-      setcircle5(colors.backgroudDarkBlue)
-    }
+    // if(count === 5){
+    //   setcircle5(colors.backgroudDarkBlue)
+    // }
   }
 
   function pressHandler (num) {
@@ -94,7 +94,7 @@ function Contrasena({route}) {
       count -= 1
     }
 
-    if(pass.length < 5 & num != 'del'){
+    if(pass.length < 4 & num != 'del'){
       pass += num
       count += 1
       fillCircle(count)
@@ -104,7 +104,7 @@ function Contrasena({route}) {
 
     console.log(pass)
     console.log(pass.length)
-    if(pass.length === 5){
+    if(pass.length === 4){
       if(pass === passwordR){
         pass = ''
         count = 0
@@ -112,7 +112,7 @@ function Contrasena({route}) {
         setcircle2(colors.backgroudDarkBlue)
         setcircle3(colors.backgroudDarkBlue)
         setcircle4(colors.backgroudDarkBlue)
-        setcircle5(colors.backgroudDarkBlue)
+        // setcircle5(colors.backgroudDarkBlue)
         navigation.navigate(pantalla)
       }
       else{
@@ -122,7 +122,7 @@ function Contrasena({route}) {
         setcircle2(colors.backgroudDarkBlue)
         setcircle3(colors.backgroudDarkBlue)
         setcircle4(colors.backgroudDarkBlue)
-        setcircle5(colors.backgroudDarkBlue)
+        // setcircle5(colors.backgroudDarkBlue)
       }
     }
   }
@@ -284,7 +284,7 @@ function Contrasena({route}) {
             <View style={[styles.circle, {backgroundColor: circle2}]}/>
             <View style={[styles.circle, {backgroundColor: circle3}]}/>
             <View style={[styles.circle, {backgroundColor: circle4}]}/>
-            <View style={[styles.circle, {backgroundColor: circle5}]}/>
+            {/* <View style={[styles.circle, {backgroundColor: circle5}]}/> */}
           </View>
       </BodyView>
       {/* </View> */}

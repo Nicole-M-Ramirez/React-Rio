@@ -40,6 +40,7 @@ const ScreenWidth = Dimensions.get("window").width
 
 function RespiracionInst ({route}) {
   const { forDate } = route.params;
+  const { pantalla } = route.params;
   const navigation = useNavigation();
   const lang = useSelector(state => state.counter.language);
   const [track, setTrack] = useState(require('../../assets/Audio/InstCirculoEs.m4a'))
@@ -199,7 +200,7 @@ const eraseAndLoad = async () => {
               <BackLinkWithDate labelBack={gs['volver'][lang]} gotoScreen={'Ansiedad'} theDate={forDate}></BackLinkWithDate>
               </View> 
 
-              <TouchableOpacity  style={{left:dimensions.bodyWidth*0.7,width:dimensions.bodyWidth*0.25,height:dimensions.footerHeight*0.5,marginTop: dimensions.separator*6}}  onPress={() => navigation.navigate('Respiracion',{forDate: forDate })}>
+              <TouchableOpacity  style={{left:dimensions.bodyWidth*0.7,width:dimensions.bodyWidth*0.25,height:dimensions.footerHeight*0.5,marginTop: dimensions.separator*6}}  onPress={() => navigation.navigate('Respiracion',{pantalla:pantalla,forDate: forDate })}>
           <View style={styles.hookedStyles}>
             <View style={{width:'92%', 'height': dimensions.footerHeight*0.5, alignItems: 'flex-end',justifyContent: 'center', }}> 
               <Text style={{color: 'white', textAlignVertical: 'center'}}>{gs['continuar'][lang]}</Text>

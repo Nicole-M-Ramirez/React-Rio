@@ -493,27 +493,27 @@ function BarrasEmociones({route}) {
     console.log(dateNum)
 
     if(dateBetween.includes('hours') || dateNum <= tiempo){
-      if(emo === 'felicidad'){
+      if(emo === 'Felicidad'){
         cantidad[0] = cantidad[0] + 1
       }
   
-      if(emo === 'ansiedad'){
+      if(emo === 'Ansiedad'){
         cantidad[1] = cantidad[1] + 1
       }
   
-      if(emo === 'miedo'){
+      if(emo === 'Miedo'){
         cantidad[2] = cantidad[2] + 1
       }
   
-      if(emo === 'tristeza'){
+      if(emo === 'Tristeza'){
         cantidad[3] = cantidad[3] + 1
       }
   
-      if(emo === 'coraje'){
+      if(emo === 'Coraje'){
         cantidad[4] = cantidad[4] + 1
       }
   
-      if(emo === 'otros'){
+      if(emo === 'Otros'){
         cantidad[5] = cantidad[5] + 1
       }
     }
@@ -575,7 +575,7 @@ function BarrasEmociones({route}) {
         ],
         colors: [
           (opacity =1) => `#da88b9`,
-          (opacity =1) => `#5b8caf`,
+          (opacity =1) => `#4eb5a3`,
           (opacity =1) => `#8f79b2`,
           (opacity =1) => `#1e76ba`,
           (opacity =1) => `#524566`,

@@ -22,7 +22,7 @@ import { gs } from '../components/RioGlobalStrings';
 import BotonConfig from './BotonConfig';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { updateDateData, decreaseByOne, reportCASIS, addAutolecionData } from '../redux/slices/counterSlice';
+import { updateDateData, decreaseByOne, reportCASIS, addAutolecionData,  addDiaryEntry,updateActUso } from '../redux/slices/counterSlice';
 import notifee from '@notifee/react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 
@@ -182,6 +182,14 @@ function Diary( props) {
   //   navigation.navigate('Diary', {day:day.day,month:day.month,year:day.year, dateString:day.dateString, key:'vengo de dia', 
   //     onGoBack: () => console.log('Will go back from nextComponent')});
   // }}
+
+  function AddDiaryEntree () {
+    dispatch(addDiaryEntry({"fecha":dateString, "texto": text}));
+  }
+
+  // if (fromScreen === "RegistroUtilidad") {
+  //   dispatch(updateActUso({"opcion" : "si", "nombre": nombre}));
+  // }
   
   return (
     <>
@@ -294,8 +302,8 @@ function Diary( props) {
          <View style={styles.container} >
         <Text style={styles.textContainer}>{gs['comoTeSientes'][lang]}</Text>
         <TextInput
-            onBlur = {()=>{setAltura(0)}}
-            onFocus = {()=>{setAltura(0.5)}}
+            onBlur = {()=>{setAltura(0);  AddDiaryEntree() }}
+            onFocus = {()=>{setAltura(0.45)}}
             multiline={true}
             autoCapitalize={'sentences'}
             style={styles.inputText}

@@ -34,6 +34,7 @@ const ScreenWidth = Dimensions.get("window").width
 function Informacion({route}) {
   const {pantallaPasada} = route.params;
   const {img} = route.params;
+  const {pantalla} = route.params;
   
   const navigation = useNavigation();
   const passwordState = useSelector(state => state.counter.setPassword);
@@ -187,7 +188,7 @@ function Informacion({route}) {
         {/* <View style={{height:'25%', width:'50%', position:'absolute',marginBottom: dimensions.separator}}> 
           <BackLink labelBack={gs['volver'][lang]} gotoScreen={pantallaPasada}/> 
         </View>  */}
-        <TouchableOpacity  style={{height:'100%'}}  onPress={() => navigation.navigate(pantallaPasada,{img:img})}>
+        <TouchableOpacity  style={{height:'100%'}}  onPress={() => navigation.navigate(pantallaPasada,{img:img,pantalla:pantalla, nombre:"Psicoeducacion"})}>
           <View style={styles.hookedStyles}>
             <View style={{width:'8%', 'height': '100%',  alignItems: 'flex-start',justifyContent: 'center', top:dimensions.footerHeight*-0.3 }}>
               <Image source={require('../../assets/back.png')}  style={styles.buttonsImage} />

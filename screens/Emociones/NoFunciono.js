@@ -31,6 +31,8 @@ function NoFunciono({route}) {
   const {pantalla} = route.params;
   const {theDate} = route.params;
 
+  console.log("pantalla: ", JSON.stringify(pantalla))
+
   function Calling (phoneNumber) {
 
     const args = {
@@ -56,7 +58,7 @@ function NoFunciono({route}) {
         <Text style={styles.TitleText}>{gs['actividadNoFunciono'][lang]}</Text>
 
         <View style={{flexDirection:'row'}}>
-            <TouchableOpacity style={[styles.button, {backgroundColor: colors.blue}]} onPress={() => navigation.navigate("SelectorEmocion", { theDate: theDate })}>
+            <TouchableOpacity style={[styles.button, {backgroundColor: colors.blue}]} onPress={() => navigation.navigate(pantalla, { theDate: theDate })}>
                     <Text style={styles.buttonText}>{gs['si'][lang]}</Text>
             </TouchableOpacity>
 

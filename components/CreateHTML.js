@@ -191,7 +191,8 @@ function CreateDetBarChart (data) {
 
 
 
- html = html + `
+ html = html + 
+ `<strong>Graficas:</strong>
 <table width="400" cellspacing="0" cellpadding="0" border="0" style="font-family: Arial, sans-serif;">
     <tr>
         <td align="center" style="padding-bottom: 10px;">
@@ -418,24 +419,137 @@ function CreateActBarChart (data, titulo) {
 }
 
 
+function CreateActividadUsoHTML (data) {
+  let nombres = []
+  let vecesUsada = []
+  let funciono = []
+  let nofunciono = []
+
+  for (i = 0; i < data.length; i++){
+    nombres.push(data[i].actividad)
+    vecesUsada.push(data[i].vecesUtilizada)
+    funciono.push(data[i].funciono)
+    nofunciono.push(data[i].nofunciono)
+  }
+
+  html = html + `<table style="width:100%; border:1px solid black;">
+      <tr style="border:1px solid black;">
+        <th style="border:1px solid black;">Actividades</th>
+        <th style="border:1px solid black;">Veces Utilizada</th>
+        <th style="border:1px solid black;">Funcion</th>
+        <th style="border:1px solid black;">No Funcion</th>
+      </tr>`
+
+  for (i = 0; i < data.length; i++){
+    html = html + `<tr>
+        <td style="border:1px solid black;">${nombres[i]}</td>
+        <td style="border:1px solid black;">${vecesUsada[i]}</td>
+        <td style="border:1px solid black;">${funciono[i]}</td>
+        <td style="border:1px solid black;">${nofunciono[i]}</td>
+      </tr>`
+  }
+
+  html = html + `</table>`
+
+
+}
+
+function CreateLogroHTML (data) {
+  //console.log(data)
+
+  metas = []
+  fechas = []
+
+  for(i = 0; i < data.length; i++){
+    metas.push(data[i].meta)
+    fechas.push(data[i].date)
+  }
+
+  for(i = 0; i < fechas.length; i++){
+    let fec = fechas[i]
+    fechas[i] = fec.slice(0,15)
+  }
+
+  // html = html + `</b><strong align="center" style="font-family: Arial, sans-serif;">Logros:</strong>`
+  html = html + `<table style="width:100%; border:1px solid black;">
+      <tr style="border:1px solid black;">
+        <th style="border:1px solid black;">Fecha de Obtención</th>
+        <th style="border:1px solid black;">Logro Optenido</th>
+      </tr>`
+
+  for (i = 0; i < data.length; i++){
+    html = html + `<tr>
+        <td style="border:1px solid black;">${fechas[i]}</td>
+        <td style="border:1px solid black;">${metas[i]}</td>
+      </tr>`
+    // html = html + `<p>${fechas[i]}:</p>`
+    // html = html + `<p>${metas[i]}</p>`
+  }
+  html = html + `</table>`
+
+}
+
+function GetDiarioData (data) {
+  
+  html = html + `<table style="width:100%; border:1px solid black;">
+      <tr style="border:1px solid black;">
+        <th style="border:1px solid black;">Fecha</th>
+        <th style="border:1px solid black;">Entrada de Diario</th>
+      </tr>`
+
+  for (i = 0; i < data.length; i++){
+    let fecha = data[i].fecha
+    let texto = data[i].texto
+
+    // html = html + `<p>${fecha}:</p>`
+    // html = html + `<p>${texto}</p>`
+    html = html + `<tr>
+        <td style="border:1px solid black;">${data[i].fecha}</td>
+        <td style="border:1px solid black;">${data[i].texto}</td>
+      </tr>`
+  }
+
+  html = html + `</table>`
+
+}
+
+
   
 export const createHTML = function (options, Data) {
   let detData 
   let emoData
   let actData
+  // let diarioData
+  //let logroData
 
+  if(options[0]===true){
+    html = html + `<strong>Actividades:</strong>`
+    CreateActividadUsoHTML(Data[5])
+  }
+  if (options[1] === true){
+    html = html +`<strong>Logros:</strong>`
+    CreateLogroHTML(Data[4])
+  }
+  if(options[3] === true){
+    html = html +`<strong>Diario:</strong>`
+    diarioData = GetDiarioData(Data[3])
+  }
   if (options[2] === true){
     detData = GetDetData(Data[0])
     emoData = GetEmoData(Data[1])
     actData = GetActData(Data[2])
+
+    CreateDetBarChart(detData)
+    CreateEmoBarChart(emoData)
+    CreateActBarChart(actData[0], actData[1])
   }
 
 
 
 
-  CreateDetBarChart(detData)
-  CreateEmoBarChart(emoData)
-  CreateActBarChart(actData[0], actData[1])
+  // CreateDetBarChart(detData)
+  // CreateEmoBarChart(emoData)
+  // CreateActBarChart(actData[0], actData[1])
   html = html + `</b>`
 
   //console.log(html)
@@ -446,6 +560,6 @@ export const createHTML = function (options, Data) {
   // }
 
   //console.log(options)
-  // console.log(htmlCode)
+  console.log(html)
   return html
 }

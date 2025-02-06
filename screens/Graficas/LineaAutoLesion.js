@@ -107,7 +107,7 @@ function LineaAutoLesion ({route}) {
             </HeaderView>
 
             <BodyView>
-
+            <View style={{left:dimensions.bodyWidth*0.05}}>
             <LineChart
             style={{
                 //transform: [{ rotate: '90deg'}]
@@ -138,6 +138,7 @@ function LineaAutoLesion ({route}) {
                     }
                 }}
             />
+            </View>
 
             </BodyView>
 

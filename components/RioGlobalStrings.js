@@ -899,7 +899,7 @@ If you have medical insurance, you can contact a customer service representative
    //GRAFICAS
 
    'emociones' : {'es' : 'Emociones' , 'en' : 'Emotions'},
-   'frecAutolecion' : {'es' : 'Frecuencia de autoleciones' , 'en' : 'Frequency of self-harm'},
+   'frecAutolecion' : {'es' : 'Frecuencia de autolesiones' , 'en' : 'Frequency of self-harm'},
    'frecActividades' : {'es' : 'Actividades Frecuentadas' , 'en' : 'Activities frequented'},
    'escojerTipo' : {'es' : 'Escoger Tipo' , 'en' : 'Choose Type'},
    'escojerTiempo' : {'es' : 'Escoger Tiempo' , 'en' : 'Choose Time'},

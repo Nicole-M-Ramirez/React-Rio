@@ -436,7 +436,7 @@ if(!isFocused){
           <BackLinkWithDate labelBack={gs['volver'][lang]} gotoScreen={pantalla} forDate={forDate}></BackLinkWithDate>
         </View>
 
-        <TouchableOpacity  style={{left:dimensions.bodyWidth*0.7,width:dimensions.bodyWidth*0.25,height:dimensions.footerHeight*0.5,marginTop: dimensions.separator*5}}  onPress={() => navigation.navigate('RegistroUtilidad',{img:<Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />, forDate: forDate, actividad: gs['meditacion'][lang]})}>
+        <TouchableOpacity  style={{left:dimensions.bodyWidth*0.7,width:dimensions.bodyWidth*0.25,height:dimensions.footerHeight*0.5,marginTop: dimensions.separator*5}}  onPress={() => navigation.navigate('RegistroUtilidad',{img:<Image source={require('../../assets/meditacion2.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />, pantalla: pantalla, forDate: forDate,nombre: "Meditacion", actividad: gs['meditacion'][lang]})}>
           <View style={styles.hookedStyles}>
             <View style={{width:'92%', 'height': dimensions.footerHeight*0.5, alignItems: 'flex-end',justifyContent: 'center', }}> 
               <Text style={{color: 'white', textAlignVertical: 'center'}}>{gs['finalizar'][lang]}</Text>

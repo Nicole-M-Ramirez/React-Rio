@@ -15,7 +15,7 @@ import EmergencyView from '../../components/EmergencyView';
 import Emergency from '../../components/Emergency';
 import BackLink from '../../components/BackLink';
 import BotonConfig from '../../components/BotonConfig';
-import { addActividadesData, addAutolecionData } from '../../redux/slices/counterSlice';
+import {addDetonanteData, addActividadesData, addAutolecionData,updateActUso,addEmocionData} from '../../redux/slices/counterSlice';
 import { useDispatch } from 'react-redux';
 
 import { gs } from '../../components/RioGlobalStrings';
@@ -33,9 +33,15 @@ function RegistroUtilidad({route}) {
   const today = new Date();
   const theDate = today.toISOString().substring(0,10);
   const {pantalla} = route.params;
-  const {actividad} = route.params; 
+  const {actividad} = route.params;
+  const {nombre} = route.params; 
+  const {detonante} = route.params;
 
+  console.log("Nombre de la actividad:", nombre)
+  //console.log("Emocion en RegistroUtilidad:",pantalla)
+  dispatch(addEmocionData({"emo" : pantalla, "fec": theDate})); 
   dispatch(addActividadesData({"act" : actividad, "fec": theDate}));
+  dispatch(addDetonanteData({"det" : detonante, "fec": theDate}))
 
   function Calling (phoneNumber) {
 
@@ -46,6 +52,11 @@ function RegistroUtilidad({route}) {
     }
 
     call(args).catch(console.error)
+  }
+
+  function ActualizarActividades(seleccion){
+    console.log("En registro utilidad, el nombre de la actividad es: ", nombre)
+    dispatch(updateActUso({"opcion" : seleccion, "nombre": nombre}));
   }
 
   return (
@@ -68,11 +79,11 @@ function RegistroUtilidad({route}) {
         <Text style={styles.TitleText}>{gs['actividadFunciono'][lang]}</Text>
 
         <View style={{flexDirection:'row'}}>
-            <TouchableOpacity style={[styles.button, {backgroundColor: colors.blue}]} onPress={() => navigation.navigate('SelectorEmocion', { theDate: theDate })}>
+            <TouchableOpacity style={[styles.button, {backgroundColor: colors.blue}]} onPress={() => {navigation.navigate('SelectorEmocion', { theDate: theDate }); ActualizarActividades("si")}}>
                     <Text style={styles.buttonText}>{gs['si'][lang]}</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={[styles.button, {backgroundColor: colors.pink}]} onPress={() => {navigation.navigate('NoFunciono', {pantalla:pantalla, theDate: theDate})}}>
+            <TouchableOpacity style={[styles.button, {backgroundColor: colors.pink}]} onPress={() => {navigation.navigate('NoFunciono', {pantalla:pantalla, theDate: theDate});ActualizarActividades("no") }}>
                     <Text style={styles.buttonText}>No</Text>     
             </TouchableOpacity>
         </View>

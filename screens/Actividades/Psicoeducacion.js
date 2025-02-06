@@ -35,7 +35,7 @@ function Psicoeducacion({route}) {
   const {vieneDe} = route.params;
 
   const functions = [
-    () => navigation.navigate('Informacion',{pantallaPasada:'RegistroUtilidad',img:img})
+    () => navigation.navigate('Informacion',{pantallaPasada:'RegistroUtilidad',img:img,pantalla:pantalla})
   ]
 
 

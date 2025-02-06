@@ -30,7 +30,7 @@ function Ansiedad({route}) {
   const navigation = useNavigation();
   const lang = useSelector(state => state.counter.language);
 
-  dispatch(addEmocionData({"emo" : "ansiedad", "fec": forDate})); 
+  //dispatch(addEmocionData({"emo" : "ansiedad", "fec": forDate})); 
 
 
   const Colors = [colors.deepPurple,colors.mintGreen,colors.pink,colors.blue,colors.purple]
@@ -41,7 +41,8 @@ function Ansiedad({route}) {
                                                      texto:gs['diarioCont'][lang],
                                                      color: colors.deepPurple,
                                                      forDate: forDate,
-                                                     titulo: title[0]
+                                                     titulo: title[0],
+                                                     nombre: "Diario"
                                                     }),
     () => navigation.navigate('Meditacion', {pantalla:'Ansiedad', forDate: forDate}),
     // () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Ansiedad',
@@ -54,16 +55,18 @@ function Ansiedad({route}) {
     //                                                  texto:gs['respiracionCont'][lang],
     //                                                  forDate: forDate,
     //                                                  titulo: title[2]}),
-    () => navigation.navigate('RespiracionInst',{forDate: forDate}),
+    () => navigation.navigate('RespiracionInst',{pantalla:'Ansiedad',forDate: forDate}),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Ansiedad',
                                                      img: <Image source={require('../../assets/atencionPlena.png')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
                                                      texto:gs['atencionCont'][lang],
                                                      forDate: forDate,
+                                                     nombre: "Atencion Plena",
                                                      titulo: title[3]}),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Ansiedad',
                                                      img: <Image source={require('../../assets/animaciones/MASCOTA.gif')} resizeMode='contain' style={[styles.buttonImage,{top:0,width: dimensions.bodyWidth *0.5, height:dimensions.bodyHeight*0.34}]} />,
                                                      texto:gs['mascotasCont'][lang],
                                                      forDate: forDate,
+                                                     nombre: "Mascota",
                                                      titulo: title[4]}),
   ]
 

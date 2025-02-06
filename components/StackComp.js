@@ -64,6 +64,8 @@ import PieEmociones from "../screens/Graficas/PieEmociones";
 import Barras from "../screens/Mi Espacio/Barras";
 import LineaAutoLesion from "../screens/Graficas/LineaAutoLesion";
 
+import AcelerarTiempo from "./AcelerarTiempo";
+
 const Stack = createStackNavigator();
 
 const StackComp = (props) => {
@@ -632,6 +634,15 @@ const StackComp = (props) => {
       <Stack.Screen
         name='LineasAutoLesion'
         component={LineaAutoLesion}
+        independent ={true}
+        options={{
+          headerTitle: "",
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name='AcelerarTiempo'
+        component={AcelerarTiempo}
         independent ={true}
         options={{
           headerTitle: "",

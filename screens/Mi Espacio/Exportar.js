@@ -11,6 +11,7 @@ import React, { useState , Linking } from 'react';
 //import { useEffect} from 'react';
 //import { CreateHTML } from '../../components/CreateHTML';
 import { useDispatch, useSelector } from 'react-redux';
+import { getActiveMeta, getAccomplishedMetas } from '../../components/RioGlobalFuncs';
 
 
 
@@ -50,12 +51,13 @@ function Exportar() {
   // const actData = useSelector(state => state.counter.actData);
  
     //let options = [false,false,false,false,false]
-    const [text, onChangeText] = React.useState(' ');
+    const [text, onChangeText] = React.useState('');
     const [circle1, setcircle1] = useState(colors.purple);
     const [circle2, setcircle2] = useState(colors.purple);
     const [circle3, setcircle3] = useState(colors.purple);
     const [circle4, setcircle4] = useState(colors.purple);
-    const [circle5, setcircle5] = useState(colors.purple);
+    //const [circle5, setcircle5] = useState(colors.purple);
+    const [altura, setAltura] = useState(0);
     //const [options, setOptions] = useState()
     const navigation = useNavigation([false,false,false,false,false]);
 
@@ -120,20 +122,20 @@ function Exportar() {
       //nav()
     }
   
-    function FifhtCircle () {
-      console.log('quinto')
-      if(circle5 === 'white'){
-        //setOptions([false,false,false,false,false])
-        setcircle5(colors.purple)
-        options[4] = false
-      }
-      else{
-        setcircle5('white')
-        options[4] = true
-      }
+    // function FifhtCircle () {
+    //   console.log('quinto')
+    //   if(circle5 === 'white'){
+    //     //setOptions([false,false,false,false,false])
+    //     setcircle5(colors.purple)
+    //     options[4] = false
+    //   }
+    //   else{
+    //     setcircle5('white')
+    //     options[4] = true
+    //   }
   
-      //nav()
-    }
+    //   //nav()
+    // }
 
 
     // handleEmail = () => {
@@ -173,11 +175,15 @@ function Exportar() {
 
     const detData = useSelector(state => state.counter.detData);
     const emoData = useSelector(state => state.counter.emoData);
-    //const autoLecionData = useSelector(state => state.counter.autoLecionData);
     const actData = useSelector(state => state.counter.actData);
+    const diarioData = useSelector(state => state.counter.diarioData);
+    const metas = useSelector(state => state.counter.metas);
+    let logroData = getAccomplishedMetas(metas);
+    const actividadUsoData = useSelector(state => state.counter.actDataPlus);
     let html = ``
+
     function CreateHtml (){
-      let Data = [detData, emoData, actData]
+      let Data = [detData,emoData,actData,diarioData, logroData, actividadUsoData]
       // if (options[2] === true){
       //   Data = [detData, emoData, actData]
       // }
@@ -192,15 +198,31 @@ function Exportar() {
       // console.log(options)
       html = createHTML(options, Data)
       console.log(html)
+
+      // if(text != ''){
+      //   //CreateEmail()
+      // }
+      // else{
+      //   console.log("Not email found")
+      // }
+      //CreateEmail()
+      
+      html = ``
+      options = [false, false, false, false, false]
+      setcircle1(colors.purple)
+      setcircle2(colors.purple)
+      setcircle3(colors.purple)
+      setcircle4(colors.purple)
+
     }
 
     function CreateEmail () {
       console.log("En handleEmail")
           Mailer.mail({
-            subject: 'need help',
-            recipients: ['nicole.ramirez10@upr.edu'],
-            ccRecipients: ['rafael.arce@upr.edu'],
-            bccRecipients: ['supportBCC@example.com'],
+            subject: 'Resumen Grafico de Aplicacion Rio',
+            recipients: [text],
+            ccRecipients: [],
+            bccRecipients: [],
             body: html,
 //             body: `
 //             <b>
@@ -369,7 +391,9 @@ function Exportar() {
   
 
   return (
+    
     <DismissKeyboard>
+    <View style={{top:dimensions.bodyHeight*-(altura)}}>
     <View>
       <BotonConfig pantalla = 'Exportar' Back={()=>{navigation.navigate('Exportar')}}/>
       <HeaderView headerButtons = 'yes'>
@@ -377,7 +401,7 @@ function Exportar() {
       </HeaderView>
 
       <View style={{left:dimensions.leftMargin, top:dimensions.bodyHeight*0.25}}>
-        <KeyboardAvoidingView
+        {/* <KeyboardAvoidingView
           automaticallyAdjustContentInsets={false}
           behavior={null}
           contentContainerStyle={{ flex: 1 }}
@@ -385,7 +409,7 @@ function Exportar() {
             backgroundColor: 'backgroundColor',
             flex: 1,
             height: '100%',
-          }}>
+          }}> */}
         
         <Image source={require('../../assets/exportar2.png')} resizeMode='contain' style={styles.titleImage} />
 
@@ -407,13 +431,15 @@ function Exportar() {
                                         }]}>
             <TouchableOpacity style={[styles.innerCircle, {backgroundColor: circle2}]} onPress={()=>{SecondCircle()}}/>
             <View style={styles.outerCircle}></View>
+
             <Text style={styles.buttonsText}>Logros</Text>
         </View>
 
         <View style={[styles.buttonView,{
-                                         top: 1.91*(dimensions.bodyHeight*0.25),
+                                         top:(dimensions.bodyHeight*0.25),
                                          width: dimensions.buttonWidth,
                                          height : ScreenHeight * 0.062,
+                                         left: dimensions.bodyWidth*0.51
                                         }]}>
             <Text style={styles.buttonsText}>Graficas</Text>
             <TouchableOpacity style={[styles.innerCircle, {backgroundColor: circle3}]} onPress={()=>{ThridCircle()}}/>
@@ -421,7 +447,7 @@ function Exportar() {
         </View>
 
         <View style={[styles.buttonView,{
-                                         top: (dimensions.bodyHeight*0.25),
+                                         top:1.45*(dimensions.bodyHeight*0.25),
                                          width : dimensions.buttonWidth,
                                          height : ScreenHeight * 0.062,
                                          left: dimensions.bodyWidth*0.51
@@ -431,7 +457,7 @@ function Exportar() {
             <View style={styles.outerCircle}></View>
         </View>
 
-        <View style={[styles.buttonView,{
+        {/* <View style={[styles.buttonView,{
                                          top: 1.45*(dimensions.bodyHeight*0.25),
                                          width : dimensions.buttonWidth,
                                          height : ScreenHeight * 0.062,
@@ -440,21 +466,22 @@ function Exportar() {
             <Text style={styles.buttonsText}>Calendario</Text>
             <TouchableOpacity style={[styles.innerCircle, {backgroundColor: circle5}]} onPress={()=>{FifhtCircle()}}/>
             <View style={styles.outerCircle}/>
-        </View>
+        </View> */}
 
-        <View style={{borderBottomColor: colors.mintGreen, width: dimensions.bodyWidth, borderBottomWidth:3, top: dimensions.bodyHeight*0.4}}/>
+        <View style={{borderBottomColor: colors.mintGreen, width: dimensions.bodyWidth, borderBottomWidth:3, top: dimensions.bodyHeight*0.29}}/>
         <Text style={styles.titleText}>Correo electrónico</Text>
 
         <View style={[styles.buttonView,{
-                                         top: 2.75*(dimensions.bodyHeight*0.25),
+                                         top: 2.4*(dimensions.bodyHeight*0.25),
                                          width: dimensions.bodyWidth,
                                          height : ScreenHeight * 0.062,
                                         }]}>
           {/* <Text style={[styles.buttonsText,{left:dimensions.separator*2}]}>example@email.com</Text> */}
-          <TextInput style={[styles.buttonsText,{left:dimensions.separator*2}]} autoCapitalize={'none'} placeholder="example@email.com" onChangeText={onChangeText} value={text}/>
+          <TextInput style={[styles.buttonsText,{left:dimensions.separator*2}]} autoCapitalize={'none'} placeholder="example@email.com" onChangeText={onChangeText} value={text} onBlur = {()=>{setAltura(0) }} onFocus = {()=>{setAltura(0.45)}}/>
+        </View>
         </View>
     
-        </KeyboardAvoidingView>
+        {/* </KeyboardAvoidingView> */}
         
 
         {/* <View style={[styles.buttonView,{
@@ -518,7 +545,7 @@ const styles = StyleSheet.create({
   titleText: {
     color: "#4eb5a3",
     fontSize: normalize(19),
-    top: dimensions.bodyHeight*0.4
+    top: dimensions.bodyHeight*0.3
   },
     titleImage :{
         left: dimensions.bodyWidth /3,

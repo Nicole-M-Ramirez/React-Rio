@@ -157,7 +157,7 @@ function Detonante({route}) {
               style={{marginLeft:dimensions.separator,top:(dimensions.buttonHeight/2)*0.12, color:'white'}}
               onChangeText={setDetonanteCreado}
               onBlur = {()=>{setAltura(0)}}
-              onFocus = {()=>{setAltura(0.5)}}
+              onFocus = {()=>{setAltura(0.43)}}
               value={detonanteCreado}
             />
         </View>
@@ -197,7 +197,7 @@ function Detonante({route}) {
             dispatch(addDetonanteData({"det" : detonanteFinal, "fec": forDate}))
             //paraRecolectar('Pareja');
 
-            navigation.navigate(pantalla, {forDate: forDate}); 
+            navigation.navigate(pantalla, {forDate: forDate, detonante: detonanteFinal}); 
           }}>
             <View style={styles.hookedStyles}>
               <View style={{width:'92%', 'height': '100%', alignItems: 'flex-end',justifyContent: 'center', }}> 

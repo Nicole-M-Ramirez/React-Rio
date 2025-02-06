@@ -185,14 +185,17 @@ const TimeSince = (props) => {
   const [minutes, setMinutes] = useState("");
   const [hours, setHours] = useState("");
   const [days, setDays] = useState("");
-
+  const aceleration = useSelector(state => state.counter.timeAceleration);
+  
   const computeValues = () => {
 
     const diffTime = Math.abs(new Date() - gDateLast);
     const diffSecs = parseInt(diffTime / 1000);
     const diffMins = parseInt(diffTime / 60000);
-    const diffHours = parseInt(diffSecs / 3600);
-    const diffDays = parseInt(diffSecs / (24 * 3600));
+    // const diffHours = parseInt(diffSecs / 3600);
+    // const diffDays = parseInt(diffSecs / (24 * 3600));
+    const diffHours = parseInt(diffSecs / aceleration);
+    const diffDays = parseInt(diffSecs / (24 * aceleration));
 
     // console.log("diffTime: " + diffTime);
     // console.log("diffSecs: " + diffSecs);
@@ -247,8 +250,10 @@ const TimeSince = (props) => {
   const diffTime = Math.abs(new Date() - gDateLast);
   const diffSecs = parseInt(diffTime / 1000);
   const diffMins = parseInt( ( diffTime / 60000) % 60).toString().padStart(2, "0");
-  const diffHours = parseInt((diffSecs / 3600) % 24).toString().padStart(2, "0");
-  const diffDays = parseInt(diffSecs / (24 * 3600)).toString().padStart(2, "0");
+  // const diffHours = parseInt((diffSecs / 3600) % 24).toString().padStart(2, "0");
+  // const diffDays = parseInt(diffSecs / (24 * 3600)).toString().padStart(2, "0");
+  const diffHours = parseInt((diffSecs / aceleration) % 24).toString().padStart(2, "0");
+  const diffDays = parseInt(diffSecs / (24 * aceleration)).toString().padStart(2, "0");
 
 
   return (

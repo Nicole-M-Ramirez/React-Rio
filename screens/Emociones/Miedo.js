@@ -49,28 +49,33 @@ function Miedo({route}) {
                                                      img: <Image source={require('../../assets/animaciones/DIARIO.gif')} resizeMode='contain' style={styles.buttonImage} />,
                                                      texto:gs['diarioCont'][lang],
                                                      forDate: forDate,
-                                                     titulo: title[0]
+                                                     titulo: title[0],
+                                                     nombre: "Diario"
                                                     }),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Miedo',
                                                     img: <Image source={require('../../assets/animaciones/HABLAR.gif')} resizeMode='contain' style={styles.buttonImage} />,
                                                     texto:gs['hablarCont'][lang],
                                                     forDate: forDate,
-                                                    titulo: title[1]
+                                                    titulo: title[1],
+                                                    nombre: "Hablar"
                                                    }),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Miedo',
                                                      img: <Image source={require('../../assets/Respiracion-Profunda.gif')} resizeMode='contain' style={styles.buttonImage} />,
                                                      texto:gs['respiracionCont'][lang],
                                                      forDate: forDate,
-                                                     titulo: title[2]}),
+                                                     titulo: title[2],
+                                                     nombre: "Respiracion"}),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Miedo',
                                                      img:<Image source={require('../../assets/animaciones/ESPIRITUALIDAD.gif')} resizeMode='contain' style={styles.buttonImage} />,
                                                      texto:gs['espiritualidadCont'][lang],
                                                      forDate: forDate,
-                                                     titulo: title[3]}),
+                                                     titulo: title[3],
+                                                     nombre: "Espiritualidad"}),
     () => navigation.navigate('ActividadEnProgreso',{pantalla: 'Miedo',
                                                      img:images[4],
                                                      texto:gs['atencionPlenaCont'][lang],
                                                      forDate: forDate,
+                                                     nombre: "Atencion Plena",
                                                      titulo: title[4]}),
   ]
 

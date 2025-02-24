@@ -931,6 +931,8 @@ If you have medical insurance, you can contact a customer service representative
    'notifActividad': {'es': '🔔🔔🔔 Recuerda tu meta 🔔🔔🔔', 'en': '🔔🔔🔔 Remember your goal 🔔🔔🔔'},
    'notifDiaActividadPre': {'es': 'Es el', 'en': "It's"},
    'notifDiaActividadPost': {'es': ' de la meta: ', 'en': ' of your goal: '},
+   'correoElectronico': {'es': 'Correo electrónico', 'en': 'Email Address'},
+   'enviar': {'es': 'Enviar', 'en': 'Send'},
 
 }
 

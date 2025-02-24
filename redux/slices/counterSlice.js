@@ -99,8 +99,6 @@ export const counterSlice = createSlice({
          {actividad: "Psicoeducacion", vecesUtilizada: 0, funciono: 0, nofunciono:0},
          {actividad: "Gratitud", vecesUtilizada: 0, funciono: 0, nofunciono:0},
          {actividad: "Meditacion", vecesUtilizada: 0, funciono: 0, nofunciono:0},
-         {actividad: "Gratitud", vecesUtilizada: 0, funciono: 0, nofunciono:0},
-         {actividad: "Meditacion", vecesUtilizada: 0, funciono: 0, nofunciono:0},
          {actividad: "Respiracion", vecesUtilizada: 0, funciono: 0, nofunciono:0},
          {actividad: "Atencion Plena", vecesUtilizada: 0, funciono: 0, nofunciono:0},
          {actividad: "Mascota", vecesUtilizada: 0, funciono: 0, nofunciono:0},

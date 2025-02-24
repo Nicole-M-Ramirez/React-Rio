@@ -192,11 +192,11 @@ function CreateDetBarChart (data,lang) {
 
 
  html = html + 
- `<strong>Graficas:</strong>
+ `<strong>Graphs:</strong>
 <table width="400" cellspacing="0" cellpadding="0" border="0" style="font-family: Arial, sans-serif;">
     <tr>
         <td align="center" style="padding-bottom: 10px;">
-            <strong>Detonantes</strong>
+            <strong>Triggers</strong>
         </td>
     </tr>
     <tr>
@@ -208,27 +208,27 @@ function CreateDetBarChart (data,lang) {
                             <tr valign="bottom" align="center">
                                 <td width="60">
                                     <div style="height:${finalData[0]}px; width:50px; background-color:#8f79b2;"></div>
-                                    Pareja
+                                    Relationship
                                 </td>
                                 <td width="60">
                                     <div style="height:${finalData[1]}px; width:50px; background-color:#da88b9;"></div>
-                                    Familia
+                                    Family
                                 </td>
                                 <td width="60">
                                     <div style="height:${finalData[2]}px; width:50px; background-color:#1e76ba;"></div>
-                                    Amistades
+                                    Friendship
                                 </td>
                                 <td width="60">
                                     <div style="height:${finalData[3]}px; width:50px; background-color:#524566;"></div>
-                                    Perdida
+                                    Loss or grief
                                 </td>
                                 <td width="60">
                                     <div style="height:${finalData[4]}px; width:50px; background-color:#4eb5a3;"></div>
-                                    Estudios
+                                    University
                                 </td>
                                 <td width="60">
                                     <div style="height:${finalData[5]}px; width:50px; background-color:#5b8caf;"></div>
-                                    Trabajo
+                                    Work
                                 </td>
                             </tr>
                         </table>
@@ -269,7 +269,7 @@ function CreateEmoBarChart (data,lang) {
 <table width="400" cellspacing="0" cellpadding="0" border="0" style="font-family: Arial, sans-serif;">
     <tr>
         <td align="center" style="padding-bottom: 10px;">
-            <strong>Emociones</strong>
+            <strong>Emotions</strong>
         </td>
     </tr>
     <tr>
@@ -281,23 +281,23 @@ function CreateEmoBarChart (data,lang) {
                             <tr valign="bottom" align="center">
                                 <td width="60">
                                     <div style="height:${finalData[0]}px; width:50px; background-color:#8f79b2;"></div>
-                                    Felicidad
+                                    Happiness
                                 </td>
                                 <td width="60">
                                     <div style="height:${finalData[1]}px; width:50px; background-color:#da88b9;"></div>
-                                    Ansiedad
+                                    Anxiety
                                 </td>
                                 <td width="60">
                                     <div style="height:${finalData[2]}px; width:50px; background-color:#1e76ba;"></div>
-                                    Miedo
+                                    Fear
                                 </td>
                                 <td width="60">
                                     <div style="height:${finalData[3]}px; width:50px; background-color:#524566;"></div>
-                                    Tristeza
+                                    Sadness
                                 </td>
                                 <td width="60">
                                     <div style="height:${finalData[4]}px; width:50px; background-color:#4eb5a3;"></div>
-                                    Coraje
+                                    Anger
                                 </td>
                             </tr>
                         </table>
@@ -335,7 +335,7 @@ function CreateActBarChart (data, titulo, lang) {
   <table width="400" cellspacing="0" cellpadding="0" border="0" style="font-family: Arial, sans-serif;">
      <tr>
          <td align="center" style="padding-bottom: 10px;">
-             <strong>Actividades</strong>
+             <strong>Activities</strong>
          </td>
      </tr>
      <tr>
@@ -434,20 +434,123 @@ function CreateActividadUsoHTML (data,lang) {
 
   html = html + `<table style="width:100%; border:1px solid black;">
       <tr style="border:1px solid black;">
-        <th style="border:1px solid black;">Actividades</th>
-        <th style="border:1px solid black;">Veces Utilizada</th>
-        <th style="border:1px solid black;">Funcion</th>
-        <th style="border:1px solid black;">No Funcion</th>
-      </tr>`
+        <th style="border:1px solid black;">Activities</th>
+        <th style="border:1px solid black;">Times Used</th>
+        <th style="border:1px solid black;">Worked</th>
+        <th style="border:1px solid black;">Not Worked</th>
+      </tr>
+      <tr>
+         <td style="border:1px solid black;">Diary</td>
+         <td style="border:1px solid black;">${vecesUsada[0]}</td>
+         <td style="border:1px solid black;">${funciono[0]}</td>
+         <td style="border:1px solid black;">${nofunciono[0]}</td>
+       </tr>
+       <tr>
+         <td style="border:1px solid black;">Drawing</td>
+         <td style="border:1px solid black;">${vecesUsada[1]}</td>
+         <td style="border:1px solid black;">${funciono[1]}</td>
+         <td style="border:1px solid black;">${nofunciono[1]}</td>
+       </tr>
+       <tr>
+         <td style="border:1px solid black;">Music</td>
+         <td style="border:1px solid black;">${vecesUsada[2]}</td>
+         <td style="border:1px solid black;">${funciono[2]}</td>
+         <td style="border:1px solid black;">${nofunciono[2]}</td>
+       </tr>
+       <tr>
+         <td style="border:1px solid black;">Psychoeducation</td>
+         <td style="border:1px solid black;">${vecesUsada[3]}</td>
+         <td style="border:1px solid black;">${funciono[3]}</td>
+         <td style="border:1px solid black;">${nofunciono[3]}</td>
+       </tr>
+       <tr>
+         <td style="border:1px solid black;">Gratitude</td>
+         <td style="border:1px solid black;">${vecesUsada[4]}</td>
+         <td style="border:1px solid black;">${funciono[4]}</td>
+         <td style="border:1px solid black;">${nofunciono[4]}</td>
+       </tr>
+       <tr>
+         <td style="border:1px solid black;">Meditation</td>
+         <td style="border:1px solid black;">${vecesUsada[5]}</td>
+         <td style="border:1px solid black;">${funciono[5]}</td>
+         <td style="border:1px solid black;">${nofunciono[5]}</td>
+       </tr>
+       <tr>
+         <td style="border:1px solid black;">Breathing</td>
+         <td style="border:1px solid black;">${vecesUsada[6]}</td>
+         <td style="border:1px solid black;">${funciono[6]}</td>
+         <td style="border:1px solid black;">${nofunciono[6]}</td>
+       </tr>
+       <tr>
+         <td style="border:1px solid black;">Mindfulness</td>
+         <td style="border:1px solid black;">${vecesUsada[7]}</td>
+         <td style="border:1px solid black;">${funciono[7]}</td>
+         <td style="border:1px solid black;">${nofunciono[7]}</td>
+       </tr>
+       <tr>
+         <td style="border:1px solid black;">Pet</td>
+         <td style="border:1px solid black;">${vecesUsada[8]}</td>
+         <td style="border:1px solid black;">${funciono[8]}</td>
+         <td style="border:1px solid black;">${nofunciono[8]}</td>
+       </tr>
+       <tr>
+         <td style="border:1px solid black;">Walking</td>
+         <td style="border:1px solid black;">${vecesUsada[9]}</td>
+         <td style="border:1px solid black;">${funciono[9]}</td>
+         <td style="border:1px solid black;">${nofunciono[9]}</td>
+       </tr>
+       <tr>
+         <td style="border:1px solid black;">Shower</td>
+         <td style="border:1px solid black;">${vecesUsada[10]}</td>
+         <td style="border:1px solid black;">${funciono[10]}</td>
+         <td style="border:1px solid black;">${nofunciono[10]}</td>
+       </tr>
+       <tr>
+         <td style="border:1px solid black;">Exercise</td>
+         <td style="border:1px solid black;">${vecesUsada[11]}</td>
+         <td style="border:1px solid black;">${funciono[11]}</td>
+         <td style="border:1px solid black;">${nofunciono[11]}</td>
+       </tr>
+       <tr>
+         <td style="border:1px solid black;">Cooking</td>
+         <td style="border:1px solid black;">${vecesUsada[12]}</td>
+         <td style="border:1px solid black;">${funciono[12]}</td>
+         <td style="border:1px solid black;">${nofunciono[12]}</td>
+       </tr>
+       <tr>
+         <td style="border:1px solid black;">Talking</td>
+         <td style="border:1px solid black;">${vecesUsada[13]}</td>
+         <td style="border:1px solid black;">${funciono[13]}</td>
+         <td style="border:1px solid black;">${nofunciono[13]}</td>
+       </tr>
+       <tr>
+         <td style="border:1px solid black;">Spirituality</td>
+         <td style="border:1px solid black;">${vecesUsada[14]}</td>
+         <td style="border:1px solid black;">${funciono[14]}</td>
+         <td style="border:1px solid black;">${nofunciono[14]}</td>
+       </tr>
+       <tr>
+         <td style="border:1px solid black;">Resting</td>
+         <td style="border:1px solid black;">${vecesUsada[15]}</td>
+         <td style="border:1px solid black;">${funciono[15]}</td>
+         <td style="border:1px solid black;">${nofunciono[15]}</td>
+       </tr>
+       <tr>
+         <td style="border:1px solid black;">Acceptance</td>
+         <td style="border:1px solid black;">${vecesUsada[16]}</td>
+         <td style="border:1px solid black;">${funciono[16]}</td>
+         <td style="border:1px solid black;">${nofunciono[16]}</td>
+       </tr>
+      `
 
-  for (i = 0; i < data.length; i++){
-    html = html + `<tr>
-        <td style="border:1px solid black;">${nombres[i]}</td>
-        <td style="border:1px solid black;">${vecesUsada[i]}</td>
-        <td style="border:1px solid black;">${funciono[i]}</td>
-        <td style="border:1px solid black;">${nofunciono[i]}</td>
-      </tr>`
-  }
+//   for (i = 0; i < data.length; i++){
+//     html = html + `<tr>
+//         <td style="border:1px solid black;">${nombres[i]}</td>
+//         <td style="border:1px solid black;">${vecesUsada[i]}</td>
+//         <td style="border:1px solid black;">${funciono[i]}</td>
+//         <td style="border:1px solid black;">${nofunciono[i]}</td>
+//       </tr>`
+//   }
 
   html = html + `</table>`
 
@@ -473,8 +576,8 @@ function CreateLogroHTML (data,lang) {
   // html = html + `</b><strong align="center" style="font-family: Arial, sans-serif;">Logros:</strong>`
   html = html + `<table style="width:100%; border:1px solid black;">
       <tr style="border:1px solid black;">
-        <th style="border:1px solid black;">Fecha de Obtención</th>
-        <th style="border:1px solid black;">Logro Optenido</th>
+        <th style="border:1px solid black;">Date Obtained</th>
+        <th style="border:1px solid black;">Achievement Obtained</th>
       </tr>`
 
   for (i = 0; i < data.length; i++){
@@ -493,8 +596,8 @@ function GetDiarioData (data,lang) {
   
   html = html + `<table style="width:100%; border:1px solid black;">
       <tr style="border:1px solid black;">
-        <th style="border:1px solid black;">Fecha</th>
-        <th style="border:1px solid black;">Entrada de Diario</th>
+        <th style="border:1px solid black;">Date</th>
+        <th style="border:1px solid black;">Diary Entry</th>
       </tr>`
 
   for (i = 0; i < data.length; i++){
@@ -515,7 +618,7 @@ function GetDiarioData (data,lang) {
 
 
   
-export const createHTML = function (options, Data) {
+export const createHTMLing = function (options, Data) {
   let detData 
   let emoData
   let actData
@@ -524,15 +627,15 @@ export const createHTML = function (options, Data) {
   let lang = Data[6]
 
   if(options[0]===true){
-    html = html + `<strong>Actividades:</strong>`
+    html = html + `<strong>Activities:</strong>`
     CreateActividadUsoHTML(Data[5],lang)
   }
   if (options[1] === true){
-    html = html +`<strong>Logros:</strong>`
+    html = html +`<strong>Accomplishments:</strong>`
     CreateLogroHTML(Data[4],lang)
   }
   if(options[3] === true){
-    html = html +`<strong>Diario:</strong>`
+    html = html +`<strong>Diary:</strong>`
     diarioData = GetDiarioData(Data[3],lang)
   }
   if (options[2] === true){

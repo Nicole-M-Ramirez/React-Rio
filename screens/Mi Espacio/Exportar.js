@@ -4,7 +4,9 @@ import { useNavigation } from '@react-navigation/native';
 import { colors, dimensions } from '../../components/constants';
 import { normalize } from '../../components/FondNormilize';
 import { createHTML } from '../../components/CreateHTML';
+import {createHTMLing} from '../../components/CreateHTMLing';
 import React, { useState , Linking } from 'react';
+import { gs } from '../../components/RioGlobalStrings';
 //import { SendEmail } from '../../components/SendEmail';
 //import email from 'react-native-email'
 //import RNFS, { DocumentDirectoryPath, DownloadDirectoryPath } from 'react-native-fs';
@@ -45,6 +47,7 @@ const DismissKeyboard = ({ children }) => (
 
 let options = [false, false, false, false, false]
 function Exportar() {
+  const lang = useSelector(state => state.counter.language);
   // const detData = useSelector(state => state.counter.detData);
   // const emoData = useSelector(state => state.counter.emoData);
   // const autoLecionData = useSelector(state => state.counter.autoLecionData);
@@ -182,8 +185,10 @@ function Exportar() {
     const actividadUsoData = useSelector(state => state.counter.actDataPlus);
     let html = ``
 
+    console.log(lang)
+
     function CreateHtml (){
-      let Data = [detData,emoData,actData,diarioData, logroData, actividadUsoData]
+      let Data = [detData,emoData,actData,diarioData, logroData, actividadUsoData, lang]
       // if (options[2] === true){
       //   Data = [detData, emoData, actData]
       // }
@@ -196,7 +201,13 @@ function Exportar() {
       
       // console.log("det: "+det)
       // console.log(options)
-      html = createHTML(options, Data)
+      if (lang === 'es'){
+        html = createHTML(options, Data)
+      }
+      else{
+        html = createHTMLing(options, Data)
+      }
+      
       console.log(html)
 
       if(text != ''){
@@ -207,12 +218,12 @@ function Exportar() {
       }
       //CreateEmail()
 
-      html = ``
       options = [false, false, false, false, false]
       setcircle1(colors.purple)
       setcircle2(colors.purple)
       setcircle3(colors.purple)
       setcircle4(colors.purple)
+      html = ``
 
     }
 
@@ -418,7 +429,7 @@ function Exportar() {
                                          width : dimensions.buttonWidth,
                                          height : ScreenHeight * 0.062,
                                         }]}>
-            <Text style={styles.buttonsText}>Actividades</Text>
+            <Text style={styles.buttonsText}>{gs['actividades'][lang]}</Text>
             <TouchableOpacity style={[styles.innerCircle, {backgroundColor: circle1}]} onPress={()=>{firstCircle()}}/>
             <View style={styles.outerCircle}/>
         </View>
@@ -432,7 +443,7 @@ function Exportar() {
             <TouchableOpacity style={[styles.innerCircle, {backgroundColor: circle2}]} onPress={()=>{SecondCircle()}}/>
             <View style={styles.outerCircle}></View>
 
-            <Text style={styles.buttonsText}>Logros</Text>
+            <Text style={styles.buttonsText}>{gs['logros'][lang]}</Text>
         </View>
 
         <View style={[styles.buttonView,{
@@ -441,7 +452,7 @@ function Exportar() {
                                          height : ScreenHeight * 0.062,
                                          left: dimensions.bodyWidth*0.51
                                         }]}>
-            <Text style={styles.buttonsText}>Graficas</Text>
+            <Text style={styles.buttonsText}>{gs['graficas'][lang]}</Text>
             <TouchableOpacity style={[styles.innerCircle, {backgroundColor: circle3}]} onPress={()=>{ThridCircle()}}/>
             <View style={styles.outerCircle}></View>
         </View>
@@ -452,7 +463,7 @@ function Exportar() {
                                          height : ScreenHeight * 0.062,
                                          left: dimensions.bodyWidth*0.51
                                         }]}>
-            <Text style={styles.buttonsText}>Diario</Text>
+            <Text style={styles.buttonsText}>{gs['diario'][lang]}</Text>
             <TouchableOpacity style={[styles.innerCircle, {backgroundColor: circle4}]} onPress={()=>{ForthCircle()}}/>
             <View style={styles.outerCircle}></View>
         </View>
@@ -469,7 +480,7 @@ function Exportar() {
         </View> */}
 
         <View style={{borderBottomColor: colors.mintGreen, width: dimensions.bodyWidth, borderBottomWidth:3, top: dimensions.bodyHeight*0.29}}/>
-        <Text style={styles.titleText}>Correo electrónico</Text>
+        <Text style={styles.titleText}>{gs['correoElectronico'][lang]}</Text>
 
         <View style={[styles.buttonView,{
                                          top: 2.4*(dimensions.bodyHeight*0.25),
@@ -518,7 +529,7 @@ function Exportar() {
 
       <FooterView> 
         <View style={{height:'25%', width:'50%', position:'absolute',marginBottom: dimensions.separator}}> 
-          <BackLink labelBack={"Regresar"} gotoScreen={'MiEspacio'}/> 
+          <BackLink labelBack={gs['volver'][lang]} gotoScreen={'MiEspacio'}/> 
         </View> 
 
         <View style={{top:dimensions.footerHeight*.25, height:'75%',justifyContent: 'center' , alignItems: 'flex-start'}}> 
@@ -526,7 +537,7 @@ function Exportar() {
         </View>
 
         <TouchableOpacity style={styles.activarButton} onPress={()=>{CreateHtml()}}>
-          <Text style={styles.activarText}>Enviar</Text>
+          <Text style={styles.activarText}>{gs['enviar'][lang]}</Text>
           <Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.activarImg} />
         </TouchableOpacity>
       </FooterView>

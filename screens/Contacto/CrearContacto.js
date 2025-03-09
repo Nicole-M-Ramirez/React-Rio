@@ -48,17 +48,18 @@ function CrearContacto ({route}) {
 
    
 
-    if(telefono.length === 2){
-        dummyNum = dummyNum + "-"
-    }
+    // if(telefono.length === 2){
+    //     dummyNum = dummyNum + "-"
+    // }
 
-    if(telefono.length === 6 || telefono.length === 7){
-        dummyNum = dummyNum + "-"
-    }
+    // if(telefono.length === 6 || telefono.length === 7){
+    //     dummyNum = dummyNum + "-"
+    // }
 
-    if(telefono.length < 12){
+    if(telefono.length < 10){
         setTelefono(dummyNum)
         setRealTelefono(realTelefono+num)
+        // console.log(telefono)
     }
 
   }
@@ -67,11 +68,17 @@ function CrearContacto ({route}) {
     let dummyNum = telefono
     dummyNum = dummyNum.slice(0, -1)
     setTelefono(dummyNum)
+    // console.log(telefono)
   }
 
   function ConfirmarContacto () {
-    if(telefono.length === 12){
-      dispatch(updateContacto({"cont":realTelefono}));
+    // console.log("telefono:",telefono)
+    // console.log("telefonoreal:",realTelefono)
+    // if(telefono.length === 12){
+    //   dispatch(updateContacto({"cont":realTelefono}));
+    // }
+    if(telefono.length === 10){
+      dispatch(updateContacto({"cont":telefono}));
     }
 
     navigation.navigate('MenuPrincipal')

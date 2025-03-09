@@ -23,6 +23,7 @@ import BackLink from '../../components/BackLink';
 import DropDown from '../../components/DropDown';
 import BotonConfig from '../../components/BotonConfig';
 import DropDownLink from '../../components/DropDownLink';
+import DropDownLinkWDPSH from '../../components/DropDownLinkWDPSH';
 
 import { gs } from '../../components/RioGlobalStrings';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -99,23 +100,27 @@ function Informacion({route}) {
                         titleHeigth = {0.2}
                         downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
             />
-            <DropDown Color={colors.mintGreen} 
+            <DropDownLinkWDPSH Color={colors.mintGreen} 
                         Title={gs['porqueAutolesion'][lang]} 
                         Function ={() => navigation.navigate('Informacion')} 
                         Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*1.7}
+                        DropSize = {dimensions.bodyHeight*1.8}
                         contText= {gs['porqueAutolesionCont'][lang]}
-                        titleHeigth = {0.1}
+                        titleHeigth = {0.2}
                         downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
+                        link = {'https://www.itriples.org/aboutnss'}
+                        linkTitle = {'Why do people self-ingure? | ISSS (itriples.org)'}
             />
-            <DropDown Color={colors.mintGreen} 
+            <DropDownLinkWDPSH Color={colors.mintGreen} 
                         Title={gs['cuanAutolesion'][lang]} 
                         Function ={() => navigation.navigate('Informacion',{pantalla: 'Configuracion'})} 
                         Image={<Image source={require('../../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />}
-                        DropSize = {dimensions.bodyHeight*0.6}
+                        DropSize = {dimensions.bodyHeight*0.7}
                         contText= {gs['cuanAutolesionCont'][lang]}
                         titleHeigth = {0.1}
                         downImage = {<Image source={require('../../assets/ingresarAbajo.png')} resizeMode='contain' style={styles.buttonImage} />}
+                        link = {'https://www.selfinjury.bctr.cornell.edu/'}
+                        linkTitle = {'The Cornell Research Programm on Sef-Injury and Recovery'}
             />
             <DropDown Color={colors.mintGreen} 
                         Title={gs['quienAutolesion'][lang]} 

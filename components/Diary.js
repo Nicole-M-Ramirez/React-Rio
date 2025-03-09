@@ -311,7 +311,7 @@ function Diary( props) {
             value={text}
             defaultValue={texto}
             textAlignVertical= 'top'
-            
+            maxLength={1000}
         />
         </View> 
       </DismissKeyboard> }
@@ -340,10 +340,18 @@ function Diary( props) {
 
         </View> 
         <View style={{top:0, left: dimensions.bodyWidth/2, position: 'absolute'}}>
-        <TwoThirdsButton label ={gs['reportarAL'][lang]} topMargin = {0} 
+        {/* <TwoThirdsButton label ={gs['reportarAL'][lang]} topMargin = {0} 
           bg = {colors.emergencyRed} row = {0} col = {0} img={require('../assets/ingresar.png')} active={new Date(dateString) < new Date()}
           onPress={ () =>{showAlert(dispatch, metaActiva); dispatch(addAutolecionData({"fec": dateString}));} }
-          />
+          /> */}
+          <TouchableOpacity style={emergencyCasisStyle.emergencyCasis} onPress={ () =>{showAlert(dispatch); dispatch(addAutolecionData({"fec": today}));}}>
+            <View style={emergencyCasisStyle.imageView}>
+              <Image source={require('../assets/ingresar.png')}  style={emergencyCasisStyle.image}  />
+            </View>
+            <View style={emergencyCasisStyle.textView}>
+              <Text style={emergencyCasisStyle.text}>{gs['reportarAL'][lang]}</Text>
+            </View>
+          </TouchableOpacity>
   
         </View>
         </View> 
@@ -486,3 +494,50 @@ const styles = StyleSheet.create({
     //backgroundColor: 'grey',
   },
 });
+
+const emergencyCasisStyle = StyleSheet.create({
+  emergencyCasis:{
+    borderRadius: 6,
+    width:dimensions.bodyWidth*0.49,
+    height:dimensions.footerHeight*0.7,
+    backgroundColor:colors.emergencyRed,
+    top: dimensions.footerHeight*0,
+    left:dimensions.bodyWidth*0.01
+  },
+  normal: {
+    height: dimensions.buttonHeight * 1/ 3, 
+    width: dimensions.buttonWidth,
+    flexDirection: 'row',
+    borderRadius: 5,
+    position: 'absolute',
+  },
+  imageView: {
+    height: '100%', 
+    width: '20%',
+    justifyContent: 'flex-start',
+    alignItems: 'center', 
+    alignContent: 'center',
+    left: (dimensions.bodyWidth*0.49)*0.1,
+    top: (dimensions.footerHeight*0.2)*0.2
+    // backgroundColor: 'yellow'
+  },
+  textView: {
+    height: '100%', 
+    justifyContent: 'flex-start',
+    width: '75%', 
+    //marginLeft:'6%', 
+    left: (dimensions.bodyWidth*0.49)*0.5,
+    top: (dimensions.footerHeight*0.2)*-2.7,
+    alignItems: 'flex-start', 
+    alignContent: 'center'
+  },
+  text: {
+    fontSize: normalize(12),
+    color: "white"
+  },
+  image: {
+    height: dimensions.buttonHeight * .81 * .35,
+    width: dimensions.buttonHeight * .81 * .35,
+    margin: '5%',
+  }
+})

@@ -34,7 +34,8 @@ function NewPassword({route}) {
   const [circle2, setcircle2] = useState('');
   const [circle3, setcircle3] = useState('');
   const [circle4, setcircle4] = useState('');
-  //const [circle5, setcircle5] = useState('');
+  const [circle5, setcircle5] = useState('');
+  const [circle6, setcircle6] = useState('');
 
   const [confirmPass, setConfirmPass]= useState(<View></View>)
 
@@ -45,7 +46,8 @@ function NewPassword({route}) {
     setcircle2(colors.backgroudDarkBlue)
     setcircle3(colors.backgroudDarkBlue)
     setcircle4(colors.backgroudDarkBlue)
-    //setcircle5(colors.backgroudDarkBlue)
+    setcircle5(colors.backgroudDarkBlue)
+    setcircle6(colors.backgroudDarkBlue)
 
     console.log('confirmando...')
 
@@ -74,9 +76,12 @@ function NewPassword({route}) {
     if(count === 4){
       setcircle4(colors.greyBlue)
     }
-    // if(count === 5){
-    //   setcircle5(colors.greyBlue)
-    // }
+    if(count === 5){
+      setcircle5(colors.greyBlue)
+    }
+    if(count === 6){
+      setcircle5(colors.greyBlue)
+    }
   }
 
   function emptyCircle(count){
@@ -92,9 +97,12 @@ function NewPassword({route}) {
     if(count === 4){
       setcircle4(colors.backgroudDarkBlue)
     }
-    // if(count === 5){
-    //   setcircle5(colors.backgroudDarkBlue)
-    // }
+    if(count === 5){
+      setcircle5(colors.backgroudDarkBlue)
+    }
+    if(count === 6){
+      setcircle5(colors.backgroudDarkBlue)
+    }
   }
 
   function pressHandler (num) {
@@ -105,12 +113,12 @@ function NewPassword({route}) {
         setConfirmPass(<View></View>)
       }
 
-    if(pass.length < 4 & num != 'del'){
+    if(pass.length < 6 & num != 'del'){
         pass += num
         count += 1
         fillCircle(count)
 
-        if(pass.length === 4){
+        if(pass.length === 6){
             setConfirmPass(
                 <View  style={{left: '50%', width:'50%', position:'absolute', top:dimensions.footerHeight*0.53}}>
                     <TouchableOpacity  style={{height:'100%'}}  onPress={() => {ConfirmarContrasena()}}>
@@ -284,7 +292,8 @@ function NewPassword({route}) {
             <View style={[styles.circle, {backgroundColor: circle2}]}/>
             <View style={[styles.circle, {backgroundColor: circle3}]}/>
             <View style={[styles.circle, {backgroundColor: circle4}]}/>
-            {/* <View style={[styles.circle, {backgroundColor: circle5}]}/> */}
+            <View style={[styles.circle, {backgroundColor: circle5}]}/>
+            <View style={[styles.circle, {backgroundColor: circle6}]}/>
           </View>
       </BodyView>
       

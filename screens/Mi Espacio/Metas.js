@@ -140,7 +140,8 @@ function Metas() {
     if (oldMeta == undefined) msg = gs['activarMeta'][lang] 
     else msg = gs['activarMeta2'][lang]+" (" + getMetaStringGlobal(oldMeta.meta,lang) +  ")?"
     Alert.alert(
-      'Confirmación',
+      gs['confirmacion'][lang],
+      // 'Confirmación',
       msg,
       [
         {
@@ -591,6 +592,7 @@ function Metas() {
             { 
               console.log(selectedOption);
               showAlert(dispatch, selectedOption, metaActiva);
+              navigation.navigate('Logros')
             }}>
             <Text style={styles.activarText}>{gs['activar'][lang]}</Text>
             <Image source={require('../../assets/continuar2.png')} resizeMode='contain' style={styles.activarImg} />

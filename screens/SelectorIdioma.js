@@ -75,7 +75,7 @@ function SelectorIdioma() {
   return (
     <View>
         <HeaderInicio>
-          <Text style={styles.title}>Seleccionar idioma de preferencia</Text>
+          <Text style={styles.title}>Seleccionar idioma de preferencia / Select preferred language</Text>
         </HeaderInicio>
 
         <BodyView flexDirec = 'row'>
@@ -90,7 +90,7 @@ function SelectorIdioma() {
 
           <TouchableOpacity style={[styles.button, {backgroundColor: colors.pink}]} onPress={() => buttonHandler('en')}>
           <View style={styles.buttonTextView} >
-            <Text style={styles.buttonText}>Inglés</Text>
+            <Text style={styles.buttonText}>English</Text>
             </View>
             <View style={styles.buttonImgView}>
               <Image source={require('../assets/ingresar.png')} resizeMode='contain' style={styles.buttonImage} />

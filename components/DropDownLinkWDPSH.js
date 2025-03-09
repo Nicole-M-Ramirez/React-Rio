@@ -6,13 +6,14 @@ import { useNavigation } from '@react-navigation/native';
 import { WebView } from 'react-native-webview'; 
 import { useDispatch, useSelector } from 'react-redux';
 import { gs } from '../components/RioGlobalStrings';
+//import { WebView } from 'react-native-webview'; 
 
 
 const ScreenHeight = Dimensions.get("window").height
 const ScreenWidth = Dimensions.get("window").width
 
 
-function DropDownLink({Color, Title, Function,Image,DropSize, contText, titleHeigth, downImage}) {
+function DropDownLinkWDPSH({Color, Title, Function,Image,DropSize, contText, titleHeigth, downImage, link, linkTitle}) {
   const lang = useSelector(state => state.counter.language);
   const navigation = useNavigation();
   
@@ -40,9 +41,8 @@ function DropDownLink({Color, Title, Function,Image,DropSize, contText, titleHei
                 </View>
                 {/* <Text style={{width:dimensions.buttonWidth*1.99,color:'white', fontSize:normalize(14),top:20, left:dimensions.separator, marginTop:dimensions.bodyWidth*0.07}}>{contText}</Text> */}
                 {/* <WebView style={{backgroundColor: 'transparent', width:dimensions.buttonWidth*1.99,color:'white', fontSize:normalize(24),top:20, left:dimensions.separator, marginTop:dimensions.bodyWidth*0.07}}  originWhitelist={['*']} source={{ html: '<div style="font-size: 50px;font-family: Arial, Helvetica; color: white" >' + contText + '</div>' }}/> */}
-                <Text style={{width:dimensions.buttonWidth*1.99,color:'white', fontSize:normalize(15),top:20, left:dimensions.separator, marginTop:dimensions.bodyWidth*0.07}}>{contText}</Text>
-                <Text style={{color: 'blue',width:dimensions.buttonWidth*1.99, fontSize:normalize(15),top:20, left:dimensions.separator, marginTop:dimensions.bodyWidth*0.07 }} onPress={() => Linking.openURL('https://www.selfinjury.bctr.cornell.edu/')}>{gs['queAutolecionCont2'][lang]}</Text>
-                <Text style={{color: 'blue',width:dimensions.buttonWidth*1.99, fontSize:normalize(15),top:20, left:dimensions.separator, marginTop:dimensions.bodyWidth*0.07}} onPress={() => Linking.openURL('https://www.itriples.org/')}>{gs['queAutolecionCont3'][lang]}</Text>
+                <WebView style={{backgroundColor: 'transparent', width:dimensions.buttonWidth*1.99,color:'white', fontSize:normalize(24),top:20, left:dimensions.separator, marginTop:dimensions.bodyWidth*0.07}}  originWhitelist={['*']} source={{ html: '<div style="font-size: 50px;font-family: Arial, Helvetica; color: white" >' + contText + '</div>' }}/>
+                <Text style={{color: 'blue',width:dimensions.buttonWidth*1.99, fontSize:normalize(15),top:-10, left:dimensions.separator, marginTop:dimensions.bodyWidth*0}} onPress={() => Linking.openURL(link)}>{linkTitle}</Text>
             </TouchableOpacity>
         )
     }
@@ -68,7 +68,7 @@ function DropDownLink({Color, Title, Function,Image,DropSize, contText, titleHei
   );
 }
 
-export default DropDownLink;
+export default DropDownLinkWDPSH;
 
 const styles = StyleSheet.create({
   titleImage :{

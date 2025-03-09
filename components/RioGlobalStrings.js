@@ -54,7 +54,7 @@ export const gs = {
 
   'politicaCont' : {
   'es' :
-`Te damos la bienvenida a RIO, una aplicación móvil desarrollada por un grupo de investigadores de las Universidad de Puerto Rico, Recinto de Rio Piedras.\n
+`Te damos la bienvenida a RIO, una aplicación móvil desarrollada por un grupo de investigadores de las Universidad de Puerto Rico, Recinto de Río Piedras.\n
 "RIO" es una herramienta psicoeducativa diseñada para ofrecer estrategias para el manejo de emociones, enfocándose particularmente en la necesidad de abordar las conductas autolesivas en estudiantes universitarios. RIO es propiedad de la Universidad de Puerto Rico, Recinto de Río Piedras (en adelante, el "Propietario").
    
 "RIO" puede proporcionar apoyo general y orientación, no está enfocado para realizar diagnósticos clínicos ni evalúa el riesgo de autolesión de manera precisa. Siempre se recomienda la consulta con un profesional de la salud mental para una evaluación y tratamiento adecuados.
@@ -431,7 +431,7 @@ These Terms and the Privacy Policy are effective on the date of your download an
       <li style="margin-top: .40em;">Pueden acordar que información pueden compartir.</li>
   </ol>
   <p>
-  <li style="margin-top: .40em;">Información para profesionales de ayuda::</li>
+  <li style="margin-top: .40em;">Información para profesionales de ayuda:</li>
   <ol style="padding-left: 55px;" type="i">
       <li style="margin-top: .40em;">Infórmales a tus participantes que se autolesionan sobre esta aplicación.</li>
       <li style="margin-top: .40em;">Recomienda su uso como herramienta complementaria que te permite llevar un registro sobre progreso.</li>
@@ -509,10 +509,10 @@ These Terms and the Privacy Policy are effective on the date of your download an
 // `
 //     },
 'queAutolecionCont1': {
-      'es' : `Es cuando una persona se provoca daño corporal, pero sin la intención de provocar la muerte. Algunas de las formas más comunes de autolesionarse son el cortarse, pellizcarse hasta sangrar, golpearse, quemarse, entre otras). Puedes buscar más información entrando a los siguientes enlaces:`, 
+      'es' : `Es cuando una persona se provoca daño corporal, pero sin la intención de provocar la muerte. Algunas de las formas más comunes de autolesionarse son el cortarse, pellizcarse hasta sangrar, golpearse, quemarse, (entre otras). Puedes buscar más información entrando a los siguientes enlaces:`, 
       'en' : `It is when a person intentionally harms their body without the intention of causing death. Some common forms of self-harm include cutting, pinching until bleeding, hitting oneself, burning, among others. You can find more information by visiting the following links:`
 },
-'queAutolecionCont2': {'es' : 'Programa de investigación sobre la autolesión ysu recuperación de la Universidad de Cornell (SIRR): The Cornell Research Program on Self-Injury and Recovery', 'en' : 'Self-Injury and Recovery Research Program at Cornell University (SIRR): The Cornell Research Program on Self-Injury and Recovery'},
+'queAutolecionCont2': {'es' : 'Programa de investigación sobre la autolesión y su recuperación de la Universidad de Cornell (SIRR): The Cornell Research Program on Self-Injury and Recovery', 'en' : 'Self-Injury and Recovery Research Program at Cornell University (SIRR): The Cornell Research Program on Self-Injury and Recovery'},
 'queAutolecionCont3': {'es' : 'Sociedad Internacional para el Estudio de la Autolesión: Home | ISSS', 'en' : 'International Society for the Study of Self-Injury: Home | ISSS'},
 
     'porqueAutolesionCont':{
@@ -577,7 +577,7 @@ If you have medical insurance, you can contact a customer service representative
       <li style="margin-top: .40em;">Preocupación constante.
       <li style="margin-top: .40em;">Dejar de hacer actividades favoritas.
       <li style="margin-top: .40em;">Irritabilidad.
-      <li style="margin-top: .40em;">Fluctuaciones en estado de animo.
+      <li style="margin-top: .40em;">Fluctuaciones en estado de ánimo.
       <li style="margin-top: .40em;">Dificultades interpersonales.
       <li style="margin-top: .40em;">Aislamiento.   
 </ol>
@@ -597,7 +597,7 @@ If you have medical insurance, you can contact a customer service representative
       <li style="margin-top: .40em;">Loss of interest in favorite activities.
       <li style="margin-top: .40em;">Irritability.
       <li style="margin-top: .40em;">Mood fluctuations.
-      <li style="margin-top: .40em;">interpersonal difficulties.
+      <li style="margin-top: .40em;">Interpersonal difficulties.
       <li style="margin-top: .40em;">Isolation.
 </ol>
 `
@@ -715,10 +715,10 @@ If you have medical insurance, you can contact a customer service representative
   //Contacto Emergencia
 
   'CrearContacto' : {'es':'Crear contacto personal', 'en':'Create personal contact'},
-  'CrearContactoTit' : {'es':'Porfavor ingrese un contacto de emergencia', 'en':'Please enter an emergency contact'},
+  'CrearContactoTit' : {'es':'Por favor ingrese un contacto de emergencia', 'en':'Please enter an emergency contact'},
   'Confirmar Contacto' : {'es' : 'Confirmar Contacto', 'en' : 'Confirm Contact'},
-  'cambiarContactoCont' : {'es' : 'Porfavor ingrese una nuevo contacto de emergencia', 'en' : 'Please enter a new emergency contact'},
-  'CambiarCont' : {'es': 'Cambiar Contacto', 'en' : 'Change Contact'},
+  'cambiarContactoCont' : {'es' : 'Por favor ingrese una nuevo contacto de emergencia', 'en' : 'Please enter a new emergency contact'},
+  'CambiarCont' : {'es': 'Cambiar contacto', 'en' : 'Change Contact'},
   'DeleteCont' : {'es': 'Borrar contacto', 'en' : 'Delete contact '},
   'confirmarBorrarCont': {'es': '¿Está seguro que desea borrar su contacto?', 'en':'Are you sure that you want to delete your contact?'},
 
@@ -912,15 +912,15 @@ If you have medical insurance, you can contact a customer service representative
    'crear' : {'es' : 'Crear', 'en' : 'Create'},
 
    //PAGINA BIENVENIDA
-   'saludos' : {'es' : 'Te damos la bienvenida a RIO, una aplicación móvil desarrollada por un grupo de investigadores de las Universidad de Puerto Rico, Recinto de Rio Piedras. ', 'en' : 'We welcome you to RIO, a mobile application developed by a group of researchers from the University of Puerto Rico, Rio Piedras Campus.'},
+   'saludos' : {'es' : 'Te damos la bienvenida a RIO, una aplicación móvil desarrollada por un grupo de investigadores de las Universidad de Puerto Rico, Recinto de Río Piedras. ', 'en' : 'We welcome you to RIO, a mobile application developed by a group of researchers from the University of Puerto Rico, Rio Piedras Campus.'},
    'warningPass' : {'es' : 'Es importante que el usuario sepa que si pierde u olvida su contraseña la misma NO podrá ser recuperada.', 'en' : 'It is important that the user knows that if they lose or forget their password it CANNOT be recovered.'},
    'bullet1' : {'es' : 'Es una herramienta psicoeducativa que puede proporcionar apoyo general y orientación, NO está enfocado para realizar diagnósticos clínicos ni evalúa el riesgo de autolesión de manera precisa.', 'en' : 'It is a psychoeducational tool that can provide general support and guidance, it is NOT intended to make clinical diagnoses nor does it accurately assess the risk of self-harm.'},
    'bullet2' : {'es' : 'NO es un sustituto de la evaluación psicológica profesional.', 'en' : 'It is NOT a substitute for professional psychological evaluation.'},
    'bullet3' : {'es' : 'NO recopila datos personales de los usuarios. Los datos registrados se quedarán guardados en el dispositivo del usuario.', 'en' : " DOES NOT collect personal data from users. The recorded data will be saved on the user's device."},
-   'minorWarning' : {'es' : 'Al utilizar RIO usted representa que NO es un menor de trece (13) años. Si usted tiene menos de trece (13) años, no podrá utilizar RIO.', 'en' : 'By using RIO you represent that you are NOT a minor under thirteen (13) years of age. If you are under thirteen (13) years old, you will not be able to use RIO.'},
+   'minorWarning' : {'es' : 'Al utilizar RIO usted confirma que NO es un menor de trece (13) años. Si usted tiene menos de trece (13) años, no podrá utilizar RIO.', 'en' : 'By using RIO you represent that you are NOT a minor under thirteen (13) years of age. If you are under thirteen (13) years old, you will not be able to use RIO.'},
    'aceptar1' : {'es' : `Al oprimir (aceptar) usted acepta nuestros`, 'en' : `By clicking (accept) you accept our`},
    'aceptar2' : {'es' : `términos de uso y política de privacidad.`, 'en' : `Terms of use and privacy policy.`},
-   'aceptarTerminos' : {'es' : 'Aceptar', 'en' : 'Acept'},
+   'aceptarTerminos' : {'es' : 'Aceptar', 'en' : 'Accept'},
    '' : {'es' : '', 'en' : ''},
 
    // Mensajes de Notificaciones
@@ -933,6 +933,8 @@ If you have medical insurance, you can contact a customer service representative
    'notifDiaActividadPost': {'es': ' de la meta: ', 'en': ' of your goal: '},
    'correoElectronico': {'es': 'Correo electrónico', 'en': 'Email Address'},
    'enviar': {'es': 'Enviar', 'en': 'Send'},
+
+   
 
 }
 
